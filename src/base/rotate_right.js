@@ -1,11 +1,14 @@
 /**
- * -> https://en.wikipedia.org/wiki/Tree_rotation
+ * Rotate tree right.
+ * (see https://en.wikipedia.org/wiki/Tree_rotation)
  *
  *      B                A
  *     / \              / \
  *    A   c     ->     a   B
  *   / \                  / \
  *  a   b                b   c
+ *
+ * @param {Node} A root of the tree
  */
 
 export function rotate_right ( B ) {
