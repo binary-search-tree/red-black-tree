@@ -620,7 +620,7 @@
     "access": null,
     "description": null,
     "lineNumber": 14,
-    "content": "/**\n * Rotate tree right.\n * (see https://en.wikipedia.org/wiki/Tree_rotation)\n *\n *      B                A\n *     / \\              / \\\n *    A   c     ->     a   B\n *   / \\                  / \\\n *  a   b                b   c\n *\n * @param {Node} A root of the tree\n */\n\nexport function rotate_right ( B ) {\n\n\tconst A = B.left;\n\tconst a = A.left ;\n\tconst b = A.right ;\n\tconst c = B.right ;\n\n\t[A.value , B.value] = [B.value , A.value] ;\n\t[A.color , B.color] = [B.color , A.color] ;\n\n\tB.left = a ;\n\tB.right = A ;\n\n\tA.left = b ;\n\tA.right = c ;\n\n\ta.parent = B ;\n\tb.parent = A ;\n\tc.parent = A ;\n\n}\n"
+    "content": "/**\n * Rotate tree right.\n * (see https://en.wikipedia.org/wiki/Tree_rotation)\n *\n *      B                A\n *     / \\              / \\\n *    A   c     ->     a   B\n *   / \\                  / \\\n *  a   b                b   c\n *\n * @param {Node} B root of the tree\n */\n\nexport function rotate_right ( B ) {\n\n\tconst A = B.left;\n\tconst a = A.left ;\n\tconst b = A.right ;\n\tconst c = B.right ;\n\n\t[A.value , B.value] = [B.value , A.value] ;\n\t[A.color , B.color] = [B.color , A.color] ;\n\n\tB.left = a ;\n\tB.right = A ;\n\n\tA.left = b ;\n\tA.right = c ;\n\n\ta.parent = B ;\n\tb.parent = A ;\n\tc.parent = A ;\n\n}\n"
   },
   {
     "__docId__": 31,
@@ -644,7 +644,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "A",
+        "name": "B",
         "description": "root of the tree"
       }
     ],
