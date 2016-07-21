@@ -12,9 +12,7 @@ test( 'RedBlackTree::find' , t => {
 
 	const tree = new RedBlackTree( increasing ) ;
 
-	const a1 = list( tree ) ;
-
-	t.deepEqual( a1.length , 0 , 'tree contains 0 elements' ) ;
+	t.truthy( tree.find( 0 ) === null ) ;
 
 	const n = 10000 ;
 	const reference = [ ] ;
@@ -33,13 +31,6 @@ test( 'RedBlackTree::find' , t => {
 
 	t.truthy( tree.find( -1 ) === null ) ;
 	t.truthy( tree.find( n ) === null ) ;
-
-	reference.sort(increasing);
-
-	const a2 = list( tree ) ;
-
-	t.deepEqual( a2.length , n , `tree contains ${n} elements` ) ;
-	t.deepEqual( a2 , reference , 'tree is sorted' ) ;
 
 });
 
