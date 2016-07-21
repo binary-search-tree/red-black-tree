@@ -1,0 +1,2133 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/adt/RedBlackTree.js",
+    "memberof": null,
+    "longname": "src/adt/RedBlackTree.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport { Node } from '..' ;\nimport { RED , BLACK } from '..' ;\nimport { predecessor , successor } from '..' ;\nimport { insert , insert_case2 } from '..' ;\nimport { delete_one_child } from '..' ;\nimport { find } from '..' ;\nimport { inordertraversal } from '..' ;\n\nexport class RedBlackTree {\n\n\tconstructor ( compare ) {\n\n\t\tthis.compare = compare ;\n\t\tthis.root = null ;\n\n\t}\n\n\tadd ( value ) {\n\t\tif ( this.root === null ) {\n\t\t\tthis.root = new Node( BLACK , value ) ;\n\t\t}\n\t\telse {\n\t\t\tconst node = new Node( RED , value ) ;\n\t\t\tinsert( this.compare , this.root , node ) ;\n\t\t\tinsert_case2( node ) ;\n\t\t}\n\t}\n\n\tfind ( value ) {\n\n\t\tif ( this.root === null ) return null ;\n\n\t\treturn find( this.compare , this.root , value ) ;\n\n\t}\n\n\tdelete ( node ) {\n\n\t\tif ( !node.left.isleaf() ) {\n\t\t\t// replace node's value with predecessor's value\n\t\t\tconst pred = predecessor( node ) ;\n\t\t\tnode.value = pred.value ;\n\t\t\t// delete predecessor node\n\t\t\t// note: this node can only have one non-leaf child\n\t\t\t//       because the tree is a red-black tree\n\t\t\tdelete_one_child( pred ) ;\n\t\t}\n\n\t\telse if ( !node.right.isleaf() ) {\n\t\t\t// replace node's value with successor's value\n\t\t\tconst succ = successor( node ) ;\n\t\t\tnode.value = succ.value ;\n\t\t\t// delete successor node\n\t\t\t// note: this node can only have one non-leaf child\n\t\t\t//       because the tree is a red-black tree\n\t\t\tdelete_one_child( pred ) ;\n\t\t}\n\n\t\telse {\n\t\t\tthis.root = null ;\n\t\t}\n\n\t}\n\n\t*[Symbol.iterator] ( ) {\n\n\t\tif ( this.root !== null ) yield* inordertraversal( this.root ) ;\n\n\t}\n\n}\n"
+  },
+  {
+    "__docId__": 1,
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "RedBlackTree",
+    "memberof": "src/adt/RedBlackTree.js",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/adt/RedBlackTree.js",
+    "importStyle": "{RedBlackTree}",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 2,
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "params": [
+      {
+        "name": "compare",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 3,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "compare",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#compare",
+    "access": null,
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 4,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "root",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#root",
+    "access": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 5,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "add",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#add",
+    "access": null,
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 6,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "root",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#root",
+    "access": null,
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 7,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "find",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#find",
+    "access": null,
+    "description": null,
+    "lineNumber": 30,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 8,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "delete",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#delete",
+    "access": null,
+    "description": null,
+    "lineNumber": 38,
+    "undocument": true,
+    "params": [
+      {
+        "name": "node",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 9,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "root",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#root",
+    "access": null,
+    "description": null,
+    "lineNumber": 61,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 10,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "[Symbol.iterator]",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#[Symbol.iterator]",
+    "access": null,
+    "description": null,
+    "lineNumber": 66,
+    "undocument": true,
+    "params": [],
+    "generator": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/adt/index.js",
+    "memberof": null,
+    "longname": "src/adt/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export * from './RedBlackTree' ;\n"
+  },
+  {
+    "__docId__": 12,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/colors.js",
+    "memberof": null,
+    "longname": "src/base/colors.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export const BLACK = 0 ;\nexport const RED = 1 ;\n"
+  },
+  {
+    "__docId__": 13,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "BLACK",
+    "memberof": "src/base/colors.js",
+    "longname": "src/base/colors.js~BLACK",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/colors.js",
+    "importStyle": "{BLACK}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "number"
+      ]
+    }
+  },
+  {
+    "__docId__": 14,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "RED",
+    "memberof": "src/base/colors.js",
+    "longname": "src/base/colors.js~RED",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/colors.js",
+    "importStyle": "{RED}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "number"
+      ]
+    }
+  },
+  {
+    "__docId__": 15,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/find.js",
+    "memberof": null,
+    "longname": "src/base/find.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nexport function find ( compare, node, value ) {\n\n\t// scan for first node whose\n\t// value equals parameter value\n\n\twhile ( true ) {\n\n\t\tconst d = compare( value, node.value );\n\n\t\tif ( d === 0 ) {\n\t\t\treturn node;\n\t\t}\n\n\t\telse if ( d < 0 ) {\n\t\t\tnode = node.left;\n\t\t}\n\n\t\telse {\n\t\t\tnode = node.right;\n\t\t}\n\n\t\tif ( node.isleaf() ) {\n\t\t\treturn null;\n\t\t}\n\n\t}\n\n}\n"
+  },
+  {
+    "__docId__": 16,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "find",
+    "memberof": "src/base/find.js",
+    "longname": "src/base/find.js~find",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/find.js",
+    "importStyle": "{find}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "params": [
+      {
+        "name": "compare",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "node",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 17,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/grandparent.js",
+    "memberof": null,
+    "longname": "src/base/grandparent.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export function grandparent( n ){\n if ((n !== null) && (n.parent !== null))\n  return n.parent.parent;\n else\n  return null;\n}\n"
+  },
+  {
+    "__docId__": 18,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "grandparent",
+    "memberof": "src/base/grandparent.js",
+    "longname": "src/base/grandparent.js~grandparent",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/grandparent.js",
+    "importStyle": "{grandparent}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 19,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/index.js",
+    "memberof": null,
+    "longname": "src/base/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export * from './colors' ;\nexport * from './find' ;\nexport * from './grandparent' ;\nexport * from './inordertraversal' ;\nexport * from './insert' ;\nexport * from './predecessor' ;\nexport * from './replace_node' ;\nexport * from './rotate_left' ;\nexport * from './rotate_right' ;\nexport * from './sibling' ;\nexport * from './successor' ;\nexport * from './uncle' ;\n"
+  },
+  {
+    "__docId__": 20,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/inordertraversal.js",
+    "memberof": null,
+    "longname": "src/base/inordertraversal.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nexport function* inordertraversal ( node ) {\n\n\tif ( !node.left.isleaf() ) {\n\t\tyield *inordertraversal( node.left );\n\t}\n\n\tyield node.value ;\n\n\tif ( !node.right.isleaf() ) {\n\t\tyield* inordertraversal( node.right );\n\t}\n\n}\n"
+  },
+  {
+    "__docId__": 21,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "inordertraversal",
+    "memberof": "src/base/inordertraversal.js",
+    "longname": "src/base/inordertraversal.js~inordertraversal",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/inordertraversal.js",
+    "importStyle": "{inordertraversal}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "params": [
+      {
+        "name": "node",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/insert.js",
+    "memberof": null,
+    "longname": "src/base/insert.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nexport function insert ( compare, A, B ) {\n\n\twhile ( true ) {\n\n\t\tif ( compare( B.value, A.value ) < 0 ) {\n\n\t\t\tconst node = A.left;\n\n\t\t\tif ( node.isleaf() ) {\n\t\t\t\tA.left = B;\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tA = node;\n\n\t\t}\n\n\t\telse {\n\n\t\t\tconst node = A.right;\n\n\t\t\tif ( node.isleaf() ) {\n\t\t\t\tA.right = B;\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tA = node;\n\n\t\t}\n\n\t}\n\n\tB.parent = A;\n\n\treturn B;\n\n}\n"
+  },
+  {
+    "__docId__": 23,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "insert",
+    "memberof": "src/base/insert.js",
+    "longname": "src/base/insert.js~insert",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/insert.js",
+    "importStyle": "{insert}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "params": [
+      {
+        "name": "compare",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "A",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "B",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 24,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/predecessor.js",
+    "memberof": null,
+    "longname": "src/base/predecessor.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export function predecessor ( node ) {\n\n\tvar pred = node.left ;\n\n\twhile ( !pred.right.isleaf() ) pred = pred.right ;\n\n\treturn pred ;\n\n}\n"
+  },
+  {
+    "__docId__": 25,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "predecessor",
+    "memberof": "src/base/predecessor.js",
+    "longname": "src/base/predecessor.js~predecessor",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/predecessor.js",
+    "importStyle": "{predecessor}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "node",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 26,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/replace_node.js",
+    "memberof": null,
+    "longname": "src/base/replace_node.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nexport function replace_node ( A , B ) {\n\tif ( A.parent === null ) {\n\t\t// nothing to do\n\t}\n\telse if ( A === A.parent.left ) {\n\t\tA.parent.left = B ;\n\t}\n\telse {\n\t\tA.parent.right = B ;\n\t}\n\tB.parent = A.parent ;\n}\n"
+  },
+  {
+    "__docId__": 27,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "replace_node",
+    "memberof": "src/base/replace_node.js",
+    "longname": "src/base/replace_node.js~replace_node",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/replace_node.js",
+    "importStyle": "{replace_node}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "params": [
+      {
+        "name": "A",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "B",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 28,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/rotate_left.js",
+    "memberof": null,
+    "longname": "src/base/rotate_left.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 14,
+    "content": "/**\n * Rotate tree left.\n * (see https://en.wikipedia.org/wiki/Tree_rotation)\n *\n *      A                B\n *     / \\              / \\\n *    a   B     ->     A   c\n *       / \\          / \\\n *      b   c        a   b\n *\n * @param {Node} A root of the tree\n */\n\nexport function rotate_left ( A ) {\n\n\tconst B = A.right ;\n\tconst a = A.left ;\n\tconst b = B.left ;\n\tconst c = B.right ;\n\n\t[A.value , B.value] = [B.value , A.value] ;\n\t[A.color , B.color] = [B.color , A.color] ;\n\n\tA.left = B ;\n\tA.right = c ;\n\n\tB.left = a ;\n\tB.right = b ;\n\n\ta.parent = B ;\n\tb.parent = B ;\n\tc.parent = A ;\n}\n"
+  },
+  {
+    "__docId__": 29,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "rotate_left",
+    "memberof": "src/base/rotate_left.js",
+    "longname": "src/base/rotate_left.js~rotate_left",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/rotate_left.js",
+    "importStyle": "{rotate_left}",
+    "description": "Rotate tree left.\n(see https://en.wikipedia.org/wiki/Tree_rotation)\n\n     A                B\n    / \\              / \\\n   a   B     ->     A   c\n      / \\          / \\\n     b   c        a   b",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Node"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "A",
+        "description": "root of the tree"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 30,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/rotate_right.js",
+    "memberof": null,
+    "longname": "src/base/rotate_right.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 14,
+    "content": "/**\n * Rotate tree right.\n * (see https://en.wikipedia.org/wiki/Tree_rotation)\n *\n *      B                A\n *     / \\              / \\\n *    A   c     ->     a   B\n *   / \\                  / \\\n *  a   b                b   c\n *\n * @param {Node} A root of the tree\n */\n\nexport function rotate_right ( B ) {\n\n\tconst A = B.left;\n\tconst a = A.left ;\n\tconst b = A.right ;\n\tconst c = B.right ;\n\n\t[A.value , B.value] = [B.value , A.value] ;\n\t[A.color , B.color] = [B.color , A.color] ;\n\n\tB.left = a ;\n\tB.right = A ;\n\n\tA.left = b ;\n\tA.right = c ;\n\n\ta.parent = B ;\n\tb.parent = A ;\n\tc.parent = A ;\n\n}\n"
+  },
+  {
+    "__docId__": 31,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "rotate_right",
+    "memberof": "src/base/rotate_right.js",
+    "longname": "src/base/rotate_right.js~rotate_right",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/rotate_right.js",
+    "importStyle": "{rotate_right}",
+    "description": "Rotate tree right.\n(see https://en.wikipedia.org/wiki/Tree_rotation)\n\n     B                A\n    / \\              / \\\n   A   c     ->     a   B\n  / \\                  / \\\n a   b                b   c",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Node"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "A",
+        "description": "root of the tree"
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 32,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/sibling.js",
+    "memberof": null,
+    "longname": "src/base/sibling.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export function sibling(n)\n{\n if ((n === null) || (n.parent === null))\n  return null; // no parent means no sibling\n if (n === n.parent.left)\n  return n.parent.right;\n else\n  return n.parent.left;\n}\n"
+  },
+  {
+    "__docId__": 33,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "sibling",
+    "memberof": "src/base/sibling.js",
+    "longname": "src/base/sibling.js~sibling",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/sibling.js",
+    "importStyle": "{sibling}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 34,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/successor.js",
+    "memberof": null,
+    "longname": "src/base/successor.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export function successor ( node ) {\n\n\tvar succ = node.right ;\n\n\twhile ( !succ.left.isleaf() ) succ = succ.left ;\n\n\treturn succ ;\n\n}\n"
+  },
+  {
+    "__docId__": 35,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "successor",
+    "memberof": "src/base/successor.js",
+    "longname": "src/base/successor.js~successor",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/successor.js",
+    "importStyle": "{successor}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "node",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 36,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/base/uncle.js",
+    "memberof": null,
+    "longname": "src/base/uncle.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import { grandparent } from './grandparent' ;\n\nexport function uncle(n){\n const g = grandparent(n);\n if (g === null)\n  return null; // No grandparent means no uncle\n if (n.parent === g.left)\n  return g.right.isleaf() ? null : g.right ;\n else\n  return g.left.isleaf() ? null : g.left;\n}\n"
+  },
+  {
+    "__docId__": 37,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "uncle",
+    "memberof": "src/base/uncle.js",
+    "longname": "src/base/uncle.js~uncle",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/base/uncle.js",
+    "importStyle": "{uncle}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 38,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/index.js",
+    "memberof": null,
+    "longname": "src/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export * from './adt' ;\nexport * from './base' ;\nexport * from './insertion' ;\nexport * from './node' ;\nexport * from './removal' ;\n"
+  },
+  {
+    "__docId__": 39,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/insertion/index.js",
+    "memberof": null,
+    "longname": "src/insertion/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export * from './insert_case1' ;\nexport * from './insert_case2' ;\nexport * from './insert_case3' ;\nexport * from './insert_case4' ;\nexport * from './insert_case5' ;\n"
+  },
+  {
+    "__docId__": 40,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/insertion/insert_case1.js",
+    "memberof": null,
+    "longname": "src/insertion/insert_case1.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport { BLACK } from '..' ;\nimport { insert_case2 } from './insert_case2' ;\n\nexport function insert_case1(n)\n{\n if (n.parent === null)\n  n.color = BLACK;\n else\n  insert_case2(n);\n}\n"
+  },
+  {
+    "__docId__": 41,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "insert_case1",
+    "memberof": "src/insertion/insert_case1.js",
+    "longname": "src/insertion/insert_case1.js~insert_case1",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/insertion/insert_case1.js",
+    "importStyle": "{insert_case1}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 42,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/insertion/insert_case2.js",
+    "memberof": null,
+    "longname": "src/insertion/insert_case2.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport { BLACK } from '..' ;\nimport { insert_case3 } from './insert_case3' ;\n\nexport function insert_case2(n)\n{\n if (n.parent.color === BLACK)\n  return; /* Tree is still valid */\n else\n  insert_case3(n);\n}\n"
+  },
+  {
+    "__docId__": 43,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "insert_case2",
+    "memberof": "src/insertion/insert_case2.js",
+    "longname": "src/insertion/insert_case2.js~insert_case2",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/insertion/insert_case2.js",
+    "importStyle": "{insert_case2}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 44,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/insertion/insert_case3.js",
+    "memberof": null,
+    "longname": "src/insertion/insert_case3.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import { BLACK , RED , uncle , grandparent } from '..' ;\nimport { insert_case1 } from './insert_case1' ;\nimport { insert_case4 } from './insert_case4' ;\n\nexport function insert_case3(n)\n{\n const u = uncle(n);\n\n if ((u !== null) && (u.color === RED)) {\n  n.parent.color = BLACK;\n  u.color = BLACK;\n  const g = grandparent(n);\n  g.color = RED;\n  insert_case1(g);\n } else {\n  insert_case4(n);\n }\n}\n"
+  },
+  {
+    "__docId__": 45,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "insert_case3",
+    "memberof": "src/insertion/insert_case3.js",
+    "longname": "src/insertion/insert_case3.js~insert_case3",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/insertion/insert_case3.js",
+    "importStyle": "{insert_case3}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 46,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/insertion/insert_case4.js",
+    "memberof": null,
+    "longname": "src/insertion/insert_case4.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport { rotate_left , rotate_right , grandparent } from '..' ;\nimport { insert_case5 } from './insert_case5' ;\n\nexport function insert_case4(n)\n{\n const g = grandparent(n);\n\n if ((n === n.parent.right) && (n.parent === g.left)) {\n  rotate_left(n.parent);\n\n /*\n * rotate_left can be the below because of already having *g =  grandparent(n)\n *\n * saved_p=g.left, *saved_left_n=n.left;\n * g.left=n;\n * n.left=saved_p;\n * saved_p.right=saved_left_n;\n *\n * and modify the parent's nodes properly\n */\n\n  n = n.left;\n\n } else if ((n === n.parent.left) && (n.parent === g.right)) {\n  rotate_right(n.parent);\n\n /*\n * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n *\n * saved_p=g.right, *saved_right_n=n.right;\n * g.right=n;\n * n.right=saved_p;\n * saved_p.left=saved_right_n;\n *\n */\n\n  n = n.right;\n }\n insert_case5(n);\n}\n"
+  },
+  {
+    "__docId__": 47,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "insert_case4",
+    "memberof": "src/insertion/insert_case4.js",
+    "longname": "src/insertion/insert_case4.js~insert_case4",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/insertion/insert_case4.js",
+    "importStyle": "{insert_case4}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/insertion/insert_case5.js",
+    "memberof": null,
+    "longname": "src/insertion/insert_case5.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport { RED , BLACK , rotate_left , rotate_right , grandparent } from '..' ;\n\nexport function insert_case5(n)\n{\n const g = grandparent(n);\n\n n.parent.color = BLACK;\n g.color = RED;\n if (n === n.parent.left)\n  rotate_right(g);\n else\n  rotate_left(g);\n}\n"
+  },
+  {
+    "__docId__": 49,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "insert_case5",
+    "memberof": "src/insertion/insert_case5.js",
+    "longname": "src/insertion/insert_case5.js~insert_case5",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/insertion/insert_case5.js",
+    "importStyle": "{insert_case5}",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/node/Leaf.js",
+    "memberof": null,
+    "longname": "src/node/Leaf.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import { BLACK } from '..' ;\n\nexport function Leaf ( parent ) {\n\tthis.color = BLACK ;\n\tthis.parent = parent ;\n}\n\nLeaf.prototype.isleaf = function ( ) { return true ; } ;\n"
+  },
+  {
+    "__docId__": 51,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "Leaf",
+    "memberof": "src/node/Leaf.js",
+    "longname": "src/node/Leaf.js~Leaf",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/node/Leaf.js",
+    "importStyle": "{Leaf}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "parent",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 52,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "isleaf",
+    "memberof": "src/node/Leaf.js",
+    "longname": "src/node/Leaf.js~isleaf",
+    "access": null,
+    "export": false,
+    "importPath": "aureooms-es-red-black-tree/src/node/Leaf.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 53,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/node/Node.js",
+    "memberof": null,
+    "longname": "src/node/Node.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import { Leaf } from './Leaf' ;\n\nexport function Node ( color , value ) {\n\tthis.color = color ;\n\tthis.left = new Leaf( this ) ;\n\tthis.right = new Leaf( this ) ;\n\tthis.parent = null ;\n\tthis.value = value ;\n}\n\nNode.prototype.isleaf = function ( ) { return false ; } ;\n"
+  },
+  {
+    "__docId__": 54,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "Node",
+    "memberof": "src/node/Node.js",
+    "longname": "src/node/Node.js~Node",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/node/Node.js",
+    "importStyle": "{Node}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "color",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 55,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "isleaf",
+    "memberof": "src/node/Node.js",
+    "longname": "src/node/Node.js~isleaf",
+    "access": null,
+    "export": false,
+    "importPath": "aureooms-es-red-black-tree/src/node/Node.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 11,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 56,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/node/index.js",
+    "memberof": null,
+    "longname": "src/node/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export * from './Leaf' ;\nexport * from './Node' ;\n"
+  },
+  {
+    "__docId__": 57,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/removal/delete_case1.js",
+    "memberof": null,
+    "longname": "src/removal/delete_case1.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport { delete_case2 } from './delete_case2' ;\n\nexport function delete_case1(n)\n{\n if (n.parent !== null)\n  delete_case2(n);\n}\n"
+  },
+  {
+    "__docId__": 58,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "delete_case1",
+    "memberof": "src/removal/delete_case1.js",
+    "longname": "src/removal/delete_case1.js~delete_case1",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/removal/delete_case1.js",
+    "importStyle": "{delete_case1}",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 59,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/removal/delete_case2.js",
+    "memberof": null,
+    "longname": "src/removal/delete_case2.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import { BLACK , RED , rotate_left , rotate_right } from '..' ;\n\nimport { delete_case3 } from './delete_case3' ;\n\nexport function delete_case2(n)\n{\n const s = sibling(n);\n\n if (s.color === RED) {\n  n.parent.color = RED;\n  s.color = BLACK;\n  if (n === n.parent.left)\n   rotate_left(n.parent);\n  else\n   rotate_right(n.parent);\n }\n delete_case3(n);\n}\n"
+  },
+  {
+    "__docId__": 60,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "delete_case2",
+    "memberof": "src/removal/delete_case2.js",
+    "longname": "src/removal/delete_case2.js~delete_case2",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/removal/delete_case2.js",
+    "importStyle": "{delete_case2}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 61,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/removal/delete_case3.js",
+    "memberof": null,
+    "longname": "src/removal/delete_case3.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport { BLACK , RED , sibling } from '..' ;\n\nimport { delete_case1 } from './delete_case1' ;\nimport { delete_case4 } from './delete_case4' ;\n\nexport function delete_case3(n)\n{\n const s = sibling(n);\n\n if ((n.parent.color === BLACK) &&\n     (s.color === BLACK) &&\n     (s.left.color === BLACK) &&\n     (s.right.color === BLACK)) {\n  s.color = RED;\n  delete_case1(n.parent);\n } else\n  delete_case4(n);\n}\n"
+  },
+  {
+    "__docId__": 62,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "delete_case3",
+    "memberof": "src/removal/delete_case3.js",
+    "longname": "src/removal/delete_case3.js~delete_case3",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/removal/delete_case3.js",
+    "importStyle": "{delete_case3}",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 63,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/removal/delete_case4.js",
+    "memberof": null,
+    "longname": "src/removal/delete_case4.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import { BLACK , RED , sibling } from '..' ;\n\nimport { delete_case5 } from './delete_case5' ;\n\nexport function delete_case4(n)\n{\n const s = sibling(n);\n\n if ((n.parent.color === RED) &&\n     (s.color === BLACK) &&\n     (s.left.color === BLACK) &&\n     (s.right.color === BLACK)) {\n  s.color = RED;\n  n.parent.color = BLACK;\n } else\n  delete_case5(n);\n}\n"
+  },
+  {
+    "__docId__": 64,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "delete_case4",
+    "memberof": "src/removal/delete_case4.js",
+    "longname": "src/removal/delete_case4.js~delete_case4",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/removal/delete_case4.js",
+    "importStyle": "{delete_case4}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 65,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/removal/delete_case5.js",
+    "memberof": null,
+    "longname": "src/removal/delete_case5.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport { BLACK , RED , sibling , rotate_right , rotate_left } from '..' ;\n\nimport { delete_case6 } from './delete_case6' ;\n\nexport function delete_case5(n)\n{\n const s = sibling(n);\n\n if  (s.color === BLACK) { /* this if statement is trivial,\ndue to case 2 (even though case 2 changed the sibling to a sibling's child,\nthe sibling's child can't be red, since no red parent can have a red child). */\n/* the following statements just force the red to be on the left of the left of the parent,\n   or right of the right, so case six will rotate correctly. */\n  if ((n === n.parent.left) &&\n      (s.right.color === BLACK) &&\n      (s.left.color === RED)) { /* this last test is trivial too due to cases 2-4. */\n   s.color = RED;\n   s.left.color = BLACK;\n   rotate_right(s);\n  } else if ((n === n.parent.right) &&\n             (s.left.color === BLACK) &&\n             (s.right.color === RED)) {/* this last test is trivial too due to cases 2-4. */\n   s.color = RED;\n   s.right.color = BLACK;\n   rotate_left(s);\n  }\n }\n delete_case6(n);\n}\n"
+  },
+  {
+    "__docId__": 66,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "delete_case5",
+    "memberof": "src/removal/delete_case5.js",
+    "longname": "src/removal/delete_case5.js~delete_case5",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/removal/delete_case5.js",
+    "importStyle": "{delete_case5}",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 67,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/removal/delete_case6.js",
+    "memberof": null,
+    "longname": "src/removal/delete_case6.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport { BLACK , RED , sibling , rotate_right , rotate_left } from '..' ;\n\nexport function delete_case6(n)\n{\n const s = sibling(n);\n\n s.color = n.parent.color;\n n.parent.color = BLACK;\n\n if (n === n.parent.left) {\n  s.right.color = BLACK;\n  rotate_left(n.parent);\n } else {\n  s.left.color = BLACK;\n  rotate_right(n.parent);\n }\n}\n"
+  },
+  {
+    "__docId__": 68,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "delete_case6",
+    "memberof": "src/removal/delete_case6.js",
+    "longname": "src/removal/delete_case6.js~delete_case6",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/removal/delete_case6.js",
+    "importStyle": "{delete_case6}",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 69,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/removal/delete_one_child.js",
+    "memberof": null,
+    "longname": "src/removal/delete_one_child.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport { BLACK , RED , replace_node } from '..' ;\n\nimport { delete_case1 } from './delete_case1' ;\n\nexport function delete_one_child(n)\n{\n /*\n  * Precondition: n has at most one non-leaf child.\n  */\n const child = n.right.isleaf() ? n.left : n.right;\n\n replace_node(n, child);\n if (n.color === BLACK) {\n  if (child.color === RED)\n   child.color = BLACK;\n  else\n   delete_case1(child);\n }\n}\n"
+  },
+  {
+    "__docId__": 70,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "delete_one_child",
+    "memberof": "src/removal/delete_one_child.js",
+    "longname": "src/removal/delete_one_child.js~delete_one_child",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/removal/delete_one_child.js",
+    "importStyle": "{delete_one_child}",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "params": [
+      {
+        "name": "n",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 71,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/removal/index.js",
+    "memberof": null,
+    "longname": "src/removal/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export * from './delete_case1' ;\nexport * from './delete_case2' ;\nexport * from './delete_case3' ;\nexport * from './delete_case4' ;\nexport * from './delete_case5' ;\nexport * from './delete_case6' ;\nexport * from './delete_one_child' ;\n"
+  },
+  {
+    "__docId__": 73,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 77,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 80,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 81,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 82,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 83,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 84,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 85,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 86,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 87,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 89,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 90,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 91,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 92,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 93,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 94,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 95,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 96,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 97,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 98,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 99,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 100,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 101,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 102,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 103,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 104,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 105,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 106,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 107,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 108,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 109,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 110,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 111,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 112,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 113,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 114,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 115,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 116,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 117,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 118,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 119,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 121,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "CanvasRenderingContext2D",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 122,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "DocumentFragment",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 123,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Element",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Element",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 124,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Event",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Event",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 125,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "Node",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~Node",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 126,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "NodeList",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 127,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "XMLHttpRequest",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 128,
+    "kind": "external",
+    "static": true,
+    "variation": null,
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  }
+]
