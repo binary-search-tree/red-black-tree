@@ -5,7 +5,7 @@ export function uncle(n){
  if (g === null)
   return null; // No grandparent means no uncle
  if (n.parent === g.left)
-  return g.right;
+  return g.right.isleaf() ? null : g.right ;
  else
-  return g.left;
+  return g.left.isleaf() ? null : g.left;
 }

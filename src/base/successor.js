@@ -1,9 +1,9 @@
-export function predecessor ( node ) {
+export function successor ( node ) {
 
-	var pred = node.right ;
+	var succ = node.right ;
 
-	while ( !pred.left.isleaf() ) pred = pred.left ;
+	while ( !succ.left.isleaf() ) succ = succ.left ;
 
-	return pred ;
+	return succ ;
 
 }

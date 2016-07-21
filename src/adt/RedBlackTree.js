@@ -1,10 +1,11 @@
 
+import { Node } from '..' ;
 import { RED , BLACK } from '..' ;
 import { predecessor , successor } from '..' ;
-import { insert , insert_case1 } from '..' ;
+import { insert , insert_case2 } from '..' ;
 import { delete_one_child } from '..' ;
 import { find } from '..' ;
-import { Node } from '..' ;
+import { inordertraversal } from '..' ;
 
 export function RedBlackTree ( compare ) {
 
@@ -20,7 +21,7 @@ RedBlackTree.prototype.add = function ( value ) {
 	else {
 		const node = new Node( RED , value ) ;
 		insert( this.compare , this.root , node ) ;
-		insert_case1( node ) ; // should go case 2 directly
+		insert_case2( node ) ;
 	}
 } ;
 
@@ -60,8 +61,8 @@ RedBlackTree.prototype.delete = function ( node ) {
 
 } ;
 
-RedBlackTree.prototype[Symbol.iterator] = function ( ) {
+RedBlackTree.prototype[Symbol.iterator] = function* ( ) {
 
-	if ( this.root !== null ) return inordertraversal( this.root ) ;
+	if ( this.root !== null ) yield* inordertraversal( this.root ) ;
 
 } ;

@@ -10,15 +10,21 @@
 
 export function rotate_left ( A ) {
 
-	const B = A.right;
+	const B = A.right ;
+	const a = A.left ;
+	const b = B.left ;
+	const c = B.right ;
 
-	A.right = B.left;
-	B.left = A;
+	[A.value , B.value] = [B.value , A.value] ;
+	[A.color , B.color] = [B.color , A.color] ;
 
-	B.parent = A.parent;
-	A.right.parent = A;
-	A.parent = B;
+	A.left = B ;
+	A.right = c ;
 
-	return B;
+	B.left = a ;
+	B.right = b ;
 
+	a.parent = B ;
+	b.parent = B ;
+	c.parent = A ;
 }
