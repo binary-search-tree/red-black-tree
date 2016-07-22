@@ -1,26 +1,26 @@
 window.esdocSearchIndex = [
   [
-    "aureooms-es-red-black-tree/src/base/colors.js~black",
+    "aureooms-es-red-black-tree/src/color/black.js~black",
     "variable/index.html#static-variable-BLACK",
-    "<span>BLACK</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/colors.js</span>",
+    "<span>BLACK</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/color/BLACK.js</span>",
     "variable"
   ],
   [
-    "aureooms-es-red-black-tree/src/node/leaf.js~leaf",
+    "aureooms-es-red-black-tree/src/adt/leaf.js~leaf",
     "function/index.html#static-function-Leaf",
-    "<span>Leaf</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/node/Leaf.js</span>",
+    "<span>Leaf</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/adt/Leaf.js</span>",
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/node/node.js~node",
+    "aureooms-es-red-black-tree/src/adt/node.js~node",
     "function/index.html#static-function-Node",
-    "<span>Node</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/node/Node.js</span>",
+    "<span>Node</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/adt/Node.js</span>",
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/base/colors.js~red",
+    "aureooms-es-red-black-tree/src/color/red.js~red",
     "variable/index.html#static-variable-RED",
-    "<span>RED</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/colors.js</span>",
+    "<span>RED</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/color/RED.js</span>",
     "variable"
   ],
   [
@@ -30,9 +30,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "aureooms-es-red-black-tree/src/base/debug.js~debug",
+    "aureooms-es-red-black-tree/src/debug/debug.js~debug",
     "function/index.html#static-function-debug",
-    "<span>debug</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/debug.js</span>",
+    "<span>debug</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/debug/debug.js</span>",
     "function"
   ],
   [
@@ -78,9 +78,9 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/base/find.js~find",
+    "aureooms-es-red-black-tree/src/search/find.js~find",
     "function/index.html#static-function-find",
-    "<span>find</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/find.js</span>",
+    "<span>find</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/search/find.js</span>",
     "function"
   ],
   [
@@ -90,15 +90,15 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/base/inordertraversal.js~inordertraversal",
+    "aureooms-es-red-black-tree/src/traversal/inordertraversal.js~inordertraversal",
     "function/index.html#static-function-inordertraversal",
-    "<span>inordertraversal</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/inordertraversal.js</span>",
+    "<span>inordertraversal</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/traversal/inordertraversal.js</span>",
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/base/insert.js~insert",
+    "aureooms-es-red-black-tree/src/insertion/insert.js~insert",
     "function/index.html#static-function-insert",
-    "<span>insert</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/insert.js</span>",
+    "<span>insert</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/insertion/insert.js</span>",
     "function"
   ],
   [
@@ -138,21 +138,21 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/base/replace_node.js~replace_node",
+    "aureooms-es-red-black-tree/src/removal/replace_node.js~replace_node",
     "function/index.html#static-function-replace_node",
-    "<span>replace_node</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/replace_node.js</span>",
+    "<span>replace_node</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/removal/replace_node.js</span>",
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/base/rotate_left.js~rotate_left",
+    "aureooms-es-red-black-tree/src/rotate/rotate_left.js~rotate_left",
     "function/index.html#static-function-rotate_left",
-    "<span>rotate_left</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/rotate_left.js</span>",
+    "<span>rotate_left</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/rotate/rotate_left.js</span>",
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/base/rotate_right.js~rotate_right",
+    "aureooms-es-red-black-tree/src/rotate/rotate_right.js~rotate_right",
     "function/index.html#static-function-rotate_right",
-    "<span>rotate_right</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/rotate_right.js</span>",
+    "<span>rotate_right</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/rotate/rotate_right.js</span>",
     "function"
   ],
   [
@@ -498,6 +498,18 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/adt/leaf.js",
+    "file/src/adt/Leaf.js.html",
+    "src/adt/Leaf.js",
+    "file"
+  ],
+  [
+    "src/adt/node.js",
+    "file/src/adt/Node.js.html",
+    "src/adt/Node.js",
+    "file"
+  ],
+  [
     "src/adt/redblacktree.js",
     "file/src/adt/RedBlackTree.js.html",
     "src/adt/RedBlackTree.js",
@@ -558,57 +570,33 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/base/colors.js",
-    "file/src/base/colors.js.html",
-    "src/base/colors.js",
+    "src/color/black.js",
+    "file/src/color/BLACK.js.html",
+    "src/color/BLACK.js",
     "file"
   ],
   [
-    "src/base/debug.js",
-    "file/src/base/debug.js.html",
-    "src/base/debug.js",
+    "src/color/red.js",
+    "file/src/color/RED.js.html",
+    "src/color/RED.js",
     "file"
   ],
   [
-    "src/base/find.js",
-    "file/src/base/find.js.html",
-    "src/base/find.js",
+    "src/color/index.js",
+    "file/src/color/index.js.html",
+    "src/color/index.js",
     "file"
   ],
   [
-    "src/base/index.js",
-    "file/src/base/index.js.html",
-    "src/base/index.js",
+    "src/debug/debug.js",
+    "file/src/debug/debug.js.html",
+    "src/debug/debug.js",
     "file"
   ],
   [
-    "src/base/inordertraversal.js",
-    "file/src/base/inordertraversal.js.html",
-    "src/base/inordertraversal.js",
-    "file"
-  ],
-  [
-    "src/base/insert.js",
-    "file/src/base/insert.js.html",
-    "src/base/insert.js",
-    "file"
-  ],
-  [
-    "src/base/replace_node.js",
-    "file/src/base/replace_node.js.html",
-    "src/base/replace_node.js",
-    "file"
-  ],
-  [
-    "src/base/rotate_left.js",
-    "file/src/base/rotate_left.js.html",
-    "src/base/rotate_left.js",
-    "file"
-  ],
-  [
-    "src/base/rotate_right.js",
-    "file/src/base/rotate_right.js.html",
-    "src/base/rotate_right.js",
+    "src/debug/index.js",
+    "file/src/debug/index.js.html",
+    "src/debug/index.js",
     "file"
   ],
   [
@@ -654,6 +642,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/insertion/insert.js",
+    "file/src/insertion/insert.js.html",
+    "src/insertion/insert.js",
+    "file"
+  ],
+  [
     "src/insertion/insert_case1.js",
     "file/src/insertion/insert_case1.js.html",
     "src/insertion/insert_case1.js",
@@ -681,24 +675,6 @@ window.esdocSearchIndex = [
     "src/insertion/insert_case5.js",
     "file/src/insertion/insert_case5.js.html",
     "src/insertion/insert_case5.js",
-    "file"
-  ],
-  [
-    "src/node/leaf.js",
-    "file/src/node/Leaf.js.html",
-    "src/node/Leaf.js",
-    "file"
-  ],
-  [
-    "src/node/node.js",
-    "file/src/node/Node.js.html",
-    "src/node/Node.js",
-    "file"
-  ],
-  [
-    "src/node/index.js",
-    "file/src/node/index.js.html",
-    "src/node/index.js",
     "file"
   ],
   [
@@ -747,6 +723,54 @@ window.esdocSearchIndex = [
     "src/removal/index.js",
     "file/src/removal/index.js.html",
     "src/removal/index.js",
+    "file"
+  ],
+  [
+    "src/removal/replace_node.js",
+    "file/src/removal/replace_node.js.html",
+    "src/removal/replace_node.js",
+    "file"
+  ],
+  [
+    "src/rotate/index.js",
+    "file/src/rotate/index.js.html",
+    "src/rotate/index.js",
+    "file"
+  ],
+  [
+    "src/rotate/rotate_left.js",
+    "file/src/rotate/rotate_left.js.html",
+    "src/rotate/rotate_left.js",
+    "file"
+  ],
+  [
+    "src/rotate/rotate_right.js",
+    "file/src/rotate/rotate_right.js.html",
+    "src/rotate/rotate_right.js",
+    "file"
+  ],
+  [
+    "src/search/find.js",
+    "file/src/search/find.js.html",
+    "src/search/find.js",
+    "file"
+  ],
+  [
+    "src/search/index.js",
+    "file/src/search/index.js.html",
+    "src/search/index.js",
+    "file"
+  ],
+  [
+    "src/traversal/index.js",
+    "file/src/traversal/index.js.html",
+    "src/traversal/index.js",
+    "file"
+  ],
+  [
+    "src/traversal/inordertraversal.js",
+    "file/src/traversal/inordertraversal.js.html",
+    "src/traversal/inordertraversal.js",
     "file"
   ]
 ]
