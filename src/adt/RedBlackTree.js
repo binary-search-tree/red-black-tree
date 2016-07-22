@@ -35,7 +35,7 @@ export class RedBlackTree {
 
 	}
 
-	delete ( node ) {
+	_delete ( node ) {
 
 		if ( !node.left.isleaf() ) {
 			// replace node's value with predecessor's value
@@ -66,6 +66,16 @@ export class RedBlackTree {
 		else {
 			delete_one_child( node ) ;
 		}
+
+	}
+
+	remove ( value ) {
+
+		const node = this.find( value ) ;
+		if ( node === null ) return false ;
+
+		this._delete( node ) ;
+		return true ;
 
 	}
 

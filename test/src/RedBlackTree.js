@@ -62,7 +62,7 @@ test( 'RedBlackTree::Symbol.iterator' , t => {
 
 });
 
-test( 'RedBlackTree::delete' , t => {
+test( 'RedBlackTree::remove' , t => {
 
 	const n = 10000 ;
 	const reference = list( range( n ) ) ;
@@ -81,8 +81,7 @@ test( 'RedBlackTree::delete' , t => {
 	for ( let i of range( m ) ) {
 		const x = reference[i] ;
 		const node = tree.find( x ) ;
-		t.truthy( node !== null ) ;
-		tree.delete( node ) ;
+		t.truthy( tree.remove( x ) ) ;
 		t.truthy( tree.find( x ) === null ) ;
 	}
 
@@ -115,9 +114,7 @@ test( 'RedBlackTree::delete' , t => {
 	for ( let i of range( n ) ) {
 		const x = reference[i] ;
 		const node = tree.find( x ) ;
-		t.truthy( node !== null ) ;
-		t.deepEqual( node.value , x ) ;
-		tree.delete( node ) ;
+		t.truthy( tree.remove( x ) ) ;
 		t.truthy( tree.find( x ) === null ) ;
 	}
 
@@ -137,7 +134,7 @@ test( 'delete root with right child' , t => {
 
 	t.deepEqual( debug( tree.root ) , repr1 , 'debug string 1 is correct' ) ;
 
-	tree.delete( tree.find( 0 ) ) ;
+	tree.remove( 0 ) ;
 
 	t.deepEqual( list( tree ) , [ 1 ] ) ;
 
@@ -158,7 +155,7 @@ test( 'delete root with left child' , t => {
 
 	t.deepEqual( debug( tree.root ) , repr1 , 'debug string 1 is correct' ) ;
 
-	tree.delete( tree.find( 0 ) ) ;
+	tree.remove( 0 ) ;
 
 	t.deepEqual( list( tree ) , [ -1 ] ) ;
 
