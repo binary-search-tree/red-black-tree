@@ -1,4 +1,4 @@
-export function find ( compare, node, value ) {
+export function search ( compare, node, value ) {
 
 	// scan for first node whose
 	// value equals parameter value

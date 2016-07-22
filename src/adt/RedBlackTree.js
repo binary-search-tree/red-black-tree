@@ -4,8 +4,8 @@ import { RED , BLACK } from '..' ;
 import { predecessor } from '..' ;
 import { insert , insert_case2 } from '..' ;
 import { delete_one_child } from '..' ;
-import { find } from '..' ;
-import { inordertraversal } from '..' ;
+import { search } from '..' ;
+import { inordertraversal , rangetraversal } from '..' ;
 
 export class RedBlackTree {
 
@@ -27,12 +27,18 @@ export class RedBlackTree {
 		}
 	}
 
-	find ( value ) {
-
+	_search ( value ) {
 		if ( this.root === null ) return null ;
+		return search( this.compare , this.root , value ) ;
+	}
 
-		return find( this.compare , this.root , value ) ;
+	get ( value ) {
+		const node = this._search( value ) ;
+		return node === null ? null : node.value ;
+	}
 
+	has ( value ) {
+		return this._search( value ) !== null ;
 	}
 
 	_delete ( node ) {
@@ -71,7 +77,7 @@ export class RedBlackTree {
 
 	remove ( value ) {
 
-		const node = this.find( value ) ;
+		const node = this._search( value ) ;
 		if ( node === null ) return false ;
 
 		this._delete( node ) ;
@@ -79,9 +85,21 @@ export class RedBlackTree {
 
 	}
 
-	*[Symbol.iterator] ( ) {
+	*range ( left , right ) {
+
+		if ( this.root !== null ) yield* rangetraversal( this.compare , this.root , left , right ) ;
+
+	}
+
+	*values ( ) {
 
 		if ( this.root !== null ) yield* inordertraversal( this.root ) ;
+
+	}
+
+	[Symbol.iterator] ( ) {
+
+		return this.values() ;
 
 	}
 
