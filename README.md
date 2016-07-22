@@ -1,7 +1,11 @@
 [aureooms/es-red-black-tree](https://aureooms.github.io/es-red-black-tree)
 ==
 
-red-black tree library for JavaScript. See [documentation](https://aureooms.github.io/es-red-black-tree/index.html).
+```js
+let tree = RedBlackTree.from( increasing , range( 100000 ) ) ;
+```
+
+Red-black tree library for JavaScript. See [documentation](https://aureooms.github.io/es-red-black-tree/index.html).
 
 [![NPM license](http://img.shields.io/npm/l/aureooms-es-red-black-tree.svg?style=flat)](https://raw.githubusercontent.com/aureooms/es-red-black-tree/master/LICENSE)
 [![NPM version](http://img.shields.io/npm/v/aureooms-es-red-black-tree.svg?style=flat)](https://www.npmjs.org/package/aureooms-es-red-black-tree)
