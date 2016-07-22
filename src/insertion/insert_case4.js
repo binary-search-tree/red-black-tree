@@ -20,7 +20,7 @@ export function insert_case4(n)
  * and modify the parent's nodes properly
  */
 
-  n = n.left;
+  //n = n.left; /!\ need to fix rotate, so that we can safely reference a node
 
  } else if ((n === n.parent.left) && (n.parent === g.right)) {
   rotate_right(n.parent);
@@ -35,7 +35,7 @@ export function insert_case4(n)
  *
  */
 
-  n = n.right;
+  //n = n.right;
  }
  insert_case5(n);
 }

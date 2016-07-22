@@ -7,6 +7,7 @@ import { delete_case4 } from './delete_case4' ;
 export function delete_case3(n)
 {
  const s = sibling(n);
+ //console.log(n.color, n.parent.color, s.color , s.isleaf());
 
  if ((n.parent.color === BLACK) &&
      (s.color === BLACK) &&
@@ -14,6 +15,8 @@ export function delete_case3(n)
      (s.right.color === BLACK)) {
   s.color = RED;
   delete_case1(n.parent);
- } else
+ }
+
+ else
   delete_case4(n);
 }

@@ -1,7 +1,7 @@
 
 import { Node } from '..' ;
 import { RED , BLACK } from '..' ;
-import { predecessor , successor } from '..' ;
+import { predecessor } from '..' ;
 import { insert , insert_case2 } from '..' ;
 import { delete_one_child } from '..' ;
 import { find } from '..' ;
@@ -49,16 +49,22 @@ export class RedBlackTree {
 
 		else if ( !node.right.isleaf() ) {
 			// replace node's value with successor's value
-			const succ = successor( node ) ;
+			// If there is no left child, then there can only be one right
+			// child.
+			const succ = node.right ;
 			node.value = succ.value ;
 			// delete successor node
 			// note: this node can only have one non-leaf child
 			//       because the tree is a red-black tree
-			delete_one_child( pred ) ;
+			delete_one_child( succ ) ;
+		}
+
+		else if ( node === this.root ) {
+			this.root = null ;
 		}
 
 		else {
-			this.root = null ;
+			delete_one_child( node ) ;
 		}
 
 	}
@@ -66,6 +72,16 @@ export class RedBlackTree {
 	*[Symbol.iterator] ( ) {
 
 		if ( this.root !== null ) yield* inordertraversal( this.root ) ;
+
+	}
+
+	static from ( compare , iterable ) {
+
+		const tree = new RedBlackTree( compare ) ;
+
+		for ( const element of iterable ) tree.add( element ) ;
+
+		return tree ;
 
 	}
 

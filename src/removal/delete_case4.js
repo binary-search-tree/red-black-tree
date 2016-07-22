@@ -5,6 +5,7 @@ import { delete_case5 } from './delete_case5' ;
 export function delete_case4(n)
 {
  const s = sibling(n);
+ //console.log( s ) ;
 
  if ((n.parent.color === RED) &&
      (s.color === BLACK) &&

@@ -1,12 +1,8 @@
 export * from './colors' ;
+export * from './debug' ;
 export * from './find' ;
-export * from './grandparent' ;
 export * from './inordertraversal' ;
 export * from './insert' ;
-export * from './predecessor' ;
 export * from './replace_node' ;
 export * from './rotate_left' ;
 export * from './rotate_right' ;
-export * from './sibling' ;
-export * from './successor' ;
-export * from './uncle' ;

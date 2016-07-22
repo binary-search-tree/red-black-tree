@@ -1,13 +1,12 @@
-
 export function replace_node ( A , B ) {
-	if ( A.parent === null ) {
-		// nothing to do
-	}
-	else if ( A === A.parent.left ) {
-		A.parent.left = B ;
-	}
-	else {
-		A.parent.right = B ;
-	}
+
+	// assert( A.parent !== null ) ;
+	// we never apply delete_one_child on the root so we are safe
+
+	if ( A === A.parent.left ) A.parent.left = B ;
+
+	else A.parent.right = B ;
+
 	B.parent = A.parent ;
+
 }
