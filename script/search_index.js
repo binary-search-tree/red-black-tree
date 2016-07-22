@@ -30,6 +30,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "aureooms-es-red-black-tree/src/base/debug.js~debug",
+    "function/index.html#static-function-debug",
+    "<span>debug</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/debug.js</span>",
+    "function"
+  ],
+  [
     "aureooms-es-red-black-tree/src/removal/delete_case1.js~delete_case1",
     "function/index.html#static-function-delete_case1",
     "<span>delete_case1</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/removal/delete_case1.js</span>",
@@ -78,9 +84,9 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/base/grandparent.js~grandparent",
+    "aureooms-es-red-black-tree/src/family/grandparent.js~grandparent",
     "function/index.html#static-function-grandparent",
-    "<span>grandparent</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/grandparent.js</span>",
+    "<span>grandparent</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/family/grandparent.js</span>",
     "function"
   ],
   [
@@ -126,9 +132,9 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/base/predecessor.js~predecessor",
+    "aureooms-es-red-black-tree/src/family/predecessor.js~predecessor",
     "function/index.html#static-function-predecessor",
-    "<span>predecessor</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/predecessor.js</span>",
+    "<span>predecessor</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/family/predecessor.js</span>",
     "function"
   ],
   [
@@ -150,21 +156,15 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/base/sibling.js~sibling",
+    "aureooms-es-red-black-tree/src/family/sibling.js~sibling",
     "function/index.html#static-function-sibling",
-    "<span>sibling</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/sibling.js</span>",
+    "<span>sibling</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/family/sibling.js</span>",
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/base/successor.js~successor",
-    "function/index.html#static-function-successor",
-    "<span>successor</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/successor.js</span>",
-    "function"
-  ],
-  [
-    "aureooms-es-red-black-tree/src/base/uncle.js~uncle",
+    "aureooms-es-red-black-tree/src/family/uncle.js~uncle",
     "function/index.html#static-function-uncle",
-    "<span>uncle</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/base/uncle.js</span>",
+    "<span>uncle</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/family/uncle.js</span>",
     "function"
   ],
   [
@@ -546,6 +546,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/adt/redblacktree.js~redblacktree.from",
+    "class/src/adt/RedBlackTree.js~RedBlackTree.html#static-method-from",
+    "src/adt/RedBlackTree.js~RedBlackTree.from",
+    "method"
+  ],
+  [
     "src/adt/index.js",
     "file/src/adt/index.js.html",
     "src/adt/index.js",
@@ -558,15 +564,15 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/base/find.js",
-    "file/src/base/find.js.html",
-    "src/base/find.js",
+    "src/base/debug.js",
+    "file/src/base/debug.js.html",
+    "src/base/debug.js",
     "file"
   ],
   [
-    "src/base/grandparent.js",
-    "file/src/base/grandparent.js.html",
-    "src/base/grandparent.js",
+    "src/base/find.js",
+    "file/src/base/find.js.html",
+    "src/base/find.js",
     "file"
   ],
   [
@@ -588,12 +594,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/base/predecessor.js",
-    "file/src/base/predecessor.js.html",
-    "src/base/predecessor.js",
-    "file"
-  ],
-  [
     "src/base/replace_node.js",
     "file/src/base/replace_node.js.html",
     "src/base/replace_node.js",
@@ -612,21 +612,33 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/base/sibling.js",
-    "file/src/base/sibling.js.html",
-    "src/base/sibling.js",
+    "src/family/grandparent.js",
+    "file/src/family/grandparent.js.html",
+    "src/family/grandparent.js",
     "file"
   ],
   [
-    "src/base/successor.js",
-    "file/src/base/successor.js.html",
-    "src/base/successor.js",
+    "src/family/index.js",
+    "file/src/family/index.js.html",
+    "src/family/index.js",
     "file"
   ],
   [
-    "src/base/uncle.js",
-    "file/src/base/uncle.js.html",
-    "src/base/uncle.js",
+    "src/family/predecessor.js",
+    "file/src/family/predecessor.js.html",
+    "src/family/predecessor.js",
+    "file"
+  ],
+  [
+    "src/family/sibling.js",
+    "file/src/family/sibling.js.html",
+    "src/family/sibling.js",
+    "file"
+  ],
+  [
+    "src/family/uncle.js",
+    "file/src/family/uncle.js.html",
+    "src/family/uncle.js",
     "file"
   ],
   [

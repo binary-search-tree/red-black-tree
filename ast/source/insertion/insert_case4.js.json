@@ -844,20 +844,13 @@
                             "column": 3
                           }
                         }
-                      }
-                    ]
-                  },
-                  {
-                    "type": "ExpressionStatement",
-                    "expression": {
-                      "type": "AssignmentExpression",
-                      "operator": "=",
-                      "left": {
-                        "type": "Identifier",
-                        "name": "n",
+                      },
+                      {
+                        "type": "Line",
+                        "value": "n = n.left; /!\\ need to fix rotate, so that we can safely reference a node",
                         "range": [
                           500,
-                          501
+                          576
                         ],
                         "loc": {
                           "start": {
@@ -866,109 +859,7 @@
                           },
                           "end": {
                             "line": 23,
-                            "column": 3
-                          }
-                        }
-                      },
-                      "right": {
-                        "type": "MemberExpression",
-                        "computed": false,
-                        "object": {
-                          "type": "Identifier",
-                          "name": "n",
-                          "range": [
-                            504,
-                            505
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 23,
-                              "column": 6
-                            },
-                            "end": {
-                              "line": 23,
-                              "column": 7
-                            }
-                          }
-                        },
-                        "property": {
-                          "type": "Identifier",
-                          "name": "left",
-                          "range": [
-                            506,
-                            510
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 23,
-                              "column": 8
-                            },
-                            "end": {
-                              "line": 23,
-                              "column": 12
-                            }
-                          }
-                        },
-                        "range": [
-                          504,
-                          510
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 23,
-                            "column": 6
-                          },
-                          "end": {
-                            "line": 23,
-                            "column": 12
-                          }
-                        }
-                      },
-                      "range": [
-                        500,
-                        510
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 23,
-                          "column": 2
-                        },
-                        "end": {
-                          "line": 23,
-                          "column": 12
-                        }
-                      }
-                    },
-                    "range": [
-                      500,
-                      511
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 23,
-                        "column": 2
-                      },
-                      "end": {
-                        "line": 23,
-                        "column": 13
-                      }
-                    },
-                    "leadingComments": [
-                      {
-                        "type": "Block",
-                        "value": "\n * rotate_left can be the below because of already having *g =  grandparent(n)\n *\n * saved_p=g.left, *saved_left_n=n.left;\n * g.left=n;\n * n.left=saved_p;\n * saved_p.right=saved_left_n;\n *\n * and modify the parent's nodes properly\n ",
-                        "range": [
-                          259,
-                          496
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 12,
-                            "column": 1
-                          },
-                          "end": {
-                            "line": 21,
-                            "column": 3
+                            "column": 78
                           }
                         }
                       }
@@ -977,7 +868,7 @@
                 ],
                 "range": [
                   230,
-                  515
+                  580
                 ],
                 "loc": {
                   "start": {
@@ -1002,8 +893,8 @@
                       "type": "Identifier",
                       "name": "n",
                       "range": [
-                        526,
-                        527
+                        591,
+                        592
                       ],
                       "loc": {
                         "start": {
@@ -1026,8 +917,8 @@
                           "type": "Identifier",
                           "name": "n",
                           "range": [
-                            532,
-                            533
+                            597,
+                            598
                           ],
                           "loc": {
                             "start": {
@@ -1044,8 +935,8 @@
                           "type": "Identifier",
                           "name": "parent",
                           "range": [
-                            534,
-                            540
+                            599,
+                            605
                           ],
                           "loc": {
                             "start": {
@@ -1059,8 +950,8 @@
                           }
                         },
                         "range": [
-                          532,
-                          540
+                          597,
+                          605
                         ],
                         "loc": {
                           "start": {
@@ -1077,8 +968,8 @@
                         "type": "Identifier",
                         "name": "left",
                         "range": [
-                          541,
-                          545
+                          606,
+                          610
                         ],
                         "loc": {
                           "start": {
@@ -1092,8 +983,8 @@
                         }
                       },
                       "range": [
-                        532,
-                        545
+                        597,
+                        610
                       ],
                       "loc": {
                         "start": {
@@ -1107,8 +998,8 @@
                       }
                     },
                     "range": [
-                      526,
-                      545
+                      591,
+                      610
                     ],
                     "loc": {
                       "start": {
@@ -1131,8 +1022,8 @@
                         "type": "Identifier",
                         "name": "n",
                         "range": [
-                          551,
-                          552
+                          616,
+                          617
                         ],
                         "loc": {
                           "start": {
@@ -1149,8 +1040,8 @@
                         "type": "Identifier",
                         "name": "parent",
                         "range": [
-                          553,
-                          559
+                          618,
+                          624
                         ],
                         "loc": {
                           "start": {
@@ -1164,8 +1055,8 @@
                         }
                       },
                       "range": [
-                        551,
-                        559
+                        616,
+                        624
                       ],
                       "loc": {
                         "start": {
@@ -1185,8 +1076,8 @@
                         "type": "Identifier",
                         "name": "g",
                         "range": [
-                          564,
-                          565
+                          629,
+                          630
                         ],
                         "loc": {
                           "start": {
@@ -1203,8 +1094,8 @@
                         "type": "Identifier",
                         "name": "right",
                         "range": [
-                          566,
-                          571
+                          631,
+                          636
                         ],
                         "loc": {
                           "start": {
@@ -1218,8 +1109,8 @@
                         }
                       },
                       "range": [
-                        564,
-                        571
+                        629,
+                        636
                       ],
                       "loc": {
                         "start": {
@@ -1233,8 +1124,8 @@
                       }
                     },
                     "range": [
-                      551,
-                      571
+                      616,
+                      636
                     ],
                     "loc": {
                       "start": {
@@ -1248,8 +1139,8 @@
                     }
                   },
                   "range": [
-                    525,
-                    572
+                    590,
+                    637
                   ],
                   "loc": {
                     "start": {
@@ -1273,8 +1164,8 @@
                           "type": "Identifier",
                           "name": "rotate_right",
                           "range": [
-                            578,
-                            590
+                            643,
+                            655
                           ],
                           "loc": {
                             "start": {
@@ -1295,8 +1186,8 @@
                               "type": "Identifier",
                               "name": "n",
                               "range": [
-                                591,
-                                592
+                                656,
+                                657
                               ],
                               "loc": {
                                 "start": {
@@ -1313,8 +1204,8 @@
                               "type": "Identifier",
                               "name": "parent",
                               "range": [
-                                593,
-                                599
+                                658,
+                                664
                               ],
                               "loc": {
                                 "start": {
@@ -1328,8 +1219,8 @@
                               }
                             },
                             "range": [
-                              591,
-                              599
+                              656,
+                              664
                             ],
                             "loc": {
                               "start": {
@@ -1344,8 +1235,8 @@
                           }
                         ],
                         "range": [
-                          578,
-                          600
+                          643,
+                          665
                         ],
                         "loc": {
                           "start": {
@@ -1359,8 +1250,8 @@
                         }
                       },
                       "range": [
-                        578,
-                        601
+                        643,
+                        666
                       ],
                       "loc": {
                         "start": {
@@ -1377,8 +1268,8 @@
                           "type": "Block",
                           "value": "\n * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n *\n * saved_p=g.right, *saved_right_n=n.right;\n * g.right=n;\n * n.right=saved_p;\n * saved_p.left=saved_right_n;\n *\n ",
                           "range": [
-                            604,
-                            815
+                            669,
+                            880
                           ],
                           "loc": {
                             "start": {
@@ -1390,20 +1281,13 @@
                               "column": 3
                             }
                           }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "ExpressionStatement",
-                      "expression": {
-                        "type": "AssignmentExpression",
-                        "operator": "=",
-                        "left": {
-                          "type": "Identifier",
-                          "name": "n",
+                        },
+                        {
+                          "type": "Line",
+                          "value": "n = n.right;",
                           "range": [
-                            819,
-                            820
+                            884,
+                            898
                           ],
                           "loc": {
                             "start": {
@@ -1412,109 +1296,7 @@
                             },
                             "end": {
                               "line": 38,
-                              "column": 3
-                            }
-                          }
-                        },
-                        "right": {
-                          "type": "MemberExpression",
-                          "computed": false,
-                          "object": {
-                            "type": "Identifier",
-                            "name": "n",
-                            "range": [
-                              823,
-                              824
-                            ],
-                            "loc": {
-                              "start": {
-                                "line": 38,
-                                "column": 6
-                              },
-                              "end": {
-                                "line": 38,
-                                "column": 7
-                              }
-                            }
-                          },
-                          "property": {
-                            "type": "Identifier",
-                            "name": "right",
-                            "range": [
-                              825,
-                              830
-                            ],
-                            "loc": {
-                              "start": {
-                                "line": 38,
-                                "column": 8
-                              },
-                              "end": {
-                                "line": 38,
-                                "column": 13
-                              }
-                            }
-                          },
-                          "range": [
-                            823,
-                            830
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 38,
-                              "column": 6
-                            },
-                            "end": {
-                              "line": 38,
-                              "column": 13
-                            }
-                          }
-                        },
-                        "range": [
-                          819,
-                          830
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 38,
-                            "column": 2
-                          },
-                          "end": {
-                            "line": 38,
-                            "column": 13
-                          }
-                        }
-                      },
-                      "range": [
-                        819,
-                        831
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 38,
-                          "column": 2
-                        },
-                        "end": {
-                          "line": 38,
-                          "column": 14
-                        }
-                      },
-                      "leadingComments": [
-                        {
-                          "type": "Block",
-                          "value": "\n * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n *\n * saved_p=g.right, *saved_right_n=n.right;\n * g.right=n;\n * n.right=saved_p;\n * saved_p.left=saved_right_n;\n *\n ",
-                          "range": [
-                            604,
-                            815
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 28,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 36,
-                              "column": 3
+                              "column": 16
                             }
                           }
                         }
@@ -1522,8 +1304,8 @@
                     }
                   ],
                   "range": [
-                    574,
-                    834
+                    639,
+                    901
                   ],
                   "loc": {
                     "start": {
@@ -1538,8 +1320,8 @@
                 },
                 "alternate": null,
                 "range": [
-                  521,
-                  834
+                  586,
+                  901
                 ],
                 "loc": {
                   "start": {
@@ -1550,11 +1332,49 @@
                     "line": 39,
                     "column": 2
                   }
-                }
+                },
+                "leadingComments": [
+                  {
+                    "type": "Block",
+                    "value": "\n * rotate_left can be the below because of already having *g =  grandparent(n)\n *\n * saved_p=g.left, *saved_left_n=n.left;\n * g.left=n;\n * n.left=saved_p;\n * saved_p.right=saved_left_n;\n *\n * and modify the parent's nodes properly\n ",
+                    "range": [
+                      259,
+                      496
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 12,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 21,
+                        "column": 3
+                      }
+                    }
+                  },
+                  {
+                    "type": "Line",
+                    "value": "n = n.left; /!\\ need to fix rotate, so that we can safely reference a node",
+                    "range": [
+                      500,
+                      576
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 23,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 23,
+                        "column": 78
+                      }
+                    }
+                  }
+                ]
               },
               "range": [
                 177,
-                834
+                901
               ],
               "loc": {
                 "start": {
@@ -1575,8 +1395,8 @@
                   "type": "Identifier",
                   "name": "insert_case5",
                   "range": [
-                    836,
-                    848
+                    903,
+                    915
                   ],
                   "loc": {
                     "start": {
@@ -1594,8 +1414,8 @@
                     "type": "Identifier",
                     "name": "n",
                     "range": [
-                      849,
-                      850
+                      916,
+                      917
                     ],
                     "loc": {
                       "start": {
@@ -1610,8 +1430,8 @@
                   }
                 ],
                 "range": [
-                  836,
-                  851
+                  903,
+                  918
                 ],
                 "loc": {
                   "start": {
@@ -1625,8 +1445,8 @@
                 }
               },
               "range": [
-                836,
-                852
+                903,
+                919
               ],
               "loc": {
                 "start": {
@@ -1637,12 +1457,50 @@
                   "line": 40,
                   "column": 17
                 }
-              }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "\n * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n *\n * saved_p=g.right, *saved_right_n=n.right;\n * g.right=n;\n * n.right=saved_p;\n * saved_p.left=saved_right_n;\n *\n ",
+                  "range": [
+                    669,
+                    880
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 28,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 36,
+                      "column": 3
+                    }
+                  }
+                },
+                {
+                  "type": "Line",
+                  "value": "n = n.right;",
+                  "range": [
+                    884,
+                    898
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 38,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 38,
+                      "column": 16
+                    }
+                  }
+                }
+              ]
             }
           ],
           "range": [
             146,
-            854
+            921
           ],
           "loc": {
             "start": {
@@ -1659,7 +1517,7 @@
         "expression": false,
         "range": [
           121,
-          854
+          921
         ],
         "loc": {
           "start": {
@@ -1678,7 +1536,7 @@
       "source": null,
       "range": [
         114,
-        854
+        921
       ],
       "loc": {
         "start": {
@@ -1695,7 +1553,7 @@
   "sourceType": "module",
   "range": [
     1,
-    854
+    921
   ],
   "loc": {
     "start": {
@@ -1727,11 +1585,29 @@
       }
     },
     {
+      "type": "Line",
+      "value": "n = n.left; /!\\ need to fix rotate, so that we can safely reference a node",
+      "range": [
+        500,
+        576
+      ],
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 2
+        },
+        "end": {
+          "line": 23,
+          "column": 78
+        }
+      }
+    },
+    {
       "type": "Block",
       "value": "\n * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n *\n * saved_p=g.right, *saved_right_n=n.right;\n * g.right=n;\n * n.right=saved_p;\n * saved_p.left=saved_right_n;\n *\n ",
       "range": [
-        604,
-        815
+        669,
+        880
       ],
       "loc": {
         "start": {
@@ -1741,6 +1617,24 @@
         "end": {
           "line": 36,
           "column": 3
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "n = n.right;",
+      "range": [
+        884,
+        898
+      ],
+      "loc": {
+        "start": {
+          "line": 38,
+          "column": 2
+        },
+        "end": {
+          "line": 38,
+          "column": 16
         }
       }
     }
