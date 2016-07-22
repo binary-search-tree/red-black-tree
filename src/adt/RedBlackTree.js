@@ -1,5 +1,5 @@
 
-import { Node } from '..' ;
+import { Node } from './Node' ;
 import { RED , BLACK } from '..' ;
 import { predecessor } from '..' ;
 import { insert , insert_case2 } from '..' ;

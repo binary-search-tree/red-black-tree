@@ -1,4 +1,3 @@
-
 export function* inordertraversal ( node ) {
 
 	if ( !node.left.isleaf() ) {

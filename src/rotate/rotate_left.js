@@ -8,7 +8,9 @@
  *       / \          / \
  *      b   c        a   b
  *
+ *
  * @param {Node} A root of the tree
+ *
  */
 
 export function rotate_left ( A ) {

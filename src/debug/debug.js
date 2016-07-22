@@ -1,7 +1,6 @@
-
-import { BLACK } from './colors' ;
-
 import chalk from 'chalk' ;
+
+import { BLACK } from '..' ;
 
 export function debug ( node ) {
 

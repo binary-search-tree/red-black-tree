@@ -1,4 +1,3 @@
-
 import { BLACK , RED , sibling , rotate_right , rotate_left } from '..' ;
 
 export function delete_case6(n)

@@ -1,4 +1,3 @@
-
 export function find ( compare, node, value ) {
 
 	// scan for first node whose

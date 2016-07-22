@@ -1,6 +1,6 @@
+import { BLACK , RED } from '..' ;
 
-import { BLACK , RED , replace_node } from '..' ;
-
+import { replace_node } from './replace_node' ;
 import { delete_case1 } from './delete_case1' ;
 
 export function delete_one_child ( n ) {
