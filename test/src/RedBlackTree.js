@@ -164,3 +164,19 @@ test( 'delete root with left child' , t => {
 	t.deepEqual( debug( tree.root ) , repr2 , 'debug string 2 is correct' ) ;
 
 });
+
+test( 'remove from empty tree' , t => {
+
+	const tree = new RedBlackTree( increasing ) ;
+
+	t.falsy( tree.remove( 0 ) ) ;
+
+});
+
+test( 'remove unexisting stuff' , t => {
+
+	const tree = RedBlackTree.from( increasing , range( 100 ) ) ;
+
+	t.falsy( tree.remove( Math.PI ) ) ;
+
+});
