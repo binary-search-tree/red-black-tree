@@ -522,6 +522,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/adt/redblacktree.js~redblacktree#_delete",
+    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-_delete",
+    "src/adt/RedBlackTree.js~RedBlackTree#_delete",
+    "method"
+  ],
+  [
     "src/adt/redblacktree.js~redblacktree#add",
     "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-add",
     "src/adt/RedBlackTree.js~RedBlackTree#add",
@@ -540,15 +546,15 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/adt/redblacktree.js~redblacktree#delete",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-delete",
-    "src/adt/RedBlackTree.js~RedBlackTree#delete",
-    "method"
-  ],
-  [
     "src/adt/redblacktree.js~redblacktree#find",
     "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-find",
     "src/adt/RedBlackTree.js~RedBlackTree#find",
+    "method"
+  ],
+  [
+    "src/adt/redblacktree.js~redblacktree#remove",
+    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-remove",
+    "src/adt/RedBlackTree.js~RedBlackTree#remove",
     "method"
   ],
   [
