@@ -2,11 +2,11 @@
  * Rotate tree right.
  * (see https://en.wikipedia.org/wiki/Tree_rotation)
  *
- *      B                A
- *     / \              / \
- *    A   c     ->     a   B
- *   / \                  / \
- *  a   b                b   c
+ *         B                A
+ *        / \              / \
+ *       A   c     ->     a   B
+ *      / \                  / \
+ *     a   b                b   c
  *
  *
  * @param {Node} B root of the tree
