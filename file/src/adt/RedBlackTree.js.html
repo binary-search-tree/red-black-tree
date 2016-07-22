@@ -60,8 +60,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-replace_node">replace_node</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">rotate</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_left">rotate_left</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_right">rotate_right</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">search</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-find">find</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">search</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">traversal</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -73,8 +74,8 @@ import { RED , BLACK } from &apos;..&apos; ;
 import { predecessor } from &apos;..&apos; ;
 import { insert , insert_case2 } from &apos;..&apos; ;
 import { delete_one_child } from &apos;..&apos; ;
-import { find } from &apos;..&apos; ;
-import { inordertraversal } from &apos;..&apos; ;
+import { search } from &apos;..&apos; ;
+import { inordertraversal , rangetraversal } from &apos;..&apos; ;
 
 export class RedBlackTree {
 
@@ -96,12 +97,18 @@ export class RedBlackTree {
 		}
 	}
 
-	find ( value ) {
-
+	_search ( value ) {
 		if ( this.root === null ) return null ;
+		return search( this.compare , this.root , value ) ;
+	}
 
-		return find( this.compare , this.root , value ) ;
+	get ( value ) {
+		const node = this._search( value ) ;
+		return node === null ? null : node.value ;
+	}
 
+	has ( value ) {
+		return this._search( value ) !== null ;
 	}
 
 	_delete ( node ) {
@@ -140,7 +147,7 @@ export class RedBlackTree {
 
 	remove ( value ) {
 
-		const node = this.find( value ) ;
+		const node = this._search( value ) ;
 		if ( node === null ) return false ;
 
 		this._delete( node ) ;
@@ -148,9 +155,21 @@ export class RedBlackTree {
 
 	}
 
-	*[Symbol.iterator] ( ) {
+	*range ( left , right ) {
+
+		if ( this.root !== null ) yield* rangetraversal( this.compare , this.root , left , right ) ;
+
+	}
+
+	*values ( ) {
 
 		if ( this.root !== null ) yield* inordertraversal( this.root ) ;
+
+	}
+
+	[Symbol.iterator] ( ) {
+
+		return this.values() ;
 
 	}
 

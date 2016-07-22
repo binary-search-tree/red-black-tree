@@ -78,12 +78,6 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/search/find.js~find",
-    "function/index.html#static-function-find",
-    "<span>find</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/search/find.js</span>",
-    "function"
-  ],
-  [
     "aureooms-es-red-black-tree/src/family/grandparent.js~grandparent",
     "function/index.html#static-function-grandparent",
     "<span>grandparent</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/family/grandparent.js</span>",
@@ -138,6 +132,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "aureooms-es-red-black-tree/src/traversal/rangetraversal.js~rangetraversal",
+    "function/index.html#static-function-rangetraversal",
+    "<span>rangetraversal</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/traversal/rangetraversal.js</span>",
+    "function"
+  ],
+  [
     "aureooms-es-red-black-tree/src/removal/replace_node.js~replace_node",
     "function/index.html#static-function-replace_node",
     "<span>replace_node</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/removal/replace_node.js</span>",
@@ -153,6 +153,12 @@ window.esdocSearchIndex = [
     "aureooms-es-red-black-tree/src/rotate/rotate_right.js~rotate_right",
     "function/index.html#static-function-rotate_right",
     "<span>rotate_right</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/rotate/rotate_right.js</span>",
+    "function"
+  ],
+  [
+    "aureooms-es-red-black-tree/src/search/search.js~search",
+    "function/index.html#static-function-search",
+    "<span>search</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/search/search.js</span>",
     "function"
   ],
   [
@@ -528,6 +534,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/adt/redblacktree.js~redblacktree#_search",
+    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-_search",
+    "src/adt/RedBlackTree.js~RedBlackTree#_search",
+    "method"
+  ],
+  [
     "src/adt/redblacktree.js~redblacktree#add",
     "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-add",
     "src/adt/RedBlackTree.js~RedBlackTree#add",
@@ -546,9 +558,21 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/adt/redblacktree.js~redblacktree#find",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-find",
-    "src/adt/RedBlackTree.js~RedBlackTree#find",
+    "src/adt/redblacktree.js~redblacktree#get",
+    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-get",
+    "src/adt/RedBlackTree.js~RedBlackTree#get",
+    "method"
+  ],
+  [
+    "src/adt/redblacktree.js~redblacktree#has",
+    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-has",
+    "src/adt/RedBlackTree.js~RedBlackTree#has",
+    "method"
+  ],
+  [
+    "src/adt/redblacktree.js~redblacktree#range",
+    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-range",
+    "src/adt/RedBlackTree.js~RedBlackTree#range",
     "method"
   ],
   [
@@ -562,6 +586,12 @@ window.esdocSearchIndex = [
     "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-member-root",
     "src/adt/RedBlackTree.js~RedBlackTree#root",
     "member"
+  ],
+  [
+    "src/adt/redblacktree.js~redblacktree#values",
+    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-values",
+    "src/adt/RedBlackTree.js~RedBlackTree#values",
+    "method"
   ],
   [
     "src/adt/redblacktree.js~redblacktree.from",
@@ -756,15 +786,15 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/search/find.js",
-    "file/src/search/find.js.html",
-    "src/search/find.js",
-    "file"
-  ],
-  [
     "src/search/index.js",
     "file/src/search/index.js.html",
     "src/search/index.js",
+    "file"
+  ],
+  [
+    "src/search/search.js",
+    "file/src/search/search.js.html",
+    "src/search/search.js",
     "file"
   ],
   [
@@ -777,6 +807,12 @@ window.esdocSearchIndex = [
     "src/traversal/inordertraversal.js",
     "file/src/traversal/inordertraversal.js.html",
     "src/traversal/inordertraversal.js",
+    "file"
+  ],
+  [
+    "src/traversal/rangetraversal.js",
+    "file/src/traversal/rangetraversal.js.html",
+    "src/traversal/rangetraversal.js",
     "file"
   ]
 ]

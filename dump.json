@@ -138,7 +138,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport { Node } from './Node' ;\nimport { RED , BLACK } from '..' ;\nimport { predecessor } from '..' ;\nimport { insert , insert_case2 } from '..' ;\nimport { delete_one_child } from '..' ;\nimport { find } from '..' ;\nimport { inordertraversal } from '..' ;\n\nexport class RedBlackTree {\n\n\tconstructor ( compare ) {\n\n\t\tthis.compare = compare ;\n\t\tthis.root = null ;\n\n\t}\n\n\tadd ( value ) {\n\t\tif ( this.root === null ) {\n\t\t\tthis.root = new Node( BLACK , value ) ;\n\t\t}\n\t\telse {\n\t\t\tconst node = new Node( RED , value ) ;\n\t\t\tinsert( this.compare , this.root , node ) ;\n\t\t\tinsert_case2( node ) ;\n\t\t}\n\t}\n\n\tfind ( value ) {\n\n\t\tif ( this.root === null ) return null ;\n\n\t\treturn find( this.compare , this.root , value ) ;\n\n\t}\n\n\t_delete ( node ) {\n\n\t\tif ( !node.left.isleaf() ) {\n\t\t\t// replace node's value with predecessor's value\n\t\t\tconst pred = predecessor( node ) ;\n\t\t\tnode.value = pred.value ;\n\t\t\t// delete predecessor node\n\t\t\t// note: this node can only have one non-leaf child\n\t\t\t//       because the tree is a red-black tree\n\t\t\tdelete_one_child( pred ) ;\n\t\t}\n\n\t\telse if ( !node.right.isleaf() ) {\n\t\t\t// replace node's value with successor's value\n\t\t\t// If there is no left child, then there can only be one right\n\t\t\t// child.\n\t\t\tconst succ = node.right ;\n\t\t\tnode.value = succ.value ;\n\t\t\t// delete successor node\n\t\t\t// note: this node can only have one non-leaf child\n\t\t\t//       because the tree is a red-black tree\n\t\t\tdelete_one_child( succ ) ;\n\t\t}\n\n\t\telse if ( node === this.root ) {\n\t\t\tthis.root = null ;\n\t\t}\n\n\t\telse {\n\t\t\tdelete_one_child( node ) ;\n\t\t}\n\n\t}\n\n\tremove ( value ) {\n\n\t\tconst node = this.find( value ) ;\n\t\tif ( node === null ) return false ;\n\n\t\tthis._delete( node ) ;\n\t\treturn true ;\n\n\t}\n\n\t*[Symbol.iterator] ( ) {\n\n\t\tif ( this.root !== null ) yield* inordertraversal( this.root ) ;\n\n\t}\n\n\tstatic from ( compare , iterable ) {\n\n\t\tconst tree = new RedBlackTree( compare ) ;\n\n\t\tfor ( const element of iterable ) tree.add( element ) ;\n\n\t\treturn tree ;\n\n\t}\n\n}\n"
+    "content": "\nimport { Node } from './Node' ;\nimport { RED , BLACK } from '..' ;\nimport { predecessor } from '..' ;\nimport { insert , insert_case2 } from '..' ;\nimport { delete_one_child } from '..' ;\nimport { search } from '..' ;\nimport { inordertraversal , rangetraversal } from '..' ;\n\nexport class RedBlackTree {\n\n\tconstructor ( compare ) {\n\n\t\tthis.compare = compare ;\n\t\tthis.root = null ;\n\n\t}\n\n\tadd ( value ) {\n\t\tif ( this.root === null ) {\n\t\t\tthis.root = new Node( BLACK , value ) ;\n\t\t}\n\t\telse {\n\t\t\tconst node = new Node( RED , value ) ;\n\t\t\tinsert( this.compare , this.root , node ) ;\n\t\t\tinsert_case2( node ) ;\n\t\t}\n\t}\n\n\t_search ( value ) {\n\t\tif ( this.root === null ) return null ;\n\t\treturn search( this.compare , this.root , value ) ;\n\t}\n\n\tget ( value ) {\n\t\tconst node = this._search( value ) ;\n\t\treturn node === null ? null : node.value ;\n\t}\n\n\thas ( value ) {\n\t\treturn this._search( value ) !== null ;\n\t}\n\n\t_delete ( node ) {\n\n\t\tif ( !node.left.isleaf() ) {\n\t\t\t// replace node's value with predecessor's value\n\t\t\tconst pred = predecessor( node ) ;\n\t\t\tnode.value = pred.value ;\n\t\t\t// delete predecessor node\n\t\t\t// note: this node can only have one non-leaf child\n\t\t\t//       because the tree is a red-black tree\n\t\t\tdelete_one_child( pred ) ;\n\t\t}\n\n\t\telse if ( !node.right.isleaf() ) {\n\t\t\t// replace node's value with successor's value\n\t\t\t// If there is no left child, then there can only be one right\n\t\t\t// child.\n\t\t\tconst succ = node.right ;\n\t\t\tnode.value = succ.value ;\n\t\t\t// delete successor node\n\t\t\t// note: this node can only have one non-leaf child\n\t\t\t//       because the tree is a red-black tree\n\t\t\tdelete_one_child( succ ) ;\n\t\t}\n\n\t\telse if ( node === this.root ) {\n\t\t\tthis.root = null ;\n\t\t}\n\n\t\telse {\n\t\t\tdelete_one_child( node ) ;\n\t\t}\n\n\t}\n\n\tremove ( value ) {\n\n\t\tconst node = this._search( value ) ;\n\t\tif ( node === null ) return false ;\n\n\t\tthis._delete( node ) ;\n\t\treturn true ;\n\n\t}\n\n\t*range ( left , right ) {\n\n\t\tif ( this.root !== null ) yield* rangetraversal( this.compare , this.root , left , right ) ;\n\n\t}\n\n\t*values ( ) {\n\n\t\tif ( this.root !== null ) yield* inordertraversal( this.root ) ;\n\n\t}\n\n\t[Symbol.iterator] ( ) {\n\n\t\treturn this.values() ;\n\n\t}\n\n\tstatic from ( compare , iterable ) {\n\n\t\tconst tree = new RedBlackTree( compare ) ;\n\n\t\tfor ( const element of iterable ) tree.add( element ) ;\n\n\t\treturn tree ;\n\n\t}\n\n}\n"
   },
   {
     "__docId__": 7,
@@ -260,9 +260,9 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "find",
+    "name": "_search",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
-    "longname": "src/adt/RedBlackTree.js~RedBlackTree#find",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#_search",
     "access": null,
     "description": null,
     "lineNumber": 30,
@@ -287,12 +287,66 @@
     "kind": "method",
     "static": false,
     "variation": null,
+    "name": "get",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#get",
+    "access": null,
+    "description": null,
+    "lineNumber": 35,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 15,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "has",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#has",
+    "access": null,
+    "description": null,
+    "lineNumber": 40,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 16,
+    "kind": "method",
+    "static": false,
+    "variation": null,
     "name": "_delete",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#_delete",
     "access": null,
     "description": null,
-    "lineNumber": 38,
+    "lineNumber": 44,
     "undocument": true,
     "params": [
       {
@@ -305,7 +359,7 @@
     "generator": false
   },
   {
-    "__docId__": 15,
+    "__docId__": 17,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -314,7 +368,7 @@
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#root",
     "access": null,
     "description": null,
-    "lineNumber": 63,
+    "lineNumber": 69,
     "undocument": true,
     "type": {
       "types": [
@@ -323,7 +377,7 @@
     }
   },
   {
-    "__docId__": 16,
+    "__docId__": 18,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -332,7 +386,7 @@
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#remove",
     "access": null,
     "description": null,
-    "lineNumber": 72,
+    "lineNumber": 78,
     "undocument": true,
     "params": [
       {
@@ -350,7 +404,50 @@
     "generator": false
   },
   {
-    "__docId__": 17,
+    "__docId__": 19,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "range",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#range",
+    "access": null,
+    "description": null,
+    "lineNumber": 88,
+    "undocument": true,
+    "params": [
+      {
+        "name": "left",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "right",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "values",
+    "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "longname": "src/adt/RedBlackTree.js~RedBlackTree#values",
+    "access": null,
+    "description": null,
+    "lineNumber": 94,
+    "undocument": true,
+    "params": [],
+    "generator": true
+  },
+  {
+    "__docId__": 21,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -359,13 +456,18 @@
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#[Symbol.iterator]",
     "access": null,
     "description": null,
-    "lineNumber": 82,
+    "lineNumber": 100,
     "undocument": true,
     "params": [],
-    "generator": true
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
   },
   {
-    "__docId__": 18,
+    "__docId__": 22,
     "kind": "method",
     "static": true,
     "variation": null,
@@ -374,7 +476,7 @@
     "longname": "src/adt/RedBlackTree.js~RedBlackTree.from",
     "access": null,
     "description": null,
-    "lineNumber": 88,
+    "lineNumber": 106,
     "undocument": true,
     "params": [
       {
@@ -398,7 +500,7 @@
     "generator": false
   },
   {
-    "__docId__": 19,
+    "__docId__": 23,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -411,7 +513,7 @@
     "content": "export * from './Leaf' ;\nexport * from './Node' ;\nexport * from './RedBlackTree' ;\n"
   },
   {
-    "__docId__": 20,
+    "__docId__": 24,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -424,7 +526,7 @@
     "content": "export const BLACK = 0 ;\n"
   },
   {
-    "__docId__": 21,
+    "__docId__": 25,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -445,7 +547,7 @@
     }
   },
   {
-    "__docId__": 22,
+    "__docId__": 26,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -458,7 +560,7 @@
     "content": "export const RED = 1 ;\n"
   },
   {
-    "__docId__": 23,
+    "__docId__": 27,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -479,7 +581,7 @@
     }
   },
   {
-    "__docId__": 24,
+    "__docId__": 28,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -492,7 +594,7 @@
     "content": "export * from './BLACK' ;\nexport * from './RED' ;\n"
   },
   {
-    "__docId__": 25,
+    "__docId__": 29,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -505,7 +607,7 @@
     "content": "import chalk from 'chalk' ;\n\nimport { BLACK } from '..' ;\n\nexport function debug ( node ) {\n\n\tif ( node.isleaf( ) ) return chalk.bgBlack('L') ;\n\n\tconst repr = node.color === BLACK ? chalk.bgBlack(node.value) : chalk.bgRed( node.value ) ;\n\n\treturn `(${debug(node.left)}, ${repr}, ${debug(node.right)})` ;\n\n}\n"
   },
   {
-    "__docId__": 26,
+    "__docId__": 30,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -535,7 +637,7 @@
     "generator": false
   },
   {
-    "__docId__": 27,
+    "__docId__": 31,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -548,7 +650,7 @@
     "content": "export * from './debug' ;\n"
   },
   {
-    "__docId__": 28,
+    "__docId__": 32,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -561,7 +663,7 @@
     "content": "export function grandparent ( n ) {\n\n\t//assert((n !== null) && (n.parent !== null));\n\t//We only call this function when n HAS a grandparent\n\treturn n.parent.parent;\n\n}\n"
   },
   {
-    "__docId__": 29,
+    "__docId__": 33,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -591,7 +693,7 @@
     "generator": false
   },
   {
-    "__docId__": 30,
+    "__docId__": 34,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -604,7 +706,7 @@
     "content": "export * from './grandparent' ;\nexport * from './predecessor' ;\nexport * from './sibling' ;\nexport * from './uncle' ;\n"
   },
   {
-    "__docId__": 31,
+    "__docId__": 35,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -617,7 +719,7 @@
     "content": "export function predecessor ( node ) {\n\n\tvar pred = node.left ;\n\n\twhile ( !pred.right.isleaf() ) pred = pred.right ;\n\n\treturn pred ;\n\n}\n"
   },
   {
-    "__docId__": 32,
+    "__docId__": 36,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -647,7 +749,7 @@
     "generator": false
   },
   {
-    "__docId__": 33,
+    "__docId__": 37,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -660,7 +762,7 @@
     "content": "export function sibling ( n ) {\n\n\t//assert((n !== null) && (n.parent !== null));\n\t//We only use this function when n HAS a sibling so this case can never\n\t//happen.\n\n\treturn  n === n.parent.left ? n.parent.right : n.parent.left ;\n\n}\n"
   },
   {
-    "__docId__": 34,
+    "__docId__": 38,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -690,7 +792,7 @@
     "generator": false
   },
   {
-    "__docId__": 35,
+    "__docId__": 39,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -703,7 +805,7 @@
     "content": "import { grandparent } from './grandparent' ;\n\nexport function uncle ( n ) {\n\tconst g = grandparent( n );\n\t// assert( g !== null ) ;\n\t// this can never happen\n\tif ( n.parent === g.left )\n\t  return g.right.isleaf( ) ? null : g.right ;\n\telse\n\t  return g.left.isleaf( ) ? null : g.left ;\n}\n"
   },
   {
-    "__docId__": 36,
+    "__docId__": 40,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -733,7 +835,7 @@
     "generator": false
   },
   {
-    "__docId__": 37,
+    "__docId__": 41,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -746,7 +848,7 @@
     "content": "export * from './adt' ;\nexport * from './color' ;\nexport * from './debug' ;\nexport * from './family' ;\nexport * from './insertion' ;\nexport * from './removal' ;\nexport * from './rotate' ;\nexport * from './search' ;\nexport * from './traversal' ;\n"
   },
   {
-    "__docId__": 38,
+    "__docId__": 42,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -759,7 +861,7 @@
     "content": "export * from './insert' ;\nexport * from './insert_case1' ;\nexport * from './insert_case2' ;\nexport * from './insert_case3' ;\nexport * from './insert_case4' ;\nexport * from './insert_case5' ;\n"
   },
   {
-    "__docId__": 39,
+    "__docId__": 43,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -772,7 +874,7 @@
     "content": "\nexport function insert ( compare, A, B ) {\n\n\twhile ( true ) {\n\n\t\tif ( compare( B.value, A.value ) < 0 ) {\n\n\t\t\tconst node = A.left;\n\n\t\t\tif ( node.isleaf() ) {\n\t\t\t\tA.left = B;\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tA = node;\n\n\t\t}\n\n\t\telse {\n\n\t\t\tconst node = A.right;\n\n\t\t\tif ( node.isleaf() ) {\n\t\t\t\tA.right = B;\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tA = node;\n\n\t\t}\n\n\t}\n\n\tB.parent = A;\n\n\treturn B;\n\n}\n"
   },
   {
-    "__docId__": 40,
+    "__docId__": 44,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -814,7 +916,7 @@
     "generator": false
   },
   {
-    "__docId__": 41,
+    "__docId__": 45,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -827,7 +929,7 @@
     "content": "\nimport { BLACK } from '..' ;\nimport { insert_case2 } from './insert_case2' ;\n\nexport function insert_case1(n)\n{\n if (n.parent === null)\n  n.color = BLACK;\n else\n  insert_case2(n);\n}\n"
   },
   {
-    "__docId__": 42,
+    "__docId__": 46,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -852,7 +954,7 @@
     "generator": false
   },
   {
-    "__docId__": 43,
+    "__docId__": 47,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -865,7 +967,7 @@
     "content": "\nimport { BLACK } from '..' ;\nimport { insert_case3 } from './insert_case3' ;\n\nexport function insert_case2(n)\n{\n if (n.parent.color === BLACK)\n  return; /* Tree is still valid */\n else\n  insert_case3(n);\n}\n"
   },
   {
-    "__docId__": 44,
+    "__docId__": 48,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -890,7 +992,7 @@
     "generator": false
   },
   {
-    "__docId__": 45,
+    "__docId__": 49,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -903,7 +1005,7 @@
     "content": "import { BLACK , RED , uncle , grandparent } from '..' ;\nimport { insert_case1 } from './insert_case1' ;\nimport { insert_case4 } from './insert_case4' ;\n\nexport function insert_case3(n)\n{\n const u = uncle(n);\n\n if ((u !== null) && (u.color === RED)) {\n  n.parent.color = BLACK;\n  u.color = BLACK;\n  const g = grandparent(n);\n  g.color = RED;\n  insert_case1(g);\n } else {\n  insert_case4(n);\n }\n}\n"
   },
   {
-    "__docId__": 46,
+    "__docId__": 50,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -928,7 +1030,7 @@
     "generator": false
   },
   {
-    "__docId__": 47,
+    "__docId__": 51,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -941,7 +1043,7 @@
     "content": "\nimport { rotate_left , rotate_right , grandparent } from '..' ;\nimport { insert_case5 } from './insert_case5' ;\n\nexport function insert_case4(n)\n{\n const g = grandparent(n);\n\n if ((n === n.parent.right) && (n.parent === g.left)) {\n  rotate_left(n.parent);\n\n /*\n * rotate_left can be the below because of already having *g =  grandparent(n)\n *\n * saved_p=g.left, *saved_left_n=n.left;\n * g.left=n;\n * n.left=saved_p;\n * saved_p.right=saved_left_n;\n *\n * and modify the parent's nodes properly\n */\n\n  //n = n.left; /!\\ need to fix rotate, so that we can safely reference a node\n\n } else if ((n === n.parent.left) && (n.parent === g.right)) {\n  rotate_right(n.parent);\n\n /*\n * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n *\n * saved_p=g.right, *saved_right_n=n.right;\n * g.right=n;\n * n.right=saved_p;\n * saved_p.left=saved_right_n;\n *\n */\n\n  //n = n.right;\n }\n insert_case5(n);\n}\n"
   },
   {
-    "__docId__": 48,
+    "__docId__": 52,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -966,7 +1068,7 @@
     "generator": false
   },
   {
-    "__docId__": 49,
+    "__docId__": 53,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -979,7 +1081,7 @@
     "content": "\nimport { RED , BLACK , rotate_left , rotate_right , grandparent } from '..' ;\n\nexport function insert_case5(n)\n{\n const g = grandparent(n);\n\n n.parent.color = BLACK;\n g.color = RED;\n if (n === n.parent.left)\n  rotate_right(g);\n else\n  rotate_left(g);\n}\n"
   },
   {
-    "__docId__": 50,
+    "__docId__": 54,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1004,7 +1106,7 @@
     "generator": false
   },
   {
-    "__docId__": 51,
+    "__docId__": 55,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1017,7 +1119,7 @@
     "content": "import { delete_case2 } from './delete_case2' ;\n\nexport function delete_case1 ( n ) {\n\n    if ( n.parent !== null ) delete_case2( n ) ;\n\n}\n"
   },
   {
-    "__docId__": 52,
+    "__docId__": 56,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1042,7 +1144,7 @@
     "generator": false
   },
   {
-    "__docId__": 53,
+    "__docId__": 57,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1055,7 +1157,7 @@
     "content": "import { BLACK , RED , sibling , rotate_left , rotate_right } from '..' ;\n\nimport { delete_case3 } from './delete_case3' ;\n\nexport function delete_case2(n)\n{\n const s = sibling(n);\n\n if (s.color === RED) {\n  n.parent.color = RED;\n  s.color = BLACK;\n  if (n === n.parent.left)\n   rotate_left(n.parent);\n  else\n   rotate_right(n.parent);\n }\n delete_case3(n);\n}\n"
   },
   {
-    "__docId__": 54,
+    "__docId__": 58,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1080,7 +1182,7 @@
     "generator": false
   },
   {
-    "__docId__": 55,
+    "__docId__": 59,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1093,7 +1195,7 @@
     "content": "import { BLACK , RED , sibling } from '..' ;\n\nimport { delete_case1 } from './delete_case1' ;\nimport { delete_case4 } from './delete_case4' ;\n\nexport function delete_case3(n)\n{\n const s = sibling(n);\n //console.log(n.color, n.parent.color, s.color , s.isleaf());\n\n if ((n.parent.color === BLACK) &&\n     (s.color === BLACK) &&\n     (s.left.color === BLACK) &&\n     (s.right.color === BLACK)) {\n  s.color = RED;\n  delete_case1(n.parent);\n }\n\n else\n  delete_case4(n);\n}\n"
   },
   {
-    "__docId__": 56,
+    "__docId__": 60,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1118,7 +1220,7 @@
     "generator": false
   },
   {
-    "__docId__": 57,
+    "__docId__": 61,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1131,7 +1233,7 @@
     "content": "import { BLACK , RED , sibling } from '..' ;\n\nimport { delete_case5 } from './delete_case5' ;\n\nexport function delete_case4(n)\n{\n const s = sibling(n);\n //console.log( s ) ;\n\n if ((n.parent.color === RED) &&\n     (s.color === BLACK) &&\n     (s.left.color === BLACK) &&\n     (s.right.color === BLACK)) {\n  s.color = RED;\n  n.parent.color = BLACK;\n } else\n  delete_case5(n);\n}\n"
   },
   {
-    "__docId__": 58,
+    "__docId__": 62,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1156,7 +1258,7 @@
     "generator": false
   },
   {
-    "__docId__": 59,
+    "__docId__": 63,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1169,7 +1271,7 @@
     "content": "import { BLACK , RED , sibling , rotate_right , rotate_left } from '..' ;\n\nimport { delete_case6 } from './delete_case6' ;\n\nexport function delete_case5(n)\n{\n const s = sibling(n);\n\n if  (s.color === BLACK) { /* this if statement is trivial,\ndue to case 2 (even though case 2 changed the sibling to a sibling's child,\nthe sibling's child can't be red, since no red parent can have a red child). */\n/* the following statements just force the red to be on the left of the left of the parent,\n   or right of the right, so case six will rotate correctly. */\n  if ((n === n.parent.left) &&\n      (s.right.color === BLACK) &&\n      (s.left.color === RED)) { /* this last test is trivial too due to cases 2-4. */\n   s.color = RED;\n   s.left.color = BLACK;\n   rotate_right(s);\n  } else if ((n === n.parent.right) &&\n             (s.left.color === BLACK) &&\n             (s.right.color === RED)) {/* this last test is trivial too due to cases 2-4. */\n   s.color = RED;\n   s.right.color = BLACK;\n   rotate_left(s);\n  }\n }\n delete_case6(n);\n}\n"
   },
   {
-    "__docId__": 60,
+    "__docId__": 64,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1194,7 +1296,7 @@
     "generator": false
   },
   {
-    "__docId__": 61,
+    "__docId__": 65,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1207,7 +1309,7 @@
     "content": "import { BLACK , RED , sibling , rotate_right , rotate_left } from '..' ;\n\nexport function delete_case6(n)\n{\n const s = sibling(n);\n\n s.color = n.parent.color;\n n.parent.color = BLACK;\n\n if (n === n.parent.left) {\n  s.right.color = BLACK;\n  rotate_left(n.parent);\n } else {\n  s.left.color = BLACK;\n  rotate_right(n.parent);\n }\n}\n"
   },
   {
-    "__docId__": 62,
+    "__docId__": 66,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1232,7 +1334,7 @@
     "generator": false
   },
   {
-    "__docId__": 63,
+    "__docId__": 67,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1245,7 +1347,7 @@
     "content": "import { BLACK , RED } from '..' ;\n\nimport { replace_node } from './replace_node' ;\nimport { delete_case1 } from './delete_case1' ;\n\nexport function delete_one_child ( n ) {\n\n    // Precondition: n has at most one non-leaf child.\n    // assert( n.right.isleaf() || n.left.isleaf());\n\n    // const child = n.right.isleaf() ? n.left : n.right;\n    // n.right is always a LEAF because either n is a subtree predecessor or it\n    // is the only child of its parent by the red-black tree properties\n    const child = n.left ;\n\n    replace_node(n, child);\n\n    if (n.color === BLACK) {\n        if (child.color === RED) child.color = BLACK;\n        else delete_case1(child);\n    }\n\n    //else {\n    //    If n is RED then its child can only be BLACK. Replacing n with its\n    //    child suffices.\n    //}\n\n}\n"
   },
   {
-    "__docId__": 64,
+    "__docId__": 68,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1270,7 +1372,7 @@
     "generator": false
   },
   {
-    "__docId__": 65,
+    "__docId__": 69,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1283,7 +1385,7 @@
     "content": "export * from './delete_case1' ;\nexport * from './delete_case2' ;\nexport * from './delete_case3' ;\nexport * from './delete_case4' ;\nexport * from './delete_case5' ;\nexport * from './delete_case6' ;\nexport * from './delete_one_child' ;\nexport * from './replace_node' ;\n"
   },
   {
-    "__docId__": 66,
+    "__docId__": 70,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1296,7 +1398,7 @@
     "content": "export function replace_node ( A , B ) {\n\n\t// assert( A.parent !== null ) ;\n\t// we never apply delete_one_child on the root so we are safe\n\n\tif ( A === A.parent.left ) A.parent.left = B ;\n\n\telse A.parent.right = B ;\n\n\tB.parent = A.parent ;\n\n}\n"
   },
   {
-    "__docId__": 67,
+    "__docId__": 71,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1327,7 +1429,7 @@
     "generator": false
   },
   {
-    "__docId__": 68,
+    "__docId__": 72,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1340,7 +1442,7 @@
     "content": "export * from './rotate_left' ;\nexport * from './rotate_right' ;\n"
   },
   {
-    "__docId__": 69,
+    "__docId__": 73,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1353,7 +1455,7 @@
     "content": "/**\n * Rotate tree left.\n * (see https://en.wikipedia.org/wiki/Tree_rotation)\n *\n *      A                B\n *     / \\              / \\\n *    a   B     ->     A   c\n *       / \\          / \\\n *      b   c        a   b\n *\n *\n * @param {Node} A root of the tree\n *\n */\n\nexport function rotate_left ( A ) {\n\n\tconst B = A.right ;\n\tconst a = A.left ;\n\tconst b = B.left ;\n\tconst c = B.right ;\n\n\t[A.value , B.value] = [B.value , A.value] ;\n\t[A.color , B.color] = [B.color , A.color] ;\n\n\tA.left = B ;\n\tA.right = c ;\n\n\tB.left = a ;\n\tB.right = b ;\n\n\ta.parent = B ;\n\tb.parent = B ;\n\tc.parent = A ;\n}\n"
   },
   {
-    "__docId__": 70,
+    "__docId__": 74,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1381,7 +1483,7 @@
     "generator": false
   },
   {
-    "__docId__": 71,
+    "__docId__": 75,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1394,7 +1496,7 @@
     "content": "/**\n * Rotate tree right.\n * (see https://en.wikipedia.org/wiki/Tree_rotation)\n *\n *      B                A\n *     / \\              / \\\n *    A   c     ->     a   B\n *   / \\                  / \\\n *  a   b                b   c\n *\n *\n * @param {Node} B root of the tree\n *\n */\n\nexport function rotate_right ( B ) {\n\n\tconst A = B.left;\n\tconst a = A.left ;\n\tconst b = A.right ;\n\tconst c = B.right ;\n\n\t[A.value , B.value] = [B.value , A.value] ;\n\t[A.color , B.color] = [B.color , A.color] ;\n\n\tB.left = a ;\n\tB.right = A ;\n\n\tA.left = b ;\n\tA.right = c ;\n\n\ta.parent = B ;\n\tb.parent = A ;\n\tc.parent = A ;\n\n}\n"
   },
   {
-    "__docId__": 72,
+    "__docId__": 76,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1422,30 +1524,43 @@
     "generator": false
   },
   {
-    "__docId__": 73,
+    "__docId__": 77,
     "kind": "file",
     "static": true,
     "variation": null,
-    "name": "src/search/find.js",
+    "name": "src/search/index.js",
     "memberof": null,
-    "longname": "src/search/find.js",
+    "longname": "src/search/index.js",
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "export function find ( compare, node, value ) {\n\n\t// scan for first node whose\n\t// value equals parameter value\n\n\twhile ( true ) {\n\n\t\tconst d = compare( value, node.value );\n\n\t\tif ( d === 0 ) {\n\t\t\treturn node;\n\t\t}\n\n\t\telse if ( d < 0 ) {\n\t\t\tnode = node.left;\n\t\t}\n\n\t\telse {\n\t\t\tnode = node.right;\n\t\t}\n\n\t\tif ( node.isleaf() ) {\n\t\t\treturn null;\n\t\t}\n\n\t}\n\n}\n"
+    "content": "export * from './search' ;\n"
   },
   {
-    "__docId__": 74,
+    "__docId__": 78,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/search/search.js",
+    "memberof": null,
+    "longname": "src/search/search.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export function search ( compare, node, value ) {\n\n\t// scan for first node whose\n\t// value equals parameter value\n\n\twhile ( true ) {\n\n\t\tconst d = compare( value, node.value );\n\n\t\tif ( d === 0 ) {\n\t\t\treturn node;\n\t\t}\n\n\t\telse if ( d < 0 ) {\n\t\t\tnode = node.left;\n\t\t}\n\n\t\telse {\n\t\t\tnode = node.right;\n\t\t}\n\n\t\tif ( node.isleaf() ) {\n\t\t\treturn null;\n\t\t}\n\n\t}\n\n}\n"
+  },
+  {
+    "__docId__": 79,
     "kind": "function",
     "static": true,
     "variation": null,
-    "name": "find",
-    "memberof": "src/search/find.js",
-    "longname": "src/search/find.js~find",
+    "name": "search",
+    "memberof": "src/search/search.js",
+    "longname": "src/search/search.js~search",
     "access": null,
     "export": true,
-    "importPath": "aureooms-es-red-black-tree/src/search/find.js",
-    "importStyle": "{find}",
+    "importPath": "aureooms-es-red-black-tree/src/search/search.js",
+    "importStyle": "{search}",
     "description": null,
     "lineNumber": 1,
     "undocument": true,
@@ -1477,20 +1592,7 @@
     "generator": false
   },
   {
-    "__docId__": 75,
-    "kind": "file",
-    "static": true,
-    "variation": null,
-    "name": "src/search/index.js",
-    "memberof": null,
-    "longname": "src/search/index.js",
-    "access": null,
-    "description": null,
-    "lineNumber": 1,
-    "content": "export * from './find' ;\n"
-  },
-  {
-    "__docId__": 76,
+    "__docId__": 80,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1500,10 +1602,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "export * from './inordertraversal' ;\n"
+    "content": "export * from './inordertraversal' ;\nexport * from './rangetraversal' ;\n"
   },
   {
-    "__docId__": 77,
+    "__docId__": 81,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1516,7 +1618,7 @@
     "content": "export function* inordertraversal ( node ) {\n\n\tif ( !node.left.isleaf() ) {\n\t\tyield *inordertraversal( node.left );\n\t}\n\n\tyield node.value ;\n\n\tif ( !node.right.isleaf() ) {\n\t\tyield* inordertraversal( node.right );\n\t}\n\n}\n"
   },
   {
-    "__docId__": 78,
+    "__docId__": 82,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1541,7 +1643,63 @@
     "generator": true
   },
   {
-    "__docId__": 80,
+    "__docId__": 83,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/traversal/rangetraversal.js",
+    "memberof": null,
+    "longname": "src/traversal/rangetraversal.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "export function* rangetraversal ( compare , node , left , right ) {\n\n\tif ( compare( node.value , left ) < 0 ) {\n\t\tif ( !node.right.isleaf() ) yield *rangetraversal( compare , node.right , left , right );\n\t}\n\telse if ( compare( node.value , right ) >= 0 ) {\n\t\tif ( !node.left.isleaf() ) yield *rangetraversal( compare , node.left , left , right );\n\t}\n\telse {\n\t\tif ( !node.left.isleaf() ) yield *rangetraversal( compare , node.left , left , right );\n\t\tyield node.value ;\n\t\tif ( !node.right.isleaf() ) yield *rangetraversal( compare , node.right , left , right );\n\t}\n\n}\n"
+  },
+  {
+    "__docId__": 84,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "rangetraversal",
+    "memberof": "src/traversal/rangetraversal.js",
+    "longname": "src/traversal/rangetraversal.js~rangetraversal",
+    "access": null,
+    "export": true,
+    "importPath": "aureooms-es-red-black-tree/src/traversal/rangetraversal.js",
+    "importStyle": "{rangetraversal}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "compare",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "node",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "left",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "right",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": true
+  },
+  {
+    "__docId__": 86,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1554,7 +1712,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 81,
+    "__docId__": 87,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1567,7 +1725,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 88,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1580,7 +1738,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 89,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1593,7 +1751,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 90,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1606,7 +1764,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 91,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1619,7 +1777,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 92,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1632,7 +1790,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 93,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1645,7 +1803,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 88,
+    "__docId__": 94,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1658,7 +1816,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 89,
+    "__docId__": 95,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1671,7 +1829,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 90,
+    "__docId__": 96,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1684,7 +1842,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 91,
+    "__docId__": 97,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1697,7 +1855,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 92,
+    "__docId__": 98,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1710,7 +1868,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 93,
+    "__docId__": 99,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1723,7 +1881,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 94,
+    "__docId__": 100,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1736,7 +1894,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 95,
+    "__docId__": 101,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1749,7 +1907,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 102,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1762,7 +1920,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 103,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1775,7 +1933,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 98,
+    "__docId__": 104,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1788,7 +1946,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 99,
+    "__docId__": 105,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1801,7 +1959,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 100,
+    "__docId__": 106,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1814,7 +1972,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 101,
+    "__docId__": 107,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1827,7 +1985,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 102,
+    "__docId__": 108,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1840,7 +1998,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 103,
+    "__docId__": 109,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1853,7 +2011,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 104,
+    "__docId__": 110,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1866,7 +2024,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 105,
+    "__docId__": 111,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1879,7 +2037,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 112,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1892,7 +2050,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 107,
+    "__docId__": 113,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1905,7 +2063,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 108,
+    "__docId__": 114,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1918,7 +2076,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 109,
+    "__docId__": 115,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1931,7 +2089,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 110,
+    "__docId__": 116,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1944,7 +2102,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 111,
+    "__docId__": 117,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1957,7 +2115,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 112,
+    "__docId__": 118,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1970,7 +2128,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 113,
+    "__docId__": 119,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1983,7 +2141,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 114,
+    "__docId__": 120,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1996,7 +2154,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 115,
+    "__docId__": 121,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2009,7 +2167,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 116,
+    "__docId__": 122,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2022,7 +2180,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 117,
+    "__docId__": 123,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2035,7 +2193,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 118,
+    "__docId__": 124,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2048,7 +2206,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 119,
+    "__docId__": 125,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2061,7 +2219,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 120,
+    "__docId__": 126,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2074,7 +2232,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 121,
+    "__docId__": 127,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2087,7 +2245,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 122,
+    "__docId__": 128,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2100,7 +2258,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 123,
+    "__docId__": 129,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2113,7 +2271,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 124,
+    "__docId__": 130,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2126,7 +2284,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 125,
+    "__docId__": 131,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2139,7 +2297,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 126,
+    "__docId__": 132,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2152,7 +2310,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 128,
+    "__docId__": 134,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2165,7 +2323,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 129,
+    "__docId__": 135,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2178,7 +2336,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 130,
+    "__docId__": 136,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2191,7 +2349,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 131,
+    "__docId__": 137,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2204,7 +2362,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 132,
+    "__docId__": 138,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2217,7 +2375,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 133,
+    "__docId__": 139,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2230,7 +2388,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 134,
+    "__docId__": 140,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2243,7 +2401,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 135,
+    "__docId__": 141,
     "kind": "external",
     "static": true,
     "variation": null,
