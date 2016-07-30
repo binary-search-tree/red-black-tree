@@ -2,40 +2,85 @@
 import { rotate_left , rotate_right , grandparent } from '..' ;
 import { insert_case5 } from './insert_case5' ;
 
-export function insert_case4(n)
-{
- const g = grandparent(n);
-
- if ((n === n.parent.right) && (n.parent === g.left)) {
-  rotate_left(n.parent);
-
- /*
- * rotate_left can be the below because of already having *g =  grandparent(n)
+/**
+ * Preconditions:
+ *   - n is red.
+ *   - n is not the root of the tree.
+ *   - n's parent is red.
+ *   - n's uncle is black.
  *
- * saved_p=g.left, *saved_left_n=n.left;
- * g.left=n;
- * n.left=saved_p;
- * saved_p.right=saved_left_n;
+ * Here we fix the input subtree to pass the preconditions of {@link insert_case5}.
  *
- * and modify the parent's nodes properly
+ * @param {Node} n - The input node.
  */
+export function insert_case4 ( n ) {
 
-  //n = n.left; /!\ need to fix rotate, so that we can safely reference a node
+	const g = grandparent( n ) ;
 
- } else if ((n === n.parent.left) && (n.parent === g.right)) {
-  rotate_right(n.parent);
+	/**
+	 * If the path from g to n makes a left-right, change it to a left-left
+	 * with {@link rotate_left}. Then call {@link insert_case5} on the old
+	 * parent of n.
+	 *
+	 *             B                     B
+	 *           /   \                 /   \
+	 *         R       B             R       B
+	 *        / \     / \   -->     / \     / \
+	 *       =  >R   -   -        >R   =   -   -
+	 *          / \               / \
+	 *         =   =             =   =
+	 */
 
- /*
- * rotate_right can be the below to take advantage of already having *g =  grandparent(n)
- *
- * saved_p=g.right, *saved_right_n=n.right;
- * g.right=n;
- * n.right=saved_p;
- * saved_p.left=saved_right_n;
- *
- */
+	if ( ( n === n.parent.right ) && ( n.parent === g.left ) ) {
 
-  //n = n.right;
- }
- insert_case5(n);
+		rotate_left( n.parent ) ;
+
+		/**
+		 * rotate_left can be the below because of already having *g =  grandparent(n)
+		 *
+		 * saved_p=g.left, *saved_left_n=n.left;
+		 * g.left=n;
+		 * n.left=saved_p;
+		 * saved_p.right=saved_left_n;
+		 *
+		 * and modify the parent's nodes properly
+		 */
+
+		// n = n.left; /!\ need to fix rotate, so that we can safely reference a node
+
+	}
+
+	/**
+	 * If the path from g to n makes a right-left, change it to a right-right
+	 * with {@link rotate_right}. Then call {@link insert_case5} on the old
+	 * parent of n.
+	 *
+	 *             B                     B
+	 *           /   \                 /   \
+	 *         B       R             B       R
+	 *        / \     / \   -->     / \     / \
+	 *       -   -  >R   =         -   -   =  >R
+	 *              / \                       / \
+	 *             =   =                     =   =
+	 */
+
+	else if ( ( n === n.parent.left ) && ( n.parent === g.right ) ) {
+
+		rotate_right( n.parent ) ;
+
+		/**
+		 * rotate_right can be the below to take advantage of already having *g =  grandparent(n)
+		 *
+		 * saved_p=g.right, *saved_right_n=n.right;
+		 * g.right=n;
+		 * n.right=saved_p;
+		 * saved_p.left=saved_right_n;
+		 *
+		 */
+
+		// n = n.right ;
+	}
+
+	insert_case5( n ) ;
+
 }
