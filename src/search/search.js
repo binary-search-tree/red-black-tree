@@ -1,25 +1,30 @@
-export function search ( compare, node, value ) {
-
-	// scan for first node whose
-	// value equals parameter value
+/**
+ * Search for the first node whose key equals <code>key</code>.
+ *
+ * @param {Function} compare - The comparison function.
+ * @param {Node} root - The root of the tree to scan.
+ * @param {Key} key - The key to search for.
+ * @returns {Node}
+ */
+export function search ( compare, root, key ) {
 
 	while ( true ) {
 
-		const d = compare( value, node.value );
+		const d = compare( key, root.key );
 
 		if ( d === 0 ) {
-			return node;
+			return root;
 		}
 
 		else if ( d < 0 ) {
-			node = node.left;
+			root = root.left;
 		}
 
 		else {
-			node = node.right;
+			root = root.right;
 		}
 
-		if ( node.isleaf() ) {
+		if ( root.isleaf() ) {
 			return null;
 		}
 

@@ -1,7 +1,13 @@
-export function grandparent ( n ) {
+/**
+ * Computes the grandparent (parent of parent) of the input node.
+ *
+ * @param {Node} node - The input node.
+ * @returns {Node}
+ */
+export function grandparent ( node ) {
 
-	//assert((n !== null) && (n.parent !== null));
-	//We only call this function when n HAS a grandparent
-	return n.parent.parent;
+	// assert((node !== null) && (node.parent !== null));
+	// We only call this function when node HAS a grandparent
+	return node.parent.parent;
 
 }

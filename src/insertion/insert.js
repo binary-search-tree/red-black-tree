@@ -1,9 +1,25 @@
 
+/**
+ * Walks the tree rooted at <code>A</code> down the only path that satisfies
+ * the following property: if at a node <code>C</code> we make a left (resp.
+ * right), then <code>B < C</code> (resp. <code>B >= C</code>). Once we hit the
+ * end of the path, we can add node <code>B</code> at this position. By the
+ * property of the path, the tree rooted at <code>A</code> is still a binary
+ * search tree.
+ * For our red-black tree, all that is left to do is fix the red-black tree
+ * properties in case they have been violated by this insertion. This is fixed
+ * by {@link insert_case1}.
+ *
+ * @param compare - The comparison function to use.
+ * @param {Node} A - The root of the tree.
+ * @param {Node} B - The node to insert.
+ * @returns {Node} B - The node that has been inserted.
+ */
 export function insert ( compare, A, B ) {
 
 	while ( true ) {
 
-		if ( compare( B.value, A.value ) < 0 ) {
+		if ( compare( B.key, A.key ) < 0 ) {
 
 			const node = A.left;
 

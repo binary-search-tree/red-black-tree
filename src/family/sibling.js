@@ -1,9 +1,15 @@
-export function sibling ( n ) {
+/**
+ * Computes the sibling of the input node.
+ *
+ * @param {Node} node - The input node.
+ * @returns {Node}
+ */
+export function sibling ( node ) {
 
-	//assert((n !== null) && (n.parent !== null));
-	//We only use this function when n HAS a sibling so this case can never
-	//happen.
+	// assert((node !== null) && (node.parent !== null));
+	// We only use this function when node HAS a sibling so this case can never
+	// happen.
 
-	return  n === n.parent.left ? n.parent.right : n.parent.left ;
+	return  node === node.parent.left ? node.parent.right : node.parent.left ;
 
 }

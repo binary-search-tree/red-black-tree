@@ -1,6 +1,6 @@
 /**
- * Rotate tree left.
- * (see https://en.wikipedia.org/wiki/Tree_rotation)
+ * Rotate tree left. (see https://en.wikipedia.org/wiki/Tree_rotation)
+ * /!\ This swaps the references to A and B.
  *
  *         A                B
  *        / \              / \
@@ -9,7 +9,7 @@
  *         b   c        a   b
  *
  *
- * @param {Node} A root of the tree
+ * @param {Node} A - The root of the tree.
  *
  */
 
@@ -20,7 +20,7 @@ export function rotate_left ( A ) {
 	const b = B.left ;
 	const c = B.right ;
 
-	[A.value , B.value] = [B.value , A.value] ;
+	[A.key , B.key] = [B.key , A.key] ;
 	[A.color , B.color] = [B.color , A.color] ;
 
 	A.left = B ;

@@ -1,11 +1,25 @@
 import { Leaf } from './Leaf' ;
 
-export function Node ( color , value ) {
+/**
+ * An internal node. This node can be red or black.
+ *
+ * @constructor
+ * @param {Number} color - The color of the node.
+ * @param {Key} key - The key of the node.
+ * @returns {Node}
+ */
+export function Node ( color , key ) {
 	this.color = color ;
 	this.left = new Leaf( this ) ;
 	this.right = new Leaf( this ) ;
 	this.parent = null ;
-	this.value = value ;
+	this.key = key ;
 }
 
+/**
+ * Returns <code>true</code> if the <code>Node</code> object is a leaf. This
+ * always returns <code>false</code>.
+ *
+ * @returns {Boolean}
+ */
 Node.prototype.isleaf = function ( ) { return false ; } ;
