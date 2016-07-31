@@ -40,6 +40,14 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">color</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BLACK">BLACK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RED">RED</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">debug</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-debug">debug</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">deletion</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case1">delete_case1</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case2">delete_case2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case3">delete_case3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case4">delete_case4</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case5">delete_case5</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case6">delete_case6</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_one_child">delete_one_child</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-replace_node">replace_node</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">family</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-grandparent">grandparent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-predecessor">predecessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sibling">sibling</a></span></span></li>
@@ -50,14 +58,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert_case3">insert_case3</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert_case4">insert_case4</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert_case5">insert_case5</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">removal</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case1">delete_case1</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case2">delete_case2</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case3">delete_case3</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case4">delete_case4</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case5">delete_case5</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case6">delete_case6</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_one_child">delete_one_child</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-replace_node">replace_node</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">rotate</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_left">rotate_left</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_right">rotate_right</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">search</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
@@ -77,8 +77,18 @@ import { delete_one_child } from &apos;..&apos; ;
 import { search } from &apos;..&apos; ;
 import { inordertraversal , rangetraversal } from &apos;..&apos; ;
 
+/**
+ * A RedBlackTree with key-only nodes.
+ *
+ */
 export class RedBlackTree {
 
+	/**
+	 * Constructs a new empty red-black tree.
+	 *
+	 * @param {Function} compare - The comparison function for node keys.
+	 * @returns {RedBlackTree}
+	 */
 	constructor ( compare ) {
 
 		this.compare = compare ;
@@ -86,37 +96,70 @@ export class RedBlackTree {
 
 	}
 
-	add ( value ) {
+	/**
+	 * Adds a key to the tree.
+	 *
+	 * @param {Key} key - The key to add.
+	 */
+	add ( key ) {
 		if ( this.root === null ) {
-			this.root = new Node( BLACK , value ) ;
+			this.root = new Node( BLACK , key ) ;
 		}
 		else {
-			const node = new Node( RED , value ) ;
+			const node = new Node( RED , key ) ;
 			insert( this.compare , this.root , node ) ;
 			insert_case2( node ) ;
 		}
 	}
 
-	_search ( value ) {
+	/**
+	 * Search for the input key in the tree.
+	 * Returns the first node whose key equals the input key.
+	 * If no such node exists, returns &lt;code&gt;null&lt;/code&gt;.
+	 *
+	 * @param {Key} key - The input key.
+	 * @returns {Node}
+	 */
+	_search ( key ) {
 		if ( this.root === null ) return null ;
-		return search( this.compare , this.root , value ) ;
+		return search( this.compare , this.root , key ) ;
 	}
 
-	get ( value ) {
-		const node = this._search( value ) ;
-		return node === null ? null : node.value ;
+	/**
+	 * Search for the input key in the tree. Returns the first node key found
+	 * in this way (with {@link RedBlackTree#_search}. If no such key exists
+	 * in the tree, returns &lt;code&gt;null&lt;/code&gt;.
+	 *
+	 * @param {Key} key - The input key.
+	 * @returns {Key}
+	 */
+	get ( key ) {
+		const node = this._search( key ) ;
+		return node === null ? null : node.key ;
 	}
 
-	has ( value ) {
-		return this._search( value ) !== null ;
+	/**
+	 * Returns &lt;code&gt;true&lt;/code&gt; if and only if the tree contains the input
+	 * key.
+	 *
+	 * @param {Key} key - The input key.
+	 * @returns {Boolean}
+	 */
+	has ( key ) {
+		return this._search( key ) !== null ;
 	}
 
+	/**
+	 * Deletes the input node from the tree.
+	 *
+	 * @param {Node} node - The input node to delete.
+	 */
 	_delete ( node ) {
 
 		if ( !node.left.isleaf() ) {
-			// replace node&apos;s value with predecessor&apos;s value
+			// replace node&apos;s key with predecessor&apos;s key
 			const pred = predecessor( node ) ;
-			node.value = pred.value ;
+			node.key = pred.key ;
 			// delete predecessor node
 			// note: this node can only have one non-leaf child
 			//       because the tree is a red-black tree
@@ -124,11 +167,11 @@ export class RedBlackTree {
 		}
 
 		else if ( !node.right.isleaf() ) {
-			// replace node&apos;s value with successor&apos;s value
+			// replace node&apos;s key with successor&apos;s key
 			// If there is no left child, then there can only be one right
 			// child.
 			const succ = node.right ;
-			node.value = succ.value ;
+			node.key = succ.key ;
 			// delete successor node
 			// note: this node can only have one non-leaf child
 			//       because the tree is a red-black tree
@@ -145,9 +188,18 @@ export class RedBlackTree {
 
 	}
 
-	remove ( value ) {
+	/**
+	 * Search for the first node of the tree whose key equals the input key
+	 * (with {@link RedBlackTree#_search}), then delete that node
+	 * (with {@link RedBlackTree#_delete}). If such a node is found and deleted
+	 * then return &lt;code&gt;true&lt;/code&gt;. Return &lt;code&gt;false&lt;/code&gt; otherwise.
+	 *
+	 * @param {Key} key - The input key.
+	 * @returns {Boolean} - Whether the key existed in the tree before removal.
+	 */
+	remove ( key ) {
 
-		const node = this._search( value ) ;
+		const node = this._search( key ) ;
 		if ( node === null ) return false ;
 
 		this._delete( node ) ;
@@ -155,24 +207,46 @@ export class RedBlackTree {
 
 	}
 
+	/**
+	 * Returns an in order iterator over the keys of the tree that lie in the
+	 * interval [left, right[.
+	 * @param {Key} left - The left bound of the interval.
+	 * @param {Key} right - The right bound of the interval.
+	 * @returns {Iterator}
+	 */
 	*range ( left , right ) {
 
 		if ( this.root !== null ) yield* rangetraversal( this.compare , this.root , left , right ) ;
 
 	}
 
-	*values ( ) {
+	/**
+	 * Returns an in order iterator over the keys of the tree.
+	 *
+	 * @returns {Iterator}
+	 */
+	*items ( ) {
 
 		if ( this.root !== null ) yield* inordertraversal( this.root ) ;
 
 	}
 
+	/**
+	 * Same as {@link RedBlackTree#items}.
+	 */
 	[Symbol.iterator] ( ) {
 
-		return this.values() ;
+		return this.items() ;
 
 	}
 
+	/**
+	 * Constructs a red-black tree from an input iterable.
+	 *
+	 * @param {Function} compare - The comparison function to use.
+	 * @param {Iterbale} iterable - The input iterable.
+	 * @returns {RedBlackTree}
+	 */
 	static from ( compare , iterable ) {
 
 		const tree = new RedBlackTree( compare ) ;

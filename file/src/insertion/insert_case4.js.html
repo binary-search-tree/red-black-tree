@@ -40,6 +40,14 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">color</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BLACK">BLACK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RED">RED</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">debug</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-debug">debug</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">deletion</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case1">delete_case1</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case2">delete_case2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case3">delete_case3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case4">delete_case4</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case5">delete_case5</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case6">delete_case6</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_one_child">delete_one_child</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-replace_node">replace_node</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">family</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-grandparent">grandparent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-predecessor">predecessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sibling">sibling</a></span></span></li>
@@ -50,14 +58,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert_case3">insert_case3</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert_case4">insert_case4</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert_case5">insert_case5</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">removal</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case1">delete_case1</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case2">delete_case2</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case3">delete_case3</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case4">delete_case4</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case5">delete_case5</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case6">delete_case6</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_one_child">delete_one_child</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-replace_node">replace_node</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">rotate</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_left">rotate_left</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_right">rotate_right</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">search</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
@@ -72,42 +72,87 @@
 import { rotate_left , rotate_right , grandparent } from &apos;..&apos; ;
 import { insert_case5 } from &apos;./insert_case5&apos; ;
 
-export function insert_case4(n)
-{
- const g = grandparent(n);
-
- if ((n === n.parent.right) &amp;&amp; (n.parent === g.left)) {
-  rotate_left(n.parent);
-
- /*
- * rotate_left can be the below because of already having *g =  grandparent(n)
+/**
+ * Preconditions:
+ *   - n is red.
+ *   - n is not the root of the tree.
+ *   - n&apos;s parent is red.
+ *   - n&apos;s uncle is black.
  *
- * saved_p=g.left, *saved_left_n=n.left;
- * g.left=n;
- * n.left=saved_p;
- * saved_p.right=saved_left_n;
+ * Here we fix the input subtree to pass the preconditions of {@link insert_case5}.
  *
- * and modify the parent&apos;s nodes properly
+ * @param {Node} n - The input node.
  */
+export function insert_case4 ( n ) {
 
-  //n = n.left; /!\ need to fix rotate, so that we can safely reference a node
+	const g = grandparent( n ) ;
 
- } else if ((n === n.parent.left) &amp;&amp; (n.parent === g.right)) {
-  rotate_right(n.parent);
+	/**
+	 * If the path from g to n makes a left-right, change it to a left-left
+	 * with {@link rotate_left}. Then call {@link insert_case5} on the old
+	 * parent of n.
+	 *
+	 *             B                     B
+	 *           /   \                 /   \
+	 *         R       B             R       B
+	 *        / \     / \   --&gt;     / \     / \
+	 *       =  &gt;R   -   -        &gt;R   =   -   -
+	 *          / \               / \
+	 *         =   =             =   =
+	 */
 
- /*
- * rotate_right can be the below to take advantage of already having *g =  grandparent(n)
- *
- * saved_p=g.right, *saved_right_n=n.right;
- * g.right=n;
- * n.right=saved_p;
- * saved_p.left=saved_right_n;
- *
- */
+	if ( ( n === n.parent.right ) &amp;&amp; ( n.parent === g.left ) ) {
 
-  //n = n.right;
- }
- insert_case5(n);
+		rotate_left( n.parent ) ;
+
+		/**
+		 * rotate_left can be the below because of already having *g =  grandparent(n)
+		 *
+		 * saved_p=g.left, *saved_left_n=n.left;
+		 * g.left=n;
+		 * n.left=saved_p;
+		 * saved_p.right=saved_left_n;
+		 *
+		 * and modify the parent&apos;s nodes properly
+		 */
+
+		// n = n.left; /!\ need to fix rotate, so that we can safely reference a node
+
+	}
+
+	/**
+	 * If the path from g to n makes a right-left, change it to a right-right
+	 * with {@link rotate_right}. Then call {@link insert_case5} on the old
+	 * parent of n.
+	 *
+	 *             B                     B
+	 *           /   \                 /   \
+	 *         B       R             B       R
+	 *        / \     / \   --&gt;     / \     / \
+	 *       -   -  &gt;R   =         -   -   =  &gt;R
+	 *              / \                       / \
+	 *             =   =                     =   =
+	 */
+
+	else if ( ( n === n.parent.left ) &amp;&amp; ( n.parent === g.right ) ) {
+
+		rotate_right( n.parent ) ;
+
+		/**
+		 * rotate_right can be the below to take advantage of already having *g =  grandparent(n)
+		 *
+		 * saved_p=g.right, *saved_right_n=n.right;
+		 * g.right=n;
+		 * n.right=saved_p;
+		 * saved_p.left=saved_right_n;
+		 *
+		 */
+
+		// n = n.right ;
+	}
+
+	insert_case5( n ) ;
+
 }
 </code></pre>
 

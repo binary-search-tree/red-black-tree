@@ -90,7 +90,27 @@
           "line": 1,
           "column": 47
         }
-      }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *\n * @param {Node} n - The input node.\n ",
+          "range": [
+            49,
+            262
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 10,
+              "column": 3
+            }
+          }
+        }
+      ]
     },
     {
       "type": "ExportNamedDeclaration",
@@ -100,16 +120,16 @@
           "type": "Identifier",
           "name": "delete_case1",
           "range": [
-            65,
-            77
+            279,
+            291
           ],
           "loc": {
             "start": {
-              "line": 3,
+              "line": 11,
               "column": 16
             },
             "end": {
-              "line": 3,
+              "line": 11,
               "column": 28
             }
           }
@@ -119,16 +139,16 @@
             "type": "Identifier",
             "name": "n",
             "range": [
-              80,
-              81
+              294,
+              295
             ],
             "loc": {
               "start": {
-                "line": 3,
+                "line": 11,
                 "column": 31
               },
               "end": {
-                "line": 3,
+                "line": 11,
                 "column": 32
               }
             }
@@ -149,16 +169,16 @@
                     "type": "Identifier",
                     "name": "n",
                     "range": [
-                      96,
-                      97
+                      406,
+                      407
                     ],
                     "loc": {
                       "start": {
-                        "line": 5,
+                        "line": 15,
                         "column": 9
                       },
                       "end": {
-                        "line": 5,
+                        "line": 15,
                         "column": 10
                       }
                     }
@@ -167,31 +187,31 @@
                     "type": "Identifier",
                     "name": "parent",
                     "range": [
-                      98,
-                      104
+                      408,
+                      414
                     ],
                     "loc": {
                       "start": {
-                        "line": 5,
+                        "line": 15,
                         "column": 11
                       },
                       "end": {
-                        "line": 5,
+                        "line": 15,
                         "column": 17
                       }
                     }
                   },
                   "range": [
-                    96,
-                    104
+                    406,
+                    414
                   ],
                   "loc": {
                     "start": {
-                      "line": 5,
+                      "line": 15,
                       "column": 9
                     },
                     "end": {
-                      "line": 5,
+                      "line": 15,
                       "column": 17
                     }
                   }
@@ -201,31 +221,31 @@
                   "value": null,
                   "raw": "null",
                   "range": [
-                    109,
-                    113
+                    419,
+                    423
                   ],
                   "loc": {
                     "start": {
-                      "line": 5,
+                      "line": 15,
                       "column": 22
                     },
                     "end": {
-                      "line": 5,
+                      "line": 15,
                       "column": 26
                     }
                   }
                 },
                 "range": [
-                  96,
-                  113
+                  406,
+                  423
                 ],
                 "loc": {
                   "start": {
-                    "line": 5,
+                    "line": 15,
                     "column": 9
                   },
                   "end": {
-                    "line": 5,
+                    "line": 15,
                     "column": 26
                   }
                 }
@@ -238,16 +258,16 @@
                     "type": "Identifier",
                     "name": "delete_case2",
                     "range": [
-                      116,
-                      128
+                      426,
+                      438
                     ],
                     "loc": {
                       "start": {
-                        "line": 5,
+                        "line": 15,
                         "column": 29
                       },
                       "end": {
-                        "line": 5,
+                        "line": 15,
                         "column": 41
                       }
                     }
@@ -257,79 +277,117 @@
                       "type": "Identifier",
                       "name": "n",
                       "range": [
-                        130,
-                        131
+                        440,
+                        441
                       ],
                       "loc": {
                         "start": {
-                          "line": 5,
+                          "line": 15,
                           "column": 43
                         },
                         "end": {
-                          "line": 5,
+                          "line": 15,
                           "column": 44
                         }
                       }
                     }
                   ],
                   "range": [
-                    116,
-                    133
+                    426,
+                    443
                   ],
                   "loc": {
                     "start": {
-                      "line": 5,
+                      "line": 15,
                       "column": 29
                     },
                     "end": {
-                      "line": 5,
+                      "line": 15,
                       "column": 46
                     }
                   }
                 },
                 "range": [
-                  116,
-                  135
+                  426,
+                  445
                 ],
                 "loc": {
                   "start": {
-                    "line": 5,
+                    "line": 15,
                     "column": 29
                   },
                   "end": {
-                    "line": 5,
+                    "line": 15,
                     "column": 48
                   }
                 }
               },
               "alternate": null,
               "range": [
-                91,
-                135
+                401,
+                445
               ],
               "loc": {
                 "start": {
-                  "line": 5,
+                  "line": 15,
                   "column": 4
                 },
                 "end": {
-                  "line": 5,
+                  "line": 15,
                   "column": 48
                 }
-              }
+              },
+              "leadingComments": [
+                {
+                  "type": "Line",
+                  "value": " If n is the root, there is nothing to do: all paths go through n, and n",
+                  "range": [
+                    305,
+                    379
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 13,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 13,
+                      "column": 78
+                    }
+                  }
+                },
+                {
+                  "type": "Line",
+                  "value": " is black.",
+                  "range": [
+                    384,
+                    396
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 14,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 14,
+                      "column": 16
+                    }
+                  }
+                }
+              ]
             }
           ],
           "range": [
-            84,
-            138
+            298,
+            448
           ],
           "loc": {
             "start": {
-              "line": 3,
+              "line": 11,
               "column": 35
             },
             "end": {
-              "line": 7,
+              "line": 17,
               "column": 1
             }
           }
@@ -337,44 +395,83 @@
         "generator": false,
         "expression": false,
         "range": [
-          56,
-          138
+          270,
+          448
         ],
         "loc": {
           "start": {
-            "line": 3,
+            "line": 11,
             "column": 7
           },
           "end": {
-            "line": 7,
+            "line": 17,
             "column": 1
           }
         },
-        "leadingComments": [],
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *\n * @param {Node} n - The input node.\n ",
+            "range": [
+              49,
+              262
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 0
+              },
+              "end": {
+                "line": 10,
+                "column": 3
+              }
+            }
+          }
+        ],
         "trailingComments": []
       },
       "specifiers": [],
       "source": null,
       "range": [
-        49,
-        138
+        263,
+        448
       ],
       "loc": {
         "start": {
-          "line": 3,
+          "line": 11,
           "column": 0
         },
         "end": {
-          "line": 7,
+          "line": 17,
           "column": 1
         }
-      }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *\n * @param {Node} n - The input node.\n ",
+          "range": [
+            49,
+            262
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 10,
+              "column": 3
+            }
+          }
+        }
+      ]
     }
   ],
   "sourceType": "module",
   "range": [
     0,
-    138
+    448
   ],
   "loc": {
     "start": {
@@ -382,9 +479,64 @@
       "column": 0
     },
     "end": {
-      "line": 7,
+      "line": 17,
       "column": 1
     }
   },
-  "comments": []
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *\n * @param {Node} n - The input node.\n ",
+      "range": [
+        49,
+        262
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 10,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " If n is the root, there is nothing to do: all paths go through n, and n",
+      "range": [
+        305,
+        379
+      ],
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 4
+        },
+        "end": {
+          "line": 13,
+          "column": 78
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " is black.",
+      "range": [
+        384,
+        396
+      ],
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 4
+        },
+        "end": {
+          "line": 14,
+          "column": 16
+        }
+      }
+    }
+  ]
 }

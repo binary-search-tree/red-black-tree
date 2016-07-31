@@ -9,16 +9,16 @@
           "type": "Identifier",
           "name": "predecessor",
           "range": [
-            16,
-            27
+            223,
+            234
           ],
           "loc": {
             "start": {
-              "line": 1,
+              "line": 8,
               "column": 16
             },
             "end": {
-              "line": 1,
+              "line": 8,
               "column": 27
             }
           }
@@ -28,16 +28,16 @@
             "type": "Identifier",
             "name": "node",
             "range": [
-              30,
-              34
+              237,
+              241
             ],
             "loc": {
               "start": {
-                "line": 1,
+                "line": 8,
                 "column": 30
               },
               "end": {
-                "line": 1,
+                "line": 8,
                 "column": 34
               }
             }
@@ -55,16 +55,16 @@
                     "type": "Identifier",
                     "name": "pred",
                     "range": [
-                      45,
-                      49
+                      288,
+                      292
                     ],
                     "loc": {
                       "start": {
-                        "line": 3,
+                        "line": 11,
                         "column": 5
                       },
                       "end": {
-                        "line": 3,
+                        "line": 11,
                         "column": 9
                       }
                     }
@@ -76,16 +76,16 @@
                       "type": "Identifier",
                       "name": "node",
                       "range": [
-                        52,
-                        56
+                        295,
+                        299
                       ],
                       "loc": {
                         "start": {
-                          "line": 3,
+                          "line": 11,
                           "column": 12
                         },
                         "end": {
-                          "line": 3,
+                          "line": 11,
                           "column": 16
                         }
                       }
@@ -94,66 +94,86 @@
                       "type": "Identifier",
                       "name": "left",
                       "range": [
-                        57,
-                        61
+                        300,
+                        304
                       ],
                       "loc": {
                         "start": {
-                          "line": 3,
+                          "line": 11,
                           "column": 17
                         },
                         "end": {
-                          "line": 3,
+                          "line": 11,
                           "column": 21
                         }
                       }
                     },
                     "range": [
-                      52,
-                      61
+                      295,
+                      304
                     ],
                     "loc": {
                       "start": {
-                        "line": 3,
+                        "line": 11,
                         "column": 12
                       },
                       "end": {
-                        "line": 3,
+                        "line": 11,
                         "column": 21
                       }
                     }
                   },
                   "range": [
-                    45,
-                    61
+                    288,
+                    304
                   ],
                   "loc": {
                     "start": {
-                      "line": 3,
+                      "line": 11,
                       "column": 5
                     },
                     "end": {
-                      "line": 3,
+                      "line": 11,
                       "column": 21
                     }
                   }
                 }
               ],
-              "kind": "var",
+              "kind": "let",
               "range": [
-                41,
-                63
+                284,
+                306
               ],
               "loc": {
                 "start": {
-                  "line": 3,
+                  "line": 11,
                   "column": 1
                 },
                 "end": {
-                  "line": 3,
+                  "line": 11,
                   "column": 23
                 }
-              }
+              },
+              "leadingComments": [
+                {
+                  "type": "Line",
+                  "value": " assert( !node.left.isleaf() ) ;",
+                  "range": [
+                    248,
+                    282
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 10,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 10,
+                      "column": 35
+                    }
+                  }
+                }
+              ]
             },
             {
               "type": "WhileStatement",
@@ -172,16 +192,16 @@
                         "type": "Identifier",
                         "name": "pred",
                         "range": [
-                          75,
-                          79
+                          318,
+                          322
                         ],
                         "loc": {
                           "start": {
-                            "line": 5,
+                            "line": 13,
                             "column": 10
                           },
                           "end": {
-                            "line": 5,
+                            "line": 13,
                             "column": 14
                           }
                         }
@@ -190,31 +210,31 @@
                         "type": "Identifier",
                         "name": "right",
                         "range": [
-                          80,
-                          85
+                          323,
+                          328
                         ],
                         "loc": {
                           "start": {
-                            "line": 5,
+                            "line": 13,
                             "column": 15
                           },
                           "end": {
-                            "line": 5,
+                            "line": 13,
                             "column": 20
                           }
                         }
                       },
                       "range": [
-                        75,
-                        85
+                        318,
+                        328
                       ],
                       "loc": {
                         "start": {
-                          "line": 5,
+                          "line": 13,
                           "column": 10
                         },
                         "end": {
-                          "line": 5,
+                          "line": 13,
                           "column": 20
                         }
                       }
@@ -223,63 +243,63 @@
                       "type": "Identifier",
                       "name": "isleaf",
                       "range": [
-                        86,
-                        92
+                        329,
+                        335
                       ],
                       "loc": {
                         "start": {
-                          "line": 5,
+                          "line": 13,
                           "column": 21
                         },
                         "end": {
-                          "line": 5,
+                          "line": 13,
                           "column": 27
                         }
                       }
                     },
                     "range": [
-                      75,
-                      92
+                      318,
+                      335
                     ],
                     "loc": {
                       "start": {
-                        "line": 5,
+                        "line": 13,
                         "column": 10
                       },
                       "end": {
-                        "line": 5,
+                        "line": 13,
                         "column": 27
                       }
                     }
                   },
                   "arguments": [],
                   "range": [
-                    75,
-                    94
+                    318,
+                    337
                   ],
                   "loc": {
                     "start": {
-                      "line": 5,
+                      "line": 13,
                       "column": 10
                     },
                     "end": {
-                      "line": 5,
+                      "line": 13,
                       "column": 29
                     }
                   }
                 },
                 "prefix": true,
                 "range": [
-                  74,
-                  94
+                  317,
+                  337
                 ],
                 "loc": {
                   "start": {
-                    "line": 5,
+                    "line": 13,
                     "column": 9
                   },
                   "end": {
-                    "line": 5,
+                    "line": 13,
                     "column": 29
                   }
                 }
@@ -293,16 +313,16 @@
                     "type": "Identifier",
                     "name": "pred",
                     "range": [
-                      97,
-                      101
+                      340,
+                      344
                     ],
                     "loc": {
                       "start": {
-                        "line": 5,
+                        "line": 13,
                         "column": 32
                       },
                       "end": {
-                        "line": 5,
+                        "line": 13,
                         "column": 36
                       }
                     }
@@ -314,16 +334,16 @@
                       "type": "Identifier",
                       "name": "pred",
                       "range": [
-                        104,
-                        108
+                        347,
+                        351
                       ],
                       "loc": {
                         "start": {
-                          "line": 5,
+                          "line": 13,
                           "column": 39
                         },
                         "end": {
-                          "line": 5,
+                          "line": 13,
                           "column": 43
                         }
                       }
@@ -332,76 +352,76 @@
                       "type": "Identifier",
                       "name": "right",
                       "range": [
-                        109,
-                        114
+                        352,
+                        357
                       ],
                       "loc": {
                         "start": {
-                          "line": 5,
+                          "line": 13,
                           "column": 44
                         },
                         "end": {
-                          "line": 5,
+                          "line": 13,
                           "column": 49
                         }
                       }
                     },
                     "range": [
-                      104,
-                      114
+                      347,
+                      357
                     ],
                     "loc": {
                       "start": {
-                        "line": 5,
+                        "line": 13,
                         "column": 39
                       },
                       "end": {
-                        "line": 5,
+                        "line": 13,
                         "column": 49
                       }
                     }
                   },
                   "range": [
-                    97,
-                    114
+                    340,
+                    357
                   ],
                   "loc": {
                     "start": {
-                      "line": 5,
+                      "line": 13,
                       "column": 32
                     },
                     "end": {
-                      "line": 5,
+                      "line": 13,
                       "column": 49
                     }
                   }
                 },
                 "range": [
-                  97,
-                  116
+                  340,
+                  359
                 ],
                 "loc": {
                   "start": {
-                    "line": 5,
+                    "line": 13,
                     "column": 32
                   },
                   "end": {
-                    "line": 5,
+                    "line": 13,
                     "column": 51
                   }
                 }
               },
               "range": [
-                66,
-                116
+                309,
+                359
               ],
               "loc": {
                 "start": {
-                  "line": 5,
+                  "line": 13,
                   "column": 1
                 },
                 "end": {
-                  "line": 5,
+                  "line": 13,
                   "column": 51
                 }
               }
@@ -412,47 +432,47 @@
                 "type": "Identifier",
                 "name": "pred",
                 "range": [
-                  126,
-                  130
+                  369,
+                  373
                 ],
                 "loc": {
                   "start": {
-                    "line": 7,
+                    "line": 15,
                     "column": 8
                   },
                   "end": {
-                    "line": 7,
+                    "line": 15,
                     "column": 12
                   }
                 }
               },
               "range": [
-                119,
-                132
+                362,
+                375
               ],
               "loc": {
                 "start": {
-                  "line": 7,
+                  "line": 15,
                   "column": 1
                 },
                 "end": {
-                  "line": 7,
+                  "line": 15,
                   "column": 14
                 }
               }
             }
           ],
           "range": [
-            37,
-            135
+            244,
+            378
           ],
           "loc": {
             "start": {
-              "line": 1,
+              "line": 8,
               "column": 37
             },
             "end": {
-              "line": 9,
+              "line": 17,
               "column": 1
             }
           }
@@ -460,27 +480,101 @@
         "generator": false,
         "expression": false,
         "range": [
-          7,
-          135
+          214,
+          378
         ],
         "loc": {
           "start": {
-            "line": 1,
+            "line": 8,
             "column": 7
           },
           "end": {
-            "line": 9,
+            "line": 17,
             "column": 1
           }
         },
-        "leadingComments": [],
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Computes the predecessor of the input node, in the subtree rooted at the\n * input node, when this predecessor is guaranteed to exist.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n ",
+            "range": [
+              0,
+              206
+            ],
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 0
+              },
+              "end": {
+                "line": 7,
+                "column": 3
+              }
+            }
+          }
+        ],
         "trailingComments": []
       },
       "specifiers": [],
       "source": null,
       "range": [
+        207,
+        378
+      ],
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 17,
+          "column": 1
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Computes the predecessor of the input node, in the subtree rooted at the\n * input node, when this predecessor is guaranteed to exist.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n ",
+          "range": [
+            0,
+            206
+          ],
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 7,
+              "column": 3
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    207,
+    378
+  ],
+  "loc": {
+    "start": {
+      "line": 8,
+      "column": 0
+    },
+    "end": {
+      "line": 17,
+      "column": 1
+    }
+  },
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\n * Computes the predecessor of the input node, in the subtree rooted at the\n * input node, when this predecessor is guaranteed to exist.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n ",
+      "range": [
         0,
-        135
+        206
       ],
       "loc": {
         "start": {
@@ -488,26 +582,28 @@
           "column": 0
         },
         "end": {
-          "line": 9,
+          "line": 7,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " assert( !node.left.isleaf() ) ;",
+      "range": [
+        248,
+        282
+      ],
+      "loc": {
+        "start": {
+          "line": 10,
           "column": 1
+        },
+        "end": {
+          "line": 10,
+          "column": 35
         }
       }
     }
-  ],
-  "sourceType": "module",
-  "range": [
-    0,
-    135
-  ],
-  "loc": {
-    "start": {
-      "line": 1,
-      "column": 0
-    },
-    "end": {
-      "line": 9,
-      "column": 1
-    }
-  },
-  "comments": []
+  ]
 }

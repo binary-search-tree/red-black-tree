@@ -36,45 +36,45 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/removal/delete_case1.js~delete_case1",
+    "aureooms-es-red-black-tree/src/deletion/delete_case1.js~delete_case1",
     "function/index.html#static-function-delete_case1",
-    "<span>delete_case1</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/removal/delete_case1.js</span>",
+    "<span>delete_case1</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/deletion/delete_case1.js</span>",
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/removal/delete_case2.js~delete_case2",
+    "aureooms-es-red-black-tree/src/deletion/delete_case2.js~delete_case2",
     "function/index.html#static-function-delete_case2",
-    "<span>delete_case2</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/removal/delete_case2.js</span>",
+    "<span>delete_case2</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/deletion/delete_case2.js</span>",
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/removal/delete_case3.js~delete_case3",
+    "aureooms-es-red-black-tree/src/deletion/delete_case3.js~delete_case3",
     "function/index.html#static-function-delete_case3",
-    "<span>delete_case3</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/removal/delete_case3.js</span>",
+    "<span>delete_case3</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/deletion/delete_case3.js</span>",
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/removal/delete_case4.js~delete_case4",
+    "aureooms-es-red-black-tree/src/deletion/delete_case4.js~delete_case4",
     "function/index.html#static-function-delete_case4",
-    "<span>delete_case4</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/removal/delete_case4.js</span>",
+    "<span>delete_case4</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/deletion/delete_case4.js</span>",
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/removal/delete_case5.js~delete_case5",
+    "aureooms-es-red-black-tree/src/deletion/delete_case5.js~delete_case5",
     "function/index.html#static-function-delete_case5",
-    "<span>delete_case5</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/removal/delete_case5.js</span>",
+    "<span>delete_case5</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/deletion/delete_case5.js</span>",
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/removal/delete_case6.js~delete_case6",
+    "aureooms-es-red-black-tree/src/deletion/delete_case6.js~delete_case6",
     "function/index.html#static-function-delete_case6",
-    "<span>delete_case6</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/removal/delete_case6.js</span>",
+    "<span>delete_case6</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/deletion/delete_case6.js</span>",
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/removal/delete_one_child.js~delete_one_child",
+    "aureooms-es-red-black-tree/src/deletion/delete_one_child.js~delete_one_child",
     "function/index.html#static-function-delete_one_child",
-    "<span>delete_one_child</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/removal/delete_one_child.js</span>",
+    "<span>delete_one_child</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/deletion/delete_one_child.js</span>",
     "function"
   ],
   [
@@ -138,9 +138,9 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "aureooms-es-red-black-tree/src/removal/replace_node.js~replace_node",
+    "aureooms-es-red-black-tree/src/deletion/replace_node.js~replace_node",
     "function/index.html#static-function-replace_node",
-    "<span>replace_node</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/removal/replace_node.js</span>",
+    "<span>replace_node</span> <span class=\"search-result-import-path\">aureooms-es-red-black-tree/src/deletion/replace_node.js</span>",
     "function"
   ],
   [
@@ -570,6 +570,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/adt/redblacktree.js~redblacktree#items",
+    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-items",
+    "src/adt/RedBlackTree.js~RedBlackTree#items",
+    "method"
+  ],
+  [
     "src/adt/redblacktree.js~redblacktree#range",
     "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-range",
     "src/adt/RedBlackTree.js~RedBlackTree#range",
@@ -586,12 +592,6 @@ window.esdocSearchIndex = [
     "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-member-root",
     "src/adt/RedBlackTree.js~RedBlackTree#root",
     "member"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#values",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-values",
-    "src/adt/RedBlackTree.js~RedBlackTree#values",
-    "method"
   ],
   [
     "src/adt/redblacktree.js~redblacktree.from",
@@ -633,6 +633,60 @@ window.esdocSearchIndex = [
     "src/debug/index.js",
     "file/src/debug/index.js.html",
     "src/debug/index.js",
+    "file"
+  ],
+  [
+    "src/deletion/delete_case1.js",
+    "file/src/deletion/delete_case1.js.html",
+    "src/deletion/delete_case1.js",
+    "file"
+  ],
+  [
+    "src/deletion/delete_case2.js",
+    "file/src/deletion/delete_case2.js.html",
+    "src/deletion/delete_case2.js",
+    "file"
+  ],
+  [
+    "src/deletion/delete_case3.js",
+    "file/src/deletion/delete_case3.js.html",
+    "src/deletion/delete_case3.js",
+    "file"
+  ],
+  [
+    "src/deletion/delete_case4.js",
+    "file/src/deletion/delete_case4.js.html",
+    "src/deletion/delete_case4.js",
+    "file"
+  ],
+  [
+    "src/deletion/delete_case5.js",
+    "file/src/deletion/delete_case5.js.html",
+    "src/deletion/delete_case5.js",
+    "file"
+  ],
+  [
+    "src/deletion/delete_case6.js",
+    "file/src/deletion/delete_case6.js.html",
+    "src/deletion/delete_case6.js",
+    "file"
+  ],
+  [
+    "src/deletion/delete_one_child.js",
+    "file/src/deletion/delete_one_child.js.html",
+    "src/deletion/delete_one_child.js",
+    "file"
+  ],
+  [
+    "src/deletion/index.js",
+    "file/src/deletion/index.js.html",
+    "src/deletion/index.js",
+    "file"
+  ],
+  [
+    "src/deletion/replace_node.js",
+    "file/src/deletion/replace_node.js.html",
+    "src/deletion/replace_node.js",
     "file"
   ],
   [
@@ -711,60 +765,6 @@ window.esdocSearchIndex = [
     "src/insertion/insert_case5.js",
     "file/src/insertion/insert_case5.js.html",
     "src/insertion/insert_case5.js",
-    "file"
-  ],
-  [
-    "src/removal/delete_case1.js",
-    "file/src/removal/delete_case1.js.html",
-    "src/removal/delete_case1.js",
-    "file"
-  ],
-  [
-    "src/removal/delete_case2.js",
-    "file/src/removal/delete_case2.js.html",
-    "src/removal/delete_case2.js",
-    "file"
-  ],
-  [
-    "src/removal/delete_case3.js",
-    "file/src/removal/delete_case3.js.html",
-    "src/removal/delete_case3.js",
-    "file"
-  ],
-  [
-    "src/removal/delete_case4.js",
-    "file/src/removal/delete_case4.js.html",
-    "src/removal/delete_case4.js",
-    "file"
-  ],
-  [
-    "src/removal/delete_case5.js",
-    "file/src/removal/delete_case5.js.html",
-    "src/removal/delete_case5.js",
-    "file"
-  ],
-  [
-    "src/removal/delete_case6.js",
-    "file/src/removal/delete_case6.js.html",
-    "src/removal/delete_case6.js",
-    "file"
-  ],
-  [
-    "src/removal/delete_one_child.js",
-    "file/src/removal/delete_one_child.js.html",
-    "src/removal/delete_one_child.js",
-    "file"
-  ],
-  [
-    "src/removal/index.js",
-    "file/src/removal/index.js.html",
-    "src/removal/index.js",
-    "file"
-  ],
-  [
-    "src/removal/replace_node.js",
-    "file/src/removal/replace_node.js.html",
-    "src/removal/replace_node.js",
     "file"
   ],
   [

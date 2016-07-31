@@ -287,7 +287,27 @@
           "line": 3,
           "column": 47
         }
-      }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Preconditions:\n *   - n is red.\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *   - n's uncle is black.\n *\n * Here we fix the input subtree to pass the preconditions of {@link insert_case5}.\n *\n * @param {Node} n - The input node.\n ",
+          "range": [
+            114,
+            374
+          ],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 0
+            },
+            "end": {
+              "line": 15,
+              "column": 3
+            }
+          }
+        }
+      ]
     },
     {
       "type": "ExportNamedDeclaration",
@@ -297,16 +317,16 @@
           "type": "Identifier",
           "name": "insert_case4",
           "range": [
-            130,
-            142
+            391,
+            403
           ],
           "loc": {
             "start": {
-              "line": 5,
+              "line": 16,
               "column": 16
             },
             "end": {
-              "line": 5,
+              "line": 16,
               "column": 28
             }
           }
@@ -316,17 +336,17 @@
             "type": "Identifier",
             "name": "n",
             "range": [
-              143,
-              144
+              406,
+              407
             ],
             "loc": {
               "start": {
-                "line": 5,
-                "column": 29
+                "line": 16,
+                "column": 31
               },
               "end": {
-                "line": 5,
-                "column": 30
+                "line": 16,
+                "column": 32
               }
             }
           }
@@ -343,16 +363,16 @@
                     "type": "Identifier",
                     "name": "g",
                     "range": [
-                      155,
-                      156
+                      420,
+                      421
                     ],
                     "loc": {
                       "start": {
-                        "line": 7,
+                        "line": 18,
                         "column": 7
                       },
                       "end": {
-                        "line": 7,
+                        "line": 18,
                         "column": 8
                       }
                     }
@@ -363,16 +383,16 @@
                       "type": "Identifier",
                       "name": "grandparent",
                       "range": [
-                        159,
-                        170
+                        424,
+                        435
                       ],
                       "loc": {
                         "start": {
-                          "line": 7,
+                          "line": 18,
                           "column": 11
                         },
                         "end": {
-                          "line": 7,
+                          "line": 18,
                           "column": 22
                         }
                       }
@@ -382,67 +402,87 @@
                         "type": "Identifier",
                         "name": "n",
                         "range": [
-                          171,
-                          172
+                          437,
+                          438
                         ],
                         "loc": {
                           "start": {
-                            "line": 7,
-                            "column": 23
+                            "line": 18,
+                            "column": 24
                           },
                           "end": {
-                            "line": 7,
-                            "column": 24
+                            "line": 18,
+                            "column": 25
                           }
                         }
                       }
                     ],
                     "range": [
-                      159,
-                      173
+                      424,
+                      440
                     ],
                     "loc": {
                       "start": {
-                        "line": 7,
+                        "line": 18,
                         "column": 11
                       },
                       "end": {
-                        "line": 7,
-                        "column": 25
+                        "line": 18,
+                        "column": 27
                       }
                     }
                   },
                   "range": [
-                    155,
-                    173
+                    420,
+                    440
                   ],
                   "loc": {
                     "start": {
-                      "line": 7,
+                      "line": 18,
                       "column": 7
                     },
                     "end": {
-                      "line": 7,
-                      "column": 25
+                      "line": 18,
+                      "column": 27
                     }
                   }
                 }
               ],
               "kind": "const",
               "range": [
-                149,
-                174
+                414,
+                442
               ],
               "loc": {
                 "start": {
-                  "line": 7,
+                  "line": 18,
                   "column": 1
                 },
                 "end": {
-                  "line": 7,
-                  "column": 26
+                  "line": 18,
+                  "column": 29
                 }
-              }
+              },
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n\t * If the path from g to n makes a left-right, change it to a left-left\n\t * with {@link rotate_left}. Then call {@link insert_case5} on the old\n\t * parent of n.\n\t *\n\t *             B                     B\n\t *           /   \\                 /   \\\n\t *         R       B             R       B\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       =  >R   -   -        >R   =   -   -\n\t *          / \\               / \\\n\t *         =   =             =   =\n\t ",
+                  "range": [
+                    445,
+                    907
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 20,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 32,
+                      "column": 4
+                    }
+                  }
+                }
+              ]
             },
             {
               "type": "IfStatement",
@@ -456,17 +496,17 @@
                     "type": "Identifier",
                     "name": "n",
                     "range": [
-                      182,
-                      183
+                      917,
+                      918
                     ],
                     "loc": {
                       "start": {
-                        "line": 9,
-                        "column": 6
+                        "line": 34,
+                        "column": 8
                       },
                       "end": {
-                        "line": 9,
-                        "column": 7
+                        "line": 34,
+                        "column": 9
                       }
                     }
                   },
@@ -480,17 +520,17 @@
                         "type": "Identifier",
                         "name": "n",
                         "range": [
-                          188,
-                          189
+                          923,
+                          924
                         ],
                         "loc": {
                           "start": {
-                            "line": 9,
-                            "column": 12
+                            "line": 34,
+                            "column": 14
                           },
                           "end": {
-                            "line": 9,
-                            "column": 13
+                            "line": 34,
+                            "column": 15
                           }
                         }
                       },
@@ -498,32 +538,32 @@
                         "type": "Identifier",
                         "name": "parent",
                         "range": [
-                          190,
-                          196
+                          925,
+                          931
                         ],
                         "loc": {
                           "start": {
-                            "line": 9,
-                            "column": 14
+                            "line": 34,
+                            "column": 16
                           },
                           "end": {
-                            "line": 9,
-                            "column": 20
+                            "line": 34,
+                            "column": 22
                           }
                         }
                       },
                       "range": [
-                        188,
-                        196
+                        923,
+                        931
                       ],
                       "loc": {
                         "start": {
-                          "line": 9,
-                          "column": 12
+                          "line": 34,
+                          "column": 14
                         },
                         "end": {
-                          "line": 9,
-                          "column": 20
+                          "line": 34,
+                          "column": 22
                         }
                       }
                     },
@@ -531,47 +571,47 @@
                       "type": "Identifier",
                       "name": "right",
                       "range": [
-                        197,
-                        202
+                        932,
+                        937
                       ],
                       "loc": {
                         "start": {
-                          "line": 9,
-                          "column": 21
+                          "line": 34,
+                          "column": 23
                         },
                         "end": {
-                          "line": 9,
-                          "column": 26
+                          "line": 34,
+                          "column": 28
                         }
                       }
                     },
                     "range": [
-                      188,
-                      202
+                      923,
+                      937
                     ],
                     "loc": {
                       "start": {
-                        "line": 9,
-                        "column": 12
+                        "line": 34,
+                        "column": 14
                       },
                       "end": {
-                        "line": 9,
-                        "column": 26
+                        "line": 34,
+                        "column": 28
                       }
                     }
                   },
                   "range": [
-                    182,
-                    202
+                    917,
+                    937
                   ],
                   "loc": {
                     "start": {
-                      "line": 9,
-                      "column": 6
+                      "line": 34,
+                      "column": 8
                     },
                     "end": {
-                      "line": 9,
-                      "column": 26
+                      "line": 34,
+                      "column": 28
                     }
                   }
                 },
@@ -585,17 +625,17 @@
                       "type": "Identifier",
                       "name": "n",
                       "range": [
-                        208,
-                        209
+                        945,
+                        946
                       ],
                       "loc": {
                         "start": {
-                          "line": 9,
-                          "column": 32
+                          "line": 34,
+                          "column": 36
                         },
                         "end": {
-                          "line": 9,
-                          "column": 33
+                          "line": 34,
+                          "column": 37
                         }
                       }
                     },
@@ -603,32 +643,32 @@
                       "type": "Identifier",
                       "name": "parent",
                       "range": [
-                        210,
-                        216
+                        947,
+                        953
                       ],
                       "loc": {
                         "start": {
-                          "line": 9,
-                          "column": 34
+                          "line": 34,
+                          "column": 38
                         },
                         "end": {
-                          "line": 9,
-                          "column": 40
+                          "line": 34,
+                          "column": 44
                         }
                       }
                     },
                     "range": [
-                      208,
-                      216
+                      945,
+                      953
                     ],
                     "loc": {
                       "start": {
-                        "line": 9,
-                        "column": 32
+                        "line": 34,
+                        "column": 36
                       },
                       "end": {
-                        "line": 9,
-                        "column": 40
+                        "line": 34,
+                        "column": 44
                       }
                     }
                   },
@@ -639,17 +679,17 @@
                       "type": "Identifier",
                       "name": "g",
                       "range": [
-                        221,
-                        222
+                        958,
+                        959
                       ],
                       "loc": {
                         "start": {
-                          "line": 9,
-                          "column": 45
+                          "line": 34,
+                          "column": 49
                         },
                         "end": {
-                          "line": 9,
-                          "column": 46
+                          "line": 34,
+                          "column": 50
                         }
                       }
                     },
@@ -657,62 +697,62 @@
                       "type": "Identifier",
                       "name": "left",
                       "range": [
-                        223,
-                        227
+                        960,
+                        964
                       ],
                       "loc": {
                         "start": {
-                          "line": 9,
-                          "column": 47
+                          "line": 34,
+                          "column": 51
                         },
                         "end": {
-                          "line": 9,
-                          "column": 51
+                          "line": 34,
+                          "column": 55
                         }
                       }
                     },
                     "range": [
-                      221,
-                      227
+                      958,
+                      964
                     ],
                     "loc": {
                       "start": {
-                        "line": 9,
-                        "column": 45
+                        "line": 34,
+                        "column": 49
                       },
                       "end": {
-                        "line": 9,
-                        "column": 51
+                        "line": 34,
+                        "column": 55
                       }
                     }
                   },
                   "range": [
-                    208,
-                    227
+                    945,
+                    964
                   ],
                   "loc": {
                     "start": {
-                      "line": 9,
-                      "column": 32
+                      "line": 34,
+                      "column": 36
                     },
                     "end": {
-                      "line": 9,
-                      "column": 51
+                      "line": 34,
+                      "column": 55
                     }
                   }
                 },
                 "range": [
-                  181,
-                  228
+                  915,
+                  966
                 ],
                 "loc": {
                   "start": {
-                    "line": 9,
-                    "column": 5
+                    "line": 34,
+                    "column": 6
                   },
                   "end": {
-                    "line": 9,
-                    "column": 52
+                    "line": 34,
+                    "column": 57
                   }
                 }
               },
@@ -727,16 +767,16 @@
                         "type": "Identifier",
                         "name": "rotate_left",
                         "range": [
-                          234,
-                          245
+                          974,
+                          985
                         ],
                         "loc": {
                           "start": {
-                            "line": 10,
+                            "line": 36,
                             "column": 2
                           },
                           "end": {
-                            "line": 10,
+                            "line": 36,
                             "column": 13
                           }
                         }
@@ -749,17 +789,17 @@
                             "type": "Identifier",
                             "name": "n",
                             "range": [
-                              246,
-                              247
+                              987,
+                              988
                             ],
                             "loc": {
                               "start": {
-                                "line": 10,
-                                "column": 14
+                                "line": 36,
+                                "column": 15
                               },
                               "end": {
-                                "line": 10,
-                                "column": 15
+                                "line": 36,
+                                "column": 16
                               }
                             }
                           },
@@ -767,99 +807,99 @@
                             "type": "Identifier",
                             "name": "parent",
                             "range": [
-                              248,
-                              254
+                              989,
+                              995
                             ],
                             "loc": {
                               "start": {
-                                "line": 10,
-                                "column": 16
+                                "line": 36,
+                                "column": 17
                               },
                               "end": {
-                                "line": 10,
-                                "column": 22
+                                "line": 36,
+                                "column": 23
                               }
                             }
                           },
                           "range": [
-                            246,
-                            254
+                            987,
+                            995
                           ],
                           "loc": {
                             "start": {
-                              "line": 10,
-                              "column": 14
+                              "line": 36,
+                              "column": 15
                             },
                             "end": {
-                              "line": 10,
-                              "column": 22
+                              "line": 36,
+                              "column": 23
                             }
                           }
                         }
                       ],
                       "range": [
-                        234,
-                        255
+                        974,
+                        997
                       ],
                       "loc": {
                         "start": {
-                          "line": 10,
+                          "line": 36,
                           "column": 2
                         },
                         "end": {
-                          "line": 10,
-                          "column": 23
+                          "line": 36,
+                          "column": 25
                         }
                       }
                     },
                     "range": [
-                      234,
-                      256
+                      974,
+                      999
                     ],
                     "loc": {
                       "start": {
-                        "line": 10,
+                        "line": 36,
                         "column": 2
                       },
                       "end": {
-                        "line": 10,
-                        "column": 24
+                        "line": 36,
+                        "column": 27
                       }
                     },
                     "trailingComments": [
                       {
                         "type": "Block",
-                        "value": "\n * rotate_left can be the below because of already having *g =  grandparent(n)\n *\n * saved_p=g.left, *saved_left_n=n.left;\n * g.left=n;\n * n.left=saved_p;\n * saved_p.right=saved_left_n;\n *\n * and modify the parent's nodes properly\n ",
+                        "value": "*\n\t\t * rotate_left can be the below because of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.left, *saved_left_n=n.left;\n\t\t * g.left=n;\n\t\t * n.left=saved_p;\n\t\t * saved_p.right=saved_left_n;\n\t\t *\n\t\t * and modify the parent's nodes properly\n\t\t ",
                         "range": [
-                          259,
-                          496
+                          1003,
+                          1259
                         ],
                         "loc": {
                           "start": {
-                            "line": 12,
-                            "column": 1
+                            "line": 38,
+                            "column": 2
                           },
                           "end": {
-                            "line": 21,
-                            "column": 3
+                            "line": 47,
+                            "column": 5
                           }
                         }
                       },
                       {
                         "type": "Line",
-                        "value": "n = n.left; /!\\ need to fix rotate, so that we can safely reference a node",
+                        "value": " n = n.left; /!\\ need to fix rotate, so that we can safely reference a node",
                         "range": [
-                          500,
-                          576
+                          1263,
+                          1340
                         ],
                         "loc": {
                           "start": {
-                            "line": 23,
+                            "line": 49,
                             "column": 2
                           },
                           "end": {
-                            "line": 23,
-                            "column": 78
+                            "line": 49,
+                            "column": 79
                           }
                         }
                       }
@@ -867,19 +907,39 @@
                   }
                 ],
                 "range": [
-                  230,
-                  580
+                  969,
+                  1344
                 ],
                 "loc": {
                   "start": {
-                    "line": 9,
-                    "column": 54
+                    "line": 34,
+                    "column": 60
                   },
                   "end": {
-                    "line": 25,
+                    "line": 51,
                     "column": 2
                   }
-                }
+                },
+                "trailingComments": [
+                  {
+                    "type": "Block",
+                    "value": "*\n\t * If the path from g to n makes a right-left, change it to a right-right\n\t * with {@link rotate_right}. Then call {@link insert_case5} on the old\n\t * parent of n.\n\t *\n\t *             B                     B\n\t *           /   \\                 /   \\\n\t *         B       R             B       R\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       -   -  >R   =         -   -   =  >R\n\t *              / \\                       / \\\n\t *             =   =                     =   =\n\t ",
+                    "range": [
+                      1347,
+                      1836
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 53,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 65,
+                        "column": 4
+                      }
+                    }
+                  }
+                ]
               },
               "alternate": {
                 "type": "IfStatement",
@@ -893,16 +953,16 @@
                       "type": "Identifier",
                       "name": "n",
                       "range": [
-                        591,
-                        592
+                        1851,
+                        1852
                       ],
                       "loc": {
                         "start": {
-                          "line": 25,
+                          "line": 67,
                           "column": 13
                         },
                         "end": {
-                          "line": 25,
+                          "line": 67,
                           "column": 14
                         }
                       }
@@ -917,16 +977,16 @@
                           "type": "Identifier",
                           "name": "n",
                           "range": [
-                            597,
-                            598
+                            1857,
+                            1858
                           ],
                           "loc": {
                             "start": {
-                              "line": 25,
+                              "line": 67,
                               "column": 19
                             },
                             "end": {
-                              "line": 25,
+                              "line": 67,
                               "column": 20
                             }
                           }
@@ -935,31 +995,31 @@
                           "type": "Identifier",
                           "name": "parent",
                           "range": [
-                            599,
-                            605
+                            1859,
+                            1865
                           ],
                           "loc": {
                             "start": {
-                              "line": 25,
+                              "line": 67,
                               "column": 21
                             },
                             "end": {
-                              "line": 25,
+                              "line": 67,
                               "column": 27
                             }
                           }
                         },
                         "range": [
-                          597,
-                          605
+                          1857,
+                          1865
                         ],
                         "loc": {
                           "start": {
-                            "line": 25,
+                            "line": 67,
                             "column": 19
                           },
                           "end": {
-                            "line": 25,
+                            "line": 67,
                             "column": 27
                           }
                         }
@@ -968,46 +1028,46 @@
                         "type": "Identifier",
                         "name": "left",
                         "range": [
-                          606,
-                          610
+                          1866,
+                          1870
                         ],
                         "loc": {
                           "start": {
-                            "line": 25,
+                            "line": 67,
                             "column": 28
                           },
                           "end": {
-                            "line": 25,
+                            "line": 67,
                             "column": 32
                           }
                         }
                       },
                       "range": [
-                        597,
-                        610
+                        1857,
+                        1870
                       ],
                       "loc": {
                         "start": {
-                          "line": 25,
+                          "line": 67,
                           "column": 19
                         },
                         "end": {
-                          "line": 25,
+                          "line": 67,
                           "column": 32
                         }
                       }
                     },
                     "range": [
-                      591,
-                      610
+                      1851,
+                      1870
                     ],
                     "loc": {
                       "start": {
-                        "line": 25,
+                        "line": 67,
                         "column": 13
                       },
                       "end": {
-                        "line": 25,
+                        "line": 67,
                         "column": 32
                       }
                     }
@@ -1022,17 +1082,17 @@
                         "type": "Identifier",
                         "name": "n",
                         "range": [
-                          616,
-                          617
+                          1878,
+                          1879
                         ],
                         "loc": {
                           "start": {
-                            "line": 25,
-                            "column": 38
+                            "line": 67,
+                            "column": 40
                           },
                           "end": {
-                            "line": 25,
-                            "column": 39
+                            "line": 67,
+                            "column": 41
                           }
                         }
                       },
@@ -1040,32 +1100,32 @@
                         "type": "Identifier",
                         "name": "parent",
                         "range": [
-                          618,
-                          624
+                          1880,
+                          1886
                         ],
                         "loc": {
                           "start": {
-                            "line": 25,
-                            "column": 40
+                            "line": 67,
+                            "column": 42
                           },
                           "end": {
-                            "line": 25,
-                            "column": 46
+                            "line": 67,
+                            "column": 48
                           }
                         }
                       },
                       "range": [
-                        616,
-                        624
+                        1878,
+                        1886
                       ],
                       "loc": {
                         "start": {
-                          "line": 25,
-                          "column": 38
+                          "line": 67,
+                          "column": 40
                         },
                         "end": {
-                          "line": 25,
-                          "column": 46
+                          "line": 67,
+                          "column": 48
                         }
                       }
                     },
@@ -1076,17 +1136,17 @@
                         "type": "Identifier",
                         "name": "g",
                         "range": [
-                          629,
-                          630
+                          1891,
+                          1892
                         ],
                         "loc": {
                           "start": {
-                            "line": 25,
-                            "column": 51
+                            "line": 67,
+                            "column": 53
                           },
                           "end": {
-                            "line": 25,
-                            "column": 52
+                            "line": 67,
+                            "column": 54
                           }
                         }
                       },
@@ -1094,62 +1154,62 @@
                         "type": "Identifier",
                         "name": "right",
                         "range": [
-                          631,
-                          636
+                          1893,
+                          1898
                         ],
                         "loc": {
                           "start": {
-                            "line": 25,
-                            "column": 53
+                            "line": 67,
+                            "column": 55
                           },
                           "end": {
-                            "line": 25,
-                            "column": 58
+                            "line": 67,
+                            "column": 60
                           }
                         }
                       },
                       "range": [
-                        629,
-                        636
+                        1891,
+                        1898
                       ],
                       "loc": {
                         "start": {
-                          "line": 25,
-                          "column": 51
+                          "line": 67,
+                          "column": 53
                         },
                         "end": {
-                          "line": 25,
-                          "column": 58
+                          "line": 67,
+                          "column": 60
                         }
                       }
                     },
                     "range": [
-                      616,
-                      636
+                      1878,
+                      1898
                     ],
                     "loc": {
                       "start": {
-                        "line": 25,
-                        "column": 38
+                        "line": 67,
+                        "column": 40
                       },
                       "end": {
-                        "line": 25,
-                        "column": 58
+                        "line": 67,
+                        "column": 60
                       }
                     }
                   },
                   "range": [
-                    590,
-                    637
+                    1849,
+                    1900
                   ],
                   "loc": {
                     "start": {
-                      "line": 25,
-                      "column": 12
+                      "line": 67,
+                      "column": 11
                     },
                     "end": {
-                      "line": 25,
-                      "column": 59
+                      "line": 67,
+                      "column": 62
                     }
                   }
                 },
@@ -1164,16 +1224,16 @@
                           "type": "Identifier",
                           "name": "rotate_right",
                           "range": [
-                            643,
-                            655
+                            1908,
+                            1920
                           ],
                           "loc": {
                             "start": {
-                              "line": 26,
+                              "line": 69,
                               "column": 2
                             },
                             "end": {
-                              "line": 26,
+                              "line": 69,
                               "column": 14
                             }
                           }
@@ -1186,17 +1246,17 @@
                               "type": "Identifier",
                               "name": "n",
                               "range": [
-                                656,
-                                657
+                                1922,
+                                1923
                               ],
                               "loc": {
                                 "start": {
-                                  "line": 26,
-                                  "column": 15
+                                  "line": 69,
+                                  "column": 16
                                 },
                                 "end": {
-                                  "line": 26,
-                                  "column": 16
+                                  "line": 69,
+                                  "column": 17
                                 }
                               }
                             },
@@ -1204,99 +1264,99 @@
                               "type": "Identifier",
                               "name": "parent",
                               "range": [
-                                658,
-                                664
+                                1924,
+                                1930
                               ],
                               "loc": {
                                 "start": {
-                                  "line": 26,
-                                  "column": 17
+                                  "line": 69,
+                                  "column": 18
                                 },
                                 "end": {
-                                  "line": 26,
-                                  "column": 23
+                                  "line": 69,
+                                  "column": 24
                                 }
                               }
                             },
                             "range": [
-                              656,
-                              664
+                              1922,
+                              1930
                             ],
                             "loc": {
                               "start": {
-                                "line": 26,
-                                "column": 15
+                                "line": 69,
+                                "column": 16
                               },
                               "end": {
-                                "line": 26,
-                                "column": 23
+                                "line": 69,
+                                "column": 24
                               }
                             }
                           }
                         ],
                         "range": [
-                          643,
-                          665
+                          1908,
+                          1932
                         ],
                         "loc": {
                           "start": {
-                            "line": 26,
+                            "line": 69,
                             "column": 2
                           },
                           "end": {
-                            "line": 26,
-                            "column": 24
+                            "line": 69,
+                            "column": 26
                           }
                         }
                       },
                       "range": [
-                        643,
-                        666
+                        1908,
+                        1934
                       ],
                       "loc": {
                         "start": {
-                          "line": 26,
+                          "line": 69,
                           "column": 2
                         },
                         "end": {
-                          "line": 26,
-                          "column": 25
+                          "line": 69,
+                          "column": 28
                         }
                       },
                       "trailingComments": [
                         {
                           "type": "Block",
-                          "value": "\n * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n *\n * saved_p=g.right, *saved_right_n=n.right;\n * g.right=n;\n * n.right=saved_p;\n * saved_p.left=saved_right_n;\n *\n ",
+                          "value": "*\n\t\t * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.right, *saved_right_n=n.right;\n\t\t * g.right=n;\n\t\t * n.right=saved_p;\n\t\t * saved_p.left=saved_right_n;\n\t\t *\n\t\t ",
                           "range": [
-                            669,
-                            880
+                            1938,
+                            2166
                           ],
                           "loc": {
                             "start": {
-                              "line": 28,
-                              "column": 1
+                              "line": 71,
+                              "column": 2
                             },
                             "end": {
-                              "line": 36,
-                              "column": 3
+                              "line": 79,
+                              "column": 5
                             }
                           }
                         },
                         {
                           "type": "Line",
-                          "value": "n = n.right;",
+                          "value": " n = n.right ;",
                           "range": [
-                            884,
-                            898
+                            2170,
+                            2186
                           ],
                           "loc": {
                             "start": {
-                              "line": 38,
+                              "line": 81,
                               "column": 2
                             },
                             "end": {
-                              "line": 38,
-                              "column": 16
+                              "line": 81,
+                              "column": 18
                             }
                           }
                         }
@@ -1304,88 +1364,126 @@
                     }
                   ],
                   "range": [
-                    639,
-                    901
+                    1903,
+                    2189
                   ],
                   "loc": {
                     "start": {
-                      "line": 25,
-                      "column": 61
+                      "line": 67,
+                      "column": 65
                     },
                     "end": {
-                      "line": 39,
+                      "line": 82,
                       "column": 2
                     }
                   }
                 },
                 "alternate": null,
                 "range": [
-                  586,
-                  901
+                  1844,
+                  2189
                 ],
                 "loc": {
                   "start": {
-                    "line": 25,
-                    "column": 8
+                    "line": 67,
+                    "column": 6
                   },
                   "end": {
-                    "line": 39,
+                    "line": 82,
                     "column": 2
                   }
                 },
                 "leadingComments": [
                   {
                     "type": "Block",
-                    "value": "\n * rotate_left can be the below because of already having *g =  grandparent(n)\n *\n * saved_p=g.left, *saved_left_n=n.left;\n * g.left=n;\n * n.left=saved_p;\n * saved_p.right=saved_left_n;\n *\n * and modify the parent's nodes properly\n ",
+                    "value": "*\n\t\t * rotate_left can be the below because of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.left, *saved_left_n=n.left;\n\t\t * g.left=n;\n\t\t * n.left=saved_p;\n\t\t * saved_p.right=saved_left_n;\n\t\t *\n\t\t * and modify the parent's nodes properly\n\t\t ",
                     "range": [
-                      259,
-                      496
+                      1003,
+                      1259
                     ],
                     "loc": {
                       "start": {
-                        "line": 12,
-                        "column": 1
+                        "line": 38,
+                        "column": 2
                       },
                       "end": {
-                        "line": 21,
-                        "column": 3
+                        "line": 47,
+                        "column": 5
                       }
                     }
                   },
                   {
                     "type": "Line",
-                    "value": "n = n.left; /!\\ need to fix rotate, so that we can safely reference a node",
+                    "value": " n = n.left; /!\\ need to fix rotate, so that we can safely reference a node",
                     "range": [
-                      500,
-                      576
+                      1263,
+                      1340
                     ],
                     "loc": {
                       "start": {
-                        "line": 23,
+                        "line": 49,
                         "column": 2
                       },
                       "end": {
-                        "line": 23,
-                        "column": 78
+                        "line": 49,
+                        "column": 79
+                      }
+                    }
+                  },
+                  {
+                    "type": "Block",
+                    "value": "*\n\t * If the path from g to n makes a right-left, change it to a right-right\n\t * with {@link rotate_right}. Then call {@link insert_case5} on the old\n\t * parent of n.\n\t *\n\t *             B                     B\n\t *           /   \\                 /   \\\n\t *         B       R             B       R\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       -   -  >R   =         -   -   =  >R\n\t *              / \\                       / \\\n\t *             =   =                     =   =\n\t ",
+                    "range": [
+                      1347,
+                      1836
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 53,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 65,
+                        "column": 4
                       }
                     }
                   }
                 ]
               },
               "range": [
-                177,
-                901
+                910,
+                2189
               ],
               "loc": {
                 "start": {
-                  "line": 9,
+                  "line": 34,
                   "column": 1
                 },
                 "end": {
-                  "line": 39,
+                  "line": 82,
                   "column": 2
                 }
-              }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n\t * If the path from g to n makes a left-right, change it to a left-left\n\t * with {@link rotate_left}. Then call {@link insert_case5} on the old\n\t * parent of n.\n\t *\n\t *             B                     B\n\t *           /   \\                 /   \\\n\t *         R       B             R       B\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       =  >R   -   -        >R   =   -   -\n\t *          / \\               / \\\n\t *         =   =             =   =\n\t ",
+                  "range": [
+                    445,
+                    907
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 20,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 32,
+                      "column": 4
+                    }
+                  }
+                }
+              ]
             },
             {
               "type": "ExpressionStatement",
@@ -1395,16 +1493,16 @@
                   "type": "Identifier",
                   "name": "insert_case5",
                   "range": [
-                    903,
-                    915
+                    2192,
+                    2204
                   ],
                   "loc": {
                     "start": {
-                      "line": 40,
+                      "line": 84,
                       "column": 1
                     },
                     "end": {
-                      "line": 40,
+                      "line": 84,
                       "column": 13
                     }
                   }
@@ -1414,84 +1512,84 @@
                     "type": "Identifier",
                     "name": "n",
                     "range": [
-                      916,
-                      917
+                      2206,
+                      2207
                     ],
                     "loc": {
                       "start": {
-                        "line": 40,
-                        "column": 14
+                        "line": 84,
+                        "column": 15
                       },
                       "end": {
-                        "line": 40,
-                        "column": 15
+                        "line": 84,
+                        "column": 16
                       }
                     }
                   }
                 ],
                 "range": [
-                  903,
-                  918
+                  2192,
+                  2209
                 ],
                 "loc": {
                   "start": {
-                    "line": 40,
+                    "line": 84,
                     "column": 1
                   },
                   "end": {
-                    "line": 40,
-                    "column": 16
+                    "line": 84,
+                    "column": 18
                   }
                 }
               },
               "range": [
-                903,
-                919
+                2192,
+                2211
               ],
               "loc": {
                 "start": {
-                  "line": 40,
+                  "line": 84,
                   "column": 1
                 },
                 "end": {
-                  "line": 40,
-                  "column": 17
+                  "line": 84,
+                  "column": 20
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "\n * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n *\n * saved_p=g.right, *saved_right_n=n.right;\n * g.right=n;\n * n.right=saved_p;\n * saved_p.left=saved_right_n;\n *\n ",
+                  "value": "*\n\t\t * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.right, *saved_right_n=n.right;\n\t\t * g.right=n;\n\t\t * n.right=saved_p;\n\t\t * saved_p.left=saved_right_n;\n\t\t *\n\t\t ",
                   "range": [
-                    669,
-                    880
+                    1938,
+                    2166
                   ],
                   "loc": {
                     "start": {
-                      "line": 28,
-                      "column": 1
+                      "line": 71,
+                      "column": 2
                     },
                     "end": {
-                      "line": 36,
-                      "column": 3
+                      "line": 79,
+                      "column": 5
                     }
                   }
                 },
                 {
                   "type": "Line",
-                  "value": "n = n.right;",
+                  "value": " n = n.right ;",
                   "range": [
-                    884,
-                    898
+                    2170,
+                    2186
                   ],
                   "loc": {
                     "start": {
-                      "line": 38,
+                      "line": 81,
                       "column": 2
                     },
                     "end": {
-                      "line": 38,
-                      "column": 16
+                      "line": 81,
+                      "column": 18
                     }
                   }
                 }
@@ -1499,16 +1597,16 @@
             }
           ],
           "range": [
-            146,
-            921
+            410,
+            2214
           ],
           "loc": {
             "start": {
-              "line": 6,
-              "column": 0
+              "line": 16,
+              "column": 35
             },
             "end": {
-              "line": 41,
+              "line": 86,
               "column": 1
             }
           }
@@ -1516,44 +1614,83 @@
         "generator": false,
         "expression": false,
         "range": [
-          121,
-          921
+          382,
+          2214
         ],
         "loc": {
           "start": {
-            "line": 5,
+            "line": 16,
             "column": 7
           },
           "end": {
-            "line": 41,
+            "line": 86,
             "column": 1
           }
         },
-        "leadingComments": [],
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Preconditions:\n *   - n is red.\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *   - n's uncle is black.\n *\n * Here we fix the input subtree to pass the preconditions of {@link insert_case5}.\n *\n * @param {Node} n - The input node.\n ",
+            "range": [
+              114,
+              374
+            ],
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 0
+              },
+              "end": {
+                "line": 15,
+                "column": 3
+              }
+            }
+          }
+        ],
         "trailingComments": []
       },
       "specifiers": [],
       "source": null,
       "range": [
-        114,
-        921
+        375,
+        2214
       ],
       "loc": {
         "start": {
-          "line": 5,
+          "line": 16,
           "column": 0
         },
         "end": {
-          "line": 41,
+          "line": 86,
           "column": 1
         }
-      }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Preconditions:\n *   - n is red.\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *   - n's uncle is black.\n *\n * Here we fix the input subtree to pass the preconditions of {@link insert_case5}.\n *\n * @param {Node} n - The input node.\n ",
+          "range": [
+            114,
+            374
+          ],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 0
+            },
+            "end": {
+              "line": 15,
+              "column": 3
+            }
+          }
+        }
+      ]
     }
   ],
   "sourceType": "module",
   "range": [
     1,
-    921
+    2214
   ],
   "loc": {
     "start": {
@@ -1561,71 +1698,53 @@
       "column": 0
     },
     "end": {
-      "line": 41,
+      "line": 86,
       "column": 1
     }
   },
   "comments": [
     {
       "type": "Block",
-      "value": "\n * rotate_left can be the below because of already having *g =  grandparent(n)\n *\n * saved_p=g.left, *saved_left_n=n.left;\n * g.left=n;\n * n.left=saved_p;\n * saved_p.right=saved_left_n;\n *\n * and modify the parent's nodes properly\n ",
+      "value": "*\n * Preconditions:\n *   - n is red.\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *   - n's uncle is black.\n *\n * Here we fix the input subtree to pass the preconditions of {@link insert_case5}.\n *\n * @param {Node} n - The input node.\n ",
       "range": [
-        259,
-        496
+        114,
+        374
       ],
       "loc": {
         "start": {
-          "line": 12,
-          "column": 1
+          "line": 5,
+          "column": 0
         },
         "end": {
-          "line": 21,
+          "line": 15,
           "column": 3
-        }
-      }
-    },
-    {
-      "type": "Line",
-      "value": "n = n.left; /!\\ need to fix rotate, so that we can safely reference a node",
-      "range": [
-        500,
-        576
-      ],
-      "loc": {
-        "start": {
-          "line": 23,
-          "column": 2
-        },
-        "end": {
-          "line": 23,
-          "column": 78
         }
       }
     },
     {
       "type": "Block",
-      "value": "\n * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n *\n * saved_p=g.right, *saved_right_n=n.right;\n * g.right=n;\n * n.right=saved_p;\n * saved_p.left=saved_right_n;\n *\n ",
+      "value": "*\n\t * If the path from g to n makes a left-right, change it to a left-left\n\t * with {@link rotate_left}. Then call {@link insert_case5} on the old\n\t * parent of n.\n\t *\n\t *             B                     B\n\t *           /   \\                 /   \\\n\t *         R       B             R       B\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       =  >R   -   -        >R   =   -   -\n\t *          / \\               / \\\n\t *         =   =             =   =\n\t ",
       "range": [
-        669,
-        880
+        445,
+        907
       ],
       "loc": {
         "start": {
-          "line": 28,
+          "line": 20,
           "column": 1
         },
         "end": {
-          "line": 36,
-          "column": 3
+          "line": 32,
+          "column": 4
         }
       }
     },
     {
-      "type": "Line",
-      "value": "n = n.right;",
+      "type": "Block",
+      "value": "*\n\t\t * rotate_left can be the below because of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.left, *saved_left_n=n.left;\n\t\t * g.left=n;\n\t\t * n.left=saved_p;\n\t\t * saved_p.right=saved_left_n;\n\t\t *\n\t\t * and modify the parent's nodes properly\n\t\t ",
       "range": [
-        884,
-        898
+        1003,
+        1259
       ],
       "loc": {
         "start": {
@@ -1633,8 +1752,80 @@
           "column": 2
         },
         "end": {
-          "line": 38,
-          "column": 16
+          "line": 47,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " n = n.left; /!\\ need to fix rotate, so that we can safely reference a node",
+      "range": [
+        1263,
+        1340
+      ],
+      "loc": {
+        "start": {
+          "line": 49,
+          "column": 2
+        },
+        "end": {
+          "line": 49,
+          "column": 79
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n\t * If the path from g to n makes a right-left, change it to a right-right\n\t * with {@link rotate_right}. Then call {@link insert_case5} on the old\n\t * parent of n.\n\t *\n\t *             B                     B\n\t *           /   \\                 /   \\\n\t *         B       R             B       R\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       -   -  >R   =         -   -   =  >R\n\t *              / \\                       / \\\n\t *             =   =                     =   =\n\t ",
+      "range": [
+        1347,
+        1836
+      ],
+      "loc": {
+        "start": {
+          "line": 53,
+          "column": 1
+        },
+        "end": {
+          "line": 65,
+          "column": 4
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n\t\t * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.right, *saved_right_n=n.right;\n\t\t * g.right=n;\n\t\t * n.right=saved_p;\n\t\t * saved_p.left=saved_right_n;\n\t\t *\n\t\t ",
+      "range": [
+        1938,
+        2166
+      ],
+      "loc": {
+        "start": {
+          "line": 71,
+          "column": 2
+        },
+        "end": {
+          "line": 79,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " n = n.right ;",
+      "range": [
+        2170,
+        2186
+      ],
+      "loc": {
+        "start": {
+          "line": 81,
+          "column": 2
+        },
+        "end": {
+          "line": 81,
+          "column": 18
         }
       }
     }

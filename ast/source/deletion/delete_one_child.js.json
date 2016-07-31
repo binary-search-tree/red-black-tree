@@ -325,7 +325,27 @@
           "line": 4,
           "column": 47
         }
-      }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Delete a node <code>n</code> that has at most a single non-leaf child.\n *\n * Precondition:\n *   - n has at most one non-leaf child.\n *   - if n has a non-leaf child, then it is its left child.\n *\n * @param {Node} n - The node to delete.\n ",
+          "range": [
+            133,
+            380
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 0
+            },
+            "end": {
+              "line": 14,
+              "column": 3
+            }
+          }
+        }
+      ]
     },
     {
       "type": "ExportNamedDeclaration",
@@ -335,16 +355,16 @@
           "type": "Identifier",
           "name": "delete_one_child",
           "range": [
-            149,
-            165
+            397,
+            413
           ],
           "loc": {
             "start": {
-              "line": 6,
+              "line": 15,
               "column": 16
             },
             "end": {
-              "line": 6,
+              "line": 15,
               "column": 32
             }
           }
@@ -354,16 +374,16 @@
             "type": "Identifier",
             "name": "n",
             "range": [
-              168,
-              169
+              416,
+              417
             ],
             "loc": {
               "start": {
-                "line": 6,
+                "line": 15,
                 "column": 35
               },
               "end": {
-                "line": 6,
+                "line": 15,
                 "column": 36
               }
             }
@@ -381,16 +401,16 @@
                     "type": "Identifier",
                     "name": "child",
                     "range": [
-                      504,
-                      509
+                      752,
+                      757
                     ],
                     "loc": {
                       "start": {
-                        "line": 14,
+                        "line": 23,
                         "column": 10
                       },
                       "end": {
-                        "line": 14,
+                        "line": 23,
                         "column": 15
                       }
                     }
@@ -402,16 +422,16 @@
                       "type": "Identifier",
                       "name": "n",
                       "range": [
-                        512,
-                        513
+                        760,
+                        761
                       ],
                       "loc": {
                         "start": {
-                          "line": 14,
+                          "line": 23,
                           "column": 18
                         },
                         "end": {
-                          "line": 14,
+                          "line": 23,
                           "column": 19
                         }
                       }
@@ -420,46 +440,46 @@
                       "type": "Identifier",
                       "name": "left",
                       "range": [
-                        514,
-                        518
+                        762,
+                        766
                       ],
                       "loc": {
                         "start": {
-                          "line": 14,
+                          "line": 23,
                           "column": 20
                         },
                         "end": {
-                          "line": 14,
+                          "line": 23,
                           "column": 24
                         }
                       }
                     },
                     "range": [
-                      512,
-                      518
+                      760,
+                      766
                     ],
                     "loc": {
                       "start": {
-                        "line": 14,
+                        "line": 23,
                         "column": 18
                       },
                       "end": {
-                        "line": 14,
+                        "line": 23,
                         "column": 24
                       }
                     }
                   },
                   "range": [
-                    504,
-                    518
+                    752,
+                    766
                   ],
                   "loc": {
                     "start": {
-                      "line": 14,
+                      "line": 23,
                       "column": 10
                     },
                     "end": {
-                      "line": 14,
+                      "line": 23,
                       "column": 24
                     }
                   }
@@ -467,16 +487,16 @@
               ],
               "kind": "const",
               "range": [
-                498,
-                520
+                746,
+                768
               ],
               "loc": {
                 "start": {
-                  "line": 14,
+                  "line": 23,
                   "column": 4
                 },
                 "end": {
-                  "line": 14,
+                  "line": 23,
                   "column": 26
                 }
               },
@@ -485,16 +505,16 @@
                   "type": "Line",
                   "value": " Precondition: n has at most one non-leaf child.",
                   "range": [
-                    179,
-                    229
+                    427,
+                    477
                   ],
                   "loc": {
                     "start": {
-                      "line": 8,
+                      "line": 17,
                       "column": 4
                     },
                     "end": {
-                      "line": 8,
+                      "line": 17,
                       "column": 54
                     }
                   }
@@ -503,16 +523,16 @@
                   "type": "Line",
                   "value": " assert( n.right.isleaf() || n.left.isleaf());",
                   "range": [
-                    234,
-                    282
+                    482,
+                    530
                   ],
                   "loc": {
                     "start": {
-                      "line": 9,
+                      "line": 18,
                       "column": 4
                     },
                     "end": {
-                      "line": 9,
+                      "line": 18,
                       "column": 52
                     }
                   }
@@ -521,16 +541,16 @@
                   "type": "Line",
                   "value": " const child = n.right.isleaf() ? n.left : n.right;",
                   "range": [
-                    288,
-                    341
+                    536,
+                    589
                   ],
                   "loc": {
                     "start": {
-                      "line": 11,
+                      "line": 20,
                       "column": 4
                     },
                     "end": {
-                      "line": 11,
+                      "line": 20,
                       "column": 57
                     }
                   }
@@ -539,16 +559,16 @@
                   "type": "Line",
                   "value": " n.right is always a LEAF because either n is a subtree predecessor or it",
                   "range": [
-                    346,
-                    421
+                    594,
+                    669
                   ],
                   "loc": {
                     "start": {
-                      "line": 12,
+                      "line": 21,
                       "column": 4
                     },
                     "end": {
-                      "line": 12,
+                      "line": 21,
                       "column": 79
                     }
                   }
@@ -557,17 +577,37 @@
                   "type": "Line",
                   "value": " is the only child of its parent by the red-black tree properties",
                   "range": [
-                    426,
-                    493
+                    674,
+                    741
                   ],
                   "loc": {
                     "start": {
-                      "line": 13,
+                      "line": 22,
                       "column": 4
                     },
                     "end": {
-                      "line": 13,
+                      "line": 22,
                       "column": 71
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Line",
+                  "value": " replace n with its left child",
+                  "range": [
+                    774,
+                    806
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 25,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 25,
+                      "column": 36
                     }
                   }
                 }
@@ -581,16 +621,16 @@
                   "type": "Identifier",
                   "name": "replace_node",
                   "range": [
-                    526,
-                    538
+                    811,
+                    823
                   ],
                   "loc": {
                     "start": {
-                      "line": 16,
+                      "line": 26,
                       "column": 4
                     },
                     "end": {
-                      "line": 16,
+                      "line": 26,
                       "column": 16
                     }
                   }
@@ -600,17 +640,17 @@
                     "type": "Identifier",
                     "name": "n",
                     "range": [
-                      539,
-                      540
+                      825,
+                      826
                     ],
                     "loc": {
                       "start": {
-                        "line": 16,
-                        "column": 17
+                        "line": 26,
+                        "column": 18
                       },
                       "end": {
-                        "line": 16,
-                        "column": 18
+                        "line": 26,
+                        "column": 19
                       }
                     }
                   },
@@ -618,50 +658,108 @@
                     "type": "Identifier",
                     "name": "child",
                     "range": [
-                      542,
-                      547
+                      829,
+                      834
                     ],
                     "loc": {
                       "start": {
-                        "line": 16,
-                        "column": 20
+                        "line": 26,
+                        "column": 22
                       },
                       "end": {
-                        "line": 16,
-                        "column": 25
+                        "line": 26,
+                        "column": 27
                       }
                     }
                   }
                 ],
                 "range": [
-                  526,
-                  548
+                  811,
+                  836
                 ],
                 "loc": {
                   "start": {
-                    "line": 16,
+                    "line": 26,
                     "column": 4
                   },
                   "end": {
-                    "line": 16,
-                    "column": 26
+                    "line": 26,
+                    "column": 29
                   }
                 }
               },
               "range": [
-                526,
-                549
+                811,
+                838
               ],
               "loc": {
                 "start": {
-                  "line": 16,
+                  "line": 26,
                   "column": 4
                 },
                 "end": {
-                  "line": 16,
-                  "column": 27
+                  "line": 26,
+                  "column": 31
                 }
-              }
+              },
+              "leadingComments": [
+                {
+                  "type": "Line",
+                  "value": " replace n with its left child",
+                  "range": [
+                    774,
+                    806
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 25,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 25,
+                      "column": 36
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Line",
+                  "value": " If n is black, deleting it reduces the black-height of every path going",
+                  "range": [
+                    844,
+                    918
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 28,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 28,
+                      "column": 78
+                    }
+                  }
+                },
+                {
+                  "type": "Line",
+                  "value": " through it by 1.",
+                  "range": [
+                    923,
+                    942
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 29,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 29,
+                      "column": 23
+                    }
+                  }
+                }
+              ]
             },
             {
               "type": "IfStatement",
@@ -675,17 +773,17 @@
                     "type": "Identifier",
                     "name": "n",
                     "range": [
-                      559,
-                      560
+                      952,
+                      953
                     ],
                     "loc": {
                       "start": {
-                        "line": 18,
-                        "column": 8
+                        "line": 30,
+                        "column": 9
                       },
                       "end": {
-                        "line": 18,
-                        "column": 9
+                        "line": 30,
+                        "column": 10
                       }
                     }
                   },
@@ -693,32 +791,32 @@
                     "type": "Identifier",
                     "name": "color",
                     "range": [
-                      561,
-                      566
+                      954,
+                      959
                     ],
                     "loc": {
                       "start": {
-                        "line": 18,
-                        "column": 10
+                        "line": 30,
+                        "column": 11
                       },
                       "end": {
-                        "line": 18,
-                        "column": 15
+                        "line": 30,
+                        "column": 16
                       }
                     }
                   },
                   "range": [
-                    559,
-                    566
+                    952,
+                    959
                   ],
                   "loc": {
                     "start": {
-                      "line": 18,
-                      "column": 8
+                      "line": 30,
+                      "column": 9
                     },
                     "end": {
-                      "line": 18,
-                      "column": 15
+                      "line": 30,
+                      "column": 16
                     }
                   }
                 },
@@ -726,32 +824,32 @@
                   "type": "Identifier",
                   "name": "BLACK",
                   "range": [
-                    571,
-                    576
+                    964,
+                    969
                   ],
                   "loc": {
                     "start": {
-                      "line": 18,
-                      "column": 20
+                      "line": 30,
+                      "column": 21
                     },
                     "end": {
-                      "line": 18,
-                      "column": 25
+                      "line": 30,
+                      "column": 26
                     }
                   }
                 },
                 "range": [
-                  559,
-                  576
+                  952,
+                  969
                 ],
                 "loc": {
                   "start": {
-                    "line": 18,
-                    "column": 8
+                    "line": 30,
+                    "column": 9
                   },
                   "end": {
-                    "line": 18,
-                    "column": 25
+                    "line": 30,
+                    "column": 26
                   }
                 }
               },
@@ -770,17 +868,17 @@
                           "type": "Identifier",
                           "name": "child",
                           "range": [
-                            592,
-                            597
+                            1156,
+                            1161
                           ],
                           "loc": {
                             "start": {
-                              "line": 19,
-                              "column": 12
+                              "line": 35,
+                              "column": 13
                             },
                             "end": {
-                              "line": 19,
-                              "column": 17
+                              "line": 35,
+                              "column": 18
                             }
                           }
                         },
@@ -788,32 +886,32 @@
                           "type": "Identifier",
                           "name": "color",
                           "range": [
-                            598,
-                            603
+                            1162,
+                            1167
                           ],
                           "loc": {
                             "start": {
-                              "line": 19,
-                              "column": 18
+                              "line": 35,
+                              "column": 19
                             },
                             "end": {
-                              "line": 19,
-                              "column": 23
+                              "line": 35,
+                              "column": 24
                             }
                           }
                         },
                         "range": [
-                          592,
-                          603
+                          1156,
+                          1167
                         ],
                         "loc": {
                           "start": {
-                            "line": 19,
-                            "column": 12
+                            "line": 35,
+                            "column": 13
                           },
                           "end": {
-                            "line": 19,
-                            "column": 23
+                            "line": 35,
+                            "column": 24
                           }
                         }
                       },
@@ -821,32 +919,32 @@
                         "type": "Identifier",
                         "name": "RED",
                         "range": [
-                          608,
-                          611
+                          1172,
+                          1175
                         ],
                         "loc": {
                           "start": {
-                            "line": 19,
-                            "column": 28
+                            "line": 35,
+                            "column": 29
                           },
                           "end": {
-                            "line": 19,
-                            "column": 31
+                            "line": 35,
+                            "column": 32
                           }
                         }
                       },
                       "range": [
-                        592,
-                        611
+                        1156,
+                        1175
                       ],
                       "loc": {
                         "start": {
-                          "line": 19,
-                          "column": 12
+                          "line": 35,
+                          "column": 13
                         },
                         "end": {
-                          "line": 19,
-                          "column": 31
+                          "line": 35,
+                          "column": 32
                         }
                       }
                     },
@@ -862,17 +960,17 @@
                             "type": "Identifier",
                             "name": "child",
                             "range": [
-                              613,
-                              618
+                              1178,
+                              1183
                             ],
                             "loc": {
                               "start": {
-                                "line": 19,
-                                "column": 33
+                                "line": 35,
+                                "column": 35
                               },
                               "end": {
-                                "line": 19,
-                                "column": 38
+                                "line": 35,
+                                "column": 40
                               }
                             }
                           },
@@ -880,32 +978,32 @@
                             "type": "Identifier",
                             "name": "color",
                             "range": [
-                              619,
-                              624
+                              1184,
+                              1189
                             ],
                             "loc": {
                               "start": {
-                                "line": 19,
-                                "column": 39
+                                "line": 35,
+                                "column": 41
                               },
                               "end": {
-                                "line": 19,
-                                "column": 44
+                                "line": 35,
+                                "column": 46
                               }
                             }
                           },
                           "range": [
-                            613,
-                            624
+                            1178,
+                            1189
                           ],
                           "loc": {
                             "start": {
-                              "line": 19,
-                              "column": 33
+                              "line": 35,
+                              "column": 35
                             },
                             "end": {
-                              "line": 19,
-                              "column": 44
+                              "line": 35,
+                              "column": 46
                             }
                           }
                         },
@@ -913,49 +1011,69 @@
                           "type": "Identifier",
                           "name": "BLACK",
                           "range": [
-                            627,
-                            632
+                            1192,
+                            1197
                           ],
                           "loc": {
                             "start": {
-                              "line": 19,
-                              "column": 47
+                              "line": 35,
+                              "column": 49
                             },
                             "end": {
-                              "line": 19,
-                              "column": 52
+                              "line": 35,
+                              "column": 54
                             }
                           }
                         },
                         "range": [
-                          613,
-                          632
+                          1178,
+                          1197
                         ],
                         "loc": {
                           "start": {
-                            "line": 19,
-                            "column": 33
+                            "line": 35,
+                            "column": 35
                           },
                           "end": {
-                            "line": 19,
-                            "column": 52
+                            "line": 35,
+                            "column": 54
                           }
                         }
                       },
                       "range": [
-                        613,
-                        633
+                        1178,
+                        1199
                       ],
                       "loc": {
                         "start": {
-                          "line": 19,
-                          "column": 33
+                          "line": 35,
+                          "column": 35
                         },
                         "end": {
-                          "line": 19,
-                          "column": 53
+                          "line": 35,
+                          "column": 56
                         }
-                      }
+                      },
+                      "trailingComments": [
+                        {
+                          "type": "Line",
+                          "value": " Otherwise, there are more things to fix.",
+                          "range": [
+                            1209,
+                            1252
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 37,
+                              "column": 8
+                            },
+                            "end": {
+                              "line": 37,
+                              "column": 51
+                            }
+                          }
+                        }
+                      ]
                     },
                     "alternate": {
                       "type": "ExpressionStatement",
@@ -965,16 +1083,16 @@
                           "type": "Identifier",
                           "name": "delete_case1",
                           "range": [
-                            647,
-                            659
+                            1266,
+                            1278
                           ],
                           "loc": {
                             "start": {
-                              "line": 20,
+                              "line": 38,
                               "column": 13
                             },
                             "end": {
-                              "line": 20,
+                              "line": 38,
                               "column": 25
                             }
                           }
@@ -984,130 +1102,244 @@
                             "type": "Identifier",
                             "name": "child",
                             "range": [
-                              660,
-                              665
+                              1280,
+                              1285
                             ],
                             "loc": {
                               "start": {
-                                "line": 20,
-                                "column": 26
+                                "line": 38,
+                                "column": 27
                               },
                               "end": {
-                                "line": 20,
-                                "column": 31
+                                "line": 38,
+                                "column": 32
                               }
                             }
                           }
                         ],
                         "range": [
-                          647,
-                          666
+                          1266,
+                          1287
                         ],
                         "loc": {
                           "start": {
-                            "line": 20,
+                            "line": 38,
                             "column": 13
                           },
                           "end": {
-                            "line": 20,
-                            "column": 32
+                            "line": 38,
+                            "column": 34
                           }
                         }
                       },
                       "range": [
-                        647,
-                        667
+                        1266,
+                        1289
                       ],
                       "loc": {
                         "start": {
-                          "line": 20,
+                          "line": 38,
                           "column": 13
                         },
                         "end": {
-                          "line": 20,
-                          "column": 33
+                          "line": 38,
+                          "column": 36
                         }
-                      }
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "Line",
+                          "value": " Otherwise, there are more things to fix.",
+                          "range": [
+                            1209,
+                            1252
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 37,
+                              "column": 8
+                            },
+                            "end": {
+                              "line": 37,
+                              "column": 51
+                            }
+                          }
+                        }
+                      ]
                     },
                     "range": [
-                      588,
-                      667
+                      1151,
+                      1289
                     ],
                     "loc": {
                       "start": {
-                        "line": 19,
+                        "line": 35,
                         "column": 8
                       },
                       "end": {
-                        "line": 20,
-                        "column": 33
+                        "line": 38,
+                        "column": 36
                       }
-                    }
+                    },
+                    "leadingComments": [
+                      {
+                        "type": "Line",
+                        "value": " We can easily fix this when its left child is an",
+                        "range": [
+                          983,
+                          1034
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 32,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 32,
+                            "column": 59
+                          }
+                        }
+                      },
+                      {
+                        "type": "Line",
+                        "value": " internal red node: change the color of the left child to black and",
+                        "range": [
+                          1043,
+                          1112
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 33,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 33,
+                            "column": 77
+                          }
+                        }
+                      },
+                      {
+                        "type": "Line",
+                        "value": " replace n with it.",
+                        "range": [
+                          1121,
+                          1142
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 34,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 34,
+                            "column": 29
+                          }
+                        }
+                      }
+                    ]
                   }
                 ],
                 "range": [
-                  578,
-                  673
+                  972,
+                  1296
                 ],
                 "loc": {
                   "start": {
-                    "line": 18,
-                    "column": 27
+                    "line": 30,
+                    "column": 29
                   },
                   "end": {
-                    "line": 21,
+                    "line": 40,
                     "column": 5
                   }
                 }
               },
               "alternate": null,
               "range": [
-                555,
-                673
+                947,
+                1296
               ],
               "loc": {
                 "start": {
-                  "line": 18,
+                  "line": 30,
                   "column": 4
                 },
                 "end": {
-                  "line": 21,
+                  "line": 40,
                   "column": 5
                 }
               },
-              "trailingComments": [
+              "leadingComments": [
                 {
                   "type": "Line",
-                  "value": "else {",
+                  "value": " If n is black, deleting it reduces the black-height of every path going",
                   "range": [
-                    679,
-                    687
+                    844,
+                    918
                   ],
                   "loc": {
                     "start": {
-                      "line": 23,
+                      "line": 28,
                       "column": 4
                     },
                     "end": {
-                      "line": 23,
-                      "column": 12
+                      "line": 28,
+                      "column": 78
                     }
                   }
                 },
                 {
                   "type": "Line",
-                  "value": "    If n is RED then its child can only be BLACK. Replacing n with its",
+                  "value": " through it by 1.",
                   "range": [
-                    692,
-                    764
+                    923,
+                    942
                   ],
                   "loc": {
                     "start": {
-                      "line": 24,
+                      "line": 29,
                       "column": 4
                     },
                     "end": {
-                      "line": 24,
+                      "line": 29,
+                      "column": 23
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Line",
+                  "value": " else {",
+                  "range": [
+                    1302,
+                    1311
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 42,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 42,
+                      "column": 13
+                    }
+                  }
+                },
+                {
+                  "type": "Line",
+                  "value": "    If n is red then its child can only be black. Replacing n with its",
+                  "range": [
+                    1316,
+                    1388
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 43,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 43,
                       "column": 76
                     }
                   }
@@ -1116,35 +1348,35 @@
                   "type": "Line",
                   "value": "    child suffices.",
                   "range": [
-                    769,
-                    790
+                    1393,
+                    1414
                   ],
                   "loc": {
                     "start": {
-                      "line": 25,
+                      "line": 44,
                       "column": 4
                     },
                     "end": {
-                      "line": 25,
+                      "line": 44,
                       "column": 25
                     }
                   }
                 },
                 {
                   "type": "Line",
-                  "value": "}",
+                  "value": " }",
                   "range": [
-                    795,
-                    798
+                    1419,
+                    1423
                   ],
                   "loc": {
                     "start": {
-                      "line": 26,
+                      "line": 45,
                       "column": 4
                     },
                     "end": {
-                      "line": 26,
-                      "column": 7
+                      "line": 45,
+                      "column": 8
                     }
                   }
                 }
@@ -1152,16 +1384,16 @@
             }
           ],
           "range": [
-            172,
-            801
+            420,
+            1426
           ],
           "loc": {
             "start": {
-              "line": 6,
+              "line": 15,
               "column": 39
             },
             "end": {
-              "line": 28,
+              "line": 47,
               "column": 1
             }
           }
@@ -1169,44 +1401,83 @@
         "generator": false,
         "expression": false,
         "range": [
-          140,
-          801
+          388,
+          1426
         ],
         "loc": {
           "start": {
-            "line": 6,
+            "line": 15,
             "column": 7
           },
           "end": {
-            "line": 28,
+            "line": 47,
             "column": 1
           }
         },
-        "leadingComments": [],
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * Delete a node <code>n</code> that has at most a single non-leaf child.\n *\n * Precondition:\n *   - n has at most one non-leaf child.\n *   - if n has a non-leaf child, then it is its left child.\n *\n * @param {Node} n - The node to delete.\n ",
+            "range": [
+              133,
+              380
+            ],
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 0
+              },
+              "end": {
+                "line": 14,
+                "column": 3
+              }
+            }
+          }
+        ],
         "trailingComments": []
       },
       "specifiers": [],
       "source": null,
       "range": [
-        133,
-        801
+        381,
+        1426
       ],
       "loc": {
         "start": {
-          "line": 6,
+          "line": 15,
           "column": 0
         },
         "end": {
-          "line": 28,
+          "line": 47,
           "column": 1
         }
-      }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Delete a node <code>n</code> that has at most a single non-leaf child.\n *\n * Precondition:\n *   - n has at most one non-leaf child.\n *   - if n has a non-leaf child, then it is its left child.\n *\n * @param {Node} n - The node to delete.\n ",
+          "range": [
+            133,
+            380
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 0
+            },
+            "end": {
+              "line": 14,
+              "column": 3
+            }
+          }
+        }
+      ]
     }
   ],
   "sourceType": "module",
   "range": [
     0,
-    801
+    1426
   ],
   "loc": {
     "start": {
@@ -1214,25 +1485,43 @@
       "column": 0
     },
     "end": {
-      "line": 28,
+      "line": 47,
       "column": 1
     }
   },
   "comments": [
     {
-      "type": "Line",
-      "value": " Precondition: n has at most one non-leaf child.",
+      "type": "Block",
+      "value": "*\n * Delete a node <code>n</code> that has at most a single non-leaf child.\n *\n * Precondition:\n *   - n has at most one non-leaf child.\n *   - if n has a non-leaf child, then it is its left child.\n *\n * @param {Node} n - The node to delete.\n ",
       "range": [
-        179,
-        229
+        133,
+        380
       ],
       "loc": {
         "start": {
-          "line": 8,
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 14,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " Precondition: n has at most one non-leaf child.",
+      "range": [
+        427,
+        477
+      ],
+      "loc": {
+        "start": {
+          "line": 17,
           "column": 4
         },
         "end": {
-          "line": 8,
+          "line": 17,
           "column": 54
         }
       }
@@ -1241,16 +1530,16 @@
       "type": "Line",
       "value": " assert( n.right.isleaf() || n.left.isleaf());",
       "range": [
-        234,
-        282
+        482,
+        530
       ],
       "loc": {
         "start": {
-          "line": 9,
+          "line": 18,
           "column": 4
         },
         "end": {
-          "line": 9,
+          "line": 18,
           "column": 52
         }
       }
@@ -1259,16 +1548,16 @@
       "type": "Line",
       "value": " const child = n.right.isleaf() ? n.left : n.right;",
       "range": [
-        288,
-        341
+        536,
+        589
       ],
       "loc": {
         "start": {
-          "line": 11,
+          "line": 20,
           "column": 4
         },
         "end": {
-          "line": 11,
+          "line": 20,
           "column": 57
         }
       }
@@ -1277,16 +1566,16 @@
       "type": "Line",
       "value": " n.right is always a LEAF because either n is a subtree predecessor or it",
       "range": [
-        346,
-        421
+        594,
+        669
       ],
       "loc": {
         "start": {
-          "line": 12,
+          "line": 21,
           "column": 4
         },
         "end": {
-          "line": 12,
+          "line": 21,
           "column": 79
         }
       }
@@ -1295,52 +1584,178 @@
       "type": "Line",
       "value": " is the only child of its parent by the red-black tree properties",
       "range": [
-        426,
-        493
+        674,
+        741
       ],
       "loc": {
         "start": {
-          "line": 13,
+          "line": 22,
           "column": 4
         },
         "end": {
-          "line": 13,
+          "line": 22,
           "column": 71
         }
       }
     },
     {
       "type": "Line",
-      "value": "else {",
+      "value": " replace n with its left child",
       "range": [
-        679,
-        687
+        774,
+        806
       ],
       "loc": {
         "start": {
-          "line": 23,
+          "line": 25,
           "column": 4
         },
         "end": {
-          "line": 23,
-          "column": 12
+          "line": 25,
+          "column": 36
         }
       }
     },
     {
       "type": "Line",
-      "value": "    If n is RED then its child can only be BLACK. Replacing n with its",
+      "value": " If n is black, deleting it reduces the black-height of every path going",
       "range": [
-        692,
-        764
+        844,
+        918
       ],
       "loc": {
         "start": {
-          "line": 24,
+          "line": 28,
           "column": 4
         },
         "end": {
-          "line": 24,
+          "line": 28,
+          "column": 78
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " through it by 1.",
+      "range": [
+        923,
+        942
+      ],
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 4
+        },
+        "end": {
+          "line": 29,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " We can easily fix this when its left child is an",
+      "range": [
+        983,
+        1034
+      ],
+      "loc": {
+        "start": {
+          "line": 32,
+          "column": 8
+        },
+        "end": {
+          "line": 32,
+          "column": 59
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " internal red node: change the color of the left child to black and",
+      "range": [
+        1043,
+        1112
+      ],
+      "loc": {
+        "start": {
+          "line": 33,
+          "column": 8
+        },
+        "end": {
+          "line": 33,
+          "column": 77
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " replace n with it.",
+      "range": [
+        1121,
+        1142
+      ],
+      "loc": {
+        "start": {
+          "line": 34,
+          "column": 8
+        },
+        "end": {
+          "line": 34,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " Otherwise, there are more things to fix.",
+      "range": [
+        1209,
+        1252
+      ],
+      "loc": {
+        "start": {
+          "line": 37,
+          "column": 8
+        },
+        "end": {
+          "line": 37,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " else {",
+      "range": [
+        1302,
+        1311
+      ],
+      "loc": {
+        "start": {
+          "line": 42,
+          "column": 4
+        },
+        "end": {
+          "line": 42,
+          "column": 13
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "    If n is red then its child can only be black. Replacing n with its",
+      "range": [
+        1316,
+        1388
+      ],
+      "loc": {
+        "start": {
+          "line": 43,
+          "column": 4
+        },
+        "end": {
+          "line": 43,
           "column": 76
         }
       }
@@ -1349,35 +1764,35 @@
       "type": "Line",
       "value": "    child suffices.",
       "range": [
-        769,
-        790
+        1393,
+        1414
       ],
       "loc": {
         "start": {
-          "line": 25,
+          "line": 44,
           "column": 4
         },
         "end": {
-          "line": 25,
+          "line": 44,
           "column": 25
         }
       }
     },
     {
       "type": "Line",
-      "value": "}",
+      "value": " }",
       "range": [
-        795,
-        798
+        1419,
+        1423
       ],
       "loc": {
         "start": {
-          "line": 26,
+          "line": 45,
           "column": 4
         },
         "end": {
-          "line": 26,
-          "column": 7
+          "line": 45,
+          "column": 8
         }
       }
     }
