@@ -1,3 +1,9 @@
+/**
+ * Replaces node <code>A</code> by node <code>B</code>.
+ *
+ * @param {Node} A - The node to replace.
+ * @param {Node} B - The replacement node.
+ */
 export function replace_node ( A , B ) {
 
 	// assert( A.parent !== null ) ;
