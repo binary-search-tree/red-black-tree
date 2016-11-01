@@ -1,9 +1,4 @@
 System.config({
-  packages: {
-    'lib/**': {
-      main: 'index.js',
-    }
-  },
   baseURL: "/",
   defaultJSExtensions: true,
   transpiler: "babel",
