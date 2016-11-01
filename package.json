@@ -19,7 +19,8 @@
     "url": "https://github.com/aureooms/es-red-black-tree/issues"
   },
   "scripts": {
-    "preversion": "babel src -d lib",
+    "build": "babel src -d lib",
+    "prepublish": "npm run build",
     "test": "ava ./test/src --concurrency 4",
     "cover": "nyc --reporter=lcov npm test"
   },
