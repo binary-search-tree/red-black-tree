@@ -1,7 +1,7 @@
 {
   "name": "aureooms-es-red-black-tree",
-  "version": "2.0.5",
-  "author": "aureooms",
+  "version": "2.0.6",
+  "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "license": "AGPL-3.0",
   "description": "red-black tree library for JavaScript",
   "keywords": [
@@ -21,7 +21,7 @@
   "scripts": {
     "build": "babel src -d lib",
     "prepublish": "npm run build",
-    "test": "ava ./test/src --concurrency 4",
+    "test": "ava ./test/src",
     "cover": "nyc --reporter=lcov npm test"
   },
   "main": "lib/index.js",
