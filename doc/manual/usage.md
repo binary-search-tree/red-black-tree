@@ -1,23 +1,14 @@
-Depending on the syntax used by this code you will need to pass the source
-through a transpiler, for example [babel](https://babeljs.io).
-
-### jspm
-Configure [jspm](http://jspm.io) to transpile all the code. Then
+The code needs a ES2015+ polyfill to work, for example
+[babel-polyfill](https://babeljs.io/docs/usage/polyfill).
 ```js
-let redblacktree = require( 'github:aureooms/es-red-black-tree' ) ;
+require( 'babel-polyfill' ) ;
 // or
-import redblacktree from 'aureooms-es-red-black-tree' ;
+import 'babel-polyfill' ;
 ```
 
-### npm
-Configure your code to transpile dependencies on the fly (for example with
-[babel-register](https://babeljs.io/docs/usage/require)). Then you can
+Then
 ```js
-import redblacktree from 'aureooms-es-red-black-tree' ;
+const redblacktree = require( 'aureooms-js-red-black-tree' ) ;
+// or
+import redblacktree from 'aureooms-js-red-black-tree' ;
 ```
-
-Additionally, for the browser, you can configure
-[rollup](http://rollupjs.org),
-[browserify](http://browserify.org),
-or [webpack](https://webpack.github.io) to transpile and package the
-dependencies with your code.
