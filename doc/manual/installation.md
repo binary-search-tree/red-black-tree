@@ -4,8 +4,6 @@ or [npm](https://github.com/npm/npm).
 
 ### jspm
 ```terminal
-jspm install github:aureooms/es-red-black-tree
-# or
 jspm install npm:aureooms-es-red-black-tree
 ```
 
