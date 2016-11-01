@@ -21,7 +21,7 @@
   "scripts": {
     "build": "babel src -d lib",
     "prepublish": "npm run build",
-    "test": "ava ./test/src --concurrency 4",
+    "test": "ava ./test/src",
     "cover": "nyc --reporter=lcov npm test"
   },
   "main": "lib/index.js",
