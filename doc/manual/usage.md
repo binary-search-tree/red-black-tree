@@ -8,7 +8,7 @@ import 'babel-polyfill' ;
 
 Then
 ```js
-const redblacktree = require( 'aureooms-es-red-black-tree' ) ;
+const redblacktree = require( 'aureooms-js-red-black-tree' ) ;
 // or
-import redblacktree from 'aureooms-es-red-black-tree' ;
+import redblacktree from 'aureooms-js-red-black-tree' ;
 ```
