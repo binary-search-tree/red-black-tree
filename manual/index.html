@@ -13,14 +13,14 @@
 <script data-ice="userScript" src="user/script/0-header.js"></script>
 <link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
 </head>
-<body class="layout-container manual-root" data-ice="rootContainer">
+<body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
 <header>
   <a href="./">Home</a>
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  <a href="test.html" data-ice="testLink">Test</a>
+  
   <a data-ice="repoURL" href="https://github.com/aureooms/js-red-black-tree" class="repo-url-github">Repository</a>
   <div class="search-box">
   <span>
@@ -34,85 +34,959 @@
 <nav class="navigation" data-ice="nav"><div class="manual-toc-root">
   
 <div data-ice="manual" data-toc-name="overview">
-    <h1 class="manual-toc-title"><a href="manual/overview.html" data-ice="title">Overview</a></h1>
     <ul class="manual-toc">
       
     </ul>
   </div>
 <div data-ice="manual" data-toc-name="installation">
-    <h1 class="manual-toc-title"><a href="manual/installation.html" data-ice="title">Installation</a></h1>
     <ul class="manual-toc">
       
-    <li data-ice="manualNav" class="indent-h2"><span class="manual-dot"></span><a href="manual/installation.html#jspm" data-ice="link">jspm</a></li>
-<li data-ice="manualNav" class="indent-h2"><span class="manual-dot"></span><a href="manual/installation.html#npm" data-ice="link">npm</a></li>
+    <li data-ice="manualNav" class="indent-h3" data-link="manual/installation/installation.html"><a href="manual/installation/installation.html#jspm" data-ice="link">jspm</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation/installation.html"><a href="manual/installation/installation.html#npm" data-ice="link">npm</a></li>
 </ul>
   </div>
 <div data-ice="manual" data-toc-name="usage">
-    <h1 class="manual-toc-title"><a href="manual/usage.html" data-ice="title">Usage</a></h1>
     <ul class="manual-toc">
       
     </ul>
   </div>
 <div data-ice="manual" data-toc-name="example">
-    <h1 class="manual-toc-title"><a href="manual/example.html" data-ice="title">Example</a></h1>
     <ul class="manual-toc">
       
     </ul>
   </div>
 <div data-ice="manual" data-toc-name="reference">
-    <h1 class="manual-toc-title"><a href="identifiers.html" data-ice="title">Reference</a></h1>
     <ul class="manual-toc">
       
-    <li data-ice="manualNav" class="indent-h1"><span class="manual-dot"></span><a href="identifiers.html#class" data-ice="link">Class</a></li>
-<li data-ice="manualNav" class="indent-h1"><span class="manual-dot"></span><a href="identifiers.html#function" data-ice="link">Function</a></li>
-<li data-ice="manualNav" class="indent-h1"><span class="manual-dot"></span><a href="identifiers.html#variable" data-ice="link">Variable</a></li>
+    <li data-ice="manualNav" class="indent-h1 manual-color manual-color-reference" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="identifiers.html"><a href="identifiers.html" data-ice="link">Reference</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#class" data-ice="link">Class</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#function" data-ice="link">Function</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#variable" data-ice="link">Variable</a></li>
 </ul>
   </div>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="github-markdown manual-toc-root">
+<div class="content" data-ice="content"><div class="github-markdown">
   
-<div data-ice="manual" data-toc-name="overview">
-    <h1 class="manual-toc-title"><a href="manual/overview.html" data-ice="title">Overview</a></h1>
-    <ul class="manual-toc">
+
+  <p class="manual-badge" data-ice="manualBadge"><img src="./manual-badge.svg"></p>
+
+  <div class="manual-cards">
+    
+  <div class="manual-card-wrap" data-ice="cards">
+      <h1 data-ice="label" class="manual-color manual-color-reference" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;"><span data-ice="label-inner">References</span></h1>
+      <div class="manual-card">
+        <div data-ice="card"><h1>References</h1>
+<div data-ice="classSummary"><h2 id="class">Class Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Class Summary</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
       
-    </ul>
-  </div>
-<div data-ice="manual" data-toc-name="installation">
-    <h1 class="manual-toc-title"><a href="manual/installation.html" data-ice="title">Installation</a></h1>
-    <ul class="manual-toc">
       
-    <li data-ice="manualNav" class="indent-h2"><span class="manual-dot"></span><a href="manual/installation.html#jspm" data-ice="link">jspm</a></li>
-<li data-ice="manualNav" class="indent-h2"><span class="manual-dot"></span><a href="manual/installation.html#npm" data-ice="link">npm</a></li>
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/adt/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>A RedBlackTree with key-only nodes.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div data-ice="functionSummary"><h2 id="function">Function Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Function Summary</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span><span data-ice="signature">(parent: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>A black leaf node.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span><span data-ice="signature">(color: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, key: <span>Key</span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>An internal node.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-debug">debug</a></span></span><span data-ice="signature">(root: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Recursively constructs a prettyprint string for the red-black tree rooted at
+<code>root</code>.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-delete_case1">delete_case1</a></span></span><span data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Preconditions:</p>
+<ul>
+<li>n is black</li>
+<li>all root-leaf paths going through n have a black height of b - 1</li>
+<li>all other root-leaf paths have a black height of b</li>
 </ul>
-  </div>
-<div data-ice="manual" data-toc-name="usage">
-    <h1 class="manual-toc-title"><a href="manual/usage.html" data-ice="title">Usage</a></h1>
-    <ul class="manual-toc">
+</div>
+      </div>
+    </td>
+    <td>
       
-    </ul>
-  </div>
-<div data-ice="manual" data-toc-name="example">
-    <h1 class="manual-toc-title"><a href="manual/example.html" data-ice="title">Example</a></h1>
-    <ul class="manual-toc">
       
-    </ul>
-  </div>
-<div data-ice="manual" data-toc-name="reference">
-    <h1 class="manual-toc-title"><a href="identifiers.html" data-ice="title">Reference</a></h1>
-    <ul class="manual-toc">
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
       
-    <li data-ice="manualNav" class="indent-h1"><span class="manual-dot"></span><a href="identifiers.html#class" data-ice="link">Class</a></li>
-<li data-ice="manualNav" class="indent-h1"><span class="manual-dot"></span><a href="identifiers.html#function" data-ice="link">Function</a></li>
-<li data-ice="manualNav" class="indent-h1"><span class="manual-dot"></span><a href="identifiers.html#variable" data-ice="link">Variable</a></li>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-delete_case2">delete_case2</a></span></span><span data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Preconditions:</p>
+<ul>
+<li>n is black</li>
+<li>all root-leaf paths going through n have a black height of b - 1</li>
+<li>all other root-leaf paths have a black height of b</li>
+<li>n is not the root</li>
 </ul>
-  </div>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-delete_case3">delete_case3</a></span></span><span data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Preconditions:</p>
+<ul>
+<li>n is black</li>
+<li>all root-leaf paths going through n have a black height of b - 1</li>
+<li>all other root-leaf paths have a black height of b</li>
+<li>n is not the root</li>
+<li>n&apos;s sibling is black</li>
+</ul>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-delete_case4">delete_case4</a></span></span><span data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Preconditions:</p>
+<ul>
+<li>n is black</li>
+<li>all root-leaf paths going through n have a black height of b - 1</li>
+<li>all other root-leaf paths have a black height of b</li>
+<li>n is not the root</li>
+<li>n&apos;s sibling is black</li>
+<li>n&apos;s parent and n&apos;s sibling&apos;s children cannot all be black</li>
+</ul>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-delete_case5">delete_case5</a></span></span><span data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Preconditions:</p>
+<ul>
+<li>n is black</li>
+<li>all root-leaf paths going through n have a black height of b - 1</li>
+<li>all other root-leaf paths have a black height of b</li>
+<li>n is not the root</li>
+<li>n&apos;s sibling is black</li>
+<li>at least one of n&apos;s sibling&apos;s children is red</li>
+</ul>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-delete_case6">delete_case6</a></span></span><span data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Preconditions:</p>
+<ul>
+<li>n is black</li>
+<li>all root-leaf paths going through n have a black height of b - 1</li>
+<li>all other root-leaf paths have a black height of b</li>
+<li>n is not the root</li>
+<li>n&apos;s sibling is black</li>
+<li>if n is a left child, the right child of n&apos;s sibling is red</li>
+<li>if n is a right child, the left child of n&apos;s sibling is red</li>
+</ul>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-delete_one_child">delete_one_child</a></span></span><span data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Delete a node <code>n</code> that has at most a single non-leaf child.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-grandparent">grandparent</a></span></span><span data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Computes the grandparent (parent of parent) of the input node.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          <span data-ice="generator">*</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span><span data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span>Iterator</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Traverses the tree rooted at <code>node</code> in order.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-insert">insert</a></span></span><span data-ice="signature">(compare: <span>*</span>, A: <span><a href="function/index.html#static-function-Node">Node</a></span>, B: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Walks the tree rooted at <code>A</code> down the only path that satisfies
+the following property: if at a node <code>C</code> we make a left (resp.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-insert_case1">insert_case1</a></span></span><span data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Preconditions:</p>
+<ul>
+<li>n is red.</li>
+</ul>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-insert_case2">insert_case2</a></span></span><span data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Preconditions:</p>
+<ul>
+<li>n is red.</li>
+</ul>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-insert_case3">insert_case3</a></span></span><span data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Preconditions:</p>
+<ul>
+<li>n is red.</li>
+</ul>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-insert_case4">insert_case4</a></span></span><span data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Preconditions:</p>
+<ul>
+<li>n is red.</li>
+</ul>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-insert_case5">insert_case5</a></span></span><span data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Preconditions:</p>
+<ul>
+<li>n is red.</li>
+</ul>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-predecessor">predecessor</a></span></span><span data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Computes the predecessor of the input node, in the subtree rooted at the
+input node, when this predecessor is guaranteed to exist.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          <span data-ice="generator">*</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span><span data-ice="signature">(compare: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, root: <span><a href="function/index.html#static-function-Node">Node</a></span>, left: <span>Key</span>, right: <span>Key</span>): <span>Iterator</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Yields all the keys in the tree rooted at <code>root</code> that lie in the
+interval <code>[left, right[</code>, in order.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-replace_node">replace_node</a></span></span><span data-ice="signature">(A: <span><a href="function/index.html#static-function-Node">Node</a></span>, B: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Replaces node <code>A</code> by node <code>B</code>.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-rotate_left">rotate_left</a></span></span><span data-ice="signature">(A: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Rotate tree left.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-rotate_right">rotate_right</a></span></span><span data-ice="signature">(B: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Rotate tree right.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span><span data-ice="signature">(compare: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, root: <span><a href="function/index.html#static-function-Node">Node</a></span>, key: <span>Key</span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Search for the first node whose key equals <code>key</code>.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-sibling">sibling</a></span></span><span data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Computes the sibling of the input node.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="function/index.html#static-function-uncle">uncle</a></span></span><span data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Computes the uncle of the input node when the grandparent is guaranteed to
+exist.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="variableSummary"><h2 id="variable">Variable Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Variable Summary</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="variable/index.html#static-variable-BLACK">BLACK</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Constant for black.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="variable/index.html#static-variable-RED">RED</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Constant for red.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+        <a data-ice="link" href="identifiers.html"></a>
+      </div>
+    </div>
+</div>
 </div>
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

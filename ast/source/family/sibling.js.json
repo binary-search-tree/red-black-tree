@@ -1,170 +1,136 @@
 {
-  "type": "Program",
-  "body": [
-    {
-      "type": "ExportNamedDeclaration",
-      "declaration": {
-        "type": "FunctionDeclaration",
-        "id": {
-          "type": "Identifier",
-          "name": "sibling",
-          "range": [
-            129,
-            136
-          ],
+  "type": "File",
+  "start": 0,
+  "end": 373,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 16,
+      "column": 0
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 373,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 16,
+        "column": 0
+      }
+    },
+    "sourceType": "module",
+    "body": [
+      {
+        "type": "ExportNamedDeclaration",
+        "start": 113,
+        "end": 372,
+        "loc": {
+          "start": {
+            "line": 7,
+            "column": 0
+          },
+          "end": {
+            "line": 15,
+            "column": 1
+          }
+        },
+        "specifiers": [],
+        "source": null,
+        "declaration": {
+          "type": "FunctionDeclaration",
+          "start": 120,
+          "end": 372,
           "loc": {
             "start": {
               "line": 7,
-              "column": 16
+              "column": 7
             },
             "end": {
-              "line": 7,
-              "column": 23
+              "line": 15,
+              "column": 1
             }
-          }
-        },
-        "params": [
-          {
+          },
+          "id": {
             "type": "Identifier",
-            "name": "node",
-            "range": [
-              139,
-              143
-            ],
+            "start": 129,
+            "end": 136,
             "loc": {
               "start": {
                 "line": 7,
-                "column": 26
+                "column": 16
               },
               "end": {
                 "line": 7,
-                "column": 30
-              }
-            }
-          }
-        ],
-        "body": {
-          "type": "BlockStatement",
-          "body": [
+                "column": 23
+              },
+              "identifierName": "sibling"
+            },
+            "name": "sibling",
+            "leadingComments": null
+          },
+          "generator": false,
+          "expression": false,
+          "async": false,
+          "params": [
             {
-              "type": "ReturnStatement",
-              "argument": {
-                "type": "ConditionalExpression",
-                "test": {
-                  "type": "BinaryExpression",
-                  "operator": "===",
-                  "left": {
-                    "type": "Identifier",
-                    "name": "node",
-                    "range": [
-                      303,
-                      307
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 13,
-                        "column": 9
-                      },
-                      "end": {
-                        "line": 13,
-                        "column": 13
-                      }
-                    }
+              "type": "Identifier",
+              "start": 139,
+              "end": 143,
+              "loc": {
+                "start": {
+                  "line": 7,
+                  "column": 26
+                },
+                "end": {
+                  "line": 7,
+                  "column": 30
+                },
+                "identifierName": "node"
+              },
+              "name": "node"
+            }
+          ],
+          "body": {
+            "type": "BlockStatement",
+            "start": 146,
+            "end": 372,
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 33
+              },
+              "end": {
+                "line": 15,
+                "column": 1
+              }
+            },
+            "body": [
+              {
+                "type": "ReturnStatement",
+                "start": 295,
+                "end": 369,
+                "loc": {
+                  "start": {
+                    "line": 13,
+                    "column": 1
                   },
-                  "right": {
-                    "type": "MemberExpression",
-                    "computed": false,
-                    "object": {
-                      "type": "MemberExpression",
-                      "computed": false,
-                      "object": {
-                        "type": "Identifier",
-                        "name": "node",
-                        "range": [
-                          312,
-                          316
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 13,
-                            "column": 18
-                          },
-                          "end": {
-                            "line": 13,
-                            "column": 22
-                          }
-                        }
-                      },
-                      "property": {
-                        "type": "Identifier",
-                        "name": "parent",
-                        "range": [
-                          317,
-                          323
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 13,
-                            "column": 23
-                          },
-                          "end": {
-                            "line": 13,
-                            "column": 29
-                          }
-                        }
-                      },
-                      "range": [
-                        312,
-                        323
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 13,
-                          "column": 18
-                        },
-                        "end": {
-                          "line": 13,
-                          "column": 29
-                        }
-                      }
-                    },
-                    "property": {
-                      "type": "Identifier",
-                      "name": "left",
-                      "range": [
-                        324,
-                        328
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 13,
-                          "column": 30
-                        },
-                        "end": {
-                          "line": 13,
-                          "column": 34
-                        }
-                      }
-                    },
-                    "range": [
-                      312,
-                      328
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 13,
-                        "column": 18
-                      },
-                      "end": {
-                        "line": 13,
-                        "column": 34
-                      }
-                    }
-                  },
-                  "range": [
-                    303,
-                    328
-                  ],
+                  "end": {
+                    "line": 13,
+                    "column": 75
+                  }
+                },
+                "argument": {
+                  "type": "ConditionalExpression",
+                  "start": 303,
+                  "end": 367,
                   "loc": {
                     "start": {
                       "line": 13,
@@ -172,56 +138,131 @@
                     },
                     "end": {
                       "line": 13,
-                      "column": 34
+                      "column": 73
                     }
-                  }
-                },
-                "consequent": {
-                  "type": "MemberExpression",
-                  "computed": false,
-                  "object": {
-                    "type": "MemberExpression",
-                    "computed": false,
-                    "object": {
+                  },
+                  "test": {
+                    "type": "BinaryExpression",
+                    "start": 303,
+                    "end": 328,
+                    "loc": {
+                      "start": {
+                        "line": 13,
+                        "column": 9
+                      },
+                      "end": {
+                        "line": 13,
+                        "column": 34
+                      }
+                    },
+                    "left": {
                       "type": "Identifier",
+                      "start": 303,
+                      "end": 307,
+                      "loc": {
+                        "start": {
+                          "line": 13,
+                          "column": 9
+                        },
+                        "end": {
+                          "line": 13,
+                          "column": 13
+                        },
+                        "identifierName": "node"
+                      },
                       "name": "node",
-                      "range": [
-                        331,
-                        335
-                      ],
+                      "leadingComments": null
+                    },
+                    "operator": "===",
+                    "right": {
+                      "type": "MemberExpression",
+                      "start": 312,
+                      "end": 328,
                       "loc": {
                         "start": {
                           "line": 13,
-                          "column": 37
+                          "column": 18
                         },
                         "end": {
                           "line": 13,
-                          "column": 41
+                          "column": 34
                         }
-                      }
-                    },
-                    "property": {
-                      "type": "Identifier",
-                      "name": "parent",
-                      "range": [
-                        336,
-                        342
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 13,
-                          "column": 42
+                      },
+                      "object": {
+                        "type": "MemberExpression",
+                        "start": 312,
+                        "end": 323,
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 18
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 29
+                          }
                         },
-                        "end": {
-                          "line": 13,
-                          "column": 48
-                        }
-                      }
+                        "object": {
+                          "type": "Identifier",
+                          "start": 312,
+                          "end": 316,
+                          "loc": {
+                            "start": {
+                              "line": 13,
+                              "column": 18
+                            },
+                            "end": {
+                              "line": 13,
+                              "column": 22
+                            },
+                            "identifierName": "node"
+                          },
+                          "name": "node"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "start": 317,
+                          "end": 323,
+                          "loc": {
+                            "start": {
+                              "line": 13,
+                              "column": 23
+                            },
+                            "end": {
+                              "line": 13,
+                              "column": 29
+                            },
+                            "identifierName": "parent"
+                          },
+                          "name": "parent"
+                        },
+                        "computed": false
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "start": 324,
+                        "end": 328,
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 30
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 34
+                          },
+                          "identifierName": "left"
+                        },
+                        "name": "left"
+                      },
+                      "computed": false
                     },
-                    "range": [
-                      331,
-                      342
-                    ],
+                    "leadingComments": null
+                  },
+                  "consequent": {
+                    "type": "MemberExpression",
+                    "start": 331,
+                    "end": 348,
                     "loc": {
                       "start": {
                         "line": 13,
@@ -229,89 +270,82 @@
                       },
                       "end": {
                         "line": 13,
-                        "column": 48
-                      }
-                    }
-                  },
-                  "property": {
-                    "type": "Identifier",
-                    "name": "right",
-                    "range": [
-                      343,
-                      348
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 13,
-                        "column": 49
-                      },
-                      "end": {
-                        "line": 13,
                         "column": 54
                       }
-                    }
-                  },
-                  "range": [
-                    331,
-                    348
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 13,
-                      "column": 37
                     },
-                    "end": {
-                      "line": 13,
-                      "column": 54
-                    }
-                  }
-                },
-                "alternate": {
-                  "type": "MemberExpression",
-                  "computed": false,
-                  "object": {
-                    "type": "MemberExpression",
-                    "computed": false,
                     "object": {
-                      "type": "Identifier",
-                      "name": "node",
-                      "range": [
-                        351,
-                        355
-                      ],
+                      "type": "MemberExpression",
+                      "start": 331,
+                      "end": 342,
                       "loc": {
                         "start": {
                           "line": 13,
-                          "column": 57
+                          "column": 37
                         },
                         "end": {
                           "line": 13,
-                          "column": 61
+                          "column": 48
                         }
-                      }
+                      },
+                      "object": {
+                        "type": "Identifier",
+                        "start": 331,
+                        "end": 335,
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 37
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 41
+                          },
+                          "identifierName": "node"
+                        },
+                        "name": "node"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "start": 336,
+                        "end": 342,
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 42
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 48
+                          },
+                          "identifierName": "parent"
+                        },
+                        "name": "parent"
+                      },
+                      "computed": false
                     },
                     "property": {
                       "type": "Identifier",
-                      "name": "parent",
-                      "range": [
-                        356,
-                        362
-                      ],
+                      "start": 343,
+                      "end": 348,
                       "loc": {
                         "start": {
                           "line": 13,
-                          "column": 62
+                          "column": 49
                         },
                         "end": {
                           "line": 13,
-                          "column": 68
-                        }
-                      }
+                          "column": 54
+                        },
+                        "identifierName": "right"
+                      },
+                      "name": "right"
                     },
-                    "range": [
-                      351,
-                      362
-                    ],
+                    "computed": false
+                  },
+                  "alternate": {
+                    "type": "MemberExpression",
+                    "start": 351,
+                    "end": 367,
                     "loc": {
                       "start": {
                         "line": 13,
@@ -319,169 +353,160 @@
                       },
                       "end": {
                         "line": 13,
-                        "column": 68
-                      }
-                    }
-                  },
-                  "property": {
-                    "type": "Identifier",
-                    "name": "left",
-                    "range": [
-                      363,
-                      367
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 13,
-                        "column": 69
-                      },
-                      "end": {
-                        "line": 13,
                         "column": 73
                       }
-                    }
-                  },
-                  "range": [
-                    351,
-                    367
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 13,
-                      "column": 57
                     },
-                    "end": {
-                      "line": 13,
-                      "column": 73
+                    "object": {
+                      "type": "MemberExpression",
+                      "start": 351,
+                      "end": 362,
+                      "loc": {
+                        "start": {
+                          "line": 13,
+                          "column": 57
+                        },
+                        "end": {
+                          "line": 13,
+                          "column": 68
+                        }
+                      },
+                      "object": {
+                        "type": "Identifier",
+                        "start": 351,
+                        "end": 355,
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 57
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 61
+                          },
+                          "identifierName": "node"
+                        },
+                        "name": "node"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "start": 356,
+                        "end": 362,
+                        "loc": {
+                          "start": {
+                            "line": 13,
+                            "column": 62
+                          },
+                          "end": {
+                            "line": 13,
+                            "column": 68
+                          },
+                          "identifierName": "parent"
+                        },
+                        "name": "parent"
+                      },
+                      "computed": false
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "start": 363,
+                      "end": 367,
+                      "loc": {
+                        "start": {
+                          "line": 13,
+                          "column": 69
+                        },
+                        "end": {
+                          "line": 13,
+                          "column": 73
+                        },
+                        "identifierName": "left"
+                      },
+                      "name": "left"
+                    },
+                    "computed": false
+                  },
+                  "leadingComments": null
+                },
+                "leadingComments": [
+                  {
+                    "type": "CommentLine",
+                    "value": " assert((node !== null) && (node.parent !== null));",
+                    "start": 150,
+                    "end": 203,
+                    "loc": {
+                      "start": {
+                        "line": 9,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 9,
+                        "column": 54
+                      }
+                    }
+                  },
+                  {
+                    "type": "CommentLine",
+                    "value": " We only use this function when node HAS a sibling so this case can never",
+                    "start": 205,
+                    "end": 280,
+                    "loc": {
+                      "start": {
+                        "line": 10,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 10,
+                        "column": 76
+                      }
+                    }
+                  },
+                  {
+                    "type": "CommentLine",
+                    "value": " happen.",
+                    "start": 282,
+                    "end": 292,
+                    "loc": {
+                      "start": {
+                        "line": 11,
+                        "column": 1
+                      },
+                      "end": {
+                        "line": 11,
+                        "column": 11
+                      }
                     }
                   }
-                },
-                "range": [
-                  303,
-                  367
-                ],
-                "loc": {
-                  "start": {
-                    "line": 13,
-                    "column": 9
-                  },
-                  "end": {
-                    "line": 13,
-                    "column": 73
-                  }
-                }
-              },
-              "range": [
-                295,
-                369
-              ],
+                ]
+              }
+            ],
+            "directives": []
+          },
+          "leadingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\n * Computes the sibling of the input node.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n ",
+              "start": 0,
+              "end": 112,
               "loc": {
                 "start": {
-                  "line": 13,
-                  "column": 1
+                  "line": 1,
+                  "column": 0
                 },
                 "end": {
-                  "line": 13,
-                  "column": 75
+                  "line": 6,
+                  "column": 3
                 }
-              },
-              "leadingComments": [
-                {
-                  "type": "Line",
-                  "value": " assert((node !== null) && (node.parent !== null));",
-                  "range": [
-                    150,
-                    203
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 9,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 9,
-                      "column": 54
-                    }
-                  }
-                },
-                {
-                  "type": "Line",
-                  "value": " We only use this function when node HAS a sibling so this case can never",
-                  "range": [
-                    205,
-                    280
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 10,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 10,
-                      "column": 76
-                    }
-                  }
-                },
-                {
-                  "type": "Line",
-                  "value": " happen.",
-                  "range": [
-                    282,
-                    292
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 11,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 11,
-                      "column": 11
-                    }
-                  }
-                }
-              ]
+              }
             }
           ],
-          "range": [
-            146,
-            372
-          ],
-          "loc": {
-            "start": {
-              "line": 7,
-              "column": 33
-            },
-            "end": {
-              "line": 15,
-              "column": 1
-            }
-          }
-        },
-        "generator": false,
-        "expression": false,
-        "range": [
-          120,
-          372
-        ],
-        "loc": {
-          "start": {
-            "line": 7,
-            "column": 7
-          },
-          "end": {
-            "line": 15,
-            "column": 1
-          }
+          "trailingComments": []
         },
         "leadingComments": [
           {
-            "type": "Block",
+            "type": "CommentBlock",
             "value": "*\n * Computes the sibling of the input node.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n ",
-            "range": [
-              0,
-              112
-            ],
+            "start": 0,
+            "end": 112,
             "loc": {
               "start": {
                 "line": 1,
@@ -493,70 +518,17 @@
               }
             }
           }
-        ],
-        "trailingComments": []
-      },
-      "specifiers": [],
-      "source": null,
-      "range": [
-        113,
-        372
-      ],
-      "loc": {
-        "start": {
-          "line": 7,
-          "column": 0
-        },
-        "end": {
-          "line": 15,
-          "column": 1
-        }
-      },
-      "leadingComments": [
-        {
-          "type": "Block",
-          "value": "*\n * Computes the sibling of the input node.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n ",
-          "range": [
-            0,
-            112
-          ],
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 0
-            },
-            "end": {
-              "line": 6,
-              "column": 3
-            }
-          }
-        }
-      ]
-    }
-  ],
-  "sourceType": "module",
-  "range": [
-    113,
-    372
-  ],
-  "loc": {
-    "start": {
-      "line": 7,
-      "column": 0
-    },
-    "end": {
-      "line": 15,
-      "column": 1
-    }
+        ]
+      }
+    ],
+    "directives": []
   },
   "comments": [
     {
-      "type": "Block",
+      "type": "CommentBlock",
       "value": "*\n * Computes the sibling of the input node.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n ",
-      "range": [
-        0,
-        112
-      ],
+      "start": 0,
+      "end": 112,
       "loc": {
         "start": {
           "line": 1,
@@ -569,12 +541,10 @@
       }
     },
     {
-      "type": "Line",
+      "type": "CommentLine",
       "value": " assert((node !== null) && (node.parent !== null));",
-      "range": [
-        150,
-        203
-      ],
+      "start": 150,
+      "end": 203,
       "loc": {
         "start": {
           "line": 9,
@@ -587,12 +557,10 @@
       }
     },
     {
-      "type": "Line",
+      "type": "CommentLine",
       "value": " We only use this function when node HAS a sibling so this case can never",
-      "range": [
-        205,
-        280
-      ],
+      "start": 205,
+      "end": 280,
       "loc": {
         "start": {
           "line": 10,
@@ -605,12 +573,10 @@
       }
     },
     {
-      "type": "Line",
+      "type": "CommentLine",
       "value": " happen.",
-      "range": [
-        282,
-        292
-      ],
+      "start": 282,
+      "end": 292,
       "loc": {
         "start": {
           "line": 11,
@@ -619,6 +585,854 @@
         "end": {
           "line": 11,
           "column": 11
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n * Computes the sibling of the input node.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n ",
+      "start": 0,
+      "end": 112,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 113,
+      "end": 119,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "function",
+        "keyword": "function",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "function",
+      "start": 120,
+      "end": 128,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 7
+        },
+        "end": {
+          "line": 7,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "sibling",
+      "start": 129,
+      "end": 136,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 16
+        },
+        "end": {
+          "line": 7,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 137,
+      "end": 138,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 24
+        },
+        "end": {
+          "line": 7,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "node",
+      "start": 139,
+      "end": 143,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 26
+        },
+        "end": {
+          "line": 7,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 144,
+      "end": 145,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 31
+        },
+        "end": {
+          "line": 7,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 146,
+      "end": 147,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 33
+        },
+        "end": {
+          "line": 7,
+          "column": 34
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " assert((node !== null) && (node.parent !== null));",
+      "start": 150,
+      "end": 203,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 1
+        },
+        "end": {
+          "line": 9,
+          "column": 54
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " We only use this function when node HAS a sibling so this case can never",
+      "start": 205,
+      "end": 280,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 1
+        },
+        "end": {
+          "line": 10,
+          "column": 76
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " happen.",
+      "start": 282,
+      "end": 292,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 1
+        },
+        "end": {
+          "line": 11,
+          "column": 11
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "return",
+        "keyword": "return",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "return",
+      "start": 295,
+      "end": 301,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 1
+        },
+        "end": {
+          "line": 13,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "node",
+      "start": 303,
+      "end": 307,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 9
+        },
+        "end": {
+          "line": 13,
+          "column": 13
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "==/!=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": 6,
+        "updateContext": null
+      },
+      "value": "===",
+      "start": 308,
+      "end": 311,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 14
+        },
+        "end": {
+          "line": 13,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "node",
+      "start": 312,
+      "end": 316,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 18
+        },
+        "end": {
+          "line": 13,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 316,
+      "end": 317,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 22
+        },
+        "end": {
+          "line": 13,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "parent",
+      "start": 317,
+      "end": 323,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 23
+        },
+        "end": {
+          "line": 13,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 323,
+      "end": 324,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 29
+        },
+        "end": {
+          "line": 13,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "left",
+      "start": 324,
+      "end": 328,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 30
+        },
+        "end": {
+          "line": 13,
+          "column": 34
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "?",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 329,
+      "end": 330,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 35
+        },
+        "end": {
+          "line": 13,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "node",
+      "start": 331,
+      "end": 335,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 37
+        },
+        "end": {
+          "line": 13,
+          "column": 41
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 335,
+      "end": 336,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 41
+        },
+        "end": {
+          "line": 13,
+          "column": 42
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "parent",
+      "start": 336,
+      "end": 342,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 42
+        },
+        "end": {
+          "line": 13,
+          "column": 48
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 342,
+      "end": 343,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 48
+        },
+        "end": {
+          "line": 13,
+          "column": 49
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "right",
+      "start": 343,
+      "end": 348,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 49
+        },
+        "end": {
+          "line": 13,
+          "column": 54
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ":",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 349,
+      "end": 350,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 55
+        },
+        "end": {
+          "line": 13,
+          "column": 56
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "node",
+      "start": 351,
+      "end": 355,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 57
+        },
+        "end": {
+          "line": 13,
+          "column": 61
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 355,
+      "end": 356,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 61
+        },
+        "end": {
+          "line": 13,
+          "column": 62
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "parent",
+      "start": 356,
+      "end": 362,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 62
+        },
+        "end": {
+          "line": 13,
+          "column": 68
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 362,
+      "end": 363,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 68
+        },
+        "end": {
+          "line": 13,
+          "column": 69
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "left",
+      "start": 363,
+      "end": 367,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 69
+        },
+        "end": {
+          "line": 13,
+          "column": 73
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 368,
+      "end": 369,
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 74
+        },
+        "end": {
+          "line": 13,
+          "column": 75
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 371,
+      "end": 372,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 0
+        },
+        "end": {
+          "line": 15,
+          "column": 1
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 373,
+      "end": 373,
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 0
+        },
+        "end": {
+          "line": 16,
+          "column": 0
         }
       }
     }

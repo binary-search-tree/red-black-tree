@@ -2,23 +2,22 @@
   {
     "__docId__": 0,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/adt/Leaf.js",
-    "memberof": null,
+    "content": "import { BLACK } from '..' ;\n\n/**\n * A black leaf node.\n *\n * @constructor\n * @param {Node} parent - The parent node in the tree.\n * @returns {Leaf}\n */\nexport function Leaf ( parent ) {\n\tthis.color = BLACK ;\n\tthis.parent = parent ;\n}\n\n/**\n * Returns <code>true</code> if the <code>Leaf</code> object is a leaf. This\n * always returns <code>true</code>.\n *\n * @returns {Boolean}\n */\nLeaf.prototype.isleaf = function ( ) { return true ; } ;\n",
+    "static": true,
     "longname": "src/adt/Leaf.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { BLACK } from '..' ;\n\n/**\n * A black leaf node.\n *\n * @constructor\n * @param {Node} parent - The parent node in the tree.\n * @returns {Leaf}\n */\nexport function Leaf ( parent ) {\n\tthis.color = BLACK ;\n\tthis.parent = parent ;\n}\n\n/**\n * Returns <code>true</code> if the <code>Leaf</code> object is a leaf. This\n * always returns <code>true</code>.\n *\n * @returns {Boolean}\n */\nLeaf.prototype.isleaf = function ( ) { return true ; } ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 1,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "Leaf",
     "memberof": "src/adt/Leaf.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/adt/Leaf.js~Leaf",
     "access": null,
     "export": true,
@@ -55,16 +54,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 2,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "isleaf",
     "memberof": "src/adt/Leaf.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/adt/Leaf.js~isleaf",
     "access": null,
     "export": false,
@@ -86,29 +85,27 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 3,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/adt/Node.js",
-    "memberof": null,
+    "content": "import { Leaf } from './Leaf' ;\n\n/**\n * An internal node. This node can be red or black.\n *\n * @constructor\n * @param {Number} color - The color of the node.\n * @param {Key} key - The key of the node.\n * @returns {Node}\n */\nexport function Node ( color , key ) {\n\tthis.color = color ;\n\tthis.left = new Leaf( this ) ;\n\tthis.right = new Leaf( this ) ;\n\tthis.parent = null ;\n\tthis.key = key ;\n}\n\n/**\n * Returns <code>true</code> if the <code>Node</code> object is a leaf. This\n * always returns <code>false</code>.\n *\n * @returns {Boolean}\n */\nNode.prototype.isleaf = function ( ) { return false ; } ;\n",
+    "static": true,
     "longname": "src/adt/Node.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { Leaf } from './Leaf' ;\n\n/**\n * An internal node. This node can be red or black.\n *\n * @constructor\n * @param {Number} color - The color of the node.\n * @param {Key} key - The key of the node.\n * @returns {Node}\n */\nexport function Node ( color , key ) {\n\tthis.color = color ;\n\tthis.left = new Leaf( this ) ;\n\tthis.right = new Leaf( this ) ;\n\tthis.parent = null ;\n\tthis.key = key ;\n}\n\n/**\n * Returns <code>true</code> if the <code>Node</code> object is a leaf. This\n * always returns <code>false</code>.\n *\n * @returns {Boolean}\n */\nNode.prototype.isleaf = function ( ) { return false ; } ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 4,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "Node",
     "memberof": "src/adt/Node.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/adt/Node.js~Node",
     "access": null,
     "export": true,
@@ -155,16 +152,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 5,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "isleaf",
     "memberof": "src/adt/Node.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/adt/Node.js~isleaf",
     "access": null,
     "export": false,
@@ -186,29 +183,25 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 6,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/adt/RedBlackTree.js",
-    "memberof": null,
+    "content": "\nimport { Node } from './Node' ;\nimport { RED , BLACK } from '..' ;\nimport { predecessor } from '..' ;\nimport { insert , insert_case2 } from '..' ;\nimport { delete_one_child } from '..' ;\nimport { search } from '..' ;\nimport { inordertraversal , rangetraversal } from '..' ;\n\n/**\n * A RedBlackTree with key-only nodes.\n *\n */\nexport class RedBlackTree {\n\n\t/**\n\t * Constructs a new empty red-black tree.\n\t *\n\t * @param {Function} compare - The comparison function for node keys.\n\t * @returns {RedBlackTree}\n\t */\n\tconstructor ( compare ) {\n\n\t\tthis.compare = compare ;\n\t\tthis.root = null ;\n\n\t}\n\n\t/**\n\t * Adds a key to the tree.\n\t *\n\t * @param {Key} key - The key to add.\n\t */\n\tadd ( key ) {\n\t\tif ( this.root === null ) {\n\t\t\tthis.root = new Node( BLACK , key ) ;\n\t\t}\n\t\telse {\n\t\t\tconst node = new Node( RED , key ) ;\n\t\t\tinsert( this.compare , this.root , node ) ;\n\t\t\tinsert_case2( node ) ;\n\t\t}\n\t}\n\n\t/**\n\t * Search for the input key in the tree.\n\t * Returns the first node whose key equals the input key.\n\t * If no such node exists, returns <code>null</code>.\n\t *\n\t * @param {Key} key - The input key.\n\t * @returns {Node}\n\t */\n\t_search ( key ) {\n\t\tif ( this.root === null ) return null ;\n\t\treturn search( this.compare , this.root , key ) ;\n\t}\n\n\t/**\n\t * Search for the input key in the tree. Returns the first node key found\n\t * in this way (with {@link RedBlackTree#_search}. If no such key exists\n\t * in the tree, returns <code>null</code>.\n\t *\n\t * @param {Key} key - The input key.\n\t * @returns {Key}\n\t */\n\tget ( key ) {\n\t\tconst node = this._search( key ) ;\n\t\treturn node === null ? null : node.key ;\n\t}\n\n\t/**\n\t * Returns <code>true</code> if and only if the tree contains the input\n\t * key.\n\t *\n\t * @param {Key} key - The input key.\n\t * @returns {Boolean}\n\t */\n\thas ( key ) {\n\t\treturn this._search( key ) !== null ;\n\t}\n\n\t/**\n\t * Deletes the input node from the tree.\n\t *\n\t * @param {Node} node - The input node to delete.\n\t */\n\t_delete ( node ) {\n\n\t\tif ( !node.left.isleaf() ) {\n\t\t\t// replace node's key with predecessor's key\n\t\t\tconst pred = predecessor( node ) ;\n\t\t\tnode.key = pred.key ;\n\t\t\t// delete predecessor node\n\t\t\t// note: this node can only have one non-leaf child\n\t\t\t//       because the tree is a red-black tree\n\t\t\tdelete_one_child( pred ) ;\n\t\t}\n\n\t\telse if ( !node.right.isleaf() ) {\n\t\t\t// replace node's key with successor's key\n\t\t\t// If there is no left child, then there can only be one right\n\t\t\t// child.\n\t\t\tconst succ = node.right ;\n\t\t\tnode.key = succ.key ;\n\t\t\t// delete successor node\n\t\t\t// note: this node can only have one non-leaf child\n\t\t\t//       because the tree is a red-black tree\n\t\t\tdelete_one_child( succ ) ;\n\t\t}\n\n\t\telse if ( node === this.root ) {\n\t\t\tthis.root = null ;\n\t\t}\n\n\t\telse {\n\t\t\tdelete_one_child( node ) ;\n\t\t}\n\n\t}\n\n\t/**\n\t * Search for the first node of the tree whose key equals the input key\n\t * (with {@link RedBlackTree#_search}), then delete that node\n\t * (with {@link RedBlackTree#_delete}). If such a node is found and deleted\n\t * then return <code>true</code>. Return <code>false</code> otherwise.\n\t *\n\t * @param {Key} key - The input key.\n\t * @returns {Boolean} - Whether the key existed in the tree before removal.\n\t */\n\tremove ( key ) {\n\n\t\tconst node = this._search( key ) ;\n\t\tif ( node === null ) return false ;\n\n\t\tthis._delete( node ) ;\n\t\treturn true ;\n\n\t}\n\n\t/**\n\t * Returns an in order iterator over the keys of the tree that lie in the\n\t * interval [left, right[.\n\t * @param {Key} left - The left bound of the interval.\n\t * @param {Key} right - The right bound of the interval.\n\t * @returns {Iterator}\n\t */\n\t*range ( left , right ) {\n\n\t\tif ( this.root !== null ) yield* rangetraversal( this.compare , this.root , left , right ) ;\n\n\t}\n\n\t/**\n\t * Returns an in order iterator over the keys of the tree.\n\t *\n\t * @returns {Iterator}\n\t */\n\t*items ( ) {\n\n\t\tif ( this.root !== null ) yield* inordertraversal( this.root ) ;\n\n\t}\n\n\t/**\n\t * Same as {@link RedBlackTree#items}.\n\t */\n\t[Symbol.iterator] ( ) {\n\n\t\treturn this.items() ;\n\n\t}\n\n\t/**\n\t * Constructs a red-black tree from an input iterable.\n\t *\n\t * @param {Function} compare - The comparison function to use.\n\t * @param {Iterbale} iterable - The input iterable.\n\t * @returns {RedBlackTree}\n\t */\n\tstatic from ( compare , iterable ) {\n\n\t\tconst tree = new RedBlackTree( compare ) ;\n\n\t\tfor ( const element of iterable ) tree.add( element ) ;\n\n\t\treturn tree ;\n\n\t}\n\n}\n",
+    "static": true,
     "longname": "src/adt/RedBlackTree.js",
     "access": null,
     "description": null,
-    "lineNumber": 2,
-    "content": "\nimport { Node } from './Node' ;\nimport { RED , BLACK } from '..' ;\nimport { predecessor } from '..' ;\nimport { insert , insert_case2 } from '..' ;\nimport { delete_one_child } from '..' ;\nimport { search } from '..' ;\nimport { inordertraversal , rangetraversal } from '..' ;\n\n/**\n * A RedBlackTree with key-only nodes.\n *\n */\nexport class RedBlackTree {\n\n\t/**\n\t * Constructs a new empty red-black tree.\n\t *\n\t * @param {Function} compare - The comparison function for node keys.\n\t * @returns {RedBlackTree}\n\t */\n\tconstructor ( compare ) {\n\n\t\tthis.compare = compare ;\n\t\tthis.root = null ;\n\n\t}\n\n\t/**\n\t * Adds a key to the tree.\n\t *\n\t * @param {Key} key - The key to add.\n\t */\n\tadd ( key ) {\n\t\tif ( this.root === null ) {\n\t\t\tthis.root = new Node( BLACK , key ) ;\n\t\t}\n\t\telse {\n\t\t\tconst node = new Node( RED , key ) ;\n\t\t\tinsert( this.compare , this.root , node ) ;\n\t\t\tinsert_case2( node ) ;\n\t\t}\n\t}\n\n\t/**\n\t * Search for the input key in the tree.\n\t * Returns the first node whose key equals the input key.\n\t * If no such node exists, returns <code>null</code>.\n\t *\n\t * @param {Key} key - The input key.\n\t * @returns {Node}\n\t */\n\t_search ( key ) {\n\t\tif ( this.root === null ) return null ;\n\t\treturn search( this.compare , this.root , key ) ;\n\t}\n\n\t/**\n\t * Search for the input key in the tree. Returns the first node key found\n\t * in this way (with {@link RedBlackTree#_search}. If no such key exists\n\t * in the tree, returns <code>null</code>.\n\t *\n\t * @param {Key} key - The input key.\n\t * @returns {Key}\n\t */\n\tget ( key ) {\n\t\tconst node = this._search( key ) ;\n\t\treturn node === null ? null : node.key ;\n\t}\n\n\t/**\n\t * Returns <code>true</code> if and only if the tree contains the input\n\t * key.\n\t *\n\t * @param {Key} key - The input key.\n\t * @returns {Boolean}\n\t */\n\thas ( key ) {\n\t\treturn this._search( key ) !== null ;\n\t}\n\n\t/**\n\t * Deletes the input node from the tree.\n\t *\n\t * @param {Node} node - The input node to delete.\n\t */\n\t_delete ( node ) {\n\n\t\tif ( !node.left.isleaf() ) {\n\t\t\t// replace node's key with predecessor's key\n\t\t\tconst pred = predecessor( node ) ;\n\t\t\tnode.key = pred.key ;\n\t\t\t// delete predecessor node\n\t\t\t// note: this node can only have one non-leaf child\n\t\t\t//       because the tree is a red-black tree\n\t\t\tdelete_one_child( pred ) ;\n\t\t}\n\n\t\telse if ( !node.right.isleaf() ) {\n\t\t\t// replace node's key with successor's key\n\t\t\t// If there is no left child, then there can only be one right\n\t\t\t// child.\n\t\t\tconst succ = node.right ;\n\t\t\tnode.key = succ.key ;\n\t\t\t// delete successor node\n\t\t\t// note: this node can only have one non-leaf child\n\t\t\t//       because the tree is a red-black tree\n\t\t\tdelete_one_child( succ ) ;\n\t\t}\n\n\t\telse if ( node === this.root ) {\n\t\t\tthis.root = null ;\n\t\t}\n\n\t\telse {\n\t\t\tdelete_one_child( node ) ;\n\t\t}\n\n\t}\n\n\t/**\n\t * Search for the first node of the tree whose key equals the input key\n\t * (with {@link RedBlackTree#_search}), then delete that node\n\t * (with {@link RedBlackTree#_delete}). If such a node is found and deleted\n\t * then return <code>true</code>. Return <code>false</code> otherwise.\n\t *\n\t * @param {Key} key - The input key.\n\t * @returns {Boolean} - Whether the key existed in the tree before removal.\n\t */\n\tremove ( key ) {\n\n\t\tconst node = this._search( key ) ;\n\t\tif ( node === null ) return false ;\n\n\t\tthis._delete( node ) ;\n\t\treturn true ;\n\n\t}\n\n\t/**\n\t * Returns an in order iterator over the keys of the tree that lie in the\n\t * interval [left, right[.\n\t * @param {Key} left - The left bound of the interval.\n\t * @param {Key} right - The right bound of the interval.\n\t * @returns {Iterator}\n\t */\n\t*range ( left , right ) {\n\n\t\tif ( this.root !== null ) yield* rangetraversal( this.compare , this.root , left , right ) ;\n\n\t}\n\n\t/**\n\t * Returns an in order iterator over the keys of the tree.\n\t *\n\t * @returns {Iterator}\n\t */\n\t*items ( ) {\n\n\t\tif ( this.root !== null ) yield* inordertraversal( this.root ) ;\n\n\t}\n\n\t/**\n\t * Same as {@link RedBlackTree#items}.\n\t */\n\t[Symbol.iterator] ( ) {\n\n\t\treturn this.items() ;\n\n\t}\n\n\t/**\n\t * Constructs a red-black tree from an input iterable.\n\t *\n\t * @param {Function} compare - The comparison function to use.\n\t * @param {Iterbale} iterable - The input iterable.\n\t * @returns {RedBlackTree}\n\t */\n\tstatic from ( compare , iterable ) {\n\n\t\tconst tree = new RedBlackTree( compare ) ;\n\n\t\tfor ( const element of iterable ) tree.add( element ) ;\n\n\t\treturn tree ;\n\n\t}\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 7,
     "kind": "class",
-    "static": true,
-    "variation": null,
     "name": "RedBlackTree",
     "memberof": "src/adt/RedBlackTree.js",
+    "static": true,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree",
     "access": null,
     "export": true,
@@ -221,10 +214,11 @@
   {
     "__docId__": 8,
     "kind": "constructor",
-    "static": false,
-    "variation": null,
     "name": "constructor",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#constructor",
     "access": null,
     "description": "Constructs a new empty red-black tree.",
@@ -254,21 +248,25 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 9,
     "kind": "member",
-    "static": false,
-    "variation": null,
     "name": "compare",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#compare",
     "access": null,
     "description": null,
     "lineNumber": 24,
     "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -278,15 +276,20 @@
   {
     "__docId__": 10,
     "kind": "member",
-    "static": false,
-    "variation": null,
     "name": "root",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#root",
     "access": null,
     "description": null,
     "lineNumber": 25,
     "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -296,10 +299,11 @@
   {
     "__docId__": 11,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "add",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#add",
     "access": null,
     "description": "Adds a key to the tree.",
@@ -315,21 +319,25 @@
         "name": "key",
         "description": "The key to add."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 12,
     "kind": "member",
-    "static": false,
-    "variation": null,
     "name": "root",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#root",
     "access": null,
     "description": null,
     "lineNumber": 36,
     "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -339,10 +347,11 @@
   {
     "__docId__": 13,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "_search",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#_search",
     "access": null,
     "description": "Search for the input key in the tree.\nReturns the first node whose key equals the input key.\nIf no such node exists, returns <code>null</code>.",
@@ -372,16 +381,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 14,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "get",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#get",
     "access": null,
     "description": "Search for the input key in the tree. Returns the first node key found\nin this way (with {@link RedBlackTree#_search}. If no such key exists\nin the tree, returns <code>null</code>.",
@@ -411,16 +420,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 15,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "has",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#has",
     "access": null,
     "description": "Returns <code>true</code> if and only if the tree contains the input\nkey.",
@@ -450,16 +459,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 16,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "_delete",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#_delete",
     "access": null,
     "description": "Deletes the input node from the tree.",
@@ -475,21 +484,25 @@
         "name": "node",
         "description": "The input node to delete."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 17,
     "kind": "member",
-    "static": false,
-    "variation": null,
     "name": "root",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#root",
     "access": null,
     "description": null,
     "lineNumber": 112,
     "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -499,10 +512,11 @@
   {
     "__docId__": 18,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "remove",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#remove",
     "access": null,
     "description": "Search for the first node of the tree whose key equals the input key\n(with {@link RedBlackTree#_search}), then delete that node\n(with {@link RedBlackTree#_delete}). If such a node is found and deleted\nthen return <code>true</code>. Return <code>false</code> otherwise.",
@@ -532,16 +546,16 @@
       ],
       "spread": false,
       "description": "Whether the key existed in the tree before removal."
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 19,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "range",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "generator": true,
+    "async": false,
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#range",
     "access": null,
     "description": "Returns an in order iterator over the keys of the tree that lie in the\ninterval [left, right[.",
@@ -581,16 +595,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": true
+    }
   },
   {
     "__docId__": 20,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "items",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "generator": true,
+    "async": false,
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#items",
     "access": null,
     "description": "Returns an in order iterator over the keys of the tree.",
@@ -609,16 +623,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": true
+    }
   },
   {
     "__docId__": 21,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "[Symbol.iterator]",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree#[Symbol.iterator]",
     "access": null,
     "description": "Same as {@link RedBlackTree#items}.",
@@ -628,16 +642,16 @@
       "types": [
         "*"
       ]
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 22,
     "kind": "method",
-    "static": true,
-    "variation": null,
     "name": "from",
     "memberof": "src/adt/RedBlackTree.js~RedBlackTree",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/adt/RedBlackTree.js~RedBlackTree.from",
     "access": null,
     "description": "Constructs a red-black tree from an input iterable.",
@@ -677,42 +691,36 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 23,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/adt/index.js",
-    "memberof": null,
+    "content": "export * from './Leaf' ;\nexport * from './Node' ;\nexport * from './RedBlackTree' ;\n",
+    "static": true,
     "longname": "src/adt/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export * from './Leaf' ;\nexport * from './Node' ;\nexport * from './RedBlackTree' ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 24,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/color/BLACK.js",
-    "memberof": null,
+    "content": "/**\n * Constant for black.\n */\nexport const BLACK = 0 ;\n",
+    "static": true,
     "longname": "src/color/BLACK.js",
     "access": null,
     "description": null,
-    "lineNumber": 4,
-    "content": "/**\n * Constant for black.\n */\nexport const BLACK = 0 ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 25,
     "kind": "variable",
-    "static": true,
-    "variation": null,
     "name": "BLACK",
     "memberof": "src/color/BLACK.js",
+    "static": true,
     "longname": "src/color/BLACK.js~BLACK",
     "access": null,
     "export": true,
@@ -729,23 +737,20 @@
   {
     "__docId__": 26,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/color/RED.js",
-    "memberof": null,
+    "content": "/**\n * Constant for red.\n */\nexport const RED = 1 ;\n",
+    "static": true,
     "longname": "src/color/RED.js",
     "access": null,
     "description": null,
-    "lineNumber": 4,
-    "content": "/**\n * Constant for red.\n */\nexport const RED = 1 ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 27,
     "kind": "variable",
-    "static": true,
-    "variation": null,
     "name": "RED",
     "memberof": "src/color/RED.js",
+    "static": true,
     "longname": "src/color/RED.js~RED",
     "access": null,
     "export": true,
@@ -762,36 +767,33 @@
   {
     "__docId__": 28,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/color/index.js",
-    "memberof": null,
+    "content": "export * from './BLACK' ;\nexport * from './RED' ;\n",
+    "static": true,
     "longname": "src/color/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export * from './BLACK' ;\nexport * from './RED' ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 29,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/debug/debug.js",
-    "memberof": null,
+    "content": "import chalk from 'chalk' ;\n\nimport { BLACK } from '..' ;\n\n/**\n * Recursively constructs a prettyprint string for the red-black tree rooted at\n * <code>root</code>.\n *\n * @param {Node} root - The root of the tree.\n * @returns {String}\n */\nexport function debug ( root ) {\n\n\tif ( root.isleaf( ) ) return chalk.bgBlack('L') ;\n\n\tconst repr = root.color === BLACK ? chalk.bgBlack(root.key) : chalk.bgRed( root.key ) ;\n\n\treturn `(${debug(root.left)}, ${repr}, ${debug(root.right)})` ;\n\n}\n",
+    "static": true,
     "longname": "src/debug/debug.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import chalk from 'chalk' ;\n\nimport { BLACK } from '..' ;\n\n/**\n * Recursively constructs a prettyprint string for the red-black tree rooted at\n * <code>root</code>.\n *\n * @param {Node} root - The root of the tree.\n * @returns {String}\n */\nexport function debug ( root ) {\n\n\tif ( root.isleaf( ) ) return chalk.bgBlack('L') ;\n\n\tconst repr = root.color === BLACK ? chalk.bgBlack(root.key) : chalk.bgRed( root.key ) ;\n\n\treturn `(${debug(root.left)}, ${repr}, ${debug(root.right)})` ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 30,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "debug",
     "memberof": "src/debug/debug.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/debug/debug.js~debug",
     "access": null,
     "export": true,
@@ -824,42 +826,38 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 31,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/debug/index.js",
-    "memberof": null,
+    "content": "export * from './debug' ;\n",
+    "static": true,
     "longname": "src/debug/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export * from './debug' ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 32,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/deletion/delete_case1.js",
-    "memberof": null,
+    "content": "import { delete_case2 } from './delete_case2' ;\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *\n * @param {Node} n - The input node.\n */\nexport function delete_case1 ( n ) {\n\n    // If n is the root, there is nothing to do: all paths go through n, and n\n    // is black.\n    if ( n.parent !== null ) delete_case2( n ) ;\n\n}\n",
+    "static": true,
     "longname": "src/deletion/delete_case1.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { delete_case2 } from './delete_case2' ;\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *\n * @param {Node} n - The input node.\n */\nexport function delete_case1 ( n ) {\n\n    // If n is the root, there is nothing to do: all paths go through n, and n\n    // is black.\n    if ( n.parent !== null ) delete_case2( n ) ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 33,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "delete_case1",
     "memberof": "src/deletion/delete_case1.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/deletion/delete_case1.js~delete_case1",
     "access": null,
     "export": true,
@@ -878,29 +876,27 @@
         "name": "n",
         "description": "The input node."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 34,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/deletion/delete_case2.js",
-    "memberof": null,
+    "content": "import { BLACK , RED , sibling , rotate_left , rotate_right } from '..' ;\n\nimport { delete_case3 } from './delete_case3' ;\nimport { delete_case4 } from './delete_case4' ;\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *\n * @param {Node} n - The input node.\n */\nexport function delete_case2 ( n ) {\n\n    const s = sibling( n ) ;\n\n\t/**\n\t * If n's sibling is red, prepare for and go to case 4.\n\t *\n\t *           B                       B\n\t *         /   \\                  /     \\\n\t *      >B       R               R       B\n\t *      / \\     / \\     -->    /   \\    / \\\n\t *     -   -  B     B        >B     B  =   =\n\t *           / \\   / \\       / \\   / \\\n\t *          =   = =   =     -   - =   =\n\t */\n    if ( s.color === RED ) {\n        n.parent.color = RED ;\n        s.color = BLACK ;\n        if ( n === n.parent.left ) rotate_left( n.parent ) ;\n        else rotate_right( n.parent ) ;\n        delete_case4( n ) ;\n    }\n\n    // Otherwise, go to case 3.\n    else delete_case3( n ) ;\n\n}\n",
+    "static": true,
     "longname": "src/deletion/delete_case2.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { BLACK , RED , sibling , rotate_left , rotate_right } from '..' ;\n\nimport { delete_case3 } from './delete_case3' ;\nimport { delete_case4 } from './delete_case4' ;\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *\n * @param {Node} n - The input node.\n */\nexport function delete_case2 ( n ) {\n\n    const s = sibling( n ) ;\n\n\t/**\n\t * If n's sibling is red, prepare for and go to case 4.\n\t *\n\t *           B                       B\n\t *         /   \\                  /     \\\n\t *      >B       R               R       B\n\t *      / \\     / \\     -->    /   \\    / \\\n\t *     -   -  B     B        >B     B  =   =\n\t *           / \\   / \\       / \\   / \\\n\t *          =   = =   =     -   - =   =\n\t */\n    if ( s.color === RED ) {\n        n.parent.color = RED ;\n        s.color = BLACK ;\n        if ( n === n.parent.left ) rotate_left( n.parent ) ;\n        else rotate_right( n.parent ) ;\n        delete_case4( n ) ;\n    }\n\n    // Otherwise, go to case 3.\n    else delete_case3( n ) ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 35,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "delete_case2",
     "memberof": "src/deletion/delete_case2.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/deletion/delete_case2.js~delete_case2",
     "access": null,
     "export": true,
@@ -919,29 +915,27 @@
         "name": "n",
         "description": "The input node."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 36,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/deletion/delete_case3.js",
-    "memberof": null,
+    "content": "import { BLACK , RED , sibling } from '..' ;\n\nimport { delete_case1 } from './delete_case1' ;\nimport { delete_case4 } from './delete_case4' ;\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *   - n's sibling is black\n *\n * @param {Node} n - The input node.\n */\nexport function delete_case3 ( n ) {\n\n    const s = sibling( n ) ;\n\n\t/**\n\t * If n's parent is black and n's sibling's children are black, then\n     * repaint n's sibling red. Now all root-leaft paths going through n's\n     * parent have a black height of b - 1. We recurse thus on n's parent.\n\t *\n\t *           B                      >B\n\t *         /   \\                  /     \\\n\t *      >B       B               B       R\n\t *      / \\     / \\     -->    /   \\    / \\\n\t *     -   -  B     B         -     - B     B\n\t *           / \\   / \\               / \\   / \\\n\t *          -   - -   -             -   - -   -\n\t */\n    if (\n        ( n.parent.color === BLACK ) &&\n        ( s.left.color === BLACK ) &&\n        ( s.right.color === BLACK )\n    ) {\n        s.color = RED ;\n        delete_case1( n.parent ) ;\n    }\n\n    // Otherwise, go to case 4.\n    else delete_case4( n ) ;\n\n}\n",
+    "static": true,
     "longname": "src/deletion/delete_case3.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { BLACK , RED , sibling } from '..' ;\n\nimport { delete_case1 } from './delete_case1' ;\nimport { delete_case4 } from './delete_case4' ;\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *   - n's sibling is black\n *\n * @param {Node} n - The input node.\n */\nexport function delete_case3 ( n ) {\n\n    const s = sibling( n ) ;\n\n\t/**\n\t * If n's parent is black and n's sibling's children are black, then\n     * repaint n's sibling red. Now all root-leaft paths going through n's\n     * parent have a black height of b - 1. We recurse thus on n's parent.\n\t *\n\t *           B                      >B\n\t *         /   \\                  /     \\\n\t *      >B       B               B       R\n\t *      / \\     / \\     -->    /   \\    / \\\n\t *     -   -  B     B         -     - B     B\n\t *           / \\   / \\               / \\   / \\\n\t *          -   - -   -             -   - -   -\n\t */\n    if (\n        ( n.parent.color === BLACK ) &&\n        ( s.left.color === BLACK ) &&\n        ( s.right.color === BLACK )\n    ) {\n        s.color = RED ;\n        delete_case1( n.parent ) ;\n    }\n\n    // Otherwise, go to case 4.\n    else delete_case4( n ) ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 37,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "delete_case3",
     "memberof": "src/deletion/delete_case3.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/deletion/delete_case3.js~delete_case3",
     "access": null,
     "export": true,
@@ -960,29 +954,27 @@
         "name": "n",
         "description": "The input node."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 38,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/deletion/delete_case4.js",
-    "memberof": null,
+    "content": "import { BLACK , RED , sibling } from '..' ;\n\nimport { delete_case5 } from './delete_case5' ;\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *   - n's sibling is black\n *   - n's parent and n's sibling's children cannot all be black\n *\n * @param {Node} n - The input node.\n */\nexport function delete_case4 ( n ) {\n\n    const s = sibling(n);\n\n\t/**\n\t * If n's parent is red and n's sibling's children are black, then swap n's\n\t * parent and n's sibling color. All root-leaf paths going through n have\n\t * now a black height of b. All other root-leaf paths have their black\n\t * height unchanged. Red-black properties are respected. We are done.\n\t *\n\t *           R                       B\n\t *         /   \\                  /     \\\n\t *      >B       B              >B        R\n\t *      / \\     / \\     -->     / \\      / \\\n\t *     -   -  B     B          -   -   B     B\n\t *           / \\   / \\                / \\   / \\\n\t *          -   - -   -              -   - -   -\n\t */\n    if (\n        // the parent color test is always true when coming from case 2\n        ( n.parent.color === RED ) &&\n        ( s.left.color === BLACK ) &&\n        ( s.right.color === BLACK )\n    ) {\n        s.color = RED;\n        n.parent.color = BLACK;\n    }\n\n    // Otherwise, go to case 5.\n    else delete_case5( n ) ;\n\n}\n",
+    "static": true,
     "longname": "src/deletion/delete_case4.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { BLACK , RED , sibling } from '..' ;\n\nimport { delete_case5 } from './delete_case5' ;\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *   - n's sibling is black\n *   - n's parent and n's sibling's children cannot all be black\n *\n * @param {Node} n - The input node.\n */\nexport function delete_case4 ( n ) {\n\n    const s = sibling(n);\n\n\t/**\n\t * If n's parent is red and n's sibling's children are black, then swap n's\n\t * parent and n's sibling color. All root-leaf paths going through n have\n\t * now a black height of b. All other root-leaf paths have their black\n\t * height unchanged. Red-black properties are respected. We are done.\n\t *\n\t *           R                       B\n\t *         /   \\                  /     \\\n\t *      >B       B              >B        R\n\t *      / \\     / \\     -->     / \\      / \\\n\t *     -   -  B     B          -   -   B     B\n\t *           / \\   / \\                / \\   / \\\n\t *          -   - -   -              -   - -   -\n\t */\n    if (\n        // the parent color test is always true when coming from case 2\n        ( n.parent.color === RED ) &&\n        ( s.left.color === BLACK ) &&\n        ( s.right.color === BLACK )\n    ) {\n        s.color = RED;\n        n.parent.color = BLACK;\n    }\n\n    // Otherwise, go to case 5.\n    else delete_case5( n ) ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 39,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "delete_case4",
     "memberof": "src/deletion/delete_case4.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/deletion/delete_case4.js~delete_case4",
     "access": null,
     "export": true,
@@ -1001,29 +993,27 @@
         "name": "n",
         "description": "The input node."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 40,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/deletion/delete_case5.js",
-    "memberof": null,
+    "content": "import { BLACK , RED , sibling , rotate_right , rotate_left } from '..' ;\n\nimport { delete_case6 } from './delete_case6' ;\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *   - n's sibling is black\n *   - at least one of n's sibling's children is red\n *\n * @param {Node} n - The input node.\n */\nexport function delete_case5 ( n ) {\n\n    const s = sibling( n ) ;\n\n    // The following statements just force the red n's sibling child to be on\n    // the left of the left of the parent, or right of the right, so case 6\n    // will rotate correctly.\n\n\t/**\n\t *           ?                       ?\n\t *         /   \\                  /     \\\n\t *      >B       B              >B        B\n\t *      / \\     / \\     -->     / \\      / \\\n\t *     -   -  R     B          -   -   =     R\n\t *           / \\   / \\                      / \\\n\t *          =   = -   -                    =   B\n\t *                                            / \\\n\t *                                           -   -\n\t */\n    if ( ( n === n.parent.left ) && ( s.right.color === BLACK ) ) {\n        s.color = RED ;\n        s.left.color = BLACK ;\n        rotate_right( s ) ;\n    }\n\n\t/**\n\t *           ?                       ?\n\t *         /   \\                  /     \\\n\t *       B      >B               B       >B\n\t *      / \\     / \\     -->     / \\      / \\\n\t *    B     R  -   -          R     =   -   -\n\t *   / \\   / \\               / \\\n\t *  -   - =   =             B   =\n\t *                         / \\\n\t *                        -   -\n\t */\n    else if ( ( n === n.parent.right ) && ( s.left.color === BLACK ) ) {\n        s.color = RED ;\n        s.right.color = BLACK ;\n        rotate_left( s ) ;\n    }\n\n    delete_case6( n ) ;\n\n}\n",
+    "static": true,
     "longname": "src/deletion/delete_case5.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { BLACK , RED , sibling , rotate_right , rotate_left } from '..' ;\n\nimport { delete_case6 } from './delete_case6' ;\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *   - n's sibling is black\n *   - at least one of n's sibling's children is red\n *\n * @param {Node} n - The input node.\n */\nexport function delete_case5 ( n ) {\n\n    const s = sibling( n ) ;\n\n    // The following statements just force the red n's sibling child to be on\n    // the left of the left of the parent, or right of the right, so case 6\n    // will rotate correctly.\n\n\t/**\n\t *           ?                       ?\n\t *         /   \\                  /     \\\n\t *      >B       B              >B        B\n\t *      / \\     / \\     -->     / \\      / \\\n\t *     -   -  R     B          -   -   =     R\n\t *           / \\   / \\                      / \\\n\t *          =   = -   -                    =   B\n\t *                                            / \\\n\t *                                           -   -\n\t */\n    if ( ( n === n.parent.left ) && ( s.right.color === BLACK ) ) {\n        s.color = RED ;\n        s.left.color = BLACK ;\n        rotate_right( s ) ;\n    }\n\n\t/**\n\t *           ?                       ?\n\t *         /   \\                  /     \\\n\t *       B      >B               B       >B\n\t *      / \\     / \\     -->     / \\      / \\\n\t *    B     R  -   -          R     =   -   -\n\t *   / \\   / \\               / \\\n\t *  -   - =   =             B   =\n\t *                         / \\\n\t *                        -   -\n\t */\n    else if ( ( n === n.parent.right ) && ( s.left.color === BLACK ) ) {\n        s.color = RED ;\n        s.right.color = BLACK ;\n        rotate_left( s ) ;\n    }\n\n    delete_case6( n ) ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 41,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "delete_case5",
     "memberof": "src/deletion/delete_case5.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/deletion/delete_case5.js~delete_case5",
     "access": null,
     "export": true,
@@ -1042,29 +1032,27 @@
         "name": "n",
         "description": "The input node."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 42,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/deletion/delete_case6.js",
-    "memberof": null,
+    "content": "import { BLACK , RED , sibling , rotate_right , rotate_left } from '..' ;\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *   - n's sibling is black\n *   - if n is a left child, the right child of n's sibling is red\n *   - if n is a right child, the left child of n's sibling is red\n *\n * @param {Node} n - The input node.\n */\nexport function delete_case6 ( n ) {\n\n    const s = sibling( n ) ;\n\n\t/**\n\t * Increment the black height of all root-leaf paths going through n by\n\t * rotating at n's parent. This decrements the black height of all\n\t * root-leaft paths going through n's sibling's right child.\n     * We can repaint n's sibling's right child in black to fix this.\n     * We are done.\n\t *\n\t *           ?                          ?\n\t *        /     \\                     /   \\\n\t *      >B        B                 B       B\n\t *      / \\      / \\               / \\     / \\\n\t *     -   -   =     R     -->   >B   =   =   B\n\t *                  / \\          / \\         / \\\n\t *                 =   B        -   -       -   -\n\t *                    / \\\n\t *                   -   -\n\t */\n\n    s.color = n.parent.color ;\n    n.parent.color = BLACK ;\n\n    if ( n === n.parent.left ) {\n        s.right.color = BLACK ;\n        rotate_left( n.parent ) ;\n    }\n\n    // symmetric case\n    else {\n        s.left.color = BLACK ;\n        rotate_right( n.parent ) ;\n    }\n\n}\n",
+    "static": true,
     "longname": "src/deletion/delete_case6.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { BLACK , RED , sibling , rotate_right , rotate_left } from '..' ;\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *   - n's sibling is black\n *   - if n is a left child, the right child of n's sibling is red\n *   - if n is a right child, the left child of n's sibling is red\n *\n * @param {Node} n - The input node.\n */\nexport function delete_case6 ( n ) {\n\n    const s = sibling( n ) ;\n\n\t/**\n\t * Increment the black height of all root-leaf paths going through n by\n\t * rotating at n's parent. This decrements the black height of all\n\t * root-leaft paths going through n's sibling's right child.\n     * We can repaint n's sibling's right child in black to fix this.\n     * We are done.\n\t *\n\t *           ?                          ?\n\t *        /     \\                     /   \\\n\t *      >B        B                 B       B\n\t *      / \\      / \\               / \\     / \\\n\t *     -   -   =     R     -->   >B   =   =   B\n\t *                  / \\          / \\         / \\\n\t *                 =   B        -   -       -   -\n\t *                    / \\\n\t *                   -   -\n\t */\n\n    s.color = n.parent.color ;\n    n.parent.color = BLACK ;\n\n    if ( n === n.parent.left ) {\n        s.right.color = BLACK ;\n        rotate_left( n.parent ) ;\n    }\n\n    // symmetric case\n    else {\n        s.left.color = BLACK ;\n        rotate_right( n.parent ) ;\n    }\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 43,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "delete_case6",
     "memberof": "src/deletion/delete_case6.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/deletion/delete_case6.js~delete_case6",
     "access": null,
     "export": true,
@@ -1083,29 +1071,27 @@
         "name": "n",
         "description": "The input node."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 44,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/deletion/delete_one_child.js",
-    "memberof": null,
+    "content": "import { BLACK , RED } from '..' ;\n\nimport { replace_node } from './replace_node' ;\nimport { delete_case1 } from './delete_case1' ;\n\n/**\n * Delete a node <code>n</code> that has at most a single non-leaf child.\n *\n * Precondition:\n *   - n has at most one non-leaf child.\n *   - if n has a non-leaf child, then it is its left child.\n *\n * @param {Node} n - The node to delete.\n */\nexport function delete_one_child ( n ) {\n\n    // Precondition: n has at most one non-leaf child.\n    // assert( n.right.isleaf() || n.left.isleaf());\n\n    // const child = n.right.isleaf() ? n.left : n.right;\n    // n.right is always a LEAF because either n is a subtree predecessor or it\n    // is the only child of its parent by the red-black tree properties\n    const child = n.left ;\n\n    // replace n with its left child\n    replace_node( n , child ) ;\n\n    // If n is black, deleting it reduces the black-height of every path going\n    // through it by 1.\n    if ( n.color === BLACK ) {\n\n        // We can easily fix this when its left child is an\n        // internal red node: change the color of the left child to black and\n        // replace n with it.\n        if ( child.color === RED ) child.color = BLACK ;\n\n        // Otherwise, there are more things to fix.\n        else delete_case1( child ) ;\n\n    }\n\n    // else {\n    //    If n is red then its child can only be black. Replacing n with its\n    //    child suffices.\n    // }\n\n}\n",
+    "static": true,
     "longname": "src/deletion/delete_one_child.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { BLACK , RED } from '..' ;\n\nimport { replace_node } from './replace_node' ;\nimport { delete_case1 } from './delete_case1' ;\n\n/**\n * Delete a node <code>n</code> that has at most a single non-leaf child.\n *\n * Precondition:\n *   - n has at most one non-leaf child.\n *   - if n has a non-leaf child, then it is its left child.\n *\n * @param {Node} n - The node to delete.\n */\nexport function delete_one_child ( n ) {\n\n    // Precondition: n has at most one non-leaf child.\n    // assert( n.right.isleaf() || n.left.isleaf());\n\n    // const child = n.right.isleaf() ? n.left : n.right;\n    // n.right is always a LEAF because either n is a subtree predecessor or it\n    // is the only child of its parent by the red-black tree properties\n    const child = n.left ;\n\n    // replace n with its left child\n    replace_node( n , child ) ;\n\n    // If n is black, deleting it reduces the black-height of every path going\n    // through it by 1.\n    if ( n.color === BLACK ) {\n\n        // We can easily fix this when its left child is an\n        // internal red node: change the color of the left child to black and\n        // replace n with it.\n        if ( child.color === RED ) child.color = BLACK ;\n\n        // Otherwise, there are more things to fix.\n        else delete_case1( child ) ;\n\n    }\n\n    // else {\n    //    If n is red then its child can only be black. Replacing n with its\n    //    child suffices.\n    // }\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 45,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "delete_one_child",
     "memberof": "src/deletion/delete_one_child.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/deletion/delete_one_child.js~delete_one_child",
     "access": null,
     "export": true,
@@ -1124,42 +1110,38 @@
         "name": "n",
         "description": "The node to delete."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 46,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/deletion/index.js",
-    "memberof": null,
+    "content": "export * from './delete_case1' ;\nexport * from './delete_case2' ;\nexport * from './delete_case3' ;\nexport * from './delete_case4' ;\nexport * from './delete_case5' ;\nexport * from './delete_case6' ;\nexport * from './delete_one_child' ;\nexport * from './replace_node' ;\n",
+    "static": true,
     "longname": "src/deletion/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export * from './delete_case1' ;\nexport * from './delete_case2' ;\nexport * from './delete_case3' ;\nexport * from './delete_case4' ;\nexport * from './delete_case5' ;\nexport * from './delete_case6' ;\nexport * from './delete_one_child' ;\nexport * from './replace_node' ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 47,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/deletion/replace_node.js",
-    "memberof": null,
+    "content": "/**\n * Replaces node <code>A</code> by node <code>B</code>.\n *\n * @param {Node} A - The node to replace.\n * @param {Node} B - The replacement node.\n */\nexport function replace_node ( A , B ) {\n\n\t// assert( A.parent !== null ) ;\n\t// we never apply delete_one_child on the root so we are safe\n\n\tif ( A === A.parent.left ) A.parent.left = B ;\n\n\telse A.parent.right = B ;\n\n\tB.parent = A.parent ;\n\n}\n",
+    "static": true,
     "longname": "src/deletion/replace_node.js",
     "access": null,
     "description": null,
-    "lineNumber": 7,
-    "content": "/**\n * Replaces node <code>A</code> by node <code>B</code>.\n *\n * @param {Node} A - The node to replace.\n * @param {Node} B - The replacement node.\n */\nexport function replace_node ( A , B ) {\n\n\t// assert( A.parent !== null ) ;\n\t// we never apply delete_one_child on the root so we are safe\n\n\tif ( A === A.parent.left ) A.parent.left = B ;\n\n\telse A.parent.right = B ;\n\n\tB.parent = A.parent ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 48,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "replace_node",
     "memberof": "src/deletion/replace_node.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/deletion/replace_node.js~replace_node",
     "access": null,
     "export": true,
@@ -1188,29 +1170,27 @@
         "name": "B",
         "description": "The replacement node."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 49,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/family/grandparent.js",
-    "memberof": null,
+    "content": "/**\n * Computes the grandparent (parent of parent) of the input node.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n */\nexport function grandparent ( node ) {\n\n\t// assert((node !== null) && (node.parent !== null));\n\t// We only call this function when node HAS a grandparent\n\treturn node.parent.parent;\n\n}\n",
+    "static": true,
     "longname": "src/family/grandparent.js",
     "access": null,
     "description": null,
-    "lineNumber": 7,
-    "content": "/**\n * Computes the grandparent (parent of parent) of the input node.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n */\nexport function grandparent ( node ) {\n\n\t// assert((node !== null) && (node.parent !== null));\n\t// We only call this function when node HAS a grandparent\n\treturn node.parent.parent;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 50,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "grandparent",
     "memberof": "src/family/grandparent.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/family/grandparent.js~grandparent",
     "access": null,
     "export": true,
@@ -1243,42 +1223,38 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 51,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/family/index.js",
-    "memberof": null,
+    "content": "export * from './grandparent' ;\nexport * from './predecessor' ;\nexport * from './sibling' ;\nexport * from './uncle' ;\n",
+    "static": true,
     "longname": "src/family/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export * from './grandparent' ;\nexport * from './predecessor' ;\nexport * from './sibling' ;\nexport * from './uncle' ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 52,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/family/predecessor.js",
-    "memberof": null,
+    "content": "/**\n * Computes the predecessor of the input node, in the subtree rooted at the\n * input node, when this predecessor is guaranteed to exist.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n */\nexport function predecessor ( node ) {\n\n\t// assert( !node.left.isleaf() ) ;\n\tlet pred = node.left ;\n\n\twhile ( !pred.right.isleaf() ) pred = pred.right ;\n\n\treturn pred ;\n\n}\n",
+    "static": true,
     "longname": "src/family/predecessor.js",
     "access": null,
     "description": null,
-    "lineNumber": 8,
-    "content": "/**\n * Computes the predecessor of the input node, in the subtree rooted at the\n * input node, when this predecessor is guaranteed to exist.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n */\nexport function predecessor ( node ) {\n\n\t// assert( !node.left.isleaf() ) ;\n\tlet pred = node.left ;\n\n\twhile ( !pred.right.isleaf() ) pred = pred.right ;\n\n\treturn pred ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 53,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "predecessor",
     "memberof": "src/family/predecessor.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/family/predecessor.js~predecessor",
     "access": null,
     "export": true,
@@ -1311,29 +1287,27 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 54,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/family/sibling.js",
-    "memberof": null,
+    "content": "/**\n * Computes the sibling of the input node.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n */\nexport function sibling ( node ) {\n\n\t// assert((node !== null) && (node.parent !== null));\n\t// We only use this function when node HAS a sibling so this case can never\n\t// happen.\n\n\treturn  node === node.parent.left ? node.parent.right : node.parent.left ;\n\n}\n",
+    "static": true,
     "longname": "src/family/sibling.js",
     "access": null,
     "description": null,
-    "lineNumber": 7,
-    "content": "/**\n * Computes the sibling of the input node.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n */\nexport function sibling ( node ) {\n\n\t// assert((node !== null) && (node.parent !== null));\n\t// We only use this function when node HAS a sibling so this case can never\n\t// happen.\n\n\treturn  node === node.parent.left ? node.parent.right : node.parent.left ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 55,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "sibling",
     "memberof": "src/family/sibling.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/family/sibling.js~sibling",
     "access": null,
     "export": true,
@@ -1366,29 +1340,27 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 56,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/family/uncle.js",
-    "memberof": null,
+    "content": "import { grandparent } from './grandparent' ;\n\n/**\n * Computes the uncle of the input node when the grandparent is guaranteed to\n * exist.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n */\nexport function uncle ( node ) {\n\tconst g = grandparent( node );\n\t// assert( g !== null ) ;\n\t// this can never happen\n\tif ( node.parent === g.left )\n\t  return g.right.isleaf( ) ? null : g.right ;\n\telse\n\t  return g.left.isleaf( ) ? null : g.left ;\n}\n",
+    "static": true,
     "longname": "src/family/uncle.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { grandparent } from './grandparent' ;\n\n/**\n * Computes the uncle of the input node when the grandparent is guaranteed to\n * exist.\n *\n * @param {Node} node - The input node.\n * @returns {Node}\n */\nexport function uncle ( node ) {\n\tconst g = grandparent( node );\n\t// assert( g !== null ) ;\n\t// this can never happen\n\tif ( node.parent === g.left )\n\t  return g.right.isleaf( ) ? null : g.right ;\n\telse\n\t  return g.left.isleaf( ) ? null : g.left ;\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 57,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "uncle",
     "memberof": "src/family/uncle.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/family/uncle.js~uncle",
     "access": null,
     "export": true,
@@ -1421,55 +1393,49 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 58,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/index.js",
-    "memberof": null,
+    "content": "export * from './adt' ;\nexport * from './color' ;\nexport * from './debug' ;\nexport * from './deletion' ;\nexport * from './family' ;\nexport * from './insertion' ;\nexport * from './rotate' ;\nexport * from './search' ;\nexport * from './traversal' ;\n",
+    "static": true,
     "longname": "src/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export * from './adt' ;\nexport * from './color' ;\nexport * from './debug' ;\nexport * from './deletion' ;\nexport * from './family' ;\nexport * from './insertion' ;\nexport * from './rotate' ;\nexport * from './search' ;\nexport * from './traversal' ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 59,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/insertion/index.js",
-    "memberof": null,
+    "content": "export * from './insert' ;\nexport * from './insert_case1' ;\nexport * from './insert_case2' ;\nexport * from './insert_case3' ;\nexport * from './insert_case4' ;\nexport * from './insert_case5' ;\n",
+    "static": true,
     "longname": "src/insertion/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export * from './insert' ;\nexport * from './insert_case1' ;\nexport * from './insert_case2' ;\nexport * from './insert_case3' ;\nexport * from './insert_case4' ;\nexport * from './insert_case5' ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 60,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/insertion/insert.js",
-    "memberof": null,
+    "content": "\n/**\n * Walks the tree rooted at <code>A</code> down the only path that satisfies\n * the following property: if at a node <code>C</code> we make a left (resp.\n * right), then <code>B < C</code> (resp. <code>B >= C</code>). Once we hit the\n * end of the path, we can add node <code>B</code> at this position. By the\n * property of the path, the tree rooted at <code>A</code> is still a binary\n * search tree.\n * For our red-black tree, all that is left to do is fix the red-black tree\n * properties in case they have been violated by this insertion. This is fixed\n * by {@link insert_case1}.\n *\n * @param compare - The comparison function to use.\n * @param {Node} A - The root of the tree.\n * @param {Node} B - The node to insert.\n * @returns {Node} B - The node that has been inserted.\n */\nexport function insert ( compare, A, B ) {\n\n\twhile ( true ) {\n\n\t\tif ( compare( B.key, A.key ) < 0 ) {\n\n\t\t\tconst node = A.left;\n\n\t\t\tif ( node.isleaf() ) {\n\t\t\t\tA.left = B;\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tA = node;\n\n\t\t}\n\n\t\telse {\n\n\t\t\tconst node = A.right;\n\n\t\t\tif ( node.isleaf() ) {\n\t\t\t\tA.right = B;\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tA = node;\n\n\t\t}\n\n\t}\n\n\tB.parent = A;\n\n\treturn B;\n\n}\n",
+    "static": true,
     "longname": "src/insertion/insert.js",
     "access": null,
     "description": null,
-    "lineNumber": 18,
-    "content": "\n/**\n * Walks the tree rooted at <code>A</code> down the only path that satisfies\n * the following property: if at a node <code>C</code> we make a left (resp.\n * right), then <code>B < C</code> (resp. <code>B >= C</code>). Once we hit the\n * end of the path, we can add node <code>B</code> at this position. By the\n * property of the path, the tree rooted at <code>A</code> is still a binary\n * search tree.\n * For our red-black tree, all that is left to do is fix the red-black tree\n * properties in case they have been violated by this insertion. This is fixed\n * by {@link insert_case1}.\n *\n * @param compare - The comparison function to use.\n * @param {Node} A - The root of the tree.\n * @param {Node} B - The node to insert.\n * @returns {Node} B - The node that has been inserted.\n */\nexport function insert ( compare, A, B ) {\n\n\twhile ( true ) {\n\n\t\tif ( compare( B.key, A.key ) < 0 ) {\n\n\t\t\tconst node = A.left;\n\n\t\t\tif ( node.isleaf() ) {\n\t\t\t\tA.left = B;\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tA = node;\n\n\t\t}\n\n\t\telse {\n\n\t\t\tconst node = A.right;\n\n\t\t\tif ( node.isleaf() ) {\n\t\t\t\tA.right = B;\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tA = node;\n\n\t\t}\n\n\t}\n\n\tB.parent = A;\n\n\treturn B;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 61,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "insert",
     "memberof": "src/insertion/insert.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/insertion/insert.js~insert",
     "access": null,
     "export": true,
@@ -1522,29 +1488,27 @@
       ],
       "spread": false,
       "description": "B - The node that has been inserted."
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 62,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/insertion/insert_case1.js",
-    "memberof": null,
+    "content": "import { BLACK } from '..' ;\nimport { insert_case2 } from './insert_case2' ;\n\n/**\n * Preconditions:\n *   - n is red.\n *\n * @param {Node} n - The input node.\n */\nexport function insert_case1 ( n ) {\n\n\t/**\n\t * If n is the root of the tree, paint it black and we are done.\n\t *\n\t *      >R\n\t *      / \\\n\t *     -   -\n\t */\n\tif ( n.parent === null ) n.color = BLACK ;\n\n\telse insert_case2( n ) ;\n\n}\n",
+    "static": true,
     "longname": "src/insertion/insert_case1.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { BLACK } from '..' ;\nimport { insert_case2 } from './insert_case2' ;\n\n/**\n * Preconditions:\n *   - n is red.\n *\n * @param {Node} n - The input node.\n */\nexport function insert_case1 ( n ) {\n\n\t/**\n\t * If n is the root of the tree, paint it black and we are done.\n\t *\n\t *      >R\n\t *      / \\\n\t *     -   -\n\t */\n\tif ( n.parent === null ) n.color = BLACK ;\n\n\telse insert_case2( n ) ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 63,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "insert_case1",
     "memberof": "src/insertion/insert_case1.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/insertion/insert_case1.js~insert_case1",
     "access": null,
     "export": true,
@@ -1563,29 +1527,27 @@
         "name": "n",
         "description": "The input node."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 64,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/insertion/insert_case2.js",
-    "memberof": null,
+    "content": "import { BLACK } from '..' ;\nimport { insert_case3 } from './insert_case3' ;\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n is not the root of the tree.\n *\n * @param {Node} n - The input node.\n */\nexport function insert_case2 ( n ) {\n\n\t/**\n\t * If the parent of n is black then we have nothing to do.\n\t *\n\t *         B\n\t *        / \\\n\t *      >R   -\n\t *      / \\\n\t *     -   -\n\t */\n\tif ( n.parent.color === BLACK ) return ;\n\n\telse insert_case3( n ) ;\n\n}\n",
+    "static": true,
     "longname": "src/insertion/insert_case2.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { BLACK } from '..' ;\nimport { insert_case3 } from './insert_case3' ;\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n is not the root of the tree.\n *\n * @param {Node} n - The input node.\n */\nexport function insert_case2 ( n ) {\n\n\t/**\n\t * If the parent of n is black then we have nothing to do.\n\t *\n\t *         B\n\t *        / \\\n\t *      >R   -\n\t *      / \\\n\t *     -   -\n\t */\n\tif ( n.parent.color === BLACK ) return ;\n\n\telse insert_case3( n ) ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 65,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "insert_case2",
     "memberof": "src/insertion/insert_case2.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/insertion/insert_case2.js~insert_case2",
     "access": null,
     "export": true,
@@ -1604,29 +1566,27 @@
         "name": "n",
         "description": "The input node."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 66,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/insertion/insert_case3.js",
-    "memberof": null,
+    "content": "import { BLACK , RED , uncle , grandparent } from '..' ;\nimport { insert_case1 } from './insert_case1' ;\nimport { insert_case4 } from './insert_case4' ;\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *\n * @param {Node} n - The input node.\n */\nexport function insert_case3 ( n ) {\n\n\tconst u = uncle( n ) ;\n\n\t/**\n\t * If n has a non-leaf uncle and this uncle is red then we simply\n\t * repaint the parent and the uncle of n in black, the grandparent of\n\t * n in red, then call insert_case1 on n's grandparent.\n\t *\n\t *             B                    >R\n\t *           /   \\                 /   \\\n\t *         R       R             B       B\n\t *        / \\     / \\   -->     / \\     / \\\n\t *      >R   -   -   -         R   -   -   -\n\t *      / \\                   / \\\n\t *     -   -                 -   -\n\t */\n\n\n\tif ( ( u !== null ) && ( u.color === RED ) ) {\n\t\tn.parent.color = BLACK ;\n\t\tu.color = BLACK ;\n\t\tconst g = grandparent( n ) ;\n\t\tg.color = RED ;\n\t\tinsert_case1( g ) ;\n\t}\n\n\telse insert_case4( n ) ;\n\n}\n",
+    "static": true,
     "longname": "src/insertion/insert_case3.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { BLACK , RED , uncle , grandparent } from '..' ;\nimport { insert_case1 } from './insert_case1' ;\nimport { insert_case4 } from './insert_case4' ;\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *\n * @param {Node} n - The input node.\n */\nexport function insert_case3 ( n ) {\n\n\tconst u = uncle( n ) ;\n\n\t/**\n\t * If n has a non-leaf uncle and this uncle is red then we simply\n\t * repaint the parent and the uncle of n in black, the grandparent of\n\t * n in red, then call insert_case1 on n's grandparent.\n\t *\n\t *             B                    >R\n\t *           /   \\                 /   \\\n\t *         R       R             B       B\n\t *        / \\     / \\   -->     / \\     / \\\n\t *      >R   -   -   -         R   -   -   -\n\t *      / \\                   / \\\n\t *     -   -                 -   -\n\t */\n\n\n\tif ( ( u !== null ) && ( u.color === RED ) ) {\n\t\tn.parent.color = BLACK ;\n\t\tu.color = BLACK ;\n\t\tconst g = grandparent( n ) ;\n\t\tg.color = RED ;\n\t\tinsert_case1( g ) ;\n\t}\n\n\telse insert_case4( n ) ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 67,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "insert_case3",
     "memberof": "src/insertion/insert_case3.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/insertion/insert_case3.js~insert_case3",
     "access": null,
     "export": true,
@@ -1645,29 +1605,27 @@
         "name": "n",
         "description": "The input node."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 68,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/insertion/insert_case4.js",
-    "memberof": null,
+    "content": "\nimport { rotate_left , rotate_right , grandparent } from '..' ;\nimport { insert_case5 } from './insert_case5' ;\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *   - n's uncle is black.\n *\n * Here we fix the input subtree to pass the preconditions of {@link insert_case5}.\n *\n * @param {Node} n - The input node.\n */\nexport function insert_case4 ( n ) {\n\n\tconst g = grandparent( n ) ;\n\n\t/**\n\t * If the path from g to n makes a left-right, change it to a left-left\n\t * with {@link rotate_left}. Then call {@link insert_case5} on the old\n\t * parent of n.\n\t *\n\t *             B                     B\n\t *           /   \\                 /   \\\n\t *         R       B             R       B\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       =  >R   -   -        >R   =   -   -\n\t *          / \\               / \\\n\t *         =   =             =   =\n\t */\n\n\tif ( ( n === n.parent.right ) && ( n.parent === g.left ) ) {\n\n\t\trotate_left( n.parent ) ;\n\n\t\t/**\n\t\t * rotate_left can be the below because of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.left, *saved_left_n=n.left;\n\t\t * g.left=n;\n\t\t * n.left=saved_p;\n\t\t * saved_p.right=saved_left_n;\n\t\t *\n\t\t * and modify the parent's nodes properly\n\t\t */\n\n\t\t// n = n.left; /!\\ need to fix rotate, so that we can safely reference a node\n\n\t}\n\n\t/**\n\t * If the path from g to n makes a right-left, change it to a right-right\n\t * with {@link rotate_right}. Then call {@link insert_case5} on the old\n\t * parent of n.\n\t *\n\t *             B                     B\n\t *           /   \\                 /   \\\n\t *         B       R             B       R\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       -   -  >R   =         -   -   =  >R\n\t *              / \\                       / \\\n\t *             =   =                     =   =\n\t */\n\n\telse if ( ( n === n.parent.left ) && ( n.parent === g.right ) ) {\n\n\t\trotate_right( n.parent ) ;\n\n\t\t/**\n\t\t * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.right, *saved_right_n=n.right;\n\t\t * g.right=n;\n\t\t * n.right=saved_p;\n\t\t * saved_p.left=saved_right_n;\n\t\t *\n\t\t */\n\n\t\t// n = n.right ;\n\t}\n\n\tinsert_case5( n ) ;\n\n}\n",
+    "static": true,
     "longname": "src/insertion/insert_case4.js",
     "access": null,
     "description": null,
-    "lineNumber": 2,
-    "content": "\nimport { rotate_left , rotate_right , grandparent } from '..' ;\nimport { insert_case5 } from './insert_case5' ;\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *   - n's uncle is black.\n *\n * Here we fix the input subtree to pass the preconditions of {@link insert_case5}.\n *\n * @param {Node} n - The input node.\n */\nexport function insert_case4 ( n ) {\n\n\tconst g = grandparent( n ) ;\n\n\t/**\n\t * If the path from g to n makes a left-right, change it to a left-left\n\t * with {@link rotate_left}. Then call {@link insert_case5} on the old\n\t * parent of n.\n\t *\n\t *             B                     B\n\t *           /   \\                 /   \\\n\t *         R       B             R       B\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       =  >R   -   -        >R   =   -   -\n\t *          / \\               / \\\n\t *         =   =             =   =\n\t */\n\n\tif ( ( n === n.parent.right ) && ( n.parent === g.left ) ) {\n\n\t\trotate_left( n.parent ) ;\n\n\t\t/**\n\t\t * rotate_left can be the below because of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.left, *saved_left_n=n.left;\n\t\t * g.left=n;\n\t\t * n.left=saved_p;\n\t\t * saved_p.right=saved_left_n;\n\t\t *\n\t\t * and modify the parent's nodes properly\n\t\t */\n\n\t\t// n = n.left; /!\\ need to fix rotate, so that we can safely reference a node\n\n\t}\n\n\t/**\n\t * If the path from g to n makes a right-left, change it to a right-right\n\t * with {@link rotate_right}. Then call {@link insert_case5} on the old\n\t * parent of n.\n\t *\n\t *             B                     B\n\t *           /   \\                 /   \\\n\t *         B       R             B       R\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       -   -  >R   =         -   -   =  >R\n\t *              / \\                       / \\\n\t *             =   =                     =   =\n\t */\n\n\telse if ( ( n === n.parent.left ) && ( n.parent === g.right ) ) {\n\n\t\trotate_right( n.parent ) ;\n\n\t\t/**\n\t\t * rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.right, *saved_right_n=n.right;\n\t\t * g.right=n;\n\t\t * n.right=saved_p;\n\t\t * saved_p.left=saved_right_n;\n\t\t *\n\t\t */\n\n\t\t// n = n.right ;\n\t}\n\n\tinsert_case5( n ) ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 69,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "insert_case4",
     "memberof": "src/insertion/insert_case4.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/insertion/insert_case4.js~insert_case4",
     "access": null,
     "export": true,
@@ -1686,29 +1644,27 @@
         "name": "n",
         "description": "The input node."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 70,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/insertion/insert_case5.js",
-    "memberof": null,
+    "content": "import { RED , BLACK , rotate_left , rotate_right , grandparent } from '..' ;\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *   - n's uncle is black.\n *   - the path from n to its grandparent makes a left-left or right-right.\n *\n * @param {Node} n - The input node.\n */\nexport function insert_case5 ( n ) {\n\n\tconst g = grandparent( n ) ;\n\n\t// repaint n's parent black, n's grandparent red\n\tn.parent.color = BLACK ;\n\tg.color = RED ;\n\n\t/**\n\t * If the path from g to n makes a left-left, {@link rotate_right} at g.\n\t * We are done.\n\t *\n\t *             R                     B\n\t *           /   \\                 /   \\\n\t *         B       B            >R       R\n\t *        / \\     / \\   -->     / \\     / \\\n\t *      >R   =   -   -         =   =   =   B\n\t *      / \\                               / \\\n\t *     =   =                             -   -\n\t */\n\tif ( n === n.parent.left ) rotate_right( g ) ;\n\n\t/**\n\t * If the path from g to n makes a right-right, {@link rotate_left} at g.\n\t * We are done.\n\t *\n\t *             R                     B\n\t *           /   \\                 /   \\\n\t *         B       B             R      >R\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       -   -   =  >R         B   =   =   =\n\t *                  / \\       / \\\n\t *                 =   =     -   -\n\t */\n\telse rotate_left( g ) ;\n\n}\n",
+    "static": true,
     "longname": "src/insertion/insert_case5.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import { RED , BLACK , rotate_left , rotate_right , grandparent } from '..' ;\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *   - n's uncle is black.\n *   - the path from n to its grandparent makes a left-left or right-right.\n *\n * @param {Node} n - The input node.\n */\nexport function insert_case5 ( n ) {\n\n\tconst g = grandparent( n ) ;\n\n\t// repaint n's parent black, n's grandparent red\n\tn.parent.color = BLACK ;\n\tg.color = RED ;\n\n\t/**\n\t * If the path from g to n makes a left-left, {@link rotate_right} at g.\n\t * We are done.\n\t *\n\t *             R                     B\n\t *           /   \\                 /   \\\n\t *         B       B            >R       R\n\t *        / \\     / \\   -->     / \\     / \\\n\t *      >R   =   -   -         =   =   =   B\n\t *      / \\                               / \\\n\t *     =   =                             -   -\n\t */\n\tif ( n === n.parent.left ) rotate_right( g ) ;\n\n\t/**\n\t * If the path from g to n makes a right-right, {@link rotate_left} at g.\n\t * We are done.\n\t *\n\t *             R                     B\n\t *           /   \\                 /   \\\n\t *         B       B             R      >R\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       -   -   =  >R         B   =   =   =\n\t *                  / \\       / \\\n\t *                 =   =     -   -\n\t */\n\telse rotate_left( g ) ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 71,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "insert_case5",
     "memberof": "src/insertion/insert_case5.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/insertion/insert_case5.js~insert_case5",
     "access": null,
     "export": true,
@@ -1727,42 +1683,38 @@
         "name": "n",
         "description": "The input node."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 72,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/rotate/index.js",
-    "memberof": null,
+    "content": "export * from './rotate_left' ;\nexport * from './rotate_right' ;\n",
+    "static": true,
     "longname": "src/rotate/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export * from './rotate_left' ;\nexport * from './rotate_right' ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 73,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/rotate/rotate_left.js",
-    "memberof": null,
+    "content": "/**\n * Rotate tree left. (see https://en.wikipedia.org/wiki/Tree_rotation)\n * /!\\ This swaps the references to A and B.\n *\n *         A                B\n *        / \\              / \\\n *       a   B     ->     A   c\n *          / \\          / \\\n *         b   c        a   b\n *\n *\n * @param {Node} A - The root of the tree.\n *\n */\n\nexport function rotate_left ( A ) {\n\n\tconst B = A.right ;\n\tconst a = A.left ;\n\tconst b = B.left ;\n\tconst c = B.right ;\n\n\t[A.key , B.key] = [B.key , A.key] ;\n\t[A.color , B.color] = [B.color , A.color] ;\n\n\tA.left = B ;\n\tA.right = c ;\n\n\tB.left = a ;\n\tB.right = b ;\n\n\ta.parent = B ;\n\tb.parent = B ;\n\tc.parent = A ;\n}\n",
+    "static": true,
     "longname": "src/rotate/rotate_left.js",
     "access": null,
     "description": null,
-    "lineNumber": 16,
-    "content": "/**\n * Rotate tree left. (see https://en.wikipedia.org/wiki/Tree_rotation)\n * /!\\ This swaps the references to A and B.\n *\n *         A                B\n *        / \\              / \\\n *       a   B     ->     A   c\n *          / \\          / \\\n *         b   c        a   b\n *\n *\n * @param {Node} A - The root of the tree.\n *\n */\n\nexport function rotate_left ( A ) {\n\n\tconst B = A.right ;\n\tconst a = A.left ;\n\tconst b = B.left ;\n\tconst c = B.right ;\n\n\t[A.key , B.key] = [B.key , A.key] ;\n\t[A.color , B.color] = [B.color , A.color] ;\n\n\tA.left = B ;\n\tA.right = c ;\n\n\tB.left = a ;\n\tB.right = b ;\n\n\ta.parent = B ;\n\tb.parent = B ;\n\tc.parent = A ;\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 74,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "rotate_left",
     "memberof": "src/rotate/rotate_left.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/rotate/rotate_left.js~rotate_left",
     "access": null,
     "export": true,
@@ -1781,29 +1733,27 @@
         "name": "A",
         "description": "The root of the tree."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 75,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/rotate/rotate_right.js",
-    "memberof": null,
+    "content": "/**\n * Rotate tree right. (see https://en.wikipedia.org/wiki/Tree_rotation)\n * /!\\ This swaps the references to A and B.\n *\n *         B                A\n *        / \\              / \\\n *       A   c     ->     a   B\n *      / \\                  / \\\n *     a   b                b   c\n *\n *\n * @param {Node} B - The root of the tree.\n *\n */\n\nexport function rotate_right ( B ) {\n\n\tconst A = B.left;\n\tconst a = A.left ;\n\tconst b = A.right ;\n\tconst c = B.right ;\n\n\t[A.key , B.key] = [B.key , A.key] ;\n\t[A.color , B.color] = [B.color , A.color] ;\n\n\tB.left = a ;\n\tB.right = A ;\n\n\tA.left = b ;\n\tA.right = c ;\n\n\ta.parent = B ;\n\tb.parent = A ;\n\tc.parent = A ;\n\n}\n",
+    "static": true,
     "longname": "src/rotate/rotate_right.js",
     "access": null,
     "description": null,
-    "lineNumber": 16,
-    "content": "/**\n * Rotate tree right. (see https://en.wikipedia.org/wiki/Tree_rotation)\n * /!\\ This swaps the references to A and B.\n *\n *         B                A\n *        / \\              / \\\n *       A   c     ->     a   B\n *      / \\                  / \\\n *     a   b                b   c\n *\n *\n * @param {Node} B - The root of the tree.\n *\n */\n\nexport function rotate_right ( B ) {\n\n\tconst A = B.left;\n\tconst a = A.left ;\n\tconst b = A.right ;\n\tconst c = B.right ;\n\n\t[A.key , B.key] = [B.key , A.key] ;\n\t[A.color , B.color] = [B.color , A.color] ;\n\n\tB.left = a ;\n\tB.right = A ;\n\n\tA.left = b ;\n\tA.right = c ;\n\n\ta.parent = B ;\n\tb.parent = A ;\n\tc.parent = A ;\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 76,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "rotate_right",
     "memberof": "src/rotate/rotate_right.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/rotate/rotate_right.js~rotate_right",
     "access": null,
     "export": true,
@@ -1822,42 +1772,38 @@
         "name": "B",
         "description": "The root of the tree."
       }
-    ],
-    "generator": false
+    ]
   },
   {
     "__docId__": 77,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/search/index.js",
-    "memberof": null,
+    "content": "export * from './search' ;\n",
+    "static": true,
     "longname": "src/search/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export * from './search' ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 78,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/search/search.js",
-    "memberof": null,
+    "content": "/**\n * Search for the first node whose key equals <code>key</code>.\n *\n * @param {Function} compare - The comparison function.\n * @param {Node} root - The root of the tree to scan.\n * @param {Key} key - The key to search for.\n * @returns {Node}\n */\nexport function search ( compare, root, key ) {\n\n\twhile ( true ) {\n\n\t\tconst d = compare( key, root.key );\n\n\t\tif ( d === 0 ) {\n\t\t\treturn root;\n\t\t}\n\n\t\telse if ( d < 0 ) {\n\t\t\troot = root.left;\n\t\t}\n\n\t\telse {\n\t\t\troot = root.right;\n\t\t}\n\n\t\tif ( root.isleaf() ) {\n\t\t\treturn null;\n\t\t}\n\n\t}\n\n}\n",
+    "static": true,
     "longname": "src/search/search.js",
     "access": null,
     "description": null,
-    "lineNumber": 9,
-    "content": "/**\n * Search for the first node whose key equals <code>key</code>.\n *\n * @param {Function} compare - The comparison function.\n * @param {Node} root - The root of the tree to scan.\n * @param {Key} key - The key to search for.\n * @returns {Node}\n */\nexport function search ( compare, root, key ) {\n\n\twhile ( true ) {\n\n\t\tconst d = compare( key, root.key );\n\n\t\tif ( d === 0 ) {\n\t\t\treturn root;\n\t\t}\n\n\t\telse if ( d < 0 ) {\n\t\t\troot = root.left;\n\t\t}\n\n\t\telse {\n\t\t\troot = root.right;\n\t\t}\n\n\t\tif ( root.isleaf() ) {\n\t\t\treturn null;\n\t\t}\n\n\t}\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 79,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "search",
     "memberof": "src/search/search.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/search/search.js~search",
     "access": null,
     "export": true,
@@ -1910,42 +1856,38 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
     "__docId__": 80,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/traversal/index.js",
-    "memberof": null,
+    "content": "export * from './inordertraversal' ;\nexport * from './rangetraversal' ;\n",
+    "static": true,
     "longname": "src/traversal/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export * from './inordertraversal' ;\nexport * from './rangetraversal' ;\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 81,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/traversal/inordertraversal.js",
-    "memberof": null,
+    "content": "/**\n * Traverses the tree rooted at <code>node</code> in order.\n *\n * @param {Node} node - The root of the tree.\n * @returns {Iterator}\n */\nexport function* inordertraversal ( node ) {\n\n\tif ( !node.left.isleaf() ) {\n\t\t// Yield the nodes on the left recursively. Those nodes are all smaller\n\t\t// than (or equal to) the current node by the binary search tree\n\t\t// properties.\n\t\tyield *inordertraversal( node.left );\n\t}\n\n\t// Yield the current node.\n\tyield node.key ;\n\n\tif ( !node.right.isleaf() ) {\n\t\t// Yield the nodes on the right recursively. Those nodes are all larger\n\t\t// than (or equal to) the current node by the binary search tree\n\t\t// properties.\n\t\tyield* inordertraversal( node.right );\n\t}\n\n}\n",
+    "static": true,
     "longname": "src/traversal/inordertraversal.js",
     "access": null,
     "description": null,
-    "lineNumber": 7,
-    "content": "/**\n * Traverses the tree rooted at <code>node</code> in order.\n *\n * @param {Node} node - The root of the tree.\n * @returns {Iterator}\n */\nexport function* inordertraversal ( node ) {\n\n\tif ( !node.left.isleaf() ) {\n\t\t// Yield the nodes on the left recursively. Those nodes are all smaller\n\t\t// than (or equal to) the current node by the binary search tree\n\t\t// properties.\n\t\tyield *inordertraversal( node.left );\n\t}\n\n\t// Yield the current node.\n\tyield node.key ;\n\n\tif ( !node.right.isleaf() ) {\n\t\t// Yield the nodes on the right recursively. Those nodes are all larger\n\t\t// than (or equal to) the current node by the binary search tree\n\t\t// properties.\n\t\tyield* inordertraversal( node.right );\n\t}\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 82,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "inordertraversal",
     "memberof": "src/traversal/inordertraversal.js",
+    "generator": true,
+    "async": false,
+    "static": true,
     "longname": "src/traversal/inordertraversal.js~inordertraversal",
     "access": null,
     "export": true,
@@ -1978,29 +1920,27 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": true
+    }
   },
   {
     "__docId__": 83,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/traversal/rangetraversal.js",
-    "memberof": null,
+    "content": "/**\n * Yields all the keys in the tree rooted at <code>root</code> that lie in the\n * interval <code>[left, right[</code>, in order.\n *\n * @param {Function} compare - The comparison function.\n * @param {Node} root - The root of the tree.\n * @param {Key} left - The lower bound of the interval.\n * @param {Key} right - The upper bound of the interval.\n * @returns {Iterator}\n */\nexport function* rangetraversal ( compare , root , left , right ) {\n\n\tif ( compare( root.key , left ) < 0 ) {\n\t\t// If the root lies to the left of the interval, we can discard the\n\t\t// entire left subtree.\n\t\tif ( !root.right.isleaf() ) yield *rangetraversal( compare , root.right , left , right );\n\t}\n\telse if ( compare( root.key , right ) >= 0 ) {\n\t\t// If the root lies to the right of the interval, we can discard the\n\t\t// entire right subtree.\n\t\tif ( !root.left.isleaf() ) yield *rangetraversal( compare , root.left , left , right );\n\t}\n\telse {\n\t\t// Otherwise just recurse on both subtrees and yield the root in\n\t\t// between.\n\t\tif ( !root.left.isleaf() ) yield *rangetraversal( compare , root.left , left , right );\n\t\tyield root.key ;\n\t\tif ( !root.right.isleaf() ) yield *rangetraversal( compare , root.right , left , right );\n\t}\n\n}\n",
+    "static": true,
     "longname": "src/traversal/rangetraversal.js",
     "access": null,
     "description": null,
-    "lineNumber": 11,
-    "content": "/**\n * Yields all the keys in the tree rooted at <code>root</code> that lie in the\n * interval <code>[left, right[</code>, in order.\n *\n * @param {Function} compare - The comparison function.\n * @param {Node} root - The root of the tree.\n * @param {Key} left - The lower bound of the interval.\n * @param {Key} right - The upper bound of the interval.\n * @returns {Iterator}\n */\nexport function* rangetraversal ( compare , root , left , right ) {\n\n\tif ( compare( root.key , left ) < 0 ) {\n\t\t// If the root lies to the left of the interval, we can discard the\n\t\t// entire left subtree.\n\t\tif ( !root.right.isleaf() ) yield *rangetraversal( compare , root.right , left , right );\n\t}\n\telse if ( compare( root.key , right ) >= 0 ) {\n\t\t// If the root lies to the right of the interval, we can discard the\n\t\t// entire right subtree.\n\t\tif ( !root.left.isleaf() ) yield *rangetraversal( compare , root.left , left , right );\n\t}\n\telse {\n\t\t// Otherwise just recurse on both subtrees and yield the root in\n\t\t// between.\n\t\tif ( !root.left.isleaf() ) yield *rangetraversal( compare , root.left , left , right );\n\t\tyield root.key ;\n\t\tif ( !root.right.isleaf() ) yield *rangetraversal( compare , root.right , left , right );\n\t}\n\n}\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 84,
     "kind": "function",
-    "static": true,
-    "variation": null,
     "name": "rangetraversal",
     "memberof": "src/traversal/rangetraversal.js",
+    "generator": true,
+    "async": false,
+    "static": true,
     "longname": "src/traversal/rangetraversal.js~rangetraversal",
     "access": null,
     "export": true,
@@ -2063,17 +2003,15 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": true
+    }
   },
   {
     "__docId__": 86,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Infinity",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
     "access": null,
     "description": "",
@@ -2082,11 +2020,10 @@
   {
     "__docId__": 87,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "NaN",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
     "access": null,
     "description": "",
@@ -2095,11 +2032,10 @@
   {
     "__docId__": 88,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "undefined",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
     "access": null,
     "description": "",
@@ -2108,11 +2044,10 @@
   {
     "__docId__": 89,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "null",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
     "access": null,
     "description": "",
@@ -2121,11 +2056,10 @@
   {
     "__docId__": 90,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Object",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
     "access": null,
     "description": "",
@@ -2134,11 +2068,10 @@
   {
     "__docId__": 91,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "object",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
     "access": null,
     "description": "",
@@ -2147,11 +2080,10 @@
   {
     "__docId__": 92,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Function",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
     "access": null,
     "description": "",
@@ -2160,11 +2092,10 @@
   {
     "__docId__": 93,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "function",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
     "access": null,
     "description": "",
@@ -2173,11 +2104,10 @@
   {
     "__docId__": 94,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Boolean",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
     "access": null,
     "description": "",
@@ -2186,11 +2116,10 @@
   {
     "__docId__": 95,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "boolean",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
     "access": null,
     "description": "",
@@ -2199,11 +2128,10 @@
   {
     "__docId__": 96,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Symbol",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
     "access": null,
     "description": "",
@@ -2212,11 +2140,10 @@
   {
     "__docId__": 97,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Error",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
     "access": null,
     "description": "",
@@ -2225,11 +2152,10 @@
   {
     "__docId__": 98,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "EvalError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
     "access": null,
     "description": "",
@@ -2238,11 +2164,10 @@
   {
     "__docId__": 99,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "InternalError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
     "access": null,
     "description": "",
@@ -2251,11 +2176,10 @@
   {
     "__docId__": 100,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "RangeError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
     "access": null,
     "description": "",
@@ -2264,11 +2188,10 @@
   {
     "__docId__": 101,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "ReferenceError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
     "access": null,
     "description": "",
@@ -2277,11 +2200,10 @@
   {
     "__docId__": 102,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "SyntaxError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
     "access": null,
     "description": "",
@@ -2290,11 +2212,10 @@
   {
     "__docId__": 103,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "TypeError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
     "access": null,
     "description": "",
@@ -2303,11 +2224,10 @@
   {
     "__docId__": 104,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "URIError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
     "access": null,
     "description": "",
@@ -2316,11 +2236,10 @@
   {
     "__docId__": 105,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Number",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
     "access": null,
     "description": "",
@@ -2329,11 +2248,10 @@
   {
     "__docId__": 106,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "number",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
     "access": null,
     "description": "",
@@ -2342,11 +2260,10 @@
   {
     "__docId__": 107,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Date",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
     "access": null,
     "description": "",
@@ -2355,11 +2272,10 @@
   {
     "__docId__": 108,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "String",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
     "access": null,
     "description": "",
@@ -2368,11 +2284,10 @@
   {
     "__docId__": 109,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "string",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
     "access": null,
     "description": "",
@@ -2381,11 +2296,10 @@
   {
     "__docId__": 110,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "RegExp",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
     "access": null,
     "description": "",
@@ -2394,11 +2308,10 @@
   {
     "__docId__": 111,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
     "access": null,
     "description": "",
@@ -2407,11 +2320,10 @@
   {
     "__docId__": 112,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Int8Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
     "access": null,
     "description": "",
@@ -2420,11 +2332,10 @@
   {
     "__docId__": 113,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Uint8Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
     "access": null,
     "description": "",
@@ -2433,11 +2344,10 @@
   {
     "__docId__": 114,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Uint8ClampedArray",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
     "access": null,
     "description": "",
@@ -2446,11 +2356,10 @@
   {
     "__docId__": 115,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Int16Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
     "access": null,
     "description": "",
@@ -2459,11 +2368,10 @@
   {
     "__docId__": 116,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Uint16Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
     "access": null,
     "description": "",
@@ -2472,11 +2380,10 @@
   {
     "__docId__": 117,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Int32Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
     "access": null,
     "description": "",
@@ -2485,11 +2392,10 @@
   {
     "__docId__": 118,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Uint32Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
     "access": null,
     "description": "",
@@ -2498,11 +2404,10 @@
   {
     "__docId__": 119,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Float32Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
     "access": null,
     "description": "",
@@ -2511,11 +2416,10 @@
   {
     "__docId__": 120,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Float64Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
     "access": null,
     "description": "",
@@ -2524,11 +2428,10 @@
   {
     "__docId__": 121,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Map",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
     "access": null,
     "description": "",
@@ -2537,11 +2440,10 @@
   {
     "__docId__": 122,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Set",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
     "access": null,
     "description": "",
@@ -2550,11 +2452,10 @@
   {
     "__docId__": 123,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "WeakMap",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
     "access": null,
     "description": "",
@@ -2563,11 +2464,10 @@
   {
     "__docId__": 124,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "WeakSet",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
     "access": null,
     "description": "",
@@ -2576,11 +2476,10 @@
   {
     "__docId__": 125,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "ArrayBuffer",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
     "access": null,
     "description": "",
@@ -2589,11 +2488,10 @@
   {
     "__docId__": 126,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "DataView",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
     "access": null,
     "description": "",
@@ -2602,11 +2500,10 @@
   {
     "__docId__": 127,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "JSON",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
     "access": null,
     "description": "",
@@ -2615,11 +2512,10 @@
   {
     "__docId__": 128,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Promise",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
     "access": null,
     "description": "",
@@ -2628,11 +2524,10 @@
   {
     "__docId__": 129,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Generator",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
     "access": null,
     "description": "",
@@ -2641,11 +2536,10 @@
   {
     "__docId__": 130,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "GeneratorFunction",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
     "access": null,
     "description": "",
@@ -2654,11 +2548,10 @@
   {
     "__docId__": 131,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Reflect",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
     "access": null,
     "description": "",
@@ -2667,24 +2560,23 @@
   {
     "__docId__": 132,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Proxy",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
     "access": null,
     "description": "",
+    "lineNumber": 193,
     "builtinExternal": true
   },
   {
     "__docId__": 134,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "CanvasRenderingContext2D",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
     "access": null,
     "description": "",
@@ -2693,11 +2585,10 @@
   {
     "__docId__": 135,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "DocumentFragment",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
     "access": null,
     "description": "",
@@ -2706,11 +2597,10 @@
   {
     "__docId__": 136,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Element",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~Element",
     "access": null,
     "description": "",
@@ -2719,11 +2609,10 @@
   {
     "__docId__": 137,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Event",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~Event",
     "access": null,
     "description": "",
@@ -2732,11 +2621,10 @@
   {
     "__docId__": 138,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Node",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~Node",
     "access": null,
     "description": "",
@@ -2745,11 +2633,10 @@
   {
     "__docId__": 139,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "NodeList",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
     "access": null,
     "description": "",
@@ -2758,11 +2645,10 @@
   {
     "__docId__": 140,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "XMLHttpRequest",
     "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
     "access": null,
     "description": "",
@@ -2771,14 +2657,14 @@
   {
     "__docId__": 141,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "AudioContext",
     "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
     "access": null,
     "description": "",
+    "lineNumber": 34,
     "builtinExternal": true
   }
 ]
