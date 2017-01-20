@@ -5,7 +5,7 @@
 let tree = RedBlackTree.from( increasing , range( 100000 ) ) ;
 ```
 
-<img src="media/sketch.svg" width="864">
+<img src="https://cdn.rawgit.com/aureooms/js-red-black-tree/master/media/sketch.svg" width="864">
 
 Red-black tree library for JavaScript.
 See [documentation](https://aureooms.github.io/js-red-black-tree/index.html).
