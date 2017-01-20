@@ -1,4 +1,4 @@
-[aureooms/js-red-black-tree](https://aureooms.github.io/js-red-black-tree)
+[@aureooms/js-red-black-tree](https://aureooms.github.io/js-red-black-tree)
 ==
 
 <img src="https://cdn.rawgit.com/aureooms/js-red-black-tree/master/media/sketch.svg" width="864">
