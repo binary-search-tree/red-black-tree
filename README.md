@@ -5,7 +5,10 @@
 let tree = RedBlackTree.from( increasing , range( 100000 ) ) ;
 ```
 
-Red-black tree library for JavaScript. See [documentation](https://aureooms.github.io/js-red-black-tree/index.html).
+<img src="media/sketch.svg" width="864">
+
+Red-black tree library for JavaScript.
+See [documentation](https://aureooms.github.io/js-red-black-tree/index.html).
 Parent is [@aureooms/js-bst](https://github.com/aureooms/js-bst).
 
 [![NPM license](http://img.shields.io/npm/l/aureooms-js-red-black-tree.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-red-black-tree/master/LICENSE)
