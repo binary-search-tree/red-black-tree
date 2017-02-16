@@ -11,7 +11,7 @@ Red-black tree library for JavaScript.
 See [documentation](https://aureooms.github.io/js-red-black-tree/index.html).
 Parent is [@aureooms/js-bst](https://github.com/aureooms/js-bst).
 
-[![NPM license](https://img.shields.io/npm/l/@aureooms/js-red-black-tree.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-red-black-tree/master/LICENSE)
+[![License](https://img.shields.io/github/license/aureooms/js-red-black-tree.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-red-black-tree/master/LICENSE)
 [![NPM version](https://img.shields.io/npm/v/@aureooms/js-red-black-tree.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-red-black-tree)
 [![Build status](https://img.shields.io/travis/aureooms/js-red-black-tree.svg?style=flat)](https://travis-ci.org/aureooms/js-red-black-tree)
 [![Coverage status](https://img.shields.io/coveralls/aureooms/js-red-black-tree.svg?style=flat)](https://coveralls.io/r/aureooms/js-red-black-tree)
