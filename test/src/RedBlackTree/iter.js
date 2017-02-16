@@ -1,8 +1,8 @@
 import test from 'ava' ;
 
-import { increasing , decreasing } from 'aureooms-js-compare' ;
+import { increasing , decreasing } from '@aureooms/js-compare' ;
 
-import { list , range } from 'aureooms-js-itertools' ;
+import { list , range } from '@aureooms/js-itertools' ;
 
 import { RedBlackTree } from '../../../src' ;
 

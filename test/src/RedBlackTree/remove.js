@@ -1,10 +1,10 @@
 import test from 'ava' ;
 
-import { increasing , decreasing } from 'aureooms-js-compare' ;
+import { increasing , decreasing } from '@aureooms/js-compare' ;
 
-import { list , range , sorted , head , iter , exhaust } from 'aureooms-js-itertools' ;
+import { list , range , sorted , head , iter , exhaust } from '@aureooms/js-itertools' ;
 
-import { randint , shuffle } from 'aureooms-js-random' ;
+import { randint , shuffle } from '@aureooms/js-random' ;
 
 import { RedBlackTree , debug } from '../../../src' ;
 
