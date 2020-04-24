@@ -7,7 +7,11 @@
     "require": [
       "@babel/polyfill",
       "@babel/register"
-    ]
+    ],
+    "files": [
+      "test/src/**/*"
+    ],
+    "timeout": "1m"
   },
   "babel": {
     "presets": [
@@ -29,7 +33,7 @@
     "@aureooms/js-compare": "1.4.5",
     "@aureooms/js-itertools": "3.4.0",
     "@aureooms/js-random": "2.0.0",
-    "ava": "0.25.0",
+    "ava": "3.7.1",
     "babel-cli": "6.26.0",
     "babel-polyfill": "6.26.0",
     "babel-preset-latest": "6.24.1",
@@ -45,8 +49,7 @@
     "esdoc-inject-script-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
-    "np": "6.2.1",
-    "xo": "0.29.1"
+    "np": "6.2.1"
   },
   "homepage": "https://aureooms.github.io/js-red-black-tree",
   "keywords": [
@@ -65,7 +68,7 @@
     "build": "babel src -d lib",
     "cover": "nyc --reporter=lcov npm test",
     "prepublish": "npm run build",
-    "test": "ava ./test/src",
+    "test": "ava",
     "esdoc": "esdoc"
   }
 }
