@@ -11,13 +11,17 @@ Red-black tree library for JavaScript.
 See [documentation](https://aureooms.github.io/js-red-black-tree/index.html).
 Parent is [@aureooms/js-bst](https://github.com/aureooms/js-bst).
 
-[![License](https://img.shields.io/github/license/aureooms/js-red-black-tree.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-red-black-tree/master/LICENSE)
-[![NPM version](https://img.shields.io/npm/v/@aureooms/js-red-black-tree.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-red-black-tree)
-[![Build status](https://img.shields.io/travis/aureooms/js-red-black-tree.svg?style=flat)](https://travis-ci.org/aureooms/js-red-black-tree)
-[![Coverage status](https://img.shields.io/coveralls/aureooms/js-red-black-tree.svg?style=flat)](https://coveralls.io/r/aureooms/js-red-black-tree)
-[![Dependencies status](https://img.shields.io/david/aureooms/js-red-black-tree.svg?style=flat)](https://david-dm.org/aureooms/js-red-black-tree#info=dependencies)
-[![Dev dependencies status](https://img.shields.io/david/dev/aureooms/js-red-black-tree.svg?style=flat)](https://david-dm.org/aureooms/js-red-black-tree#info=devDependencies)
-[![Code Climate](https://img.shields.io/codeclimate/github/aureooms/js-red-black-tree.svg?style=flat)](https://codeclimate.com/github/aureooms/js-red-black-tree)
-[![NPM downloads per month](https://img.shields.io/npm/dm/@aureooms/js-red-black-tree.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-red-black-tree)
-[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-red-black-tree.svg?style=flat)](https://github.com/aureooms/js-red-black-tree/issues)
+[![License](https://img.shields.io/github/license/aureooms/js-red-black-tree.svg)](https://raw.githubusercontent.com/aureooms/js-red-black-tree/master/LICENSE)
+[![Version](https://img.shields.io/npm/v/@aureooms/js-red-black-tree.svg)](https://www.npmjs.org/package/@aureooms/js-red-black-tree)
+[![Build](https://img.shields.io/travis/aureooms/js-red-black-tree/master.svg)](https://travis-ci.org/aureooms/js-red-black-tree/branches)
+[![Dependencies](https://img.shields.io/david/aureooms/js-red-black-tree.svg)](https://david-dm.org/aureooms/js-red-black-tree)
+[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-red-black-tree.svg)](https://david-dm.org/aureooms/js-red-black-tree?type=dev)
+[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-red-black-tree.svg)](https://github.com/aureooms/js-red-black-tree/issues)
+[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-red-black-tree.svg)](https://www.npmjs.org/package/@aureooms/js-red-black-tree)
+
+[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-red-black-tree.svg)](https://codeclimate.com/github/aureooms/js-red-black-tree/issues)
+[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-red-black-tree.svg)](https://codeclimate.com/github/aureooms/js-red-black-tree/trends/churn)
+[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-red-black-tree/master.svg)](https://codecov.io/gh/aureooms/js-red-black-tree)
+[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-red-black-tree.svg)](https://codeclimate.com/github/aureooms/js-red-black-tree/trends/technical_debt)
 [![Documentation](https://aureooms.github.io/js-red-black-tree/badge.svg)](https://aureooms.github.io/js-red-black-tree/source.html)
+[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-red-black-tree)](https://bundlephobia.com/result?p=@aureooms/js-red-black-tree)
