@@ -6,9 +6,13 @@ import { list , range , sorted , head , iter , exhaust } from '@aureooms/js-iter
 
 import { randint , shuffle } from '@aureooms/js-random' ;
 
-import { RedBlackTree , debug } from '../../../src' ;
+import { RedBlackTree , _debug } from '../../../src' ;
 
-import chalk from 'chalk' ;
+import { bgRed, bgBlack } from 'chalk' ;
+
+const red = bgRed;
+const black = bgBlack;
+const debug = _debug({red, black});
 
 test( 'RedBlackTree::remove' , t => {
 
@@ -72,7 +76,7 @@ test( 'delete root with right child' , t => {
 	tree.add( 0 ) ;
 	tree.add( 1 ) ;
 
-	const repr1 = `(${chalk.bgBlack('L')}, ${chalk.bgBlack(0)}, (${chalk.bgBlack('L')}, ${chalk.bgRed(1)}, ${chalk.bgBlack('L')}))` ;
+	const repr1 = `(${black('L')}, ${black(0)}, (${black('L')}, ${red(1)}, ${black('L')}))` ;
 
 	t.deepEqual( debug( tree.root ) , repr1 , 'debug string 1 is correct' ) ;
 
@@ -80,7 +84,7 @@ test( 'delete root with right child' , t => {
 
 	t.deepEqual( list( tree ) , [ 1 ] ) ;
 
-	const repr2 = `(${chalk.bgBlack('L')}, ${chalk.bgBlack(1)}, ${chalk.bgBlack('L')})` ;
+	const repr2 = `(${black('L')}, ${black(1)}, ${black('L')})` ;
 
 	t.deepEqual( debug( tree.root ) , repr2 , 'debug string 2 is correct' ) ;
 
@@ -93,7 +97,7 @@ test( 'delete root with left child' , t => {
 	tree.add( 0 ) ;
 	tree.add( -1 ) ;
 
-	const repr1 = `((${chalk.bgBlack('L')}, ${chalk.bgRed(-1)}, ${chalk.bgBlack('L')}), ${chalk.bgBlack(0)}, ${chalk.bgBlack('L')})` ;
+	const repr1 = `((${black('L')}, ${red(-1)}, ${black('L')}), ${black(0)}, ${black('L')})` ;
 
 	t.deepEqual( debug( tree.root ) , repr1 , 'debug string 1 is correct' ) ;
 
@@ -101,7 +105,7 @@ test( 'delete root with left child' , t => {
 
 	t.deepEqual( list( tree ) , [ -1 ] ) ;
 
-	const repr2 = `(${chalk.bgBlack('L')}, ${chalk.bgBlack(-1)}, ${chalk.bgBlack('L')})` ;
+	const repr2 = `(${black('L')}, ${black(-1)}, ${black('L')})` ;
 
 	t.deepEqual( debug( tree.root ) , repr2 , 'debug string 2 is correct' ) ;
 

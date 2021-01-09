@@ -1,5 +1,3 @@
-import chalk from 'chalk' ;
-
 import { BLACK } from '..' ;
 
 /**
@@ -9,12 +7,18 @@ import { BLACK } from '..' ;
  * @param {Node} root - The root of the tree.
  * @returns {String}
  */
-export function debug ( root ) {
+export function _debug ({red, black}) {
 
-	if ( root.isleaf( ) ) return chalk.bgBlack('L') ;
+	const debug = ( root ) => {
 
-	const repr = root.color === BLACK ? chalk.bgBlack(root.key) : chalk.bgRed( root.key ) ;
+		if (root.isleaf( )) return black('L');
 
-	return `(${debug(root.left)}, ${repr}, ${debug(root.right)})` ;
+		const repr = root.color === BLACK ? black(root.key) : red(root.key);
+
+		return `(${debug(root.left)}, ${repr}, ${debug(root.right)})`;
+
+	};
+
+	return debug;
 
 }
