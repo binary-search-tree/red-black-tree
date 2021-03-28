@@ -6,7 +6,7 @@ import { list , range , sorted } from '@aureooms/js-itertools' ;
 
 import { shuffle } from '@aureooms/js-random' ;
 
-import { RedBlackTree } from '../../../src' ;
+import { RedBlackTree } from "../../../src/index.js" ;
 
 test( 'RedBlackTree::range' , t => {
 

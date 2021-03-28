@@ -4,7 +4,7 @@ import { increasing , decreasing } from '@aureooms/js-compare' ;
 
 import { range } from '@aureooms/js-itertools' ;
 
-import { RedBlackTree } from '../../../src' ;
+import { RedBlackTree } from "../../../src/index.js" ;
 
 test( 'RedBlackTree::has' , t => {
 

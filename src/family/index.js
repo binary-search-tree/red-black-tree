@@ -1,4 +1,4 @@
-export * from './grandparent' ;
-export * from './predecessor' ;
-export * from './sibling' ;
-export * from './uncle' ;
+export * from "./grandparent.js" ;
+export * from "./predecessor.js" ;
+export * from "./sibling.js" ;
+export * from "./uncle.js" ;

@@ -1,2 +1,2 @@
-export * from './rotate_left' ;
-export * from './rotate_right' ;
+export * from "./rotate_left.js" ;
+export * from "./rotate_right.js" ;

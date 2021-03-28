@@ -1,4 +1,4 @@
-import { delete_case2 } from './delete_case2' ;
+import { delete_case2 } from "./delete_case2.js" ;
 
 /**
  * Preconditions:

@@ -1,7 +1,7 @@
 import { BLACK , RED , sibling , rotate_left , rotate_right } from '../index.js' ;
 
-import { delete_case3 } from './delete_case3' ;
-import { delete_case4 } from './delete_case4' ;
+import { delete_case3 } from "./delete_case3.js" ;
+import { delete_case4 } from "./delete_case4.js" ;
 
 /**
  * Preconditions:

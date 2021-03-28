@@ -1,5 +1,5 @@
 import { BLACK } from '../index.js' ;
-import { insert_case2 } from './insert_case2' ;
+import { insert_case2 } from "./insert_case2.js" ;
 
 /**
  * Preconditions:

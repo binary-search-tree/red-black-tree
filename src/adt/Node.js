@@ -1,4 +1,4 @@
-import { Leaf } from './Leaf' ;
+import { Leaf } from "./Leaf.js" ;
 
 /**
  * An internal node. This node can be red or black.

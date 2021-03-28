@@ -1,6 +1,6 @@
 
 import { rotate_left , rotate_right , grandparent } from '../index.js' ;
-import { insert_case5 } from './insert_case5' ;
+import { insert_case5 } from "./insert_case5.js" ;
 
 /**
  * Preconditions:

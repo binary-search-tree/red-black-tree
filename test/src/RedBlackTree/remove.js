@@ -6,7 +6,7 @@ import { list , range , sorted , head , iter , exhaust } from '@aureooms/js-iter
 
 import { randint , shuffle } from '@aureooms/js-random' ;
 
-import { RedBlackTree , _debug } from '../../../src' ;
+import { RedBlackTree , _debug } from "../../../src/index.js" ;
 
 import { bgRed, bgBlack } from 'chalk' ;
 

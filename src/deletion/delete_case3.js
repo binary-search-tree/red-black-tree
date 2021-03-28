@@ -1,7 +1,7 @@
 import { BLACK , RED , sibling } from '../index.js' ;
 
-import { delete_case1 } from './delete_case1' ;
-import { delete_case4 } from './delete_case4' ;
+import { delete_case1 } from "./delete_case1.js" ;
+import { delete_case4 } from "./delete_case4.js" ;
 
 /**
  * Preconditions:

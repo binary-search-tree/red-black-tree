@@ -1,2 +1,2 @@
-export * from './BLACK' ;
-export * from './RED' ;
+export * from "./BLACK.js" ;
+export * from "./RED.js" ;

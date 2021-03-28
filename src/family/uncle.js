@@ -1,4 +1,4 @@
-import { grandparent } from './grandparent' ;
+import { grandparent } from "./grandparent.js" ;
 
 /**
  * Computes the uncle of the input node when the grandparent is guaranteed to

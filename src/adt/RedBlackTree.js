@@ -1,5 +1,5 @@
 
-import { Node } from './Node' ;
+import { Node } from "./Node.js" ;
 import { RED , BLACK } from '../index.js' ;
 import { predecessor } from '../index.js' ;
 import { insert , insert_case2 } from '../index.js' ;

@@ -1,7 +1,7 @@
 import { BLACK , RED } from '../index.js' ;
 
-import { replace_node } from './replace_node' ;
-import { delete_case1 } from './delete_case1' ;
+import { replace_node } from "./replace_node.js" ;
+import { delete_case1 } from "./delete_case1.js" ;
 
 /**
  * Delete a node <code>n</code> that has at most a single non-leaf child.
