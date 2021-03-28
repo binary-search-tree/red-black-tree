@@ -1,4 +1,4 @@
-import { BLACK } from '..' ;
+import { BLACK } from '../index.js' ;
 
 /**
  * A black leaf node.

@@ -1,4 +1,4 @@
-import { BLACK , RED , sibling , rotate_right , rotate_left } from '..' ;
+import { BLACK , RED , sibling , rotate_right , rotate_left } from '../index.js' ;
 
 import { delete_case6 } from './delete_case6' ;
 

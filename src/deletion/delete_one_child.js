@@ -1,4 +1,4 @@
-import { BLACK , RED } from '..' ;
+import { BLACK , RED } from '../index.js' ;
 
 import { replace_node } from './replace_node' ;
 import { delete_case1 } from './delete_case1' ;

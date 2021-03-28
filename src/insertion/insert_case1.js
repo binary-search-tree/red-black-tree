@@ -1,4 +1,4 @@
-import { BLACK } from '..' ;
+import { BLACK } from '../index.js' ;
 import { insert_case2 } from './insert_case2' ;
 
 /**

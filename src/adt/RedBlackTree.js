@@ -1,11 +1,11 @@
 
 import { Node } from './Node' ;
-import { RED , BLACK } from '..' ;
-import { predecessor } from '..' ;
-import { insert , insert_case2 } from '..' ;
-import { delete_one_child } from '..' ;
-import { search } from '..' ;
-import { inordertraversal , rangetraversal } from '..' ;
+import { RED , BLACK } from '../index.js' ;
+import { predecessor } from '../index.js' ;
+import { insert , insert_case2 } from '../index.js' ;
+import { delete_one_child } from '../index.js' ;
+import { search } from '../index.js' ;
+import { inordertraversal , rangetraversal } from '../index.js' ;
 
 /**
  * A RedBlackTree with key-only nodes.

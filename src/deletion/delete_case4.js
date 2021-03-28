@@ -1,4 +1,4 @@
-import { BLACK , RED , sibling } from '..' ;
+import { BLACK , RED , sibling } from '../index.js' ;
 
 import { delete_case5 } from './delete_case5' ;
 
