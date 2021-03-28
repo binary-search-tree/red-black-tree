@@ -1,4 +1,4 @@
-import { RED , BLACK , rotate_left , rotate_right , grandparent } from '../index.js' ;
+import {RED, BLACK, rotate_left, rotate_right, grandparent} from '../index.js';
 
 /**
  * Preconditions:
@@ -10,13 +10,12 @@ import { RED , BLACK , rotate_left , rotate_right , grandparent } from '../index
  *
  * @param {Node} n - The input node.
  */
-export function insert_case5 ( n ) {
+export function insert_case5(n) {
+	const g = grandparent(n);
 
-	const g = grandparent( n ) ;
-
-	// repaint n's parent black, n's grandparent red
-	n.parent.color = BLACK ;
-	g.color = RED ;
+	// Repaint n's parent black, n's grandparent red
+	n.parent.color = BLACK;
+	g.color = RED;
 
 	/**
 	 * If the path from g to n makes a left-left, {@link rotate_right} at g.
@@ -30,8 +29,7 @@ export function insert_case5 ( n ) {
 	 *      / \                               / \
 	 *     =   =                             -   -
 	 */
-	if ( n === n.parent.left ) rotate_right( g ) ;
-
+	if (n === n.parent.left) rotate_right(g);
 	/**
 	 * If the path from g to n makes a right-right, {@link rotate_left} at g.
 	 * We are done.
@@ -43,7 +41,5 @@ export function insert_case5 ( n ) {
 	 *       -   -   =  >R         B   =   =   =
 	 *                  / \       / \
 	 *                 =   =     -   -
-	 */
-	else rotate_left( g ) ;
-
+	 */ else rotate_left(g);
 }

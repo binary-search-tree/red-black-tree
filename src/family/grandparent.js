@@ -4,10 +4,8 @@
  * @param {Node} node - The input node.
  * @returns {Node}
  */
-export function grandparent ( node ) {
-
-	// assert((node !== null) && (node.parent !== null));
+export function grandparent(node) {
+	// Assert((node !== null) && (node.parent !== null));
 	// We only call this function when node HAS a grandparent
 	return node.parent.parent;
-
 }

@@ -4,23 +4,21 @@
  * @param {Node} node - The root of the tree.
  * @returns {Iterator}
  */
-export function* inordertraversal ( node ) {
-
-	if ( !node.left.isleaf() ) {
+export function* inordertraversal(node) {
+	if (!node.left.isleaf()) {
 		// Yield the nodes on the left recursively. Those nodes are all smaller
 		// than (or equal to) the current node by the binary search tree
 		// properties.
-		yield *inordertraversal( node.left );
+		yield* inordertraversal(node.left);
 	}
 
 	// Yield the current node.
-	yield node.key ;
+	yield node.key;
 
-	if ( !node.right.isleaf() ) {
+	if (!node.right.isleaf()) {
 		// Yield the nodes on the right recursively. Those nodes are all larger
 		// than (or equal to) the current node by the binary search tree
 		// properties.
-		yield* inordertraversal( node.right );
+		yield* inordertraversal(node.right);
 	}
-
 }

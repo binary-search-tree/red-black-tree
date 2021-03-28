@@ -1,4 +1,4 @@
-import { BLACK } from '../index.js' ;
+import {BLACK} from '../index.js';
 
 /**
  * A black leaf node.
@@ -7,9 +7,9 @@ import { BLACK } from '../index.js' ;
  * @param {Node} parent - The parent node in the tree.
  * @returns {Leaf}
  */
-export function Leaf ( parent ) {
-	this.color = BLACK ;
-	this.parent = parent ;
+export function Leaf(parent) {
+	this.color = BLACK;
+	this.parent = parent;
 }
 
 /**
@@ -18,4 +18,6 @@ export function Leaf ( parent ) {
  *
  * @returns {Boolean}
  */
-Leaf.prototype.isleaf = function ( ) { return true ; } ;
+Leaf.prototype.isleaf = function () {
+	return true;
+};

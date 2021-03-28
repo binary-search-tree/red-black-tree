@@ -1,6 +1,5 @@
-
-import { rotate_left , rotate_right , grandparent } from '../index.js' ;
-import { insert_case5 } from "./insert_case5.js" ;
+import {rotate_left, rotate_right, grandparent} from '../index.js';
+import {insert_case5} from './insert_case5.js';
 
 /**
  * Preconditions:
@@ -13,9 +12,8 @@ import { insert_case5 } from "./insert_case5.js" ;
  *
  * @param {Node} n - The input node.
  */
-export function insert_case4 ( n ) {
-
-	const g = grandparent( n ) ;
+export function insert_case4(n) {
+	const g = grandparent(n);
 
 	/**
 	 * If the path from g to n makes a left-right, change it to a left-left
@@ -31,12 +29,11 @@ export function insert_case4 ( n ) {
 	 *         =   =             =   =
 	 */
 
-	if ( ( n === n.parent.right ) && ( n.parent === g.left ) ) {
-
-		rotate_left( n.parent ) ;
+	if (n === n.parent.right && n.parent === g.left) {
+		rotate_left(n.parent);
 
 		/**
-		 * rotate_left can be the below because of already having *g =  grandparent(n)
+		 * Rotate_left can be the below because of already having *g =  grandparent(n)
 		 *
 		 * saved_p=g.left, *saved_left_n=n.left;
 		 * g.left=n;
@@ -47,29 +44,24 @@ export function insert_case4 ( n ) {
 		 */
 
 		// n = n.left; /!\ need to fix rotate, so that we can safely reference a node
-
-	}
-
-	/**
-	 * If the path from g to n makes a right-left, change it to a right-right
-	 * with {@link rotate_right}. Then call {@link insert_case5} on the old
-	 * parent of n.
-	 *
-	 *             B                     B
-	 *           /   \                 /   \
-	 *         B       R             B       R
-	 *        / \     / \   -->     / \     / \
-	 *       -   -  >R   =         -   -   =  >R
-	 *              / \                       / \
-	 *             =   =                     =   =
-	 */
-
-	else if ( ( n === n.parent.left ) && ( n.parent === g.right ) ) {
-
-		rotate_right( n.parent ) ;
+	} else if (n === n.parent.left && n.parent === g.right) {
+		/**
+		 * If the path from g to n makes a right-left, change it to a right-right
+		 * with {@link rotate_right}. Then call {@link insert_case5} on the old
+		 * parent of n.
+		 *
+		 *             B                     B
+		 *           /   \                 /   \
+		 *         B       R             B       R
+		 *        / \     / \   -->     / \     / \
+		 *       -   -  >R   =         -   -   =  >R
+		 *              / \                       / \
+		 *             =   =                     =   =
+		 */
+		rotate_right(n.parent);
 
 		/**
-		 * rotate_right can be the below to take advantage of already having *g =  grandparent(n)
+		 * Rotate_right can be the below to take advantage of already having *g =  grandparent(n)
 		 *
 		 * saved_p=g.right, *saved_right_n=n.right;
 		 * g.right=n;
@@ -81,6 +73,5 @@ export function insert_case4 ( n ) {
 		// n = n.right ;
 	}
 
-	insert_case5( n ) ;
-
+	insert_case5(n);
 }

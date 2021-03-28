@@ -13,24 +13,22 @@
  *
  */
 
-export function rotate_right ( B ) {
-
+export function rotate_right(B) {
 	const A = B.left;
-	const a = A.left ;
-	const b = A.right ;
-	const c = B.right ;
+	const a = A.left;
+	const b = A.right;
+	const c = B.right;
 
-	[A.key , B.key] = [B.key , A.key] ;
-	[A.color , B.color] = [B.color , A.color] ;
+	[A.key, B.key] = [B.key, A.key];
+	[A.color, B.color] = [B.color, A.color];
 
-	B.left = a ;
-	B.right = A ;
+	B.left = a;
+	B.right = A;
 
-	A.left = b ;
-	A.right = c ;
+	A.left = b;
+	A.right = c;
 
-	a.parent = B ;
-	b.parent = A ;
-	c.parent = A ;
-
+	a.parent = B;
+	b.parent = A;
+	c.parent = A;
 }

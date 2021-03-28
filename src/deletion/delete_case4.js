@@ -1,6 +1,6 @@
-import { BLACK , RED , sibling } from '../index.js' ;
+import {BLACK, RED, sibling} from '../index.js';
 
-import { delete_case5 } from "./delete_case5.js" ;
+import {delete_case5} from './delete_case5.js';
 
 /**
  * Preconditions:
@@ -13,9 +13,8 @@ import { delete_case5 } from "./delete_case5.js" ;
  *
  * @param {Node} n - The input node.
  */
-export function delete_case4 ( n ) {
-
-    const s = sibling(n);
+export function delete_case4(n) {
+	const s = sibling(n);
 
 	/**
 	 * If n's parent is red and n's sibling's children are black, then swap n's
@@ -31,17 +30,16 @@ export function delete_case4 ( n ) {
 	 *           / \   / \                / \   / \
 	 *          -   - -   -              -   - -   -
 	 */
-    if (
-        // the parent color test is always true when coming from case 2
-        ( n.parent.color === RED ) &&
-        ( s.left.color === BLACK ) &&
-        ( s.right.color === BLACK )
-    ) {
-        s.color = RED;
-        n.parent.color = BLACK;
-    }
+	if (
+		// The parent color test is always true when coming from case 2
+		n.parent.color === RED &&
+		s.left.color === BLACK &&
+		s.right.color === BLACK
+	) {
+		s.color = RED;
+		n.parent.color = BLACK;
+	}
 
-    // Otherwise, go to case 5.
-    else delete_case5( n ) ;
-
+	// Otherwise, go to case 5.
+	else delete_case5(n);
 }

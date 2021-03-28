@@ -1,6 +1,6 @@
-import { BLACK , RED , sibling , rotate_right , rotate_left } from '../index.js' ;
+import {BLACK, RED, sibling, rotate_right, rotate_left} from '../index.js';
 
-import { delete_case6 } from "./delete_case6.js" ;
+import {delete_case6} from './delete_case6.js';
 
 /**
  * Preconditions:
@@ -13,13 +13,12 @@ import { delete_case6 } from "./delete_case6.js" ;
  *
  * @param {Node} n - The input node.
  */
-export function delete_case5 ( n ) {
+export function delete_case5(n) {
+	const s = sibling(n);
 
-    const s = sibling( n ) ;
-
-    // The following statements just force the red n's sibling child to be on
-    // the left of the left of the parent, or right of the right, so case 6
-    // will rotate correctly.
+	// The following statements just force the red n's sibling child to be on
+	// the left of the left of the parent, or right of the right, so case 6
+	// will rotate correctly.
 
 	/**
 	 *           ?                       ?
@@ -32,29 +31,26 @@ export function delete_case5 ( n ) {
 	 *                                            / \
 	 *                                           -   -
 	 */
-    if ( ( n === n.parent.left ) && ( s.right.color === BLACK ) ) {
-        s.color = RED ;
-        s.left.color = BLACK ;
-        rotate_right( s ) ;
-    }
+	if (n === n.parent.left && s.right.color === BLACK) {
+		s.color = RED;
+		s.left.color = BLACK;
+		rotate_right(s);
+	} else if (n === n.parent.right && s.left.color === BLACK) {
+		/**
+		 *           ?                       ?
+		 *         /   \                  /     \
+		 *       B      >B               B       >B
+		 *      / \     / \     -->     / \      / \
+		 *    B     R  -   -          R     =   -   -
+		 *   / \   / \               / \
+		 *  -   - =   =             B   =
+		 *                         / \
+		 *                        -   -
+		 */
+		s.color = RED;
+		s.right.color = BLACK;
+		rotate_left(s);
+	}
 
-	/**
-	 *           ?                       ?
-	 *         /   \                  /     \
-	 *       B      >B               B       >B
-	 *      / \     / \     -->     / \      / \
-	 *    B     R  -   -          R     =   -   -
-	 *   / \   / \               / \
-	 *  -   - =   =             B   =
-	 *                         / \
-	 *                        -   -
-	 */
-    else if ( ( n === n.parent.right ) && ( s.left.color === BLACK ) ) {
-        s.color = RED ;
-        s.right.color = BLACK ;
-        rotate_left( s ) ;
-    }
-
-    delete_case6( n ) ;
-
+	delete_case6(n);
 }

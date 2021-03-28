@@ -1,4 +1,4 @@
-import { delete_case2 } from "./delete_case2.js" ;
+import {delete_case2} from './delete_case2.js';
 
 /**
  * Preconditions:
@@ -8,10 +8,8 @@ import { delete_case2 } from "./delete_case2.js" ;
  *
  * @param {Node} n - The input node.
  */
-export function delete_case1 ( n ) {
-
-    // If n is the root, there is nothing to do: all paths go through n, and n
-    // is black.
-    if ( n.parent !== null ) delete_case2( n ) ;
-
+export function delete_case1(n) {
+	// If n is the root, there is nothing to do: all paths go through n, and n
+	// is black.
+	if (n.parent !== null) delete_case2(n);
 }

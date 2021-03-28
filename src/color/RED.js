@@ -1,4 +1,4 @@
 /**
  * Constant for red.
  */
-export const RED = 1 ;
+export const RED = 1;

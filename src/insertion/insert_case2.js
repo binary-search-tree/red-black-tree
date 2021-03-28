@@ -1,5 +1,5 @@
-import { BLACK } from '../index.js' ;
-import { insert_case3 } from "./insert_case3.js" ;
+import {BLACK} from '../index.js';
+import {insert_case3} from './insert_case3.js';
 
 /**
  * Preconditions:
@@ -8,8 +8,7 @@ import { insert_case3 } from "./insert_case3.js" ;
  *
  * @param {Node} n - The input node.
  */
-export function insert_case2 ( n ) {
-
+export function insert_case2(n) {
 	/**
 	 * If the parent of n is black then we have nothing to do.
 	 *
@@ -19,8 +18,7 @@ export function insert_case2 ( n ) {
 	 *      / \
 	 *     -   -
 	 */
-	if ( n.parent.color === BLACK ) return ;
+	if (n.parent.color === BLACK) return;
 
-	else insert_case3( n ) ;
-
+	insert_case3(n);
 }

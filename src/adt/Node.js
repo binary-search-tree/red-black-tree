@@ -1,4 +1,4 @@
-import { Leaf } from "./Leaf.js" ;
+import {Leaf} from './Leaf.js';
 
 /**
  * An internal node. This node can be red or black.
@@ -8,12 +8,12 @@ import { Leaf } from "./Leaf.js" ;
  * @param {Key} key - The key of the node.
  * @returns {Node}
  */
-export function Node ( color , key ) {
-	this.color = color ;
-	this.left = new Leaf( this ) ;
-	this.right = new Leaf( this ) ;
-	this.parent = null ;
-	this.key = key ;
+export function Node(color, key) {
+	this.color = color;
+	this.left = new Leaf(this);
+	this.right = new Leaf(this);
+	this.parent = null;
+	this.key = key;
 }
 
 /**
@@ -22,4 +22,6 @@ export function Node ( color , key ) {
  *
  * @returns {Boolean}
  */
-Node.prototype.isleaf = function ( ) { return false ; } ;
+Node.prototype.isleaf = function () {
+	return false;
+};

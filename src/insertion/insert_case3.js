@@ -1,6 +1,6 @@
-import { BLACK , RED , uncle , grandparent } from '../index.js' ;
-import { insert_case1 } from "./insert_case1.js" ;
-import { insert_case4 } from "./insert_case4.js" ;
+import {BLACK, RED, uncle, grandparent} from '../index.js';
+import {insert_case1} from './insert_case1.js';
+import {insert_case4} from './insert_case4.js';
 
 /**
  * Preconditions:
@@ -10,9 +10,8 @@ import { insert_case4 } from "./insert_case4.js" ;
  *
  * @param {Node} n - The input node.
  */
-export function insert_case3 ( n ) {
-
-	const u = uncle( n ) ;
+export function insert_case3(n) {
+	const u = uncle(n);
 
 	/**
 	 * If n has a non-leaf uncle and this uncle is red then we simply
@@ -28,15 +27,11 @@ export function insert_case3 ( n ) {
 	 *     -   -                 -   -
 	 */
 
-
-	if ( ( u !== null ) && ( u.color === RED ) ) {
-		n.parent.color = BLACK ;
-		u.color = BLACK ;
-		const g = grandparent( n ) ;
-		g.color = RED ;
-		insert_case1( g ) ;
-	}
-
-	else insert_case4( n ) ;
-
+	if (u !== null && u.color === RED) {
+		n.parent.color = BLACK;
+		u.color = BLACK;
+		const g = grandparent(n);
+		g.color = RED;
+		insert_case1(g);
+	} else insert_case4(n);
 }

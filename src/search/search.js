@@ -6,28 +6,18 @@
  * @param {Key} key - The key to search for.
  * @returns {Node}
  */
-export function search ( compare, root, key ) {
+export function search(compare, root, key) {
+	while (true) {
+		const d = compare(key, root.key);
 
-	while ( true ) {
-
-		const d = compare( key, root.key );
-
-		if ( d === 0 ) {
+		if (d === 0) {
 			return root;
 		}
 
-		else if ( d < 0 ) {
-			root = root.left;
-		}
+		root = d < 0 ? root.left : root.right;
 
-		else {
-			root = root.right;
-		}
-
-		if ( root.isleaf() ) {
+		if (root.isleaf()) {
 			return null;
 		}
-
 	}
-
 }

@@ -1,4 +1,4 @@
-import { BLACK , RED , sibling , rotate_right , rotate_left } from '../index.js' ;
+import {BLACK, sibling, rotate_right, rotate_left} from '../index.js';
 
 /**
  * Preconditions:
@@ -12,16 +12,15 @@ import { BLACK , RED , sibling , rotate_right , rotate_left } from '../index.js'
  *
  * @param {Node} n - The input node.
  */
-export function delete_case6 ( n ) {
-
-    const s = sibling( n ) ;
+export function delete_case6(n) {
+	const s = sibling(n);
 
 	/**
 	 * Increment the black height of all root-leaf paths going through n by
 	 * rotating at n's parent. This decrements the black height of all
 	 * root-leaft paths going through n's sibling's right child.
-     * We can repaint n's sibling's right child in black to fix this.
-     * We are done.
+	 * We can repaint n's sibling's right child in black to fix this.
+	 * We are done.
 	 *
 	 *           ?                          ?
 	 *        /     \                     /   \
@@ -34,18 +33,17 @@ export function delete_case6 ( n ) {
 	 *                   -   -
 	 */
 
-    s.color = n.parent.color ;
-    n.parent.color = BLACK ;
+	s.color = n.parent.color;
+	n.parent.color = BLACK;
 
-    if ( n === n.parent.left ) {
-        s.right.color = BLACK ;
-        rotate_left( n.parent ) ;
-    }
+	if (n === n.parent.left) {
+		s.right.color = BLACK;
+		rotate_left(n.parent);
+	}
 
-    // symmetric case
-    else {
-        s.left.color = BLACK ;
-        rotate_right( n.parent ) ;
-    }
-
+	// Symmetric case
+	else {
+		s.left.color = BLACK;
+		rotate_right(n.parent);
+	}
 }

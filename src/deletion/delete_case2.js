@@ -1,7 +1,7 @@
-import { BLACK , RED , sibling , rotate_left , rotate_right } from '../index.js' ;
+import {BLACK, RED, sibling, rotate_left, rotate_right} from '../index.js';
 
-import { delete_case3 } from "./delete_case3.js" ;
-import { delete_case4 } from "./delete_case4.js" ;
+import {delete_case3} from './delete_case3.js';
+import {delete_case4} from './delete_case4.js';
 
 /**
  * Preconditions:
@@ -12,9 +12,8 @@ import { delete_case4 } from "./delete_case4.js" ;
  *
  * @param {Node} n - The input node.
  */
-export function delete_case2 ( n ) {
-
-    const s = sibling( n ) ;
+export function delete_case2(n) {
+	const s = sibling(n);
 
 	/**
 	 * If n's sibling is red, prepare for and go to case 4.
@@ -27,15 +26,14 @@ export function delete_case2 ( n ) {
 	 *           / \   / \       / \   / \
 	 *          =   = =   =     -   - =   =
 	 */
-    if ( s.color === RED ) {
-        n.parent.color = RED ;
-        s.color = BLACK ;
-        if ( n === n.parent.left ) rotate_left( n.parent ) ;
-        else rotate_right( n.parent ) ;
-        delete_case4( n ) ;
-    }
+	if (s.color === RED) {
+		n.parent.color = RED;
+		s.color = BLACK;
+		if (n === n.parent.left) rotate_left(n.parent);
+		else rotate_right(n.parent);
+		delete_case4(n);
+	}
 
-    // Otherwise, go to case 3.
-    else delete_case3( n ) ;
-
+	// Otherwise, go to case 3.
+	else delete_case3(n);
 }

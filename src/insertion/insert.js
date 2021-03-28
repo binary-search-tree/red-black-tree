@@ -1,4 +1,3 @@
-
 /**
  * Walks the tree rooted at <code>A</code> down the only path that satisfies
  * the following property: if at a node <code>C</code> we make a left (resp.
@@ -15,40 +14,30 @@
  * @param {Node} B - The node to insert.
  * @returns {Node} B - The node that has been inserted.
  */
-export function insert ( compare, A, B ) {
-
-	while ( true ) {
-
-		if ( compare( B.key, A.key ) < 0 ) {
-
+export function insert(compare, A, B) {
+	while (true) {
+		if (compare(B.key, A.key) < 0) {
 			const node = A.left;
 
-			if ( node.isleaf() ) {
+			if (node.isleaf()) {
 				A.left = B;
 				break;
 			}
 
 			A = node;
-
-		}
-
-		else {
-
+		} else {
 			const node = A.right;
 
-			if ( node.isleaf() ) {
+			if (node.isleaf()) {
 				A.right = B;
 				break;
 			}
 
 			A = node;
-
 		}
-
 	}
 
 	B.parent = A;
 
 	return B;
-
 }

@@ -1,37 +1,34 @@
-import test from 'ava' ;
+import test from 'ava';
 
-import { increasing , decreasing } from '@aureooms/js-compare' ;
+import {increasing, decreasing} from '@aureooms/js-compare';
 
-import { list , range } from '@aureooms/js-itertools' ;
+import {list, range} from '@aureooms/js-itertools';
 
-import { RedBlackTree } from "../../../src/index.js" ;
+import {RedBlackTree} from '../../../src/index.js';
 
-test( 'RedBlackTree::Symbol.iterator' , t => {
+test('RedBlackTree::Symbol.iterator', (t) => {
+	for (const compare of [increasing, decreasing]) {
+		const tree = new RedBlackTree(compare);
 
-	for ( const compare of [ increasing , decreasing ] ) {
+		const a1 = list(tree);
 
-		const tree = new RedBlackTree( compare ) ;
+		t.is(a1.length, 0, 'tree contains 0 elements');
 
-		const a1 = list( tree ) ;
+		const n = 10000;
+		const reference = [];
 
-		t.deepEqual( a1.length , 0 , 'tree contains 0 elements' ) ;
-
-		const n = 10000 ;
-		const reference = [ ] ;
-
-		for ( let i of range( n ) ) {
-			const x = Math.random() ;
-			tree.add( x ) ;
-			reference.push( x ) ;
+		// eslint-disable-next-line no-unused-vars
+		for (const _ of range(n)) {
+			const x = Math.random();
+			tree.add(x);
+			reference.push(x);
 		}
 
 		reference.sort(compare);
 
-		const a2 = list( tree ) ;
+		const a2 = list(tree);
 
-		t.deepEqual( a2.length , n , `tree contains ${n} elements` ) ;
-		t.deepEqual( a2 , reference , 'tree is sorted' ) ;
-
+		t.deepEqual(a2.length, n, `tree contains ${n} elements`);
+		t.deepEqual(a2, reference, 'tree is sorted');
 	}
-
 });

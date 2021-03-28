@@ -1,29 +1,30 @@
-
-import { Node } from "./Node.js" ;
-import { RED , BLACK } from '../index.js' ;
-import { predecessor } from '../index.js' ;
-import { insert , insert_case2 } from '../index.js' ;
-import { delete_one_child } from '../index.js' ;
-import { search } from '../index.js' ;
-import { inordertraversal , rangetraversal } from '../index.js' ;
+import {Node} from './Node.js';
+import {
+	RED,
+	BLACK,
+	predecessor,
+	insert,
+	insert_case2,
+	delete_one_child,
+	search,
+	inordertraversal,
+	rangetraversal,
+} from '../index.js';
 
 /**
  * A RedBlackTree with key-only nodes.
  *
  */
 export class RedBlackTree {
-
 	/**
 	 * Constructs a new empty red-black tree.
 	 *
 	 * @param {Function} compare - The comparison function for node keys.
 	 * @returns {RedBlackTree}
 	 */
-	constructor ( compare ) {
-
-		this.compare = compare ;
-		this.root = null ;
-
+	constructor(compare) {
+		this.compare = compare;
+		this.root = null;
 	}
 
 	/**
@@ -31,14 +32,13 @@ export class RedBlackTree {
 	 *
 	 * @param {Key} key - The key to add.
 	 */
-	add ( key ) {
-		if ( this.root === null ) {
-			this.root = new Node( BLACK , key ) ;
-		}
-		else {
-			const node = new Node( RED , key ) ;
-			insert( this.compare , this.root , node ) ;
-			insert_case2( node ) ;
+	add(key) {
+		if (this.root === null) {
+			this.root = new Node(BLACK, key);
+		} else {
+			const node = new Node(RED, key);
+			insert(this.compare, this.root, node);
+			insert_case2(node);
 		}
 	}
 
@@ -50,9 +50,9 @@ export class RedBlackTree {
 	 * @param {Key} key - The input key.
 	 * @returns {Node}
 	 */
-	_search ( key ) {
-		if ( this.root === null ) return null ;
-		return search( this.compare , this.root , key ) ;
+	_search(key) {
+		if (this.root === null) return null;
+		return search(this.compare, this.root, key);
 	}
 
 	/**
@@ -63,9 +63,9 @@ export class RedBlackTree {
 	 * @param {Key} key - The input key.
 	 * @returns {Key}
 	 */
-	get ( key ) {
-		const node = this._search( key ) ;
-		return node === null ? null : node.key ;
+	get(key) {
+		const node = this._search(key);
+		return node === null ? null : node.key;
 	}
 
 	/**
@@ -75,8 +75,8 @@ export class RedBlackTree {
 	 * @param {Key} key - The input key.
 	 * @returns {Boolean}
 	 */
-	has ( key ) {
-		return this._search( key ) !== null ;
+	has(key) {
+		return this._search(key) !== null;
 	}
 
 	/**
@@ -84,38 +84,30 @@ export class RedBlackTree {
 	 *
 	 * @param {Node} node - The input node to delete.
 	 */
-	_delete ( node ) {
-
-		if ( !node.left.isleaf() ) {
-			// replace node's key with predecessor's key
-			const pred = predecessor( node ) ;
-			node.key = pred.key ;
-			// delete predecessor node
+	_delete(node) {
+		if (!node.left.isleaf()) {
+			// Replace node's key with predecessor's key
+			const pred = predecessor(node);
+			node.key = pred.key;
+			// Delete predecessor node
 			// note: this node can only have one non-leaf child
 			//       because the tree is a red-black tree
-			delete_one_child( pred ) ;
-		}
-
-		else if ( !node.right.isleaf() ) {
-			// replace node's key with successor's key
+			delete_one_child(pred);
+		} else if (!node.right.isleaf()) {
+			// Replace node's key with successor's key
 			// If there is no left child, then there can only be one right
 			// child.
-			const succ = node.right ;
-			node.key = succ.key ;
-			// delete successor node
+			const succ = node.right;
+			node.key = succ.key;
+			// Delete successor node
 			// note: this node can only have one non-leaf child
 			//       because the tree is a red-black tree
-			delete_one_child( succ ) ;
+			delete_one_child(succ);
+		} else if (node === this.root) {
+			this.root = null;
+		} else {
+			delete_one_child(node);
 		}
-
-		else if ( node === this.root ) {
-			this.root = null ;
-		}
-
-		else {
-			delete_one_child( node ) ;
-		}
-
 	}
 
 	/**
@@ -127,14 +119,12 @@ export class RedBlackTree {
 	 * @param {Key} key - The input key.
 	 * @returns {Boolean} - Whether the key existed in the tree before removal.
 	 */
-	remove ( key ) {
+	remove(key) {
+		const node = this._search(key);
+		if (node === null) return false;
 
-		const node = this._search( key ) ;
-		if ( node === null ) return false ;
-
-		this._delete( node ) ;
-		return true ;
-
+		this._delete(node);
+		return true;
 	}
 
 	/**
@@ -144,10 +134,9 @@ export class RedBlackTree {
 	 * @param {Key} right - The right bound of the interval.
 	 * @returns {Iterator}
 	 */
-	*range ( left , right ) {
-
-		if ( this.root !== null ) yield* rangetraversal( this.compare , this.root , left , right ) ;
-
+	*range(left, right) {
+		if (this.root !== null)
+			yield* rangetraversal(this.compare, this.root, left, right);
 	}
 
 	/**
@@ -155,19 +144,15 @@ export class RedBlackTree {
 	 *
 	 * @returns {Iterator}
 	 */
-	*items ( ) {
-
-		if ( this.root !== null ) yield* inordertraversal( this.root ) ;
-
+	*items() {
+		if (this.root !== null) yield* inordertraversal(this.root);
 	}
 
 	/**
 	 * Same as {@link RedBlackTree#items}.
 	 */
-	[Symbol.iterator] ( ) {
-
-		return this.items() ;
-
+	[Symbol.iterator]() {
+		return this.items();
 	}
 
 	/**
@@ -177,14 +162,11 @@ export class RedBlackTree {
 	 * @param {Iterbale} iterable - The input iterable.
 	 * @returns {RedBlackTree}
 	 */
-	static from ( compare , iterable ) {
+	static from(compare, iterable) {
+		const tree = new RedBlackTree(compare);
 
-		const tree = new RedBlackTree( compare ) ;
+		for (const element of iterable) tree.add(element);
 
-		for ( const element of iterable ) tree.add( element ) ;
-
-		return tree ;
-
+		return tree;
 	}
-
 }
