@@ -1,4 +1,5 @@
-import {BLACK, RED, uncle, grandparent} from '../index.js';
+import {BLACK, RED} from '../color/index.js';
+import {uncle, grandparent} from '../family/index.js';
 import {insert_case1} from './insert_case1.js';
 import {insert_case4} from './insert_case4.js';
 

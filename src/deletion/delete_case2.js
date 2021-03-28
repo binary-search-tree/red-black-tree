@@ -1,4 +1,6 @@
-import {BLACK, RED, sibling, rotate_left, rotate_right} from '../index.js';
+import {BLACK, RED} from '../color/index.js';
+import {rotate_left, rotate_right} from '../rotate/index.js';
+import {sibling} from '../family/sibling.js';
 
 import {delete_case3} from './delete_case3.js';
 import {delete_case4} from './delete_case4.js';

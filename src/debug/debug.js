@@ -1,4 +1,4 @@
-import {BLACK} from '../index.js';
+import {BLACK} from '../color/BLACK.js';
 
 /**
  * Recursively constructs a prettyprint string for the red-black tree rooted at

@@ -1,4 +1,5 @@
-import {BLACK, RED, sibling} from '../index.js';
+import {BLACK, RED} from '../color/index.js';
+import {sibling} from '../family/sibling.js';
 
 import {delete_case1} from './delete_case1.js';
 import {delete_case4} from './delete_case4.js';

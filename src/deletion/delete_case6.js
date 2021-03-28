@@ -1,4 +1,6 @@
-import {BLACK, sibling, rotate_right, rotate_left} from '../index.js';
+import {BLACK} from '../color/BLACK.js';
+import {rotate_left, rotate_right} from '../rotate/index.js';
+import {sibling} from '../family/sibling.js';
 
 /**
  * Preconditions:

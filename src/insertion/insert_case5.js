@@ -1,4 +1,6 @@
-import {RED, BLACK, rotate_left, rotate_right, grandparent} from '../index.js';
+import {BLACK, RED} from '../color/index.js';
+import {rotate_left, rotate_right} from '../rotate/index.js';
+import {grandparent} from '../family/grandparent.js';
 
 /**
  * Preconditions:
