@@ -13,7 +13,7 @@ Parent is [@aureooms/js-bst](https://github.com/aureooms/js-bst).
 
 [![License](https://img.shields.io/github/license/aureooms/js-red-black-tree.svg)](https://raw.githubusercontent.com/aureooms/js-red-black-tree/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@aureooms/js-red-black-tree.svg)](https://www.npmjs.org/package/@aureooms/js-red-black-tree)
-[![Build](https://img.shields.io/travis/aureooms/js-red-black-tree/main.svg)](https://travis-ci.com/aureooms/js-red-black-tree/branches)
+[![Tests](https://img.shields.io/github/workflow/status/aureooms/js-red-black-tree/ci:test?event=push&label=tests)](https://github.com/aureooms/js-red-black-tree/actions/workflows/ci:test.yml?query=branch:main)
 [![Dependencies](https://img.shields.io/david/aureooms/js-red-black-tree.svg)](https://david-dm.org/aureooms/js-red-black-tree)
 [![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-red-black-tree.svg)](https://david-dm.org/aureooms/js-red-black-tree?type=dev)
 [![GitHub issues](https://img.shields.io/github/issues/aureooms/js-red-black-tree.svg)](https://github.com/aureooms/js-red-black-tree/issues)
