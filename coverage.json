@@ -1,19 +1,27 @@
 {
-  "coverage": "95.23%",
-  "expectCount": 42,
-  "actualCount": 40,
+  "coverage": "95.45%",
+  "expectCount": 44,
+  "actualCount": 42,
   "files": {
-    "src/color/BLACK.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
     "src/adt/Leaf.js": {
-      "expectCount": 1,
-      "actualCount": 1,
+      "expectCount": 2,
+      "actualCount": 2,
       "undocumentLines": []
     },
     "src/adt/Node.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/adt/RedBlackTree.js": {
+      "expectCount": 14,
+      "actualCount": 12,
+      "undocumentLines": [
+        21,
+        22
+      ]
+    },
+    "src/color/BLACK.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -22,14 +30,6 @@
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
-    },
-    "src/adt/RedBlackTree.js": {
-      "expectCount": 14,
-      "actualCount": 12,
-      "undocumentLines": [
-        24,
-        25
-      ]
     },
     "src/debug/debug.js": {
       "expectCount": 1,
@@ -71,12 +71,27 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/deletion/replace_node.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/family/grandparent.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/traversal/inordertraversal.js": {
+    "src/family/predecessor.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/family/sibling.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/family/uncle.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -111,21 +126,6 @@
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/family/predecessor.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/traversal/rangetraversal.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/deletion/replace_node.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
     "src/rotate/rotate_left.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -141,12 +141,12 @@
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/family/sibling.js": {
+    "src/traversal/inordertraversal.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/family/uncle.js": {
+    "src/traversal/rangetraversal.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []

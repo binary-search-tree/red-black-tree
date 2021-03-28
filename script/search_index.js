@@ -1,506 +1,458 @@
 window.esdocSearchIndex = [
   [
-    "aureooms-js-red-black-tree/src/color/black.js~black",
+    "@aureooms/js-red-black-tree/src/color/black.js~black",
     "variable/index.html#static-variable-BLACK",
-    "<span>BLACK</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/color/BLACK.js</span>",
+    "<span>BLACK</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/color/BLACK.js</span>",
     "variable"
   ],
   [
-    "aureooms-js-red-black-tree/src/adt/leaf.js~leaf",
+    "@aureooms/js-red-black-tree/src/adt/leaf.js~leaf",
     "function/index.html#static-function-Leaf",
-    "<span>Leaf</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/adt/Leaf.js</span>",
+    "<span>Leaf</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/adt/Leaf.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/adt/node.js~node",
+    "@aureooms/js-red-black-tree/src/adt/node.js~node",
     "function/index.html#static-function-Node",
-    "<span>Node</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/adt/Node.js</span>",
+    "<span>Node</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/adt/Node.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/color/red.js~red",
+    "@aureooms/js-red-black-tree/src/color/red.js~red",
     "variable/index.html#static-variable-RED",
-    "<span>RED</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/color/RED.js</span>",
+    "<span>RED</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/color/RED.js</span>",
     "variable"
   ],
   [
-    "aureooms-js-red-black-tree/src/adt/redblacktree.js~redblacktree",
+    "@aureooms/js-red-black-tree/src/adt/redblacktree.js~redblacktree",
     "class/src/adt/RedBlackTree.js~RedBlackTree.html",
-    "<span>RedBlackTree</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/adt/RedBlackTree.js</span>",
+    "<span>RedBlackTree</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/adt/RedBlackTree.js</span>",
     "class"
   ],
   [
-    "aureooms-js-red-black-tree/src/debug/debug.js~debug",
-    "function/index.html#static-function-debug",
-    "<span>debug</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/debug/debug.js</span>",
+    "@aureooms/js-red-black-tree/src/debug/debug.js~_debug",
+    "function/index.html#static-function-_debug",
+    "<span>_debug</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/debug/debug.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/deletion/delete_case1.js~delete_case1",
+    "@aureooms/js-red-black-tree/src/deletion/delete_case1.js~delete_case1",
     "function/index.html#static-function-delete_case1",
-    "<span>delete_case1</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/deletion/delete_case1.js</span>",
+    "<span>delete_case1</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case1.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/deletion/delete_case2.js~delete_case2",
+    "@aureooms/js-red-black-tree/src/deletion/delete_case2.js~delete_case2",
     "function/index.html#static-function-delete_case2",
-    "<span>delete_case2</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/deletion/delete_case2.js</span>",
+    "<span>delete_case2</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case2.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/deletion/delete_case3.js~delete_case3",
+    "@aureooms/js-red-black-tree/src/deletion/delete_case3.js~delete_case3",
     "function/index.html#static-function-delete_case3",
-    "<span>delete_case3</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/deletion/delete_case3.js</span>",
+    "<span>delete_case3</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case3.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/deletion/delete_case4.js~delete_case4",
+    "@aureooms/js-red-black-tree/src/deletion/delete_case4.js~delete_case4",
     "function/index.html#static-function-delete_case4",
-    "<span>delete_case4</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/deletion/delete_case4.js</span>",
+    "<span>delete_case4</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case4.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/deletion/delete_case5.js~delete_case5",
+    "@aureooms/js-red-black-tree/src/deletion/delete_case5.js~delete_case5",
     "function/index.html#static-function-delete_case5",
-    "<span>delete_case5</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/deletion/delete_case5.js</span>",
+    "<span>delete_case5</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case5.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/deletion/delete_case6.js~delete_case6",
+    "@aureooms/js-red-black-tree/src/deletion/delete_case6.js~delete_case6",
     "function/index.html#static-function-delete_case6",
-    "<span>delete_case6</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/deletion/delete_case6.js</span>",
+    "<span>delete_case6</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case6.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/deletion/delete_one_child.js~delete_one_child",
+    "@aureooms/js-red-black-tree/src/deletion/delete_one_child.js~delete_one_child",
     "function/index.html#static-function-delete_one_child",
-    "<span>delete_one_child</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/deletion/delete_one_child.js</span>",
+    "<span>delete_one_child</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_one_child.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/family/grandparent.js~grandparent",
+    "@aureooms/js-red-black-tree/src/family/grandparent.js~grandparent",
     "function/index.html#static-function-grandparent",
-    "<span>grandparent</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/family/grandparent.js</span>",
+    "<span>grandparent</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/family/grandparent.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/traversal/inordertraversal.js~inordertraversal",
+    "@aureooms/js-red-black-tree/src/traversal/inordertraversal.js~inordertraversal",
     "function/index.html#static-function-inordertraversal",
-    "<span>inordertraversal</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/traversal/inordertraversal.js</span>",
+    "<span>inordertraversal</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/traversal/inordertraversal.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/insertion/insert.js~insert",
+    "@aureooms/js-red-black-tree/src/insertion/insert.js~insert",
     "function/index.html#static-function-insert",
-    "<span>insert</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/insertion/insert.js</span>",
+    "<span>insert</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/insertion/insert_case1.js~insert_case1",
+    "@aureooms/js-red-black-tree/src/insertion/insert_case1.js~insert_case1",
     "function/index.html#static-function-insert_case1",
-    "<span>insert_case1</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/insertion/insert_case1.js</span>",
+    "<span>insert_case1</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case1.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/insertion/insert_case2.js~insert_case2",
+    "@aureooms/js-red-black-tree/src/insertion/insert_case2.js~insert_case2",
     "function/index.html#static-function-insert_case2",
-    "<span>insert_case2</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/insertion/insert_case2.js</span>",
+    "<span>insert_case2</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case2.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/insertion/insert_case3.js~insert_case3",
+    "@aureooms/js-red-black-tree/src/insertion/insert_case3.js~insert_case3",
     "function/index.html#static-function-insert_case3",
-    "<span>insert_case3</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/insertion/insert_case3.js</span>",
+    "<span>insert_case3</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case3.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/insertion/insert_case4.js~insert_case4",
+    "@aureooms/js-red-black-tree/src/insertion/insert_case4.js~insert_case4",
     "function/index.html#static-function-insert_case4",
-    "<span>insert_case4</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/insertion/insert_case4.js</span>",
+    "<span>insert_case4</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case4.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/insertion/insert_case5.js~insert_case5",
+    "@aureooms/js-red-black-tree/src/insertion/insert_case5.js~insert_case5",
     "function/index.html#static-function-insert_case5",
-    "<span>insert_case5</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/insertion/insert_case5.js</span>",
+    "<span>insert_case5</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case5.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/family/predecessor.js~predecessor",
+    "@aureooms/js-red-black-tree/src/family/predecessor.js~predecessor",
     "function/index.html#static-function-predecessor",
-    "<span>predecessor</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/family/predecessor.js</span>",
+    "<span>predecessor</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/family/predecessor.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/traversal/rangetraversal.js~rangetraversal",
+    "@aureooms/js-red-black-tree/src/traversal/rangetraversal.js~rangetraversal",
     "function/index.html#static-function-rangetraversal",
-    "<span>rangetraversal</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/traversal/rangetraversal.js</span>",
+    "<span>rangetraversal</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/traversal/rangetraversal.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/deletion/replace_node.js~replace_node",
+    "@aureooms/js-red-black-tree/src/deletion/replace_node.js~replace_node",
     "function/index.html#static-function-replace_node",
-    "<span>replace_node</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/deletion/replace_node.js</span>",
+    "<span>replace_node</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/replace_node.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/rotate/rotate_left.js~rotate_left",
+    "@aureooms/js-red-black-tree/src/rotate/rotate_left.js~rotate_left",
     "function/index.html#static-function-rotate_left",
-    "<span>rotate_left</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/rotate/rotate_left.js</span>",
+    "<span>rotate_left</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/rotate/rotate_left.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/rotate/rotate_right.js~rotate_right",
+    "@aureooms/js-red-black-tree/src/rotate/rotate_right.js~rotate_right",
     "function/index.html#static-function-rotate_right",
-    "<span>rotate_right</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/rotate/rotate_right.js</span>",
+    "<span>rotate_right</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/rotate/rotate_right.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/search/search.js~search",
+    "@aureooms/js-red-black-tree/src/search/search.js~search",
     "function/index.html#static-function-search",
-    "<span>search</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/search/search.js</span>",
+    "<span>search</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/search/search.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/family/sibling.js~sibling",
+    "@aureooms/js-red-black-tree/src/family/sibling.js~sibling",
     "function/index.html#static-function-sibling",
-    "<span>sibling</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/family/sibling.js</span>",
+    "<span>sibling</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/family/sibling.js</span>",
     "function"
   ],
   [
-    "aureooms-js-red-black-tree/src/family/uncle.js~uncle",
+    "@aureooms/js-red-black-tree/src/family/uncle.js~uncle",
     "function/index.html#static-function-uncle",
-    "<span>uncle</span> <span class=\"search-result-import-path\">aureooms-js-red-black-tree/src/family/uncle.js</span>",
+    "<span>uncle</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/family/uncle.js</span>",
     "function"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~array",
+    "src/.external-ecmascript.js~array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "src/.external-ecmascript.js~Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~arraybuffer",
+    "src/.external-ecmascript.js~arraybuffer",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
-    "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "src/.external-ecmascript.js~ArrayBuffer",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~boolean",
+    "src/.external-ecmascript.js~boolean",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-    "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "src/.external-ecmascript.js~Boolean",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~dataview",
+    "src/.external-ecmascript.js~dataview",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
-    "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "src/.external-ecmascript.js~DataView",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~date",
+    "src/.external-ecmascript.js~date",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
-    "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "src/.external-ecmascript.js~Date",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~error",
+    "src/.external-ecmascript.js~error",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
-    "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "src/.external-ecmascript.js~Error",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~evalerror",
+    "src/.external-ecmascript.js~evalerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
-    "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "src/.external-ecmascript.js~EvalError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~float32array",
+    "src/.external-ecmascript.js~float32array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "src/.external-ecmascript.js~Float32Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~float64array",
+    "src/.external-ecmascript.js~float64array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "src/.external-ecmascript.js~Float64Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~function",
+    "src/.external-ecmascript.js~function",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
-    "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "src/.external-ecmascript.js~Function",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~generator",
+    "src/.external-ecmascript.js~generator",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
-    "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "src/.external-ecmascript.js~Generator",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~generatorfunction",
+    "src/.external-ecmascript.js~generatorfunction",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
-    "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "src/.external-ecmascript.js~GeneratorFunction",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~infinity",
+    "src/.external-ecmascript.js~infinity",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
-    "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "src/.external-ecmascript.js~Infinity",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~int16array",
+    "src/.external-ecmascript.js~int16array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "src/.external-ecmascript.js~Int16Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~int32array",
+    "src/.external-ecmascript.js~int32array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "src/.external-ecmascript.js~Int32Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~int8array",
+    "src/.external-ecmascript.js~int8array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "src/.external-ecmascript.js~Int8Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~internalerror",
+    "src/.external-ecmascript.js~internalerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
-    "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "src/.external-ecmascript.js~InternalError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~json",
+    "src/.external-ecmascript.js~json",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
-    "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "src/.external-ecmascript.js~JSON",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~map",
+    "src/.external-ecmascript.js~map",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
-    "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "src/.external-ecmascript.js~Map",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~nan",
+    "src/.external-ecmascript.js~nan",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
-    "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "src/.external-ecmascript.js~NaN",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~number",
+    "src/.external-ecmascript.js~number",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-    "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "src/.external-ecmascript.js~Number",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~object",
+    "src/.external-ecmascript.js~object",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-    "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "src/.external-ecmascript.js~Object",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~promise",
+    "src/.external-ecmascript.js~promise",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
-    "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "src/.external-ecmascript.js~Promise",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~proxy",
+    "src/.external-ecmascript.js~proxy",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
-    "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "src/.external-ecmascript.js~Proxy",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~rangeerror",
+    "src/.external-ecmascript.js~rangeerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
-    "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "src/.external-ecmascript.js~RangeError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~referenceerror",
+    "src/.external-ecmascript.js~referenceerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
-    "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "src/.external-ecmascript.js~ReferenceError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~reflect",
+    "src/.external-ecmascript.js~reflect",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
-    "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "src/.external-ecmascript.js~Reflect",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~regexp",
+    "src/.external-ecmascript.js~regexp",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
-    "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "src/.external-ecmascript.js~RegExp",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~set",
+    "src/.external-ecmascript.js~set",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
-    "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "src/.external-ecmascript.js~Set",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~string",
+    "src/.external-ecmascript.js~string",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-    "BuiltinExternal/ECMAScriptExternal.js~String",
+    "src/.external-ecmascript.js~String",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~symbol",
+    "src/.external-ecmascript.js~symbol",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
-    "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "src/.external-ecmascript.js~Symbol",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~syntaxerror",
+    "src/.external-ecmascript.js~syntaxerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
-    "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "src/.external-ecmascript.js~SyntaxError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~typeerror",
+    "src/.external-ecmascript.js~typeerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
-    "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "src/.external-ecmascript.js~TypeError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~urierror",
+    "src/.external-ecmascript.js~urierror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
-    "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "src/.external-ecmascript.js~URIError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~uint16array",
+    "src/.external-ecmascript.js~uint16array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "src/.external-ecmascript.js~Uint16Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~uint32array",
+    "src/.external-ecmascript.js~uint32array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "src/.external-ecmascript.js~Uint32Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~uint8array",
+    "src/.external-ecmascript.js~uint8array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "src/.external-ecmascript.js~Uint8Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~uint8clampedarray",
+    "src/.external-ecmascript.js~uint8clampedarray",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "src/.external-ecmascript.js~Uint8ClampedArray",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~weakmap",
+    "src/.external-ecmascript.js~weakmap",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
-    "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "src/.external-ecmascript.js~WeakMap",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~weakset",
+    "src/.external-ecmascript.js~weakset",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
-    "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "src/.external-ecmascript.js~WeakSet",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~boolean",
+    "src/.external-ecmascript.js~boolean",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-    "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "src/.external-ecmascript.js~boolean",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~function",
+    "src/.external-ecmascript.js~function",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
-    "BuiltinExternal/ECMAScriptExternal.js~function",
+    "src/.external-ecmascript.js~function",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~null",
+    "src/.external-ecmascript.js~null",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
-    "BuiltinExternal/ECMAScriptExternal.js~null",
+    "src/.external-ecmascript.js~null",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~number",
+    "src/.external-ecmascript.js~number",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-    "BuiltinExternal/ECMAScriptExternal.js~number",
+    "src/.external-ecmascript.js~number",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~object",
+    "src/.external-ecmascript.js~object",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-    "BuiltinExternal/ECMAScriptExternal.js~object",
+    "src/.external-ecmascript.js~object",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~string",
+    "src/.external-ecmascript.js~string",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-    "BuiltinExternal/ECMAScriptExternal.js~string",
+    "src/.external-ecmascript.js~string",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~undefined",
+    "src/.external-ecmascript.js~undefined",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
-    "BuiltinExternal/ECMAScriptExternal.js~undefined",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~audiocontext",
-    "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
-    "BuiltinExternal/WebAPIExternal.js~AudioContext",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~canvasrenderingcontext2d",
-    "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
-    "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~documentfragment",
-    "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
-    "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~element",
-    "https://developer.mozilla.org/en-US/docs/Web/API/Element",
-    "BuiltinExternal/WebAPIExternal.js~Element",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~event",
-    "https://developer.mozilla.org/en-US/docs/Web/API/Event",
-    "BuiltinExternal/WebAPIExternal.js~Event",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~node",
-    "https://developer.mozilla.org/en-US/docs/Web/API/Node",
-    "BuiltinExternal/WebAPIExternal.js~Node",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~nodelist",
-    "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
-    "BuiltinExternal/WebAPIExternal.js~NodeList",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~xmlhttprequest",
-    "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
-    "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "src/.external-ecmascript.js~undefined",
     "external"
   ],
   [
