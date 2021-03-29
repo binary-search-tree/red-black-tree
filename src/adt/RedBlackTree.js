@@ -23,6 +23,15 @@ export class RedBlackTree {
 	}
 
 	/**
+	 * Tells whether the tree is empty.
+	 *
+	 * @returns {boolean} true if empty, false otherwise.
+	 */
+	isEmpty() {
+		return this.root === null;
+	}
+
+	/**
 	 * Adds a key to the tree.
 	 *
 	 * @param {Key} key - The key to add.
