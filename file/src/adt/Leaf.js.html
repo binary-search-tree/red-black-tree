@@ -73,7 +73,7 @@
  * @returns {Leaf}
  */
 export function Leaf(parent) {
-	this.color = BLACK;
+	this._color = BLACK;
 	this.parent = parent;
 }
 
@@ -83,7 +83,7 @@ export function Leaf(parent) {
  *
  * @returns {Boolean}
  */
-Leaf.prototype.isleaf = function () {
+Leaf.prototype.isLeaf = function () {
 	return true;
 };
 </code></pre>

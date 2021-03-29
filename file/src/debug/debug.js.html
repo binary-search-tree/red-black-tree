@@ -66,23 +66,29 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {BLACK} from &apos;../color/BLACK.js&apos;;
 
 /**
- * Recursively constructs a prettyprint string for the red-black tree rooted at
- * &lt;code&gt;root&lt;/code&gt;.
+ * Builds a debug function from color handlers.
  *
- * @param {Node} root - The root of the tree.
- * @returns {String}
+ * @param {Object} colors The colors to use.
+ * @returns {Function} The debug function.
  */
-export function _debug({red, black}) {
+export const _debug = ({red, black}) =&gt; {
+	/**
+	 * Recursively constructs a prettyprint string for the red-black tree rooted at
+	 * &lt;code&gt;root&lt;/code&gt;.
+	 *
+	 * @param {Node} root - The root of the tree.
+	 * @returns {string}
+	 */
 	const debug = (root) =&gt; {
-		if (root.isleaf()) return black(&apos;L&apos;);
+		if (root.isLeaf()) return black(&apos;L&apos;);
 
-		const repr = root.color === BLACK ? black(root.key) : red(root.key);
+		const repr = root._color === BLACK ? black(root.key) : red(root.key);
 
 		return `(${debug(root.left)}, ${repr}, ${debug(root.right)})`;
 	};
 
 	return debug;
-}
+};
 </code></pre>
 
 </div>

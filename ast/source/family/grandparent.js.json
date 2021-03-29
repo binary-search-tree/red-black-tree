@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 316,
+  "end": 320,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 316,
+    "end": 320,
     "loc": {
       "start": {
         "line": 1,
@@ -31,7 +31,7 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 136,
-        "end": 315,
+        "end": 319,
         "loc": {
           "start": {
             "line": 7,
@@ -39,15 +39,15 @@
           },
           "end": {
             "line": 11,
-            "column": 1
+            "column": 2
           }
         },
         "specifiers": [],
         "source": null,
         "declaration": {
-          "type": "FunctionDeclaration",
+          "type": "VariableDeclaration",
           "start": 143,
-          "end": 315,
+          "end": 319,
           "loc": {
             "start": {
               "line": 7,
@@ -55,202 +55,254 @@
             },
             "end": {
               "line": 11,
-              "column": 1
+              "column": 2
             }
           },
-          "id": {
-            "type": "Identifier",
-            "start": 152,
-            "end": 163,
-            "loc": {
-              "start": {
-                "line": 7,
-                "column": 16
-              },
-              "end": {
-                "line": 7,
-                "column": 27
-              },
-              "identifierName": "grandparent"
-            },
-            "name": "grandparent",
-            "leadingComments": null
-          },
-          "generator": false,
-          "expression": false,
-          "async": false,
-          "params": [
+          "declarations": [
             {
-              "type": "Identifier",
-              "start": 164,
-              "end": 168,
+              "type": "VariableDeclarator",
+              "start": 149,
+              "end": 318,
               "loc": {
                 "start": {
                   "line": 7,
-                  "column": 28
+                  "column": 13
                 },
                 "end": {
-                  "line": 7,
-                  "column": 32
-                },
-                "identifierName": "node"
+                  "line": 11,
+                  "column": 1
+                }
               },
-              "name": "node"
-            }
-          ],
-          "body": {
-            "type": "BlockStatement",
-            "start": 170,
-            "end": 315,
-            "loc": {
-              "start": {
-                "line": 7,
-                "column": 34
-              },
-              "end": {
-                "line": 11,
-                "column": 1
-              }
-            },
-            "body": [
-              {
-                "type": "ReturnStatement",
-                "start": 287,
-                "end": 313,
+              "id": {
+                "type": "Identifier",
+                "start": 149,
+                "end": 160,
                 "loc": {
                   "start": {
-                    "line": 10,
-                    "column": 1
+                    "line": 7,
+                    "column": 13
                   },
                   "end": {
-                    "line": 10,
+                    "line": 7,
+                    "column": 24
+                  },
+                  "identifierName": "grandparent"
+                },
+                "name": "grandparent",
+                "leadingComments": null
+              },
+              "init": {
+                "type": "ArrowFunctionExpression",
+                "start": 163,
+                "end": 318,
+                "loc": {
+                  "start": {
+                    "line": 7,
                     "column": 27
+                  },
+                  "end": {
+                    "line": 11,
+                    "column": 1
                   }
                 },
-                "argument": {
-                  "type": "MemberExpression",
-                  "start": 294,
-                  "end": 312,
+                "id": {
+                  "type": "Identifier",
+                  "start": 149,
+                  "end": 160,
                   "loc": {
                     "start": {
-                      "line": 10,
-                      "column": 8
+                      "line": 7,
+                      "column": 13
                     },
                     "end": {
-                      "line": 10,
-                      "column": 26
-                    }
+                      "line": 7,
+                      "column": 24
+                    },
+                    "identifierName": "grandparent"
                   },
-                  "object": {
-                    "type": "MemberExpression",
-                    "start": 294,
-                    "end": 305,
-                    "loc": {
-                      "start": {
-                        "line": 10,
-                        "column": 8
-                      },
-                      "end": {
-                        "line": 10,
-                        "column": 19
-                      }
-                    },
-                    "object": {
-                      "type": "Identifier",
-                      "start": 294,
-                      "end": 298,
-                      "loc": {
-                        "start": {
-                          "line": 10,
-                          "column": 8
-                        },
-                        "end": {
-                          "line": 10,
-                          "column": 12
-                        },
-                        "identifierName": "node"
-                      },
-                      "name": "node",
-                      "leadingComments": null
-                    },
-                    "property": {
-                      "type": "Identifier",
-                      "start": 299,
-                      "end": 305,
-                      "loc": {
-                        "start": {
-                          "line": 10,
-                          "column": 13
-                        },
-                        "end": {
-                          "line": 10,
-                          "column": 19
-                        },
-                        "identifierName": "parent"
-                      },
-                      "name": "parent"
-                    },
-                    "computed": false,
-                    "leadingComments": null
-                  },
-                  "property": {
-                    "type": "Identifier",
-                    "start": 306,
-                    "end": 312,
-                    "loc": {
-                      "start": {
-                        "line": 10,
-                        "column": 20
-                      },
-                      "end": {
-                        "line": 10,
-                        "column": 26
-                      },
-                      "identifierName": "parent"
-                    },
-                    "name": "parent"
-                  },
-                  "computed": false,
+                  "name": "grandparent",
                   "leadingComments": null
                 },
-                "leadingComments": [
+                "generator": false,
+                "expression": false,
+                "async": false,
+                "params": [
                   {
-                    "type": "CommentLine",
-                    "value": " Assert((node !== null) && (node.parent !== null));",
-                    "start": 173,
-                    "end": 226,
+                    "type": "Identifier",
+                    "start": 164,
+                    "end": 168,
                     "loc": {
                       "start": {
-                        "line": 8,
-                        "column": 1
+                        "line": 7,
+                        "column": 28
                       },
                       "end": {
-                        "line": 8,
-                        "column": 54
-                      }
+                        "line": 7,
+                        "column": 32
+                      },
+                      "identifierName": "node"
+                    },
+                    "name": "node"
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "start": 173,
+                  "end": 318,
+                  "loc": {
+                    "start": {
+                      "line": 7,
+                      "column": 37
+                    },
+                    "end": {
+                      "line": 11,
+                      "column": 1
                     }
                   },
-                  {
-                    "type": "CommentLine",
-                    "value": " We only call this function when node HAS a grandparent",
-                    "start": 228,
-                    "end": 285,
-                    "loc": {
-                      "start": {
-                        "line": 9,
-                        "column": 1
+                  "body": [
+                    {
+                      "type": "ReturnStatement",
+                      "start": 290,
+                      "end": 316,
+                      "loc": {
+                        "start": {
+                          "line": 10,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 10,
+                          "column": 27
+                        }
                       },
-                      "end": {
-                        "line": 9,
-                        "column": 58
-                      }
+                      "argument": {
+                        "type": "MemberExpression",
+                        "start": 297,
+                        "end": 315,
+                        "loc": {
+                          "start": {
+                            "line": 10,
+                            "column": 8
+                          },
+                          "end": {
+                            "line": 10,
+                            "column": 26
+                          }
+                        },
+                        "object": {
+                          "type": "MemberExpression",
+                          "start": 297,
+                          "end": 308,
+                          "loc": {
+                            "start": {
+                              "line": 10,
+                              "column": 8
+                            },
+                            "end": {
+                              "line": 10,
+                              "column": 19
+                            }
+                          },
+                          "object": {
+                            "type": "Identifier",
+                            "start": 297,
+                            "end": 301,
+                            "loc": {
+                              "start": {
+                                "line": 10,
+                                "column": 8
+                              },
+                              "end": {
+                                "line": 10,
+                                "column": 12
+                              },
+                              "identifierName": "node"
+                            },
+                            "name": "node",
+                            "leadingComments": null
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "start": 302,
+                            "end": 308,
+                            "loc": {
+                              "start": {
+                                "line": 10,
+                                "column": 13
+                              },
+                              "end": {
+                                "line": 10,
+                                "column": 19
+                              },
+                              "identifierName": "parent"
+                            },
+                            "name": "parent"
+                          },
+                          "computed": false,
+                          "leadingComments": null
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "start": 309,
+                          "end": 315,
+                          "loc": {
+                            "start": {
+                              "line": 10,
+                              "column": 20
+                            },
+                            "end": {
+                              "line": 10,
+                              "column": 26
+                            },
+                            "identifierName": "parent"
+                          },
+                          "name": "parent"
+                        },
+                        "computed": false,
+                        "leadingComments": null
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "CommentLine",
+                          "value": " Assert((node !== null) && (node.parent !== null));",
+                          "start": 176,
+                          "end": 229,
+                          "loc": {
+                            "start": {
+                              "line": 8,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 8,
+                              "column": 54
+                            }
+                          }
+                        },
+                        {
+                          "type": "CommentLine",
+                          "value": " We only call this function when node HAS a grandparent",
+                          "start": 231,
+                          "end": 288,
+                          "loc": {
+                            "start": {
+                              "line": 9,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 9,
+                              "column": 58
+                            }
+                          }
+                        }
+                      ]
                     }
-                  }
-                ]
-              }
-            ],
-            "directives": []
-          },
+                  ],
+                  "directives": []
+                }
+              },
+              "leadingComments": null
+            }
+          ],
+          "kind": "const",
           "leadingComments": [
             {
               "type": "CommentBlock",
@@ -313,8 +365,8 @@
     {
       "type": "CommentLine",
       "value": " Assert((node !== null) && (node.parent !== null));",
-      "start": 173,
-      "end": 226,
+      "start": 176,
+      "end": 229,
       "loc": {
         "start": {
           "line": 8,
@@ -329,8 +381,8 @@
     {
       "type": "CommentLine",
       "value": " We only call this function when node HAS a grandparent",
-      "start": 228,
-      "end": 285,
+      "start": 231,
+      "end": 288,
       "loc": {
         "start": {
           "line": 9,
@@ -390,20 +442,21 @@
     },
     {
       "type": {
-        "label": "function",
-        "keyword": "function",
+        "label": "const",
+        "keyword": "const",
         "beforeExpr": false,
-        "startsExpr": true,
+        "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
         "prefix": false,
         "postfix": false,
-        "binop": null
+        "binop": null,
+        "updateContext": null
       },
-      "value": "function",
+      "value": "const",
       "start": 143,
-      "end": 151,
+      "end": 148,
       "loc": {
         "start": {
           "line": 7,
@@ -411,7 +464,7 @@
         },
         "end": {
           "line": 7,
-          "column": 15
+          "column": 12
         }
       }
     },
@@ -428,16 +481,43 @@
         "binop": null
       },
       "value": "grandparent",
-      "start": 152,
-      "end": 163,
+      "start": 149,
+      "end": 160,
       "loc": {
         "start": {
           "line": 7,
-          "column": 16
+          "column": 13
         },
         "end": {
           "line": 7,
-          "column": 27
+          "column": 24
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 161,
+      "end": 162,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 25
+        },
+        "end": {
+          "line": 7,
+          "column": 26
         }
       }
     },
@@ -519,6 +599,32 @@
     },
     {
       "type": {
+        "label": "=>",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 170,
+      "end": 172,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 34
+        },
+        "end": {
+          "line": 7,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
         "label": "{",
         "beforeExpr": true,
         "startsExpr": true,
@@ -529,24 +635,24 @@
         "postfix": false,
         "binop": null
       },
-      "start": 170,
-      "end": 171,
+      "start": 173,
+      "end": 174,
       "loc": {
         "start": {
           "line": 7,
-          "column": 34
+          "column": 37
         },
         "end": {
           "line": 7,
-          "column": 35
+          "column": 38
         }
       }
     },
     {
       "type": "CommentLine",
       "value": " Assert((node !== null) && (node.parent !== null));",
-      "start": 173,
-      "end": 226,
+      "start": 176,
+      "end": 229,
       "loc": {
         "start": {
           "line": 8,
@@ -561,8 +667,8 @@
     {
       "type": "CommentLine",
       "value": " We only call this function when node HAS a grandparent",
-      "start": 228,
-      "end": 285,
+      "start": 231,
+      "end": 288,
       "loc": {
         "start": {
           "line": 9,
@@ -589,8 +695,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 287,
-      "end": 293,
+      "start": 290,
+      "end": 296,
       "loc": {
         "start": {
           "line": 10,
@@ -615,8 +721,8 @@
         "binop": null
       },
       "value": "node",
-      "start": 294,
-      "end": 298,
+      "start": 297,
+      "end": 301,
       "loc": {
         "start": {
           "line": 10,
@@ -641,8 +747,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 298,
-      "end": 299,
+      "start": 301,
+      "end": 302,
       "loc": {
         "start": {
           "line": 10,
@@ -667,8 +773,8 @@
         "binop": null
       },
       "value": "parent",
-      "start": 299,
-      "end": 305,
+      "start": 302,
+      "end": 308,
       "loc": {
         "start": {
           "line": 10,
@@ -693,8 +799,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 305,
-      "end": 306,
+      "start": 308,
+      "end": 309,
       "loc": {
         "start": {
           "line": 10,
@@ -719,8 +825,8 @@
         "binop": null
       },
       "value": "parent",
-      "start": 306,
-      "end": 312,
+      "start": 309,
+      "end": 315,
       "loc": {
         "start": {
           "line": 10,
@@ -745,8 +851,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 312,
-      "end": 313,
+      "start": 315,
+      "end": 316,
       "loc": {
         "start": {
           "line": 10,
@@ -770,8 +876,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 314,
-      "end": 315,
+      "start": 317,
+      "end": 318,
       "loc": {
         "start": {
           "line": 11,
@@ -780,6 +886,32 @@
         "end": {
           "line": 11,
           "column": 1
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 318,
+      "end": 319,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 1
+        },
+        "end": {
+          "line": 11,
+          "column": 2
         }
       }
     },
@@ -796,8 +928,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 316,
-      "end": 316,
+      "start": 320,
+      "end": 320,
       "loc": {
         "start": {
           "line": 12,

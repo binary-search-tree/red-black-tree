@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 1333,
+  "end": 1340,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 1333,
+    "end": 1340,
     "loc": {
       "start": {
         "line": 1,
@@ -356,7 +356,7 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 392,
-        "end": 1332,
+        "end": 1339,
         "loc": {
           "start": {
             "line": 15,
@@ -364,15 +364,15 @@
           },
           "end": {
             "line": 42,
-            "column": 1
+            "column": 2
           }
         },
         "specifiers": [],
         "source": null,
         "declaration": {
-          "type": "FunctionDeclaration",
+          "type": "VariableDeclaration",
           "start": 399,
-          "end": 1332,
+          "end": 1339,
           "loc": {
             "start": {
               "line": 15,
@@ -380,594 +380,526 @@
             },
             "end": {
               "line": 42,
-              "column": 1
+              "column": 2
             }
           },
-          "id": {
-            "type": "Identifier",
-            "start": 408,
-            "end": 424,
-            "loc": {
-              "start": {
-                "line": 15,
-                "column": 16
-              },
-              "end": {
-                "line": 15,
-                "column": 32
-              },
-              "identifierName": "delete_one_child"
-            },
-            "name": "delete_one_child",
-            "leadingComments": null
-          },
-          "generator": false,
-          "expression": false,
-          "async": false,
-          "params": [
+          "declarations": [
             {
-              "type": "Identifier",
-              "start": 425,
-              "end": 426,
+              "type": "VariableDeclarator",
+              "start": 405,
+              "end": 1338,
               "loc": {
                 "start": {
                   "line": 15,
-                  "column": 33
+                  "column": 13
                 },
                 "end": {
-                  "line": 15,
-                  "column": 34
-                },
-                "identifierName": "n"
+                  "line": 42,
+                  "column": 1
+                }
               },
-              "name": "n"
-            }
-          ],
-          "body": {
-            "type": "BlockStatement",
-            "start": 428,
-            "end": 1332,
-            "loc": {
-              "start": {
-                "line": 15,
-                "column": 36
-              },
-              "end": {
-                "line": 42,
-                "column": 1
-              }
-            },
-            "body": [
-              {
-                "type": "VariableDeclaration",
-                "start": 735,
-                "end": 756,
+              "id": {
+                "type": "Identifier",
+                "start": 405,
+                "end": 421,
                 "loc": {
                   "start": {
-                    "line": 22,
-                    "column": 1
+                    "line": 15,
+                    "column": 13
                   },
                   "end": {
-                    "line": 22,
-                    "column": 22
-                  }
+                    "line": 15,
+                    "column": 29
+                  },
+                  "identifierName": "delete_one_child"
                 },
-                "declarations": [
-                  {
-                    "type": "VariableDeclarator",
-                    "start": 741,
-                    "end": 755,
-                    "loc": {
-                      "start": {
-                        "line": 22,
-                        "column": 7
-                      },
-                      "end": {
-                        "line": 22,
-                        "column": 21
-                      }
-                    },
-                    "id": {
-                      "type": "Identifier",
-                      "start": 741,
-                      "end": 746,
-                      "loc": {
-                        "start": {
-                          "line": 22,
-                          "column": 7
-                        },
-                        "end": {
-                          "line": 22,
-                          "column": 12
-                        },
-                        "identifierName": "child"
-                      },
-                      "name": "child",
-                      "leadingComments": null
-                    },
-                    "init": {
-                      "type": "MemberExpression",
-                      "start": 749,
-                      "end": 755,
-                      "loc": {
-                        "start": {
-                          "line": 22,
-                          "column": 15
-                        },
-                        "end": {
-                          "line": 22,
-                          "column": 21
-                        }
-                      },
-                      "object": {
-                        "type": "Identifier",
-                        "start": 749,
-                        "end": 750,
-                        "loc": {
-                          "start": {
-                            "line": 22,
-                            "column": 15
-                          },
-                          "end": {
-                            "line": 22,
-                            "column": 16
-                          },
-                          "identifierName": "n"
-                        },
-                        "name": "n"
-                      },
-                      "property": {
-                        "type": "Identifier",
-                        "start": 751,
-                        "end": 755,
-                        "loc": {
-                          "start": {
-                            "line": 22,
-                            "column": 17
-                          },
-                          "end": {
-                            "line": 22,
-                            "column": 21
-                          },
-                          "identifierName": "left"
-                        },
-                        "name": "left"
-                      },
-                      "computed": false
-                    },
-                    "leadingComments": null
-                  }
-                ],
-                "kind": "const",
-                "leadingComments": [
-                  {
-                    "type": "CommentLine",
-                    "value": " Precondition: n has at most one non-leaf child.",
-                    "start": 431,
-                    "end": 481,
-                    "loc": {
-                      "start": {
-                        "line": 16,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 16,
-                        "column": 51
-                      }
-                    }
-                  },
-                  {
-                    "type": "CommentLine",
-                    "value": " assert( n.right.isleaf() || n.left.isleaf());",
-                    "start": 483,
-                    "end": 531,
-                    "loc": {
-                      "start": {
-                        "line": 17,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 17,
-                        "column": 49
-                      }
-                    }
-                  },
-                  {
-                    "type": "CommentLine",
-                    "value": " const child = n.right.isleaf() ? n.left : n.right;",
-                    "start": 534,
-                    "end": 587,
-                    "loc": {
-                      "start": {
-                        "line": 19,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 19,
-                        "column": 54
-                      }
-                    }
-                  },
-                  {
-                    "type": "CommentLine",
-                    "value": " n.right is always a LEAF because either n is a subtree predecessor or it",
-                    "start": 589,
-                    "end": 664,
-                    "loc": {
-                      "start": {
-                        "line": 20,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 20,
-                        "column": 76
-                      }
-                    }
-                  },
-                  {
-                    "type": "CommentLine",
-                    "value": " is the only child of its parent by the red-black tree properties",
-                    "start": 666,
-                    "end": 733,
-                    "loc": {
-                      "start": {
-                        "line": 21,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 21,
-                        "column": 68
-                      }
-                    }
-                  }
-                ],
-                "trailingComments": [
-                  {
-                    "type": "CommentLine",
-                    "value": " Replace n with its left child",
-                    "start": 759,
-                    "end": 791,
-                    "loc": {
-                      "start": {
-                        "line": 24,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 24,
-                        "column": 33
-                      }
-                    }
-                  }
-                ]
+                "name": "delete_one_child",
+                "leadingComments": null
               },
-              {
-                "type": "ExpressionStatement",
-                "start": 793,
-                "end": 816,
+              "init": {
+                "type": "ArrowFunctionExpression",
+                "start": 424,
+                "end": 1338,
                 "loc": {
                   "start": {
-                    "line": 25,
-                    "column": 1
+                    "line": 15,
+                    "column": 32
                   },
                   "end": {
-                    "line": 25,
-                    "column": 24
+                    "line": 42,
+                    "column": 1
                   }
                 },
-                "expression": {
-                  "type": "CallExpression",
-                  "start": 793,
-                  "end": 815,
+                "id": {
+                  "type": "Identifier",
+                  "start": 405,
+                  "end": 421,
                   "loc": {
                     "start": {
-                      "line": 25,
-                      "column": 1
+                      "line": 15,
+                      "column": 13
                     },
                     "end": {
-                      "line": 25,
-                      "column": 23
-                    }
-                  },
-                  "callee": {
-                    "type": "Identifier",
-                    "start": 793,
-                    "end": 805,
-                    "loc": {
-                      "start": {
-                        "line": 25,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 25,
-                        "column": 13
-                      },
-                      "identifierName": "replace_node"
+                      "line": 15,
+                      "column": 29
                     },
-                    "name": "replace_node",
-                    "leadingComments": null
+                    "identifierName": "delete_one_child"
                   },
-                  "arguments": [
-                    {
-                      "type": "Identifier",
-                      "start": 806,
-                      "end": 807,
-                      "loc": {
-                        "start": {
-                          "line": 25,
-                          "column": 14
-                        },
-                        "end": {
-                          "line": 25,
-                          "column": 15
-                        },
-                        "identifierName": "n"
-                      },
-                      "name": "n"
-                    },
-                    {
-                      "type": "Identifier",
-                      "start": 809,
-                      "end": 814,
-                      "loc": {
-                        "start": {
-                          "line": 25,
-                          "column": 17
-                        },
-                        "end": {
-                          "line": 25,
-                          "column": 22
-                        },
-                        "identifierName": "child"
-                      },
-                      "name": "child"
-                    }
-                  ],
+                  "name": "delete_one_child",
                   "leadingComments": null
                 },
-                "leadingComments": [
+                "generator": false,
+                "expression": false,
+                "async": false,
+                "params": [
                   {
-                    "type": "CommentLine",
-                    "value": " Replace n with its left child",
-                    "start": 759,
-                    "end": 791,
+                    "type": "Identifier",
+                    "start": 425,
+                    "end": 426,
                     "loc": {
                       "start": {
-                        "line": 24,
-                        "column": 1
+                        "line": 15,
+                        "column": 33
                       },
                       "end": {
-                        "line": 24,
-                        "column": 33
-                      }
-                    }
+                        "line": 15,
+                        "column": 34
+                      },
+                      "identifierName": "n"
+                    },
+                    "name": "n"
                   }
                 ],
-                "trailingComments": [
-                  {
-                    "type": "CommentLine",
-                    "value": " If n is black, deleting it reduces the black-height of every path going",
-                    "start": 819,
-                    "end": 893,
-                    "loc": {
-                      "start": {
-                        "line": 27,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 27,
-                        "column": 75
-                      }
-                    }
-                  },
-                  {
-                    "type": "CommentLine",
-                    "value": " through it by 1.",
-                    "start": 895,
-                    "end": 914,
-                    "loc": {
-                      "start": {
-                        "line": 28,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 28,
-                        "column": 20
-                      }
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "IfStatement",
-                "start": 916,
-                "end": 1215,
-                "loc": {
-                  "start": {
-                    "line": 29,
-                    "column": 1
-                  },
-                  "end": {
-                    "line": 36,
-                    "column": 2
-                  }
-                },
-                "test": {
-                  "type": "BinaryExpression",
-                  "start": 920,
-                  "end": 937,
-                  "loc": {
-                    "start": {
-                      "line": 29,
-                      "column": 5
-                    },
-                    "end": {
-                      "line": 29,
-                      "column": 22
-                    }
-                  },
-                  "left": {
-                    "type": "MemberExpression",
-                    "start": 920,
-                    "end": 927,
-                    "loc": {
-                      "start": {
-                        "line": 29,
-                        "column": 5
-                      },
-                      "end": {
-                        "line": 29,
-                        "column": 12
-                      }
-                    },
-                    "object": {
-                      "type": "Identifier",
-                      "start": 920,
-                      "end": 921,
-                      "loc": {
-                        "start": {
-                          "line": 29,
-                          "column": 5
-                        },
-                        "end": {
-                          "line": 29,
-                          "column": 6
-                        },
-                        "identifierName": "n"
-                      },
-                      "name": "n",
-                      "leadingComments": null
-                    },
-                    "property": {
-                      "type": "Identifier",
-                      "start": 922,
-                      "end": 927,
-                      "loc": {
-                        "start": {
-                          "line": 29,
-                          "column": 7
-                        },
-                        "end": {
-                          "line": 29,
-                          "column": 12
-                        },
-                        "identifierName": "color"
-                      },
-                      "name": "color"
-                    },
-                    "computed": false,
-                    "leadingComments": null
-                  },
-                  "operator": "===",
-                  "right": {
-                    "type": "Identifier",
-                    "start": 932,
-                    "end": 937,
-                    "loc": {
-                      "start": {
-                        "line": 29,
-                        "column": 17
-                      },
-                      "end": {
-                        "line": 29,
-                        "column": 22
-                      },
-                      "identifierName": "BLACK"
-                    },
-                    "name": "BLACK"
-                  },
-                  "leadingComments": null
-                },
-                "consequent": {
+                "body": {
                   "type": "BlockStatement",
-                  "start": 939,
-                  "end": 1215,
+                  "start": 431,
+                  "end": 1338,
                   "loc": {
                     "start": {
-                      "line": 29,
-                      "column": 24
+                      "line": 15,
+                      "column": 39
                     },
                     "end": {
-                      "line": 36,
-                      "column": 2
+                      "line": 42,
+                      "column": 1
                     }
                   },
                   "body": [
                     {
-                      "type": "IfStatement",
-                      "start": 1093,
-                      "end": 1212,
+                      "type": "VariableDeclaration",
+                      "start": 738,
+                      "end": 759,
                       "loc": {
                         "start": {
-                          "line": 33,
-                          "column": 2
+                          "line": 22,
+                          "column": 1
                         },
                         "end": {
-                          "line": 35,
-                          "column": 27
+                          "line": 22,
+                          "column": 22
                         }
                       },
-                      "test": {
-                        "type": "BinaryExpression",
-                        "start": 1097,
-                        "end": 1116,
-                        "loc": {
-                          "start": {
-                            "line": 33,
-                            "column": 6
-                          },
-                          "end": {
-                            "line": 33,
-                            "column": 25
-                          }
-                        },
-                        "left": {
-                          "type": "MemberExpression",
-                          "start": 1097,
-                          "end": 1108,
+                      "declarations": [
+                        {
+                          "type": "VariableDeclarator",
+                          "start": 744,
+                          "end": 758,
                           "loc": {
                             "start": {
-                              "line": 33,
-                              "column": 6
+                              "line": 22,
+                              "column": 7
                             },
                             "end": {
-                              "line": 33,
-                              "column": 17
+                              "line": 22,
+                              "column": 21
                             }
                           },
-                          "object": {
+                          "id": {
                             "type": "Identifier",
-                            "start": 1097,
-                            "end": 1102,
+                            "start": 744,
+                            "end": 749,
                             "loc": {
                               "start": {
-                                "line": 33,
-                                "column": 6
+                                "line": 22,
+                                "column": 7
                               },
                               "end": {
-                                "line": 33,
-                                "column": 11
+                                "line": 22,
+                                "column": 12
                               },
                               "identifierName": "child"
                             },
                             "name": "child",
                             "leadingComments": null
                           },
-                          "property": {
-                            "type": "Identifier",
-                            "start": 1103,
-                            "end": 1108,
+                          "init": {
+                            "type": "MemberExpression",
+                            "start": 752,
+                            "end": 758,
                             "loc": {
                               "start": {
-                                "line": 33,
-                                "column": 12
+                                "line": 22,
+                                "column": 15
                               },
                               "end": {
-                                "line": 33,
+                                "line": 22,
+                                "column": 21
+                              }
+                            },
+                            "object": {
+                              "type": "Identifier",
+                              "start": 752,
+                              "end": 753,
+                              "loc": {
+                                "start": {
+                                  "line": 22,
+                                  "column": 15
+                                },
+                                "end": {
+                                  "line": 22,
+                                  "column": 16
+                                },
+                                "identifierName": "n"
+                              },
+                              "name": "n"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "start": 754,
+                              "end": 758,
+                              "loc": {
+                                "start": {
+                                  "line": 22,
+                                  "column": 17
+                                },
+                                "end": {
+                                  "line": 22,
+                                  "column": 21
+                                },
+                                "identifierName": "left"
+                              },
+                              "name": "left"
+                            },
+                            "computed": false
+                          },
+                          "leadingComments": null
+                        }
+                      ],
+                      "kind": "const",
+                      "leadingComments": [
+                        {
+                          "type": "CommentLine",
+                          "value": " Precondition: n has at most one non-leaf child.",
+                          "start": 434,
+                          "end": 484,
+                          "loc": {
+                            "start": {
+                              "line": 16,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 16,
+                              "column": 51
+                            }
+                          }
+                        },
+                        {
+                          "type": "CommentLine",
+                          "value": " assert( n.right.isLeaf() || n.left.isLeaf());",
+                          "start": 486,
+                          "end": 534,
+                          "loc": {
+                            "start": {
+                              "line": 17,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 17,
+                              "column": 49
+                            }
+                          }
+                        },
+                        {
+                          "type": "CommentLine",
+                          "value": " const child = n.right.isLeaf() ? n.left : n.right;",
+                          "start": 537,
+                          "end": 590,
+                          "loc": {
+                            "start": {
+                              "line": 19,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 19,
+                              "column": 54
+                            }
+                          }
+                        },
+                        {
+                          "type": "CommentLine",
+                          "value": " n.right is always a LEAF because either n is a subtree predecessor or it",
+                          "start": 592,
+                          "end": 667,
+                          "loc": {
+                            "start": {
+                              "line": 20,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 20,
+                              "column": 76
+                            }
+                          }
+                        },
+                        {
+                          "type": "CommentLine",
+                          "value": " is the only child of its parent by the red-black tree properties",
+                          "start": 669,
+                          "end": 736,
+                          "loc": {
+                            "start": {
+                              "line": 21,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 21,
+                              "column": 68
+                            }
+                          }
+                        }
+                      ],
+                      "trailingComments": [
+                        {
+                          "type": "CommentLine",
+                          "value": " Replace n with its left child",
+                          "start": 762,
+                          "end": 794,
+                          "loc": {
+                            "start": {
+                              "line": 24,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 24,
+                              "column": 33
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "start": 796,
+                      "end": 819,
+                      "loc": {
+                        "start": {
+                          "line": 25,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 25,
+                          "column": 24
+                        }
+                      },
+                      "expression": {
+                        "type": "CallExpression",
+                        "start": 796,
+                        "end": 818,
+                        "loc": {
+                          "start": {
+                            "line": 25,
+                            "column": 1
+                          },
+                          "end": {
+                            "line": 25,
+                            "column": 23
+                          }
+                        },
+                        "callee": {
+                          "type": "Identifier",
+                          "start": 796,
+                          "end": 808,
+                          "loc": {
+                            "start": {
+                              "line": 25,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 25,
+                              "column": 13
+                            },
+                            "identifierName": "replace_node"
+                          },
+                          "name": "replace_node",
+                          "leadingComments": null
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "start": 809,
+                            "end": 810,
+                            "loc": {
+                              "start": {
+                                "line": 25,
+                                "column": 14
+                              },
+                              "end": {
+                                "line": 25,
+                                "column": 15
+                              },
+                              "identifierName": "n"
+                            },
+                            "name": "n"
+                          },
+                          {
+                            "type": "Identifier",
+                            "start": 812,
+                            "end": 817,
+                            "loc": {
+                              "start": {
+                                "line": 25,
                                 "column": 17
                               },
-                              "identifierName": "color"
+                              "end": {
+                                "line": 25,
+                                "column": 22
+                              },
+                              "identifierName": "child"
                             },
-                            "name": "color"
+                            "name": "child"
+                          }
+                        ],
+                        "leadingComments": null
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "CommentLine",
+                          "value": " Replace n with its left child",
+                          "start": 762,
+                          "end": 794,
+                          "loc": {
+                            "start": {
+                              "line": 24,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 24,
+                              "column": 33
+                            }
+                          }
+                        }
+                      ],
+                      "trailingComments": [
+                        {
+                          "type": "CommentLine",
+                          "value": " If n is black, deleting it reduces the black-height of every path going",
+                          "start": 822,
+                          "end": 896,
+                          "loc": {
+                            "start": {
+                              "line": 27,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 27,
+                              "column": 75
+                            }
+                          }
+                        },
+                        {
+                          "type": "CommentLine",
+                          "value": " through it by 1.",
+                          "start": 898,
+                          "end": 917,
+                          "loc": {
+                            "start": {
+                              "line": 28,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 28,
+                              "column": 20
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "IfStatement",
+                      "start": 919,
+                      "end": 1221,
+                      "loc": {
+                        "start": {
+                          "line": 29,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 36,
+                          "column": 2
+                        }
+                      },
+                      "test": {
+                        "type": "BinaryExpression",
+                        "start": 923,
+                        "end": 941,
+                        "loc": {
+                          "start": {
+                            "line": 29,
+                            "column": 5
+                          },
+                          "end": {
+                            "line": 29,
+                            "column": 23
+                          }
+                        },
+                        "left": {
+                          "type": "MemberExpression",
+                          "start": 923,
+                          "end": 931,
+                          "loc": {
+                            "start": {
+                              "line": 29,
+                              "column": 5
+                            },
+                            "end": {
+                              "line": 29,
+                              "column": 13
+                            }
+                          },
+                          "object": {
+                            "type": "Identifier",
+                            "start": 923,
+                            "end": 924,
+                            "loc": {
+                              "start": {
+                                "line": 29,
+                                "column": 5
+                              },
+                              "end": {
+                                "line": 29,
+                                "column": 6
+                              },
+                              "identifierName": "n"
+                            },
+                            "name": "n",
+                            "leadingComments": null
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "start": 925,
+                            "end": 931,
+                            "loc": {
+                              "start": {
+                                "line": 29,
+                                "column": 7
+                              },
+                              "end": {
+                                "line": 29,
+                                "column": 13
+                              },
+                              "identifierName": "_color"
+                            },
+                            "name": "_color"
                           },
                           "computed": false,
                           "leadingComments": null
@@ -975,385 +907,505 @@
                         "operator": "===",
                         "right": {
                           "type": "Identifier",
-                          "start": 1113,
-                          "end": 1116,
+                          "start": 936,
+                          "end": 941,
                           "loc": {
                             "start": {
-                              "line": 33,
-                              "column": 22
+                              "line": 29,
+                              "column": 18
                             },
                             "end": {
-                              "line": 33,
-                              "column": 25
+                              "line": 29,
+                              "column": 23
                             },
-                            "identifierName": "RED"
+                            "identifierName": "BLACK"
                           },
-                          "name": "RED"
+                          "name": "BLACK"
                         },
                         "leadingComments": null
                       },
                       "consequent": {
-                        "type": "ExpressionStatement",
-                        "start": 1118,
-                        "end": 1138,
+                        "type": "BlockStatement",
+                        "start": 943,
+                        "end": 1221,
                         "loc": {
                           "start": {
-                            "line": 33,
-                            "column": 27
+                            "line": 29,
+                            "column": 25
                           },
                           "end": {
-                            "line": 33,
-                            "column": 47
+                            "line": 36,
+                            "column": 2
                           }
                         },
-                        "expression": {
-                          "type": "AssignmentExpression",
-                          "start": 1118,
-                          "end": 1137,
-                          "loc": {
-                            "start": {
-                              "line": 33,
-                              "column": 27
-                            },
-                            "end": {
-                              "line": 33,
-                              "column": 46
-                            }
-                          },
-                          "operator": "=",
-                          "left": {
-                            "type": "MemberExpression",
-                            "start": 1118,
-                            "end": 1129,
+                        "body": [
+                          {
+                            "type": "IfStatement",
+                            "start": 1097,
+                            "end": 1218,
                             "loc": {
                               "start": {
                                 "line": 33,
+                                "column": 2
+                              },
+                              "end": {
+                                "line": 35,
                                 "column": 27
-                              },
-                              "end": {
-                                "line": 33,
-                                "column": 38
                               }
                             },
-                            "object": {
-                              "type": "Identifier",
-                              "start": 1118,
-                              "end": 1123,
+                            "test": {
+                              "type": "BinaryExpression",
+                              "start": 1101,
+                              "end": 1121,
                               "loc": {
                                 "start": {
                                   "line": 33,
+                                  "column": 6
+                                },
+                                "end": {
+                                  "line": 33,
+                                  "column": 26
+                                }
+                              },
+                              "left": {
+                                "type": "MemberExpression",
+                                "start": 1101,
+                                "end": 1113,
+                                "loc": {
+                                  "start": {
+                                    "line": 33,
+                                    "column": 6
+                                  },
+                                  "end": {
+                                    "line": 33,
+                                    "column": 18
+                                  }
+                                },
+                                "object": {
+                                  "type": "Identifier",
+                                  "start": 1101,
+                                  "end": 1106,
+                                  "loc": {
+                                    "start": {
+                                      "line": 33,
+                                      "column": 6
+                                    },
+                                    "end": {
+                                      "line": 33,
+                                      "column": 11
+                                    },
+                                    "identifierName": "child"
+                                  },
+                                  "name": "child",
+                                  "leadingComments": null
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "start": 1107,
+                                  "end": 1113,
+                                  "loc": {
+                                    "start": {
+                                      "line": 33,
+                                      "column": 12
+                                    },
+                                    "end": {
+                                      "line": 33,
+                                      "column": 18
+                                    },
+                                    "identifierName": "_color"
+                                  },
+                                  "name": "_color"
+                                },
+                                "computed": false,
+                                "leadingComments": null
+                              },
+                              "operator": "===",
+                              "right": {
+                                "type": "Identifier",
+                                "start": 1118,
+                                "end": 1121,
+                                "loc": {
+                                  "start": {
+                                    "line": 33,
+                                    "column": 23
+                                  },
+                                  "end": {
+                                    "line": 33,
+                                    "column": 26
+                                  },
+                                  "identifierName": "RED"
+                                },
+                                "name": "RED"
+                              },
+                              "leadingComments": null
+                            },
+                            "consequent": {
+                              "type": "ExpressionStatement",
+                              "start": 1123,
+                              "end": 1144,
+                              "loc": {
+                                "start": {
+                                  "line": 33,
+                                  "column": 28
+                                },
+                                "end": {
+                                  "line": 33,
+                                  "column": 49
+                                }
+                              },
+                              "expression": {
+                                "type": "AssignmentExpression",
+                                "start": 1123,
+                                "end": 1143,
+                                "loc": {
+                                  "start": {
+                                    "line": 33,
+                                    "column": 28
+                                  },
+                                  "end": {
+                                    "line": 33,
+                                    "column": 48
+                                  }
+                                },
+                                "operator": "=",
+                                "left": {
+                                  "type": "MemberExpression",
+                                  "start": 1123,
+                                  "end": 1135,
+                                  "loc": {
+                                    "start": {
+                                      "line": 33,
+                                      "column": 28
+                                    },
+                                    "end": {
+                                      "line": 33,
+                                      "column": 40
+                                    }
+                                  },
+                                  "object": {
+                                    "type": "Identifier",
+                                    "start": 1123,
+                                    "end": 1128,
+                                    "loc": {
+                                      "start": {
+                                        "line": 33,
+                                        "column": 28
+                                      },
+                                      "end": {
+                                        "line": 33,
+                                        "column": 33
+                                      },
+                                      "identifierName": "child"
+                                    },
+                                    "name": "child"
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "start": 1129,
+                                    "end": 1135,
+                                    "loc": {
+                                      "start": {
+                                        "line": 33,
+                                        "column": 34
+                                      },
+                                      "end": {
+                                        "line": 33,
+                                        "column": 40
+                                      },
+                                      "identifierName": "_color"
+                                    },
+                                    "name": "_color"
+                                  },
+                                  "computed": false
+                                },
+                                "right": {
+                                  "type": "Identifier",
+                                  "start": 1138,
+                                  "end": 1143,
+                                  "loc": {
+                                    "start": {
+                                      "line": 33,
+                                      "column": 43
+                                    },
+                                    "end": {
+                                      "line": 33,
+                                      "column": 48
+                                    },
+                                    "identifierName": "BLACK"
+                                  },
+                                  "name": "BLACK"
+                                }
+                              },
+                              "trailingComments": [
+                                {
+                                  "type": "CommentLine",
+                                  "value": " Otherwise, there are more things to fix.",
+                                  "start": 1147,
+                                  "end": 1190,
+                                  "loc": {
+                                    "start": {
+                                      "line": 34,
+                                      "column": 2
+                                    },
+                                    "end": {
+                                      "line": 34,
+                                      "column": 45
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            "alternate": {
+                              "type": "ExpressionStatement",
+                              "start": 1198,
+                              "end": 1218,
+                              "loc": {
+                                "start": {
+                                  "line": 35,
+                                  "column": 7
+                                },
+                                "end": {
+                                  "line": 35,
                                   "column": 27
-                                },
-                                "end": {
-                                  "line": 33,
-                                  "column": 32
-                                },
-                                "identifierName": "child"
+                                }
                               },
-                              "name": "child"
+                              "expression": {
+                                "type": "CallExpression",
+                                "start": 1198,
+                                "end": 1217,
+                                "loc": {
+                                  "start": {
+                                    "line": 35,
+                                    "column": 7
+                                  },
+                                  "end": {
+                                    "line": 35,
+                                    "column": 26
+                                  }
+                                },
+                                "callee": {
+                                  "type": "Identifier",
+                                  "start": 1198,
+                                  "end": 1210,
+                                  "loc": {
+                                    "start": {
+                                      "line": 35,
+                                      "column": 7
+                                    },
+                                    "end": {
+                                      "line": 35,
+                                      "column": 19
+                                    },
+                                    "identifierName": "delete_case1"
+                                  },
+                                  "name": "delete_case1",
+                                  "leadingComments": null
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "Identifier",
+                                    "start": 1211,
+                                    "end": 1216,
+                                    "loc": {
+                                      "start": {
+                                        "line": 35,
+                                        "column": 20
+                                      },
+                                      "end": {
+                                        "line": 35,
+                                        "column": 25
+                                      },
+                                      "identifierName": "child"
+                                    },
+                                    "name": "child"
+                                  }
+                                ],
+                                "leadingComments": null
+                              },
+                              "leadingComments": [
+                                {
+                                  "type": "CommentLine",
+                                  "value": " Otherwise, there are more things to fix.",
+                                  "start": 1147,
+                                  "end": 1190,
+                                  "loc": {
+                                    "start": {
+                                      "line": 34,
+                                      "column": 2
+                                    },
+                                    "end": {
+                                      "line": 34,
+                                      "column": 45
+                                    }
+                                  }
+                                }
+                              ]
                             },
-                            "property": {
-                              "type": "Identifier",
-                              "start": 1124,
-                              "end": 1129,
-                              "loc": {
-                                "start": {
-                                  "line": 33,
-                                  "column": 33
-                                },
-                                "end": {
-                                  "line": 33,
-                                  "column": 38
-                                },
-                                "identifierName": "color"
+                            "leadingComments": [
+                              {
+                                "type": "CommentLine",
+                                "value": " We can easily fix this when its left child is an",
+                                "start": 947,
+                                "end": 998,
+                                "loc": {
+                                  "start": {
+                                    "line": 30,
+                                    "column": 2
+                                  },
+                                  "end": {
+                                    "line": 30,
+                                    "column": 53
+                                  }
+                                }
                               },
-                              "name": "color"
-                            },
-                            "computed": false
-                          },
-                          "right": {
-                            "type": "Identifier",
-                            "start": 1132,
-                            "end": 1137,
-                            "loc": {
-                              "start": {
-                                "line": 33,
-                                "column": 41
+                              {
+                                "type": "CommentLine",
+                                "value": " internal red node: change the color of the left child to black and",
+                                "start": 1001,
+                                "end": 1070,
+                                "loc": {
+                                  "start": {
+                                    "line": 31,
+                                    "column": 2
+                                  },
+                                  "end": {
+                                    "line": 31,
+                                    "column": 71
+                                  }
+                                }
                               },
-                              "end": {
-                                "line": 33,
-                                "column": 46
-                              },
-                              "identifierName": "BLACK"
-                            },
-                            "name": "BLACK"
-                          }
-                        },
-                        "trailingComments": [
-                          {
-                            "type": "CommentLine",
-                            "value": " Otherwise, there are more things to fix.",
-                            "start": 1141,
-                            "end": 1184,
-                            "loc": {
-                              "start": {
-                                "line": 34,
-                                "column": 2
-                              },
-                              "end": {
-                                "line": 34,
-                                "column": 45
+                              {
+                                "type": "CommentLine",
+                                "value": " replace n with it.",
+                                "start": 1073,
+                                "end": 1094,
+                                "loc": {
+                                  "start": {
+                                    "line": 32,
+                                    "column": 2
+                                  },
+                                  "end": {
+                                    "line": 32,
+                                    "column": 23
+                                  }
+                                }
                               }
-                            }
+                            ]
                           }
-                        ]
+                        ],
+                        "directives": [],
+                        "trailingComments": null
                       },
-                      "alternate": {
-                        "type": "ExpressionStatement",
-                        "start": 1192,
-                        "end": 1212,
-                        "loc": {
-                          "start": {
-                            "line": 35,
-                            "column": 7
-                          },
-                          "end": {
-                            "line": 35,
-                            "column": 27
-                          }
-                        },
-                        "expression": {
-                          "type": "CallExpression",
-                          "start": 1192,
-                          "end": 1211,
-                          "loc": {
-                            "start": {
-                              "line": 35,
-                              "column": 7
-                            },
-                            "end": {
-                              "line": 35,
-                              "column": 26
-                            }
-                          },
-                          "callee": {
-                            "type": "Identifier",
-                            "start": 1192,
-                            "end": 1204,
-                            "loc": {
-                              "start": {
-                                "line": 35,
-                                "column": 7
-                              },
-                              "end": {
-                                "line": 35,
-                                "column": 19
-                              },
-                              "identifierName": "delete_case1"
-                            },
-                            "name": "delete_case1",
-                            "leadingComments": null
-                          },
-                          "arguments": [
-                            {
-                              "type": "Identifier",
-                              "start": 1205,
-                              "end": 1210,
-                              "loc": {
-                                "start": {
-                                  "line": 35,
-                                  "column": 20
-                                },
-                                "end": {
-                                  "line": 35,
-                                  "column": 25
-                                },
-                                "identifierName": "child"
-                              },
-                              "name": "child"
-                            }
-                          ],
-                          "leadingComments": null
-                        },
-                        "leadingComments": [
-                          {
-                            "type": "CommentLine",
-                            "value": " Otherwise, there are more things to fix.",
-                            "start": 1141,
-                            "end": 1184,
-                            "loc": {
-                              "start": {
-                                "line": 34,
-                                "column": 2
-                              },
-                              "end": {
-                                "line": 34,
-                                "column": 45
-                              }
-                            }
-                          }
-                        ]
-                      },
+                      "alternate": null,
                       "leadingComments": [
                         {
                           "type": "CommentLine",
-                          "value": " We can easily fix this when its left child is an",
-                          "start": 943,
-                          "end": 994,
+                          "value": " If n is black, deleting it reduces the black-height of every path going",
+                          "start": 822,
+                          "end": 896,
                           "loc": {
                             "start": {
-                              "line": 30,
-                              "column": 2
+                              "line": 27,
+                              "column": 1
                             },
                             "end": {
-                              "line": 30,
-                              "column": 53
+                              "line": 27,
+                              "column": 75
                             }
                           }
                         },
                         {
                           "type": "CommentLine",
-                          "value": " internal red node: change the color of the left child to black and",
-                          "start": 997,
-                          "end": 1066,
+                          "value": " through it by 1.",
+                          "start": 898,
+                          "end": 917,
                           "loc": {
                             "start": {
-                              "line": 31,
-                              "column": 2
+                              "line": 28,
+                              "column": 1
                             },
                             "end": {
-                              "line": 31,
-                              "column": 71
+                              "line": 28,
+                              "column": 20
+                            }
+                          }
+                        }
+                      ],
+                      "trailingComments": [
+                        {
+                          "type": "CommentLine",
+                          "value": " Else {",
+                          "start": 1224,
+                          "end": 1233,
+                          "loc": {
+                            "start": {
+                              "line": 38,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 38,
+                              "column": 10
                             }
                           }
                         },
                         {
                           "type": "CommentLine",
-                          "value": " replace n with it.",
-                          "start": 1069,
-                          "end": 1090,
+                          "value": "    If n is red then its child can only be black. Replacing n with its",
+                          "start": 1235,
+                          "end": 1307,
                           "loc": {
                             "start": {
-                              "line": 32,
-                              "column": 2
+                              "line": 39,
+                              "column": 1
                             },
                             "end": {
-                              "line": 32,
-                              "column": 23
+                              "line": 39,
+                              "column": 73
+                            }
+                          }
+                        },
+                        {
+                          "type": "CommentLine",
+                          "value": "    child suffices.",
+                          "start": 1309,
+                          "end": 1330,
+                          "loc": {
+                            "start": {
+                              "line": 40,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 40,
+                              "column": 22
+                            }
+                          }
+                        },
+                        {
+                          "type": "CommentLine",
+                          "value": " }",
+                          "start": 1332,
+                          "end": 1336,
+                          "loc": {
+                            "start": {
+                              "line": 41,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 41,
+                              "column": 5
                             }
                           }
                         }
                       ]
                     }
                   ],
-                  "directives": [],
-                  "trailingComments": null
-                },
-                "alternate": null,
-                "leadingComments": [
-                  {
-                    "type": "CommentLine",
-                    "value": " If n is black, deleting it reduces the black-height of every path going",
-                    "start": 819,
-                    "end": 893,
-                    "loc": {
-                      "start": {
-                        "line": 27,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 27,
-                        "column": 75
-                      }
-                    }
-                  },
-                  {
-                    "type": "CommentLine",
-                    "value": " through it by 1.",
-                    "start": 895,
-                    "end": 914,
-                    "loc": {
-                      "start": {
-                        "line": 28,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 28,
-                        "column": 20
-                      }
-                    }
-                  }
-                ],
-                "trailingComments": [
-                  {
-                    "type": "CommentLine",
-                    "value": " Else {",
-                    "start": 1218,
-                    "end": 1227,
-                    "loc": {
-                      "start": {
-                        "line": 38,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 38,
-                        "column": 10
-                      }
-                    }
-                  },
-                  {
-                    "type": "CommentLine",
-                    "value": "    If n is red then its child can only be black. Replacing n with its",
-                    "start": 1229,
-                    "end": 1301,
-                    "loc": {
-                      "start": {
-                        "line": 39,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 39,
-                        "column": 73
-                      }
-                    }
-                  },
-                  {
-                    "type": "CommentLine",
-                    "value": "    child suffices.",
-                    "start": 1303,
-                    "end": 1324,
-                    "loc": {
-                      "start": {
-                        "line": 40,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 40,
-                        "column": 22
-                      }
-                    }
-                  },
-                  {
-                    "type": "CommentLine",
-                    "value": " }",
-                    "start": 1326,
-                    "end": 1330,
-                    "loc": {
-                      "start": {
-                        "line": 41,
-                        "column": 1
-                      },
-                      "end": {
-                        "line": 41,
-                        "column": 5
-                      }
-                    }
-                  }
-                ]
-              }
-            ],
-            "directives": []
-          },
+                  "directives": []
+                }
+              },
+              "leadingComments": null
+            }
+          ],
+          "kind": "const",
           "leadingComments": [
             {
               "type": "CommentBlock",
@@ -1416,8 +1468,8 @@
     {
       "type": "CommentLine",
       "value": " Precondition: n has at most one non-leaf child.",
-      "start": 431,
-      "end": 481,
+      "start": 434,
+      "end": 484,
       "loc": {
         "start": {
           "line": 16,
@@ -1431,9 +1483,9 @@
     },
     {
       "type": "CommentLine",
-      "value": " assert( n.right.isleaf() || n.left.isleaf());",
-      "start": 483,
-      "end": 531,
+      "value": " assert( n.right.isLeaf() || n.left.isLeaf());",
+      "start": 486,
+      "end": 534,
       "loc": {
         "start": {
           "line": 17,
@@ -1447,9 +1499,9 @@
     },
     {
       "type": "CommentLine",
-      "value": " const child = n.right.isleaf() ? n.left : n.right;",
-      "start": 534,
-      "end": 587,
+      "value": " const child = n.right.isLeaf() ? n.left : n.right;",
+      "start": 537,
+      "end": 590,
       "loc": {
         "start": {
           "line": 19,
@@ -1464,8 +1516,8 @@
     {
       "type": "CommentLine",
       "value": " n.right is always a LEAF because either n is a subtree predecessor or it",
-      "start": 589,
-      "end": 664,
+      "start": 592,
+      "end": 667,
       "loc": {
         "start": {
           "line": 20,
@@ -1480,8 +1532,8 @@
     {
       "type": "CommentLine",
       "value": " is the only child of its parent by the red-black tree properties",
-      "start": 666,
-      "end": 733,
+      "start": 669,
+      "end": 736,
       "loc": {
         "start": {
           "line": 21,
@@ -1496,8 +1548,8 @@
     {
       "type": "CommentLine",
       "value": " Replace n with its left child",
-      "start": 759,
-      "end": 791,
+      "start": 762,
+      "end": 794,
       "loc": {
         "start": {
           "line": 24,
@@ -1512,8 +1564,8 @@
     {
       "type": "CommentLine",
       "value": " If n is black, deleting it reduces the black-height of every path going",
-      "start": 819,
-      "end": 893,
+      "start": 822,
+      "end": 896,
       "loc": {
         "start": {
           "line": 27,
@@ -1528,8 +1580,8 @@
     {
       "type": "CommentLine",
       "value": " through it by 1.",
-      "start": 895,
-      "end": 914,
+      "start": 898,
+      "end": 917,
       "loc": {
         "start": {
           "line": 28,
@@ -1544,8 +1596,8 @@
     {
       "type": "CommentLine",
       "value": " We can easily fix this when its left child is an",
-      "start": 943,
-      "end": 994,
+      "start": 947,
+      "end": 998,
       "loc": {
         "start": {
           "line": 30,
@@ -1560,8 +1612,8 @@
     {
       "type": "CommentLine",
       "value": " internal red node: change the color of the left child to black and",
-      "start": 997,
-      "end": 1066,
+      "start": 1001,
+      "end": 1070,
       "loc": {
         "start": {
           "line": 31,
@@ -1576,8 +1628,8 @@
     {
       "type": "CommentLine",
       "value": " replace n with it.",
-      "start": 1069,
-      "end": 1090,
+      "start": 1073,
+      "end": 1094,
       "loc": {
         "start": {
           "line": 32,
@@ -1592,8 +1644,8 @@
     {
       "type": "CommentLine",
       "value": " Otherwise, there are more things to fix.",
-      "start": 1141,
-      "end": 1184,
+      "start": 1147,
+      "end": 1190,
       "loc": {
         "start": {
           "line": 34,
@@ -1608,8 +1660,8 @@
     {
       "type": "CommentLine",
       "value": " Else {",
-      "start": 1218,
-      "end": 1227,
+      "start": 1224,
+      "end": 1233,
       "loc": {
         "start": {
           "line": 38,
@@ -1624,8 +1676,8 @@
     {
       "type": "CommentLine",
       "value": "    If n is red then its child can only be black. Replacing n with its",
-      "start": 1229,
-      "end": 1301,
+      "start": 1235,
+      "end": 1307,
       "loc": {
         "start": {
           "line": 39,
@@ -1640,8 +1692,8 @@
     {
       "type": "CommentLine",
       "value": "    child suffices.",
-      "start": 1303,
-      "end": 1324,
+      "start": 1309,
+      "end": 1330,
       "loc": {
         "start": {
           "line": 40,
@@ -1656,8 +1708,8 @@
     {
       "type": "CommentLine",
       "value": " }",
-      "start": 1326,
-      "end": 1330,
+      "start": 1332,
+      "end": 1336,
       "loc": {
         "start": {
           "line": 41,
@@ -2318,20 +2370,21 @@
     },
     {
       "type": {
-        "label": "function",
-        "keyword": "function",
+        "label": "const",
+        "keyword": "const",
         "beforeExpr": false,
-        "startsExpr": true,
+        "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
         "prefix": false,
         "postfix": false,
-        "binop": null
+        "binop": null,
+        "updateContext": null
       },
-      "value": "function",
+      "value": "const",
       "start": 399,
-      "end": 407,
+      "end": 404,
       "loc": {
         "start": {
           "line": 15,
@@ -2339,7 +2392,7 @@
         },
         "end": {
           "line": 15,
-          "column": 15
+          "column": 12
         }
       }
     },
@@ -2356,16 +2409,43 @@
         "binop": null
       },
       "value": "delete_one_child",
-      "start": 408,
-      "end": 424,
+      "start": 405,
+      "end": 421,
       "loc": {
         "start": {
           "line": 15,
-          "column": 16
+          "column": 13
         },
         "end": {
           "line": 15,
-          "column": 32
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 422,
+      "end": 423,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 30
+        },
+        "end": {
+          "line": 15,
+          "column": 31
         }
       }
     },
@@ -2447,6 +2527,32 @@
     },
     {
       "type": {
+        "label": "=>",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 428,
+      "end": 430,
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 36
+        },
+        "end": {
+          "line": 15,
+          "column": 38
+        }
+      }
+    },
+    {
+      "type": {
         "label": "{",
         "beforeExpr": true,
         "startsExpr": true,
@@ -2457,24 +2563,24 @@
         "postfix": false,
         "binop": null
       },
-      "start": 428,
-      "end": 429,
+      "start": 431,
+      "end": 432,
       "loc": {
         "start": {
           "line": 15,
-          "column": 36
+          "column": 39
         },
         "end": {
           "line": 15,
-          "column": 37
+          "column": 40
         }
       }
     },
     {
       "type": "CommentLine",
       "value": " Precondition: n has at most one non-leaf child.",
-      "start": 431,
-      "end": 481,
+      "start": 434,
+      "end": 484,
       "loc": {
         "start": {
           "line": 16,
@@ -2488,9 +2594,9 @@
     },
     {
       "type": "CommentLine",
-      "value": " assert( n.right.isleaf() || n.left.isleaf());",
-      "start": 483,
-      "end": 531,
+      "value": " assert( n.right.isLeaf() || n.left.isLeaf());",
+      "start": 486,
+      "end": 534,
       "loc": {
         "start": {
           "line": 17,
@@ -2504,9 +2610,9 @@
     },
     {
       "type": "CommentLine",
-      "value": " const child = n.right.isleaf() ? n.left : n.right;",
-      "start": 534,
-      "end": 587,
+      "value": " const child = n.right.isLeaf() ? n.left : n.right;",
+      "start": 537,
+      "end": 590,
       "loc": {
         "start": {
           "line": 19,
@@ -2521,8 +2627,8 @@
     {
       "type": "CommentLine",
       "value": " n.right is always a LEAF because either n is a subtree predecessor or it",
-      "start": 589,
-      "end": 664,
+      "start": 592,
+      "end": 667,
       "loc": {
         "start": {
           "line": 20,
@@ -2537,8 +2643,8 @@
     {
       "type": "CommentLine",
       "value": " is the only child of its parent by the red-black tree properties",
-      "start": 666,
-      "end": 733,
+      "start": 669,
+      "end": 736,
       "loc": {
         "start": {
           "line": 21,
@@ -2565,8 +2671,8 @@
         "updateContext": null
       },
       "value": "const",
-      "start": 735,
-      "end": 740,
+      "start": 738,
+      "end": 743,
       "loc": {
         "start": {
           "line": 22,
@@ -2591,8 +2697,8 @@
         "binop": null
       },
       "value": "child",
-      "start": 741,
-      "end": 746,
+      "start": 744,
+      "end": 749,
       "loc": {
         "start": {
           "line": 22,
@@ -2618,8 +2724,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 747,
-      "end": 748,
+      "start": 750,
+      "end": 751,
       "loc": {
         "start": {
           "line": 22,
@@ -2644,8 +2750,8 @@
         "binop": null
       },
       "value": "n",
-      "start": 749,
-      "end": 750,
+      "start": 752,
+      "end": 753,
       "loc": {
         "start": {
           "line": 22,
@@ -2670,8 +2776,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 750,
-      "end": 751,
+      "start": 753,
+      "end": 754,
       "loc": {
         "start": {
           "line": 22,
@@ -2696,8 +2802,8 @@
         "binop": null
       },
       "value": "left",
-      "start": 751,
-      "end": 755,
+      "start": 754,
+      "end": 758,
       "loc": {
         "start": {
           "line": 22,
@@ -2722,8 +2828,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 755,
-      "end": 756,
+      "start": 758,
+      "end": 759,
       "loc": {
         "start": {
           "line": 22,
@@ -2738,8 +2844,8 @@
     {
       "type": "CommentLine",
       "value": " Replace n with its left child",
-      "start": 759,
-      "end": 791,
+      "start": 762,
+      "end": 794,
       "loc": {
         "start": {
           "line": 24,
@@ -2764,8 +2870,8 @@
         "binop": null
       },
       "value": "replace_node",
-      "start": 793,
-      "end": 805,
+      "start": 796,
+      "end": 808,
       "loc": {
         "start": {
           "line": 25,
@@ -2789,8 +2895,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 805,
-      "end": 806,
+      "start": 808,
+      "end": 809,
       "loc": {
         "start": {
           "line": 25,
@@ -2815,8 +2921,8 @@
         "binop": null
       },
       "value": "n",
-      "start": 806,
-      "end": 807,
+      "start": 809,
+      "end": 810,
       "loc": {
         "start": {
           "line": 25,
@@ -2841,8 +2947,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 807,
-      "end": 808,
+      "start": 810,
+      "end": 811,
       "loc": {
         "start": {
           "line": 25,
@@ -2867,8 +2973,8 @@
         "binop": null
       },
       "value": "child",
-      "start": 809,
-      "end": 814,
+      "start": 812,
+      "end": 817,
       "loc": {
         "start": {
           "line": 25,
@@ -2892,8 +2998,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 814,
-      "end": 815,
+      "start": 817,
+      "end": 818,
       "loc": {
         "start": {
           "line": 25,
@@ -2918,8 +3024,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 815,
-      "end": 816,
+      "start": 818,
+      "end": 819,
       "loc": {
         "start": {
           "line": 25,
@@ -2934,8 +3040,8 @@
     {
       "type": "CommentLine",
       "value": " If n is black, deleting it reduces the black-height of every path going",
-      "start": 819,
-      "end": 893,
+      "start": 822,
+      "end": 896,
       "loc": {
         "start": {
           "line": 27,
@@ -2950,8 +3056,8 @@
     {
       "type": "CommentLine",
       "value": " through it by 1.",
-      "start": 895,
-      "end": 914,
+      "start": 898,
+      "end": 917,
       "loc": {
         "start": {
           "line": 28,
@@ -2978,8 +3084,8 @@
         "updateContext": null
       },
       "value": "if",
-      "start": 916,
-      "end": 918,
+      "start": 919,
+      "end": 921,
       "loc": {
         "start": {
           "line": 29,
@@ -3003,8 +3109,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 919,
-      "end": 920,
+      "start": 922,
+      "end": 923,
       "loc": {
         "start": {
           "line": 29,
@@ -3029,8 +3135,8 @@
         "binop": null
       },
       "value": "n",
-      "start": 920,
-      "end": 921,
+      "start": 923,
+      "end": 924,
       "loc": {
         "start": {
           "line": 29,
@@ -3055,8 +3161,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 921,
-      "end": 922,
+      "start": 924,
+      "end": 925,
       "loc": {
         "start": {
           "line": 29,
@@ -3080,9 +3186,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "color",
-      "start": 922,
-      "end": 927,
+      "value": "_color",
+      "start": 925,
+      "end": 931,
       "loc": {
         "start": {
           "line": 29,
@@ -3090,7 +3196,7 @@
         },
         "end": {
           "line": 29,
-          "column": 12
+          "column": 13
         }
       }
     },
@@ -3108,16 +3214,16 @@
         "updateContext": null
       },
       "value": "===",
-      "start": 928,
-      "end": 931,
+      "start": 932,
+      "end": 935,
       "loc": {
         "start": {
           "line": 29,
-          "column": 13
+          "column": 14
         },
         "end": {
           "line": 29,
-          "column": 16
+          "column": 17
         }
       }
     },
@@ -3134,16 +3240,16 @@
         "binop": null
       },
       "value": "BLACK",
-      "start": 932,
-      "end": 937,
+      "start": 936,
+      "end": 941,
       "loc": {
         "start": {
           "line": 29,
-          "column": 17
+          "column": 18
         },
         "end": {
           "line": 29,
-          "column": 22
+          "column": 23
         }
       }
     },
@@ -3159,16 +3265,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 937,
-      "end": 938,
+      "start": 941,
+      "end": 942,
       "loc": {
         "start": {
           "line": 29,
-          "column": 22
+          "column": 23
         },
         "end": {
           "line": 29,
-          "column": 23
+          "column": 24
         }
       }
     },
@@ -3184,24 +3290,24 @@
         "postfix": false,
         "binop": null
       },
-      "start": 939,
-      "end": 940,
+      "start": 943,
+      "end": 944,
       "loc": {
         "start": {
           "line": 29,
-          "column": 24
+          "column": 25
         },
         "end": {
           "line": 29,
-          "column": 25
+          "column": 26
         }
       }
     },
     {
       "type": "CommentLine",
       "value": " We can easily fix this when its left child is an",
-      "start": 943,
-      "end": 994,
+      "start": 947,
+      "end": 998,
       "loc": {
         "start": {
           "line": 30,
@@ -3216,8 +3322,8 @@
     {
       "type": "CommentLine",
       "value": " internal red node: change the color of the left child to black and",
-      "start": 997,
-      "end": 1066,
+      "start": 1001,
+      "end": 1070,
       "loc": {
         "start": {
           "line": 31,
@@ -3232,8 +3338,8 @@
     {
       "type": "CommentLine",
       "value": " replace n with it.",
-      "start": 1069,
-      "end": 1090,
+      "start": 1073,
+      "end": 1094,
       "loc": {
         "start": {
           "line": 32,
@@ -3260,8 +3366,8 @@
         "updateContext": null
       },
       "value": "if",
-      "start": 1093,
-      "end": 1095,
+      "start": 1097,
+      "end": 1099,
       "loc": {
         "start": {
           "line": 33,
@@ -3285,8 +3391,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1096,
-      "end": 1097,
+      "start": 1100,
+      "end": 1101,
       "loc": {
         "start": {
           "line": 33,
@@ -3311,8 +3417,8 @@
         "binop": null
       },
       "value": "child",
-      "start": 1097,
-      "end": 1102,
+      "start": 1101,
+      "end": 1106,
       "loc": {
         "start": {
           "line": 33,
@@ -3337,8 +3443,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1102,
-      "end": 1103,
+      "start": 1106,
+      "end": 1107,
       "loc": {
         "start": {
           "line": 33,
@@ -3362,9 +3468,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "color",
-      "start": 1103,
-      "end": 1108,
+      "value": "_color",
+      "start": 1107,
+      "end": 1113,
       "loc": {
         "start": {
           "line": 33,
@@ -3372,7 +3478,7 @@
         },
         "end": {
           "line": 33,
-          "column": 17
+          "column": 18
         }
       }
     },
@@ -3390,16 +3496,16 @@
         "updateContext": null
       },
       "value": "===",
-      "start": 1109,
-      "end": 1112,
+      "start": 1114,
+      "end": 1117,
       "loc": {
         "start": {
           "line": 33,
-          "column": 18
+          "column": 19
         },
         "end": {
           "line": 33,
-          "column": 21
+          "column": 22
         }
       }
     },
@@ -3416,16 +3522,16 @@
         "binop": null
       },
       "value": "RED",
-      "start": 1113,
-      "end": 1116,
+      "start": 1118,
+      "end": 1121,
       "loc": {
         "start": {
           "line": 33,
-          "column": 22
+          "column": 23
         },
         "end": {
           "line": 33,
-          "column": 25
+          "column": 26
         }
       }
     },
@@ -3441,16 +3547,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1116,
-      "end": 1117,
+      "start": 1121,
+      "end": 1122,
       "loc": {
         "start": {
           "line": 33,
-          "column": 25
+          "column": 26
         },
         "end": {
           "line": 33,
-          "column": 26
+          "column": 27
         }
       }
     },
@@ -3467,16 +3573,16 @@
         "binop": null
       },
       "value": "child",
-      "start": 1118,
-      "end": 1123,
+      "start": 1123,
+      "end": 1128,
       "loc": {
         "start": {
           "line": 33,
-          "column": 27
+          "column": 28
         },
         "end": {
           "line": 33,
-          "column": 32
+          "column": 33
         }
       }
     },
@@ -3493,16 +3599,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1123,
-      "end": 1124,
+      "start": 1128,
+      "end": 1129,
       "loc": {
         "start": {
           "line": 33,
-          "column": 32
+          "column": 33
         },
         "end": {
           "line": 33,
-          "column": 33
+          "column": 34
         }
       }
     },
@@ -3518,17 +3624,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "color",
-      "start": 1124,
-      "end": 1129,
+      "value": "_color",
+      "start": 1129,
+      "end": 1135,
       "loc": {
         "start": {
           "line": 33,
-          "column": 33
+          "column": 34
         },
         "end": {
           "line": 33,
-          "column": 38
+          "column": 40
         }
       }
     },
@@ -3546,16 +3652,16 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 1130,
-      "end": 1131,
+      "start": 1136,
+      "end": 1137,
       "loc": {
         "start": {
           "line": 33,
-          "column": 39
+          "column": 41
         },
         "end": {
           "line": 33,
-          "column": 40
+          "column": 42
         }
       }
     },
@@ -3572,16 +3678,16 @@
         "binop": null
       },
       "value": "BLACK",
-      "start": 1132,
-      "end": 1137,
+      "start": 1138,
+      "end": 1143,
       "loc": {
         "start": {
           "line": 33,
-          "column": 41
+          "column": 43
         },
         "end": {
           "line": 33,
-          "column": 46
+          "column": 48
         }
       }
     },
@@ -3598,24 +3704,24 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1137,
-      "end": 1138,
+      "start": 1143,
+      "end": 1144,
       "loc": {
         "start": {
           "line": 33,
-          "column": 46
+          "column": 48
         },
         "end": {
           "line": 33,
-          "column": 47
+          "column": 49
         }
       }
     },
     {
       "type": "CommentLine",
       "value": " Otherwise, there are more things to fix.",
-      "start": 1141,
-      "end": 1184,
+      "start": 1147,
+      "end": 1190,
       "loc": {
         "start": {
           "line": 34,
@@ -3642,8 +3748,8 @@
         "updateContext": null
       },
       "value": "else",
-      "start": 1187,
-      "end": 1191,
+      "start": 1193,
+      "end": 1197,
       "loc": {
         "start": {
           "line": 35,
@@ -3668,8 +3774,8 @@
         "binop": null
       },
       "value": "delete_case1",
-      "start": 1192,
-      "end": 1204,
+      "start": 1198,
+      "end": 1210,
       "loc": {
         "start": {
           "line": 35,
@@ -3693,8 +3799,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1204,
-      "end": 1205,
+      "start": 1210,
+      "end": 1211,
       "loc": {
         "start": {
           "line": 35,
@@ -3719,8 +3825,8 @@
         "binop": null
       },
       "value": "child",
-      "start": 1205,
-      "end": 1210,
+      "start": 1211,
+      "end": 1216,
       "loc": {
         "start": {
           "line": 35,
@@ -3744,8 +3850,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1210,
-      "end": 1211,
+      "start": 1216,
+      "end": 1217,
       "loc": {
         "start": {
           "line": 35,
@@ -3770,8 +3876,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1211,
-      "end": 1212,
+      "start": 1217,
+      "end": 1218,
       "loc": {
         "start": {
           "line": 35,
@@ -3795,8 +3901,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1214,
-      "end": 1215,
+      "start": 1220,
+      "end": 1221,
       "loc": {
         "start": {
           "line": 36,
@@ -3811,8 +3917,8 @@
     {
       "type": "CommentLine",
       "value": " Else {",
-      "start": 1218,
-      "end": 1227,
+      "start": 1224,
+      "end": 1233,
       "loc": {
         "start": {
           "line": 38,
@@ -3827,8 +3933,8 @@
     {
       "type": "CommentLine",
       "value": "    If n is red then its child can only be black. Replacing n with its",
-      "start": 1229,
-      "end": 1301,
+      "start": 1235,
+      "end": 1307,
       "loc": {
         "start": {
           "line": 39,
@@ -3843,8 +3949,8 @@
     {
       "type": "CommentLine",
       "value": "    child suffices.",
-      "start": 1303,
-      "end": 1324,
+      "start": 1309,
+      "end": 1330,
       "loc": {
         "start": {
           "line": 40,
@@ -3859,8 +3965,8 @@
     {
       "type": "CommentLine",
       "value": " }",
-      "start": 1326,
-      "end": 1330,
+      "start": 1332,
+      "end": 1336,
       "loc": {
         "start": {
           "line": 41,
@@ -3884,8 +3990,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1331,
-      "end": 1332,
+      "start": 1337,
+      "end": 1338,
       "loc": {
         "start": {
           "line": 42,
@@ -3894,6 +4000,32 @@
         "end": {
           "line": 42,
           "column": 1
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1338,
+      "end": 1339,
+      "loc": {
+        "start": {
+          "line": 42,
+          "column": 1
+        },
+        "end": {
+          "line": 42,
+          "column": 2
         }
       }
     },
@@ -3910,8 +4042,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1333,
-      "end": 1333,
+      "start": 1340,
+      "end": 1340,
       "loc": {
         "start": {
           "line": 43,

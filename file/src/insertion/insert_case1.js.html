@@ -72,7 +72,7 @@ import {insert_case2} from &apos;./insert_case2.js&apos;;
  *
  * @param {Node} n - The input node.
  */
-export function insert_case1(n) {
+export const insert_case1 = (n) =&gt; {
 	/**
 	 * If n is the root of the tree, paint it black and we are done.
 	 *
@@ -80,9 +80,9 @@ export function insert_case1(n) {
 	 *      / \
 	 *     -   -
 	 */
-	if (n.parent === null) n.color = BLACK;
+	if (n.parent === null) n._color = BLACK;
 	else insert_case2(n);
-}
+};
 </code></pre>
 
 </div>

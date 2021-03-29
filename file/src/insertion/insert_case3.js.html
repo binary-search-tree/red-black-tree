@@ -76,7 +76,7 @@ import {insert_case4} from &apos;./insert_case4.js&apos;;
  *
  * @param {Node} n - The input node.
  */
-export function insert_case3(n) {
+export const insert_case3 = (n) =&gt; {
 	const u = uncle(n);
 
 	/**
@@ -93,14 +93,14 @@ export function insert_case3(n) {
 	 *     -   -                 -   -
 	 */
 
-	if (u !== null &amp;&amp; u.color === RED) {
-		n.parent.color = BLACK;
-		u.color = BLACK;
+	if (u !== null &amp;&amp; u._color === RED) {
+		n.parent._color = BLACK;
+		u._color = BLACK;
 		const g = grandparent(n);
-		g.color = RED;
+		g._color = RED;
 		insert_case1(g);
 	} else insert_case4(n);
-}
+};
 </code></pre>
 
 </div>

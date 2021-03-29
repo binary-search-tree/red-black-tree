@@ -522,6 +522,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/adt/redblacktree.js~redblacktree#isempty",
+    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-isEmpty",
+    "src/adt/RedBlackTree.js~RedBlackTree#isEmpty",
+    "method"
+  ],
+  [
     "src/adt/redblacktree.js~redblacktree#items",
     "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-items",
     "src/adt/RedBlackTree.js~RedBlackTree#items",

@@ -71,7 +71,7 @@
  * @param {Key} key - The key to search for.
  * @returns {Node}
  */
-export function search(compare, root, key) {
+export const search = (compare, root, key) =&gt; {
 	while (true) {
 		const d = compare(key, root.key);
 
@@ -81,11 +81,11 @@ export function search(compare, root, key) {
 
 		root = d &lt; 0 ? root.left : root.right;
 
-		if (root.isleaf()) {
+		if (root.isLeaf()) {
 			return null;
 		}
 	}
-}
+};
 </code></pre>
 
 </div>

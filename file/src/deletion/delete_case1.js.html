@@ -73,11 +73,11 @@
  *
  * @param {Node} n - The input node.
  */
-export function delete_case1(n) {
+export const delete_case1 = (n) =&gt; {
 	// If n is the root, there is nothing to do: all paths go through n, and n
 	// is black.
 	if (n.parent !== null) delete_case2(n);
-}
+};
 </code></pre>
 
 </div>

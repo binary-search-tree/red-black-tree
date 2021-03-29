@@ -70,14 +70,14 @@
  * @param {Node} node - The input node.
  * @returns {Node}
  */
-export function predecessor(node) {
-	// Assert( !node.left.isleaf() ) ;
+export const predecessor = (node) =&gt; {
+	// Assert( !node.left.isLeaf() ) ;
 	let pred = node.left;
 
-	while (!pred.right.isleaf()) pred = pred.right;
+	while (!pred.right.isLeaf()) pred = pred.right;
 
 	return pred;
-}
+};
 </code></pre>
 
 </div>

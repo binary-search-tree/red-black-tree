@@ -78,14 +78,14 @@
  *
  */
 
-export function rotate_left(A) {
+export const rotate_left = (A) =&gt; {
 	const B = A.right;
 	const a = A.left;
 	const b = B.left;
 	const c = B.right;
 
 	[A.key, B.key] = [B.key, A.key];
-	[A.color, B.color] = [B.color, A.color];
+	[A._color, B._color] = [B._color, A._color];
 
 	A.left = B;
 	A.right = c;
@@ -96,7 +96,7 @@ export function rotate_left(A) {
 	a.parent = B;
 	b.parent = B;
 	c.parent = A;
-}
+};
 </code></pre>
 
 </div>

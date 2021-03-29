@@ -874,14 +874,13 @@ exist.</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-_debug">_debug</a></span></span><span class="code" data-ice="signature">(root: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-_debug">_debug</a></span></span><span class="code" data-ice="signature">(colors: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Recursively constructs a prettyprint string for the red-black tree rooted at
-<code>root</code>.</p>
+        <div data-ice="description"><p>Builds a debug function from color handlers.</p>
 </div>
       </div>
     </td>
@@ -2711,19 +2710,18 @@ exist.</p>
     
     
     
-    <span class="code" data-ice="name">_debug</span><span class="code" data-ice="signature">(root: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></span>
+    <span class="code" data-ice="name">_debug</span><span class="code" data-ice="signature">(colors: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/debug/debug.js.html#lineNumber10">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/debug/debug.js.html#lineNumber9">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_debug} from &apos;<span><a href="file/src/debug/debug.js.html#lineNumber10">@aureooms/js-red-black-tree/src/debug/debug.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_debug} from &apos;<span><a href="file/src/debug/debug.js.html#lineNumber9">@aureooms/js-red-black-tree/src/debug/debug.js</a></span>&apos;</code></pre></div>
   
   
-  <div data-ice="description"><p>Recursively constructs a prettyprint string for the red-black tree rooted at
-<code>root</code>.</p>
+  <div data-ice="description"><p>Builds a debug function from color handlers.</p>
 </div>
 
   
@@ -2737,10 +2735,10 @@ exist.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">root</td>
-      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
+      <td data-ice="name" class="code" data-depth="0">colors</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>The root of the tree.</p>
+      <td data-ice="description"><p>The colors to use.</p>
 </td>
     </tr>
 </tbody>
@@ -2753,8 +2751,9 @@ exist.</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
-          
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The debug function.</p>
+</td>
         </tr>
       </tbody>
     </table>

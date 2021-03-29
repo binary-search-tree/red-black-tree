@@ -79,7 +79,7 @@ import {delete_case5} from &apos;./delete_case5.js&apos;;
  *
  * @param {Node} n - The input node.
  */
-export function delete_case4(n) {
+export const delete_case4 = (n) =&gt; {
 	const s = sibling(n);
 
 	/**
@@ -98,17 +98,17 @@ export function delete_case4(n) {
 	 */
 	if (
 		// The parent color test is always true when coming from case 2
-		n.parent.color === RED &amp;&amp;
-		s.left.color === BLACK &amp;&amp;
-		s.right.color === BLACK
+		n.parent._color === RED &amp;&amp;
+		s.left._color === BLACK &amp;&amp;
+		s.right._color === BLACK
 	) {
-		s.color = RED;
-		n.parent.color = BLACK;
+		s._color = RED;
+		n.parent._color = BLACK;
 	}
 
 	// Otherwise, go to case 5.
 	else delete_case5(n);
-}
+};
 </code></pre>
 
 </div>

@@ -77,12 +77,12 @@ import {grandparent} from &apos;../family/grandparent.js&apos;;
  *
  * @param {Node} n - The input node.
  */
-export function insert_case5(n) {
+export const insert_case5 = (n) =&gt; {
 	const g = grandparent(n);
 
 	// Repaint n&apos;s parent black, n&apos;s grandparent red
-	n.parent.color = BLACK;
-	g.color = RED;
+	n.parent._color = BLACK;
+	g._color = RED;
 
 	/**
 	 * If the path from g to n makes a left-left, {@link rotate_right} at g.
@@ -109,7 +109,7 @@ export function insert_case5(n) {
 	 *                  / \       / \
 	 *                 =   =     -   -
 	 */ else rotate_left(g);
-}
+};
 </code></pre>
 
 </div>

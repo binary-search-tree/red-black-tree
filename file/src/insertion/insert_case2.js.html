@@ -73,7 +73,7 @@ import {insert_case3} from &apos;./insert_case3.js&apos;;
  *
  * @param {Node} n - The input node.
  */
-export function insert_case2(n) {
+export const insert_case2 = (n) =&gt; {
 	/**
 	 * If the parent of n is black then we have nothing to do.
 	 *
@@ -83,10 +83,10 @@ export function insert_case2(n) {
 	 *      / \
 	 *     -   -
 	 */
-	if (n.parent.color === BLACK) return;
+	if (n.parent._color === BLACK) return;
 
 	insert_case3(n);
-}
+};
 </code></pre>
 
 </div>

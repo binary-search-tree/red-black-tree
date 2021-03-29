@@ -79,12 +79,12 @@
  * @param {Node} B - The node to insert.
  * @returns {Node} B - The node that has been inserted.
  */
-export function insert(compare, A, B) {
+export const insert = (compare, A, B) =&gt; {
 	while (true) {
 		if (compare(B.key, A.key) &lt; 0) {
 			const node = A.left;
 
-			if (node.isleaf()) {
+			if (node.isLeaf()) {
 				A.left = B;
 				break;
 			}
@@ -93,7 +93,7 @@ export function insert(compare, A, B) {
 		} else {
 			const node = A.right;
 
-			if (node.isleaf()) {
+			if (node.isLeaf()) {
 				A.right = B;
 				break;
 			}
@@ -105,7 +105,7 @@ export function insert(compare, A, B) {
 	B.parent = A;
 
 	return B;
-}
+};
 </code></pre>
 
 </div>
