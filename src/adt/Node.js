@@ -9,7 +9,7 @@ import {Leaf} from './Leaf.js';
  * @returns {Node}
  */
 export function Node(color, key) {
-	this.color = color;
+	this._color = color;
 	this.left = new Leaf(this);
 	this.right = new Leaf(this);
 	this.parent = null;

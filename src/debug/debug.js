@@ -17,7 +17,7 @@ export const _debug = ({red, black}) => {
 	const debug = (root) => {
 		if (root.isLeaf()) return black('L');
 
-		const repr = root.color === BLACK ? black(root.key) : red(root.key);
+		const repr = root._color === BLACK ? black(root.key) : red(root.key);
 
 		return `(${debug(root.left)}, ${repr}, ${debug(root.right)})`;
 	};

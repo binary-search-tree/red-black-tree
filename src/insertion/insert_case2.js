@@ -18,7 +18,7 @@ export const insert_case2 = (n) => {
 	 *      / \
 	 *     -   -
 	 */
-	if (n.parent.color === BLACK) return;
+	if (n.parent._color === BLACK) return;
 
 	insert_case3(n);
 };

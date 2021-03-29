@@ -26,11 +26,11 @@ export const delete_one_child = (n) => {
 
 	// If n is black, deleting it reduces the black-height of every path going
 	// through it by 1.
-	if (n.color === BLACK) {
+	if (n._color === BLACK) {
 		// We can easily fix this when its left child is an
 		// internal red node: change the color of the left child to black and
 		// replace n with it.
-		if (child.color === RED) child.color = BLACK;
+		if (child._color === RED) child._color = BLACK;
 		// Otherwise, there are more things to fix.
 		else delete_case1(child);
 	}

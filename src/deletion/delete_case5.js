@@ -33,11 +33,11 @@ export const delete_case5 = (n) => {
 	 *                                            / \
 	 *                                           -   -
 	 */
-	if (n === n.parent.left && s.right.color === BLACK) {
-		s.color = RED;
-		s.left.color = BLACK;
+	if (n === n.parent.left && s.right._color === BLACK) {
+		s._color = RED;
+		s.left._color = BLACK;
 		rotate_right(s);
-	} else if (n === n.parent.right && s.left.color === BLACK) {
+	} else if (n === n.parent.right && s.left._color === BLACK) {
 		/**
 		 *           ?                       ?
 		 *         /   \                  /     \
@@ -49,8 +49,8 @@ export const delete_case5 = (n) => {
 		 *                         / \
 		 *                        -   -
 		 */
-		s.color = RED;
-		s.right.color = BLACK;
+		s._color = RED;
+		s.right._color = BLACK;
 		rotate_left(s);
 	}
 

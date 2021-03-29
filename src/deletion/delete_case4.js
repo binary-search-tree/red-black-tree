@@ -33,12 +33,12 @@ export const delete_case4 = (n) => {
 	 */
 	if (
 		// The parent color test is always true when coming from case 2
-		n.parent.color === RED &&
-		s.left.color === BLACK &&
-		s.right.color === BLACK
+		n.parent._color === RED &&
+		s.left._color === BLACK &&
+		s.right._color === BLACK
 	) {
-		s.color = RED;
-		n.parent.color = BLACK;
+		s._color = RED;
+		n.parent._color = BLACK;
 	}
 
 	// Otherwise, go to case 5.

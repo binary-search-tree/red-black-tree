@@ -16,8 +16,8 @@ export const insert_case5 = (n) => {
 	const g = grandparent(n);
 
 	// Repaint n's parent black, n's grandparent red
-	n.parent.color = BLACK;
-	g.color = RED;
+	n.parent._color = BLACK;
+	g._color = RED;
 
 	/**
 	 * If the path from g to n makes a left-left, {@link rotate_right} at g.

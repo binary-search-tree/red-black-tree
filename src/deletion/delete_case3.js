@@ -31,11 +31,11 @@ export const delete_case3 = (n) => {
 	 *          -   - -   -             -   - -   -
 	 */
 	if (
-		n.parent.color === BLACK &&
-		s.left.color === BLACK &&
-		s.right.color === BLACK
+		n.parent._color === BLACK &&
+		s.left._color === BLACK &&
+		s.right._color === BLACK
 	) {
-		s.color = RED;
+		s._color = RED;
 		delete_case1(n.parent);
 	}
 

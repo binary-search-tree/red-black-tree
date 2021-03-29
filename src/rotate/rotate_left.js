@@ -20,7 +20,7 @@ export const rotate_left = (A) => {
 	const c = B.right;
 
 	[A.key, B.key] = [B.key, A.key];
-	[A.color, B.color] = [B.color, A.color];
+	[A._color, B._color] = [B._color, A._color];
 
 	A.left = B;
 	A.right = c;

@@ -28,11 +28,11 @@ export const insert_case3 = (n) => {
 	 *     -   -                 -   -
 	 */
 
-	if (u !== null && u.color === RED) {
-		n.parent.color = BLACK;
-		u.color = BLACK;
+	if (u !== null && u._color === RED) {
+		n.parent._color = BLACK;
+		u._color = BLACK;
 		const g = grandparent(n);
-		g.color = RED;
+		g._color = RED;
 		insert_case1(g);
 	} else insert_case4(n);
 };

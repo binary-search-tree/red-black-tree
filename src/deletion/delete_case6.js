@@ -35,17 +35,17 @@ export const delete_case6 = (n) => {
 	 *                   -   -
 	 */
 
-	s.color = n.parent.color;
-	n.parent.color = BLACK;
+	s._color = n.parent._color;
+	n.parent._color = BLACK;
 
 	if (n === n.parent.left) {
-		s.right.color = BLACK;
+		s.right._color = BLACK;
 		rotate_left(n.parent);
 	}
 
 	// Symmetric case
 	else {
-		s.left.color = BLACK;
+		s.left._color = BLACK;
 		rotate_right(n.parent);
 	}
 };

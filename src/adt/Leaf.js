@@ -8,7 +8,7 @@ import {BLACK} from '../color/BLACK.js';
  * @returns {Leaf}
  */
 export function Leaf(parent) {
-	this.color = BLACK;
+	this._color = BLACK;
 	this.parent = parent;
 }
 

@@ -28,9 +28,9 @@ export const delete_case2 = (n) => {
 	 *           / \   / \       / \   / \
 	 *          =   = =   =     -   - =   =
 	 */
-	if (s.color === RED) {
-		n.parent.color = RED;
-		s.color = BLACK;
+	if (s._color === RED) {
+		n.parent._color = RED;
+		s._color = BLACK;
 		if (n === n.parent.left) rotate_left(n.parent);
 		else rotate_right(n.parent);
 		delete_case4(n);
