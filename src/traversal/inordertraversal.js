@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {Node} from '../adt/Node.js';
+import Node from '../adt/Node.js';
 
 /**
  * Traverses the tree rooted at <code>node</code> in order.
@@ -7,7 +7,7 @@ import {Node} from '../adt/Node.js';
  * @param {Node} node - The root of the tree.
  * @returns {IterableIterator}
  */
-export function* inordertraversal(node) {
+export default function* inordertraversal(node) {
 	assert(node instanceof Node);
 	if (!node.left.isLeaf()) {
 		// Yield the nodes on the left recursively. Those nodes are all smaller

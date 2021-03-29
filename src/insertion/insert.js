@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {Node} from '../adt/Node.js';
+import Node from '../adt/Node.js';
 
 /**
  * Walks the tree rooted at <code>A</code> down the only path that satisfies
@@ -17,7 +17,7 @@ import {Node} from '../adt/Node.js';
  * @param {Node} B - The node to insert.
  * @returns {Node} B - The node that has been inserted.
  */
-export const insert = (compare, A, B) => {
+const insert = (compare, A, B) => {
 	while (true) {
 		if (compare(B.key, A.key) < 0) {
 			const node = A.left;
@@ -46,3 +46,5 @@ export const insert = (compare, A, B) => {
 
 	return B;
 };
+
+export default insert;

@@ -1,6 +1,6 @@
 import assert from 'assert';
-import {BLACK} from '../color/BLACK.js';
-import {Node} from './Node.js';
+import BLACK from '../color/BLACK.js';
+import Node from './Node.js';
 
 /**
  * A black leaf node.
@@ -8,7 +8,7 @@ import {Node} from './Node.js';
  * @class
  * @param {Node} parent - The parent node in the tree.
  */
-export function Leaf(parent) {
+export default function Leaf(parent) {
 	assert(parent instanceof Node);
 	/** @constant {number} The color of the node. */
 	this._color = BLACK;

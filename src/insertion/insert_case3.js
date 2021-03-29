@@ -1,10 +1,11 @@
 import assert from 'assert';
-import {Node} from '../adt/Node.js';
-import {BLACK} from '../color/BLACK.js';
-import {RED} from '../color/RED.js';
-import {uncle, grandparent} from '../family/index.js';
-import {insert_case1} from './insert_case1.js';
-import {insert_case4} from './insert_case4.js';
+import Node from '../adt/Node.js';
+import BLACK from '../color/BLACK.js';
+import RED from '../color/RED.js';
+import uncle from '../family/uncle.js';
+import grandparent from '../family/grandparent.js';
+import insert_case1 from './insert_case1.js';
+import insert_case4 from './insert_case4.js';
 
 /**
  * Preconditions:
@@ -14,7 +15,7 @@ import {insert_case4} from './insert_case4.js';
  *
  * @param {Node} n - The input node.
  */
-export const insert_case3 = (n) => {
+const insert_case3 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === RED);
 	assert(n.parent !== null);
@@ -43,3 +44,5 @@ export const insert_case3 = (n) => {
 		insert_case1(g);
 	} else insert_case4(n);
 };
+
+export default insert_case3;

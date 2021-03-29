@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {Node} from '../adt/Node.js';
+import Node from '../adt/Node.js';
 
 /**
  * Rotate tree right. (see https://en.wikipedia.org/wiki/Tree_rotation)
@@ -16,7 +16,7 @@ import {Node} from '../adt/Node.js';
  *
  */
 
-export const rotate_right = (B) => {
+const rotate_right = (B) => {
 	assert(B instanceof Node);
 	const A = B.left;
 	assert(A instanceof Node);
@@ -37,3 +37,5 @@ export const rotate_right = (B) => {
 	b.parent = A;
 	c.parent = A;
 };
+
+export default rotate_right;

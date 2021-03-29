@@ -1,10 +1,11 @@
 import assert from 'assert';
-import {BLACK, RED} from '../color/index.js';
-import {Node} from '../adt/Node.js';
-import {Leaf} from '../adt/Leaf.js';
+import BLACK from '../color/BLACK.js';
+import RED from '../color/RED.js';
+import Node from '../adt/Node.js';
+import Leaf from '../adt/Leaf.js';
 
-import {replace_node} from './replace_node.js';
-import {delete_case1} from './delete_case1.js';
+import replace_node from './replace_node.js';
+import delete_case1 from './delete_case1.js';
 
 /**
  * Delete a node <code>n</code> that has at most a single non-leaf child.
@@ -16,7 +17,7 @@ import {delete_case1} from './delete_case1.js';
  *
  * @param {Node} n - The node to delete.
  */
-export const delete_one_child = (n) => {
+const delete_one_child = (n) => {
 	assert(n instanceof Node);
 	// Precondition: n's right child is a leaf.
 	// The right child of n is always a LEAF because either n is a subtree
@@ -40,10 +41,11 @@ export const delete_one_child = (n) => {
 		else {
 			delete_case1(child);
 		}
+	} else {
+		//    If n is red then its child can only be black. Replacing n with its
+		//    child suffices. This is a NO-OP.
+		assert(child._color === BLACK);
 	}
-
-	// Else {
-	//    If n is red then its child can only be black. Replacing n with its
-	//    child suffices.
-	// }
 };
+
+export default delete_one_child;

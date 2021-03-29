@@ -1,6 +1,6 @@
 import assert from 'assert';
-import {Node} from '../adt/Node.js';
-import {grandparent} from './grandparent.js';
+import Node from '../adt/Node.js';
+import grandparent from './grandparent.js';
 
 /**
  * Computes the uncle of the input node when the grandparent is guaranteed to
@@ -9,7 +9,7 @@ import {grandparent} from './grandparent.js';
  * @param {Node} node - The input node.
  * @returns {Node}
  */
-export const uncle = (node) => {
+const uncle = (node) => {
 	assert(node instanceof Node);
 	const g = grandparent(node);
 	assert(g !== null);
@@ -23,3 +23,5 @@ export const uncle = (node) => {
 	assert(g.left instanceof Node);
 	return g.left;
 };
+
+export default uncle;

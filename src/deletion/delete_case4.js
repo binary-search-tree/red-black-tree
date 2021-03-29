@@ -1,10 +1,11 @@
 import assert from 'assert';
-import {BLACK, RED} from '../color/index.js';
-import {Node} from '../adt/Node.js';
-import {Leaf} from '../adt/Leaf.js';
-import {sibling} from '../family/sibling.js';
+import BLACK from '../color/BLACK.js';
+import RED from '../color/RED.js';
+import Node from '../adt/Node.js';
+import Leaf from '../adt/Leaf.js';
+import sibling from '../family/sibling.js';
 
-import {delete_case5} from './delete_case5.js';
+import delete_case5 from './delete_case5.js';
 
 /**
  * Preconditions:
@@ -17,7 +18,7 @@ import {delete_case5} from './delete_case5.js';
  *
  * @param {Node|Leaf} n - The input node.
  */
-export const delete_case4 = (n) => {
+const delete_case4 = (n) => {
 	assert(n instanceof Node || n instanceof Leaf);
 	assert(n._color === BLACK);
 	assert(n.parent !== null);
@@ -55,3 +56,5 @@ export const delete_case4 = (n) => {
 	// Otherwise, go to case 5.
 	else delete_case5(n);
 };
+
+export default delete_case4;

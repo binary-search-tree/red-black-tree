@@ -1,9 +1,10 @@
 import assert from 'assert';
-import {Node} from '../adt/Node.js';
-import {BLACK} from '../color/BLACK.js';
-import {RED} from '../color/RED.js';
-import {rotate_left, rotate_right} from '../rotate/index.js';
-import {grandparent} from '../family/grandparent.js';
+import Node from '../adt/Node.js';
+import BLACK from '../color/BLACK.js';
+import RED from '../color/RED.js';
+import rotate_left from '../rotate/rotate_left.js';
+import rotate_right from '../rotate/rotate_right.js';
+import grandparent from '../family/grandparent.js';
 
 /**
  * Preconditions:
@@ -15,7 +16,7 @@ import {grandparent} from '../family/grandparent.js';
  *
  * @param {Node} n - The input node.
  */
-export const insert_case5 = (n) => {
+const insert_case5 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === RED);
 	assert(n.parent !== null);
@@ -62,3 +63,5 @@ export const insert_case5 = (n) => {
 		rotate_left(g);
 	}
 };
+
+export default insert_case5;

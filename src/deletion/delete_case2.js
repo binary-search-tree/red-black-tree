@@ -1,12 +1,14 @@
 import assert from 'assert';
-import {BLACK, RED} from '../color/index.js';
-import {Node} from '../adt/Node.js';
-import {Leaf} from '../adt/Leaf.js';
-import {rotate_left, rotate_right} from '../rotate/index.js';
-import {sibling} from '../family/sibling.js';
+import BLACK from '../color/BLACK.js';
+import RED from '../color/RED.js';
+import Node from '../adt/Node.js';
+import Leaf from '../adt/Leaf.js';
+import rotate_left from '../rotate/rotate_left.js';
+import rotate_right from '../rotate/rotate_right.js';
+import sibling from '../family/sibling.js';
 
-import {delete_case3} from './delete_case3.js';
-import {delete_case4} from './delete_case4.js';
+import delete_case3 from './delete_case3.js';
+import delete_case4 from './delete_case4.js';
 
 /**
  * Preconditions:
@@ -17,7 +19,7 @@ import {delete_case4} from './delete_case4.js';
  *
  * @param {Node|Leaf} n - The input node.
  */
-export const delete_case2 = (n) => {
+const delete_case2 = (n) => {
 	assert(n instanceof Node || n instanceof Leaf);
 	assert(n._color === BLACK);
 	assert(n.parent !== null);
@@ -46,3 +48,5 @@ export const delete_case2 = (n) => {
 	// Otherwise, go to case 3.
 	else delete_case3(n);
 };
+
+export default delete_case2;

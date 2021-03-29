@@ -1,4 +1,5 @@
 /**
  * Constant for black.
  */
-export const BLACK = 0;
+const BLACK = 0;
+export default BLACK;

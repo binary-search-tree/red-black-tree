@@ -1,8 +1,8 @@
 import assert from 'assert';
-import {BLACK} from '../color/BLACK.js';
-import {Node} from '../adt/Node.js';
-import {Leaf} from '../adt/Leaf.js';
-import {delete_case2} from './delete_case2.js';
+import BLACK from '../color/BLACK.js';
+import Node from '../adt/Node.js';
+import Leaf from '../adt/Leaf.js';
+import delete_case2 from './delete_case2.js';
 
 /**
  * Preconditions:
@@ -12,7 +12,7 @@ import {delete_case2} from './delete_case2.js';
  *
  * @param {Node|Leaf} n - The input node.
  */
-export const delete_case1 = (n) => {
+const delete_case1 = (n) => {
 	assert(n instanceof Node || n instanceof Leaf);
 	assert(n._color === BLACK);
 	// If n is the root, there is nothing to do:
@@ -20,3 +20,5 @@ export const delete_case1 = (n) => {
 	//   - n is black.
 	if (n.parent !== null) delete_case2(n);
 };
+
+export default delete_case1;

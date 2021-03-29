@@ -1,17 +1,20 @@
 import assert from 'assert';
-import {Node} from './Node.js';
-import {BLACK, RED} from '../color/index.js';
-import {predecessor} from '../family/predecessor.js';
-import {insert, insert_case2} from '../insertion/index.js';
-import {delete_one_child} from '../deletion/index.js';
-import {search} from '../search/index.js';
-import {inordertraversal, rangetraversal} from '../traversal/index.js';
+import Node from './Node.js';
+import BLACK from '../color/BLACK.js';
+import RED from '../color/RED.js';
+import predecessor from '../family/predecessor.js';
+import insert from '../insertion/insert.js';
+import insert_case2 from '../insertion/insert_case2.js';
+import delete_one_child from '../deletion/delete_one_child.js';
+import search from '../search/search.js';
+import inordertraversal from '../traversal/inordertraversal.js';
+import rangetraversal from '../traversal/rangetraversal.js';
 
 /**
  * A RedBlackTree with key-only nodes.
  *
  */
-export class RedBlackTree {
+export default class RedBlackTree {
 	/**
 	 * Constructs a new empty red-black tree.
 	 *

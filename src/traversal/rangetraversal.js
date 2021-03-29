@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {Node} from '../adt/Node.js';
+import Node from '../adt/Node.js';
 
 /**
  * Yields all the keys in the tree rooted at <code>root</code> that lie in the
@@ -11,7 +11,7 @@ import {Node} from '../adt/Node.js';
  * @param {any} right - The non-inclusive upper bound of the interval.
  * @returns {IterableIterator}
  */
-export function* rangetraversal(compare, root, left, right) {
+export default function* rangetraversal(compare, root, left, right) {
 	if (compare(root.key, left) < 0) {
 		// If the root lies to the left of the interval, we can discard the
 		// entire left subtree.

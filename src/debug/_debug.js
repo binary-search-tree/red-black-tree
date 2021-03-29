@@ -1,7 +1,7 @@
 import assert from 'assert';
-import {Node} from '../adt/Node.js';
-import {Leaf} from '../adt/Leaf.js';
-import {BLACK} from '../color/BLACK.js';
+import Node from '../adt/Node.js';
+import Leaf from '../adt/Leaf.js';
+import BLACK from '../color/BLACK.js';
 
 /**
  * Builds a debug function from color handlers.
@@ -9,7 +9,7 @@ import {BLACK} from '../color/BLACK.js';
  * @param {Object} colors The colors to use.
  * @returns {Function} The debug function.
  */
-export const _debug = ({red, black}) => {
+const _debug = ({red, black}) => {
 	/**
 	 * Recursively constructs a prettyprint string for the red-black tree rooted at
 	 * <code>root</code>.
@@ -33,3 +33,5 @@ export const _debug = ({red, black}) => {
 
 	return debug;
 };
+
+export default _debug;

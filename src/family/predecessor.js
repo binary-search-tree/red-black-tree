@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {Node} from '../adt/Node.js';
+import Node from '../adt/Node.js';
 
 /**
  * Computes the predecessor of the input node, in the subtree rooted at the
@@ -8,7 +8,7 @@ import {Node} from '../adt/Node.js';
  * @param {Node} node - The input node.
  * @returns {Node}
  */
-export const predecessor = (node) => {
+const predecessor = (node) => {
 	assert(node.left instanceof Node);
 	let pred = node.left;
 
@@ -19,3 +19,5 @@ export const predecessor = (node) => {
 
 	return pred;
 };
+
+export default predecessor;

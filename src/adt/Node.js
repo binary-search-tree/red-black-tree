@@ -1,4 +1,4 @@
-import {Leaf} from './Leaf.js';
+import Leaf from './Leaf.js';
 
 /**
  * An internal node. This node can be red or black.
@@ -7,7 +7,7 @@ import {Leaf} from './Leaf.js';
  * @param {number} color - The color of the node.
  * @param {any} key - The key of the node.
  */
-export function Node(color, key) {
+export default function Node(color, key) {
 	/** @member {number} The color of the node. */
 	this._color = color;
 	/** @member {Node|Leaf} The left child */

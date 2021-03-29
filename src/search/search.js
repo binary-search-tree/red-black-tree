@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {Node} from '../adt/Node.js';
+import Node from '../adt/Node.js';
 
 /**
  * Search for the first node whose key equals <code>key</code>.
@@ -9,7 +9,7 @@ import {Node} from '../adt/Node.js';
  * @param {any} key - The key to search for.
  * @returns {Node}
  */
-export const search = (compare, root, key) => {
+const search = (compare, root, key) => {
 	assert(root instanceof Node);
 	while (true) {
 		const d = compare(key, root.key);
@@ -28,3 +28,5 @@ export const search = (compare, root, key) => {
 		root = child;
 	}
 };
+
+export default search;
