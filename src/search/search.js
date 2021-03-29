@@ -1,12 +1,16 @@
+import assert from 'assert';
+import {Node} from '../adt/Node.js';
+
 /**
  * Search for the first node whose key equals <code>key</code>.
  *
  * @param {Function} compare - The comparison function.
  * @param {Node} root - The root of the tree to scan.
- * @param {Key} key - The key to search for.
+ * @param {any} key - The key to search for.
  * @returns {Node}
  */
 export const search = (compare, root, key) => {
+	assert(root instanceof Node);
 	while (true) {
 		const d = compare(key, root.key);
 
@@ -14,10 +18,13 @@ export const search = (compare, root, key) => {
 			return root;
 		}
 
-		root = d < 0 ? root.left : root.right;
+		const child = d < 0 ? root.left : root.right;
 
-		if (root.isLeaf()) {
+		if (child.isLeaf()) {
 			return null;
 		}
+
+		assert(child instanceof Node);
+		root = child;
 	}
 };

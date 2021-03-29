@@ -1,3 +1,6 @@
+import assert from 'assert';
+import {Node} from '../adt/Node.js';
+
 /**
  * Walks the tree rooted at <code>A</code> down the only path that satisfies
  * the following property: if at a node <code>C</code> we make a left (resp.
@@ -9,7 +12,7 @@
  * properties in case they have been violated by this insertion. This is fixed
  * by {@link insert_case1}.
  *
- * @param compare - The comparison function to use.
+ * @param {Function} compare - The comparison function to use.
  * @param {Node} A - The root of the tree.
  * @param {Node} B - The node to insert.
  * @returns {Node} B - The node that has been inserted.
@@ -24,6 +27,7 @@ export const insert = (compare, A, B) => {
 				break;
 			}
 
+			assert(node instanceof Node);
 			A = node;
 		} else {
 			const node = A.right;
@@ -33,6 +37,7 @@ export const insert = (compare, A, B) => {
 				break;
 			}
 
+			assert(node instanceof Node);
 			A = node;
 		}
 	}

@@ -1,4 +1,7 @@
+import assert from 'assert';
 import {BLACK, RED} from '../color/index.js';
+import {Node} from '../adt/Node.js';
+import {Leaf} from '../adt/Leaf.js';
 
 import {replace_node} from './replace_node.js';
 import {delete_case1} from './delete_case1.js';
@@ -9,16 +12,18 @@ import {delete_case1} from './delete_case1.js';
  * Precondition:
  *   - n has at most one non-leaf child.
  *   - if n has a non-leaf child, then it is its left child.
+ *   - hence, n's right child is a leaf
  *
  * @param {Node} n - The node to delete.
  */
 export const delete_one_child = (n) => {
-	// Precondition: n has at most one non-leaf child.
-	// assert( n.right.isLeaf() || n.left.isLeaf());
+	assert(n instanceof Node);
+	// Precondition: n's right child is a leaf.
+	// The right child of n is always a LEAF because either n is a subtree
+	// predecessor or it is the only child of its parent by the red-black tree
+	// properties
+	assert(n.right instanceof Leaf);
 
-	// const child = n.right.isLeaf() ? n.left : n.right;
-	// n.right is always a LEAF because either n is a subtree predecessor or it
-	// is the only child of its parent by the red-black tree properties
 	const child = n.left;
 
 	// Replace n with its left child
@@ -32,7 +37,9 @@ export const delete_one_child = (n) => {
 		// replace n with it.
 		if (child._color === RED) child._color = BLACK;
 		// Otherwise, there are more things to fix.
-		else delete_case1(child);
+		else {
+			delete_case1(child);
+		}
 	}
 
 	// Else {

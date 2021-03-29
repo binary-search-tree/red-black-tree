@@ -1,4 +1,7 @@
+import assert from 'assert';
 import {BLACK, RED} from '../color/index.js';
+import {Node} from '../adt/Node.js';
+import {Leaf} from '../adt/Leaf.js';
 import {rotate_left, rotate_right} from '../rotate/index.js';
 import {sibling} from '../family/sibling.js';
 
@@ -13,10 +16,16 @@ import {delete_case6} from './delete_case6.js';
  *   - n's sibling is black
  *   - at least one of n's sibling's children is red
  *
- * @param {Node} n - The input node.
+ * @param {Node|Leaf} n - The input node.
  */
 export const delete_case5 = (n) => {
+	assert(n instanceof Node || n instanceof Leaf);
+	assert(n._color === BLACK);
+	assert(n.parent !== null);
 	const s = sibling(n);
+	assert(s instanceof Node);
+	assert(s._color === BLACK);
+	assert(s.left._color === RED || s.right._color === RED);
 
 	// The following statements just force the red n's sibling child to be on
 	// the left of the left of the parent, or right of the right, so case 6

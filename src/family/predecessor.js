@@ -1,3 +1,6 @@
+import assert from 'assert';
+import {Node} from '../adt/Node.js';
+
 /**
  * Computes the predecessor of the input node, in the subtree rooted at the
  * input node, when this predecessor is guaranteed to exist.
@@ -6,10 +9,13 @@
  * @returns {Node}
  */
 export const predecessor = (node) => {
-	// Assert( !node.left.isLeaf() ) ;
+	assert(node.left instanceof Node);
 	let pred = node.left;
 
-	while (!pred.right.isLeaf()) pred = pred.right;
+	while (!pred.right.isLeaf()) {
+		assert(pred.right instanceof Node);
+		pred = pred.right;
+	}
 
 	return pred;
 };

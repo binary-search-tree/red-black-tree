@@ -1,4 +1,7 @@
-import {BLACK, RED} from '../color/index.js';
+import assert from 'assert';
+import {Node} from '../adt/Node.js';
+import {BLACK} from '../color/BLACK.js';
+import {RED} from '../color/RED.js';
 import {uncle, grandparent} from '../family/index.js';
 import {insert_case1} from './insert_case1.js';
 import {insert_case4} from './insert_case4.js';
@@ -12,6 +15,10 @@ import {insert_case4} from './insert_case4.js';
  * @param {Node} n - The input node.
  */
 export const insert_case3 = (n) => {
+	assert(n instanceof Node);
+	assert(n._color === RED);
+	assert(n.parent !== null);
+	assert(n.parent._color === RED);
 	const u = uncle(n);
 
 	/**

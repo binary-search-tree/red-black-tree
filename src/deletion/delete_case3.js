@@ -1,4 +1,7 @@
+import assert from 'assert';
 import {BLACK, RED} from '../color/index.js';
+import {Node} from '../adt/Node.js';
+import {Leaf} from '../adt/Leaf.js';
 import {sibling} from '../family/sibling.js';
 
 import {delete_case1} from './delete_case1.js';
@@ -12,10 +15,15 @@ import {delete_case4} from './delete_case4.js';
  *   - n is not the root
  *   - n's sibling is black
  *
- * @param {Node} n - The input node.
+ * @param {Node|Leaf} n - The input node.
  */
 export const delete_case3 = (n) => {
+	assert(n instanceof Node || n instanceof Leaf);
+	assert(n._color === BLACK);
+	assert(n.parent !== null);
 	const s = sibling(n);
+	assert(s instanceof Node);
+	assert(s._color === BLACK);
 
 	/**
 	 * If n's parent is black and n's sibling's children are black, then

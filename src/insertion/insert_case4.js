@@ -1,3 +1,6 @@
+import assert from 'assert';
+import {Node} from '../adt/Node.js';
+import {RED} from '../color/RED.js';
 import {rotate_left, rotate_right} from '../rotate/index.js';
 import {grandparent} from '../family/grandparent.js';
 import {insert_case5} from './insert_case5.js';
@@ -14,6 +17,10 @@ import {insert_case5} from './insert_case5.js';
  * @param {Node} n - The input node.
  */
 export const insert_case4 = (n) => {
+	assert(n instanceof Node);
+	assert(n._color === RED);
+	assert(n.parent !== null);
+	assert(n.parent._color === RED);
 	const g = grandparent(n);
 
 	/**

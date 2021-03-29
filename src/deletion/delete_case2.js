@@ -1,4 +1,7 @@
+import assert from 'assert';
 import {BLACK, RED} from '../color/index.js';
+import {Node} from '../adt/Node.js';
+import {Leaf} from '../adt/Leaf.js';
 import {rotate_left, rotate_right} from '../rotate/index.js';
 import {sibling} from '../family/sibling.js';
 
@@ -12,9 +15,13 @@ import {delete_case4} from './delete_case4.js';
  *   - all other root-leaf paths have a black height of b
  *   - n is not the root
  *
- * @param {Node} n - The input node.
+ * @param {Node|Leaf} n - The input node.
  */
 export const delete_case2 = (n) => {
+	assert(n instanceof Node || n instanceof Leaf);
+	assert(n._color === BLACK);
+	assert(n.parent !== null);
+
 	const s = sibling(n);
 
 	/**

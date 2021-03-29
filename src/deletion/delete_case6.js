@@ -1,4 +1,8 @@
+import assert from 'assert';
 import {BLACK} from '../color/BLACK.js';
+import {RED} from '../color/RED.js';
+import {Node} from '../adt/Node.js';
+import {Leaf} from '../adt/Leaf.js';
 import {rotate_left, rotate_right} from '../rotate/index.js';
 import {sibling} from '../family/sibling.js';
 
@@ -12,10 +16,15 @@ import {sibling} from '../family/sibling.js';
  *   - if n is a left child, the right child of n's sibling is red
  *   - if n is a right child, the left child of n's sibling is red
  *
- * @param {Node} n - The input node.
+ * @param {Node|Leaf} n - The input node.
  */
 export const delete_case6 = (n) => {
+	assert(n instanceof Node || n instanceof Leaf);
+	assert(n._color === BLACK);
+	assert(n.parent !== null);
 	const s = sibling(n);
+	assert(s instanceof Node);
+	assert(s._color === BLACK);
 
 	/**
 	 * Increment the black height of all root-leaf paths going through n by
@@ -39,12 +48,14 @@ export const delete_case6 = (n) => {
 	n.parent._color = BLACK;
 
 	if (n === n.parent.left) {
+		assert(s.right._color === RED);
 		s.right._color = BLACK;
 		rotate_left(n.parent);
 	}
 
 	// Symmetric case
 	else {
+		assert(s.left._color === RED);
 		s.left._color = BLACK;
 		rotate_right(n.parent);
 	}

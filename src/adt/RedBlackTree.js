@@ -1,3 +1,4 @@
+import assert from 'assert';
 import {Node} from './Node.js';
 import {BLACK, RED} from '../color/index.js';
 import {predecessor} from '../family/predecessor.js';
@@ -15,10 +16,11 @@ export class RedBlackTree {
 	 * Constructs a new empty red-black tree.
 	 *
 	 * @param {Function} compare - The comparison function for node keys.
-	 * @returns {RedBlackTree}
 	 */
 	constructor(compare) {
+		/** @member {Function} The comparison function for node keys. */
 		this.compare = compare;
+		/** @member {Node} The root of the tree. */
 		this.root = null;
 	}
 
@@ -34,7 +36,7 @@ export class RedBlackTree {
 	/**
 	 * Adds a key to the tree.
 	 *
-	 * @param {Key} key - The key to add.
+	 * @param {any} key - The key to add.
 	 */
 	add(key) {
 		if (this.root === null) {
@@ -51,7 +53,7 @@ export class RedBlackTree {
 	 * Returns the first node whose key equals the input key.
 	 * If no such node exists, returns <code>null</code>.
 	 *
-	 * @param {Key} key - The input key.
+	 * @param {any} key - The input key.
 	 * @returns {Node}
 	 */
 	_search(key) {
@@ -64,8 +66,8 @@ export class RedBlackTree {
 	 * in this way (with {@link RedBlackTree#_search}. If no such key exists
 	 * in the tree, returns <code>null</code>.
 	 *
-	 * @param {Key} key - The input key.
-	 * @returns {Key}
+	 * @param {any} key - The input key.
+	 * @returns {any}
 	 */
 	get(key) {
 		const node = this._search(key);
@@ -76,7 +78,7 @@ export class RedBlackTree {
 	 * Returns <code>true</code> if and only if the tree contains the input
 	 * key.
 	 *
-	 * @param {Key} key - The input key.
+	 * @param {any} key - The input key.
 	 * @returns {Boolean}
 	 */
 	has(key) {
@@ -102,6 +104,7 @@ export class RedBlackTree {
 			// If there is no left child, then there can only be one right
 			// child.
 			const succ = node.right;
+			assert(succ instanceof Node);
 			node.key = succ.key;
 			// Delete successor node
 			// note: this node can only have one non-leaf child
@@ -120,7 +123,7 @@ export class RedBlackTree {
 	 * (with {@link RedBlackTree#_delete}). If such a node is found and deleted
 	 * then return <code>true</code>. Return <code>false</code> otherwise.
 	 *
-	 * @param {Key} key - The input key.
+	 * @param {any} key - The input key.
 	 * @returns {Boolean} - Whether the key existed in the tree before removal.
 	 */
 	remove(key) {
@@ -134,9 +137,9 @@ export class RedBlackTree {
 	/**
 	 * Returns an in order iterator over the keys of the tree that lie in the
 	 * interval [left, right[.
-	 * @param {Key} left - The left bound of the interval.
-	 * @param {Key} right - The right bound of the interval.
-	 * @returns {Iterator}
+	 * @param {any} left - The left bound of the interval.
+	 * @param {any} right - The right bound of the interval.
+	 * @returns {IterableIterator}
 	 */
 	*range(left, right) {
 		if (this.root !== null)
@@ -146,7 +149,7 @@ export class RedBlackTree {
 	/**
 	 * Returns an in order iterator over the keys of the tree.
 	 *
-	 * @returns {Iterator}
+	 * @returns {IterableIterator}
 	 */
 	*items() {
 		if (this.root !== null) yield* inordertraversal(this.root);
@@ -163,7 +166,7 @@ export class RedBlackTree {
 	 * Constructs a red-black tree from an input iterable.
 	 *
 	 * @param {Function} compare - The comparison function to use.
-	 * @param {Iterbale} iterable - The input iterable.
+	 * @param {Iterable} iterable - The input iterable.
 	 * @returns {RedBlackTree}
 	 */
 	static from(compare, iterable) {

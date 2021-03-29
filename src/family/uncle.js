@@ -1,3 +1,5 @@
+import assert from 'assert';
+import {Node} from '../adt/Node.js';
 import {grandparent} from './grandparent.js';
 
 /**
@@ -8,9 +10,16 @@ import {grandparent} from './grandparent.js';
  * @returns {Node}
  */
 export const uncle = (node) => {
+	assert(node instanceof Node);
 	const g = grandparent(node);
-	// Assert( g !== null ) ;
-	// this can never happen
-	if (node.parent === g.left) return g.right.isLeaf() ? null : g.right;
-	return g.left.isLeaf() ? null : g.left;
+	assert(g !== null);
+	if (node.parent === g.left) {
+		if (g.right.isLeaf()) return null;
+		assert(g.right instanceof Node);
+		return g.right;
+	}
+
+	if (g.left.isLeaf()) return null;
+	assert(g.left instanceof Node);
+	return g.left;
 };
