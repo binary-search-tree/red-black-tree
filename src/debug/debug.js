@@ -1,13 +1,19 @@
 import {BLACK} from '../color/BLACK.js';
 
 /**
- * Recursively constructs a prettyprint string for the red-black tree rooted at
- * <code>root</code>.
+ * Builds a debug function from color handlers.
  *
- * @param {Node} root - The root of the tree.
- * @returns {String}
+ * @param {Object} colors The colors to use.
+ * @returns {Function} The debug function.
  */
-export function _debug({red, black}) {
+export const _debug = ({red, black}) => {
+	/**
+	 * Recursively constructs a prettyprint string for the red-black tree rooted at
+	 * <code>root</code>.
+	 *
+	 * @param {Node} root - The root of the tree.
+	 * @returns {string}
+	 */
 	const debug = (root) => {
 		if (root.isLeaf()) return black('L');
 
@@ -17,4 +23,4 @@ export function _debug({red, black}) {
 	};
 
 	return debug;
-}
+};
