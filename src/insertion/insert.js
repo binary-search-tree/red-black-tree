@@ -19,7 +19,7 @@ export function insert(compare, A, B) {
 		if (compare(B.key, A.key) < 0) {
 			const node = A.left;
 
-			if (node.isleaf()) {
+			if (node.isLeaf()) {
 				A.left = B;
 				break;
 			}
@@ -28,7 +28,7 @@ export function insert(compare, A, B) {
 		} else {
 			const node = A.right;
 
-			if (node.isleaf()) {
+			if (node.isLeaf()) {
 				A.right = B;
 				break;
 			}

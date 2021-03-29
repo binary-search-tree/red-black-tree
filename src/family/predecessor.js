@@ -6,10 +6,10 @@
  * @returns {Node}
  */
 export function predecessor(node) {
-	// Assert( !node.left.isleaf() ) ;
+	// Assert( !node.left.isLeaf() ) ;
 	let pred = node.left;
 
-	while (!pred.right.isleaf()) pred = pred.right;
+	while (!pred.right.isLeaf()) pred = pred.right;
 
 	return pred;
 }

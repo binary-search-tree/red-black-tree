@@ -11,6 +11,6 @@ export function uncle(node) {
 	const g = grandparent(node);
 	// Assert( g !== null ) ;
 	// this can never happen
-	if (node.parent === g.left) return g.right.isleaf() ? null : g.right;
-	return g.left.isleaf() ? null : g.left;
+	if (node.parent === g.left) return g.right.isLeaf() ? null : g.right;
+	return g.left.isLeaf() ? null : g.left;
 }

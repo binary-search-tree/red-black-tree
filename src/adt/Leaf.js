@@ -18,6 +18,6 @@ export function Leaf(parent) {
  *
  * @returns {Boolean}
  */
-Leaf.prototype.isleaf = function () {
+Leaf.prototype.isLeaf = function () {
 	return true;
 };

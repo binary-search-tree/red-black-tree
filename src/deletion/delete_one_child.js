@@ -14,9 +14,9 @@ import {delete_case1} from './delete_case1.js';
  */
 export function delete_one_child(n) {
 	// Precondition: n has at most one non-leaf child.
-	// assert( n.right.isleaf() || n.left.isleaf());
+	// assert( n.right.isLeaf() || n.left.isLeaf());
 
-	// const child = n.right.isleaf() ? n.left : n.right;
+	// const child = n.right.isLeaf() ? n.left : n.right;
 	// n.right is always a LEAF because either n is a subtree predecessor or it
 	// is the only child of its parent by the red-black tree properties
 	const child = n.left;

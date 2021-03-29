@@ -80,7 +80,7 @@ export class RedBlackTree {
 	 * @param {Node} node - The input node to delete.
 	 */
 	_delete(node) {
-		if (!node.left.isleaf()) {
+		if (!node.left.isLeaf()) {
 			// Replace node's key with predecessor's key
 			const pred = predecessor(node);
 			node.key = pred.key;
@@ -88,7 +88,7 @@ export class RedBlackTree {
 			// note: this node can only have one non-leaf child
 			//       because the tree is a red-black tree
 			delete_one_child(pred);
-		} else if (!node.right.isleaf()) {
+		} else if (!node.right.isLeaf()) {
 			// Replace node's key with successor's key
 			// If there is no left child, then there can only be one right
 			// child.

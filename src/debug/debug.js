@@ -9,7 +9,7 @@ import {BLACK} from '../color/BLACK.js';
  */
 export function _debug({red, black}) {
 	const debug = (root) => {
-		if (root.isleaf()) return black('L');
+		if (root.isLeaf()) return black('L');
 
 		const repr = root.color === BLACK ? black(root.key) : red(root.key);
 

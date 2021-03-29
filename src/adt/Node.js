@@ -22,6 +22,6 @@ export function Node(color, key) {
  *
  * @returns {Boolean}
  */
-Node.prototype.isleaf = function () {
+Node.prototype.isLeaf = function () {
 	return false;
 };

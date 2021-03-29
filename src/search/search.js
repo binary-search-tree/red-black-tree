@@ -16,7 +16,7 @@ export function search(compare, root, key) {
 
 		root = d < 0 ? root.left : root.right;
 
-		if (root.isleaf()) {
+		if (root.isLeaf()) {
 			return null;
 		}
 	}
