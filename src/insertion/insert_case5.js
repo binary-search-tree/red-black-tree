@@ -12,7 +12,7 @@ import {grandparent} from '../family/grandparent.js';
  *
  * @param {Node} n - The input node.
  */
-export function insert_case5(n) {
+export const insert_case5 = (n) => {
 	const g = grandparent(n);
 
 	// Repaint n's parent black, n's grandparent red
@@ -44,4 +44,4 @@ export function insert_case5(n) {
 	 *                  / \       / \
 	 *                 =   =     -   -
 	 */ else rotate_left(g);
-}
+};

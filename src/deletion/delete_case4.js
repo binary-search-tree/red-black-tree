@@ -14,7 +14,7 @@ import {delete_case5} from './delete_case5.js';
  *
  * @param {Node} n - The input node.
  */
-export function delete_case4(n) {
+export const delete_case4 = (n) => {
 	const s = sibling(n);
 
 	/**
@@ -43,4 +43,4 @@ export function delete_case4(n) {
 
 	// Otherwise, go to case 5.
 	else delete_case5(n);
-}
+};

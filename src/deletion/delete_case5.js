@@ -15,7 +15,7 @@ import {delete_case6} from './delete_case6.js';
  *
  * @param {Node} n - The input node.
  */
-export function delete_case5(n) {
+export const delete_case5 = (n) => {
 	const s = sibling(n);
 
 	// The following statements just force the red n's sibling child to be on
@@ -55,4 +55,4 @@ export function delete_case5(n) {
 	}
 
 	delete_case6(n);
-}
+};

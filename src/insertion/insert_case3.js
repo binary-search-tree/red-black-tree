@@ -11,7 +11,7 @@ import {insert_case4} from './insert_case4.js';
  *
  * @param {Node} n - The input node.
  */
-export function insert_case3(n) {
+export const insert_case3 = (n) => {
 	const u = uncle(n);
 
 	/**
@@ -35,4 +35,4 @@ export function insert_case3(n) {
 		g.color = RED;
 		insert_case1(g);
 	} else insert_case4(n);
-}
+};

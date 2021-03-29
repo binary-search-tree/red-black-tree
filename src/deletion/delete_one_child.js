@@ -12,7 +12,7 @@ import {delete_case1} from './delete_case1.js';
  *
  * @param {Node} n - The node to delete.
  */
-export function delete_one_child(n) {
+export const delete_one_child = (n) => {
 	// Precondition: n has at most one non-leaf child.
 	// assert( n.right.isLeaf() || n.left.isLeaf());
 
@@ -39,4 +39,4 @@ export function delete_one_child(n) {
 	//    If n is red then its child can only be black. Replacing n with its
 	//    child suffices.
 	// }
-}
+};

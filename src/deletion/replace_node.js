@@ -4,7 +4,7 @@
  * @param {Node} A - The node to replace.
  * @param {Node} B - The replacement node.
  */
-export function replace_node(A, B) {
+export const replace_node = (A, B) => {
 	// Assert( A.parent !== null ) ;
 	// we never apply delete_one_child on the root so we are safe
 
@@ -12,4 +12,4 @@ export function replace_node(A, B) {
 	else A.parent.right = B;
 
 	B.parent = A.parent;
-}
+};

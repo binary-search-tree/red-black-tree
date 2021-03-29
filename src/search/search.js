@@ -6,7 +6,7 @@
  * @param {Key} key - The key to search for.
  * @returns {Node}
  */
-export function search(compare, root, key) {
+export const search = (compare, root, key) => {
 	while (true) {
 		const d = compare(key, root.key);
 
@@ -20,4 +20,4 @@ export function search(compare, root, key) {
 			return null;
 		}
 	}
-}
+};

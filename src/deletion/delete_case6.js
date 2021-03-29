@@ -14,7 +14,7 @@ import {sibling} from '../family/sibling.js';
  *
  * @param {Node} n - The input node.
  */
-export function delete_case6(n) {
+export const delete_case6 = (n) => {
 	const s = sibling(n);
 
 	/**
@@ -48,4 +48,4 @@ export function delete_case6(n) {
 		s.left.color = BLACK;
 		rotate_right(n.parent);
 	}
-}
+};

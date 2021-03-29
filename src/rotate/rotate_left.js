@@ -13,7 +13,7 @@
  *
  */
 
-export function rotate_left(A) {
+export const rotate_left = (A) => {
 	const B = A.right;
 	const a = A.left;
 	const b = B.left;
@@ -31,4 +31,4 @@ export function rotate_left(A) {
 	a.parent = B;
 	b.parent = B;
 	c.parent = A;
-}
+};

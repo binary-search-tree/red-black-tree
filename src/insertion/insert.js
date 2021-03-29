@@ -14,7 +14,7 @@
  * @param {Node} B - The node to insert.
  * @returns {Node} B - The node that has been inserted.
  */
-export function insert(compare, A, B) {
+export const insert = (compare, A, B) => {
 	while (true) {
 		if (compare(B.key, A.key) < 0) {
 			const node = A.left;
@@ -40,4 +40,4 @@ export function insert(compare, A, B) {
 	B.parent = A;
 
 	return B;
-}
+};

@@ -13,7 +13,7 @@ import {insert_case5} from './insert_case5.js';
  *
  * @param {Node} n - The input node.
  */
-export function insert_case4(n) {
+export const insert_case4 = (n) => {
 	const g = grandparent(n);
 
 	/**
@@ -75,4 +75,4 @@ export function insert_case4(n) {
 	}
 
 	insert_case5(n);
-}
+};
