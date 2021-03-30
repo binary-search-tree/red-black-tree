@@ -10,6 +10,7 @@ import insert_case4 from './insert_case4.js';
 /**
  * Preconditions:
  *   - n is red.
+ *   - n's children are BLACK
  *   - n is not the root of the tree.
  *   - n's parent is red.
  *
@@ -18,6 +19,8 @@ import insert_case4 from './insert_case4.js';
 const insert_case3 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === RED);
+	assert(n.left._color === BLACK);
+	assert(n.right._color === BLACK);
 	assert(n.parent !== null);
 	assert(n.parent._color === RED);
 	const u = uncle(n);

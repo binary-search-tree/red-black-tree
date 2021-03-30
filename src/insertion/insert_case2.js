@@ -7,6 +7,7 @@ import insert_case3 from './insert_case3.js';
 /**
  * Preconditions:
  *   - n is red.
+ *   - n's children are BLACK
  *   - n is not the root of the tree.
  *
  * @param {Node} n - The input node.
@@ -14,6 +15,8 @@ import insert_case3 from './insert_case3.js';
 const insert_case2 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === RED);
+	assert(n.left._color === BLACK);
+	assert(n.right._color === BLACK);
 	assert(n.parent !== null);
 
 	/**

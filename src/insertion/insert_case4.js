@@ -1,5 +1,6 @@
 import assert from 'assert';
 import Node from '../adt/Node.js';
+import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import rotate_left from '../rotate/rotate_left.js';
 import rotate_right from '../rotate/rotate_right.js';
@@ -9,6 +10,7 @@ import insert_case5 from './insert_case5.js';
 /**
  * Preconditions:
  *   - n is red.
+ *   - n's children are BLACK
  *   - n is not the root of the tree.
  *   - n's parent is red.
  *   - n's uncle is black.
@@ -20,6 +22,8 @@ import insert_case5 from './insert_case5.js';
 const insert_case4 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === RED);
+	assert(n.left._color === BLACK);
+	assert(n.right._color === BLACK);
 	assert(n.parent !== null);
 	assert(n.parent._color === RED);
 	const g = grandparent(n);

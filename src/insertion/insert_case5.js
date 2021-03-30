@@ -9,6 +9,7 @@ import grandparent from '../family/grandparent.js';
 /**
  * Preconditions:
  *   - n is red.
+ *   - n's children are BLACK
  *   - n is not the root of the tree.
  *   - n's parent is red.
  *   - n's uncle is black.
@@ -19,6 +20,8 @@ import grandparent from '../family/grandparent.js';
 const insert_case5 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === RED);
+	assert(n.left._color === BLACK);
+	assert(n.right._color === BLACK);
 	assert(n.parent !== null);
 	assert(n.parent._color === RED);
 	const g = grandparent(n);
