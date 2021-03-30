@@ -28,7 +28,7 @@ const delete_case3 = (n) => {
 
 	/**
 	 * If n's parent is black and n's sibling's children are black, then
-	 * repaint n's sibling red. Now all root-leaft paths going through n's
+	 * repaint n's sibling red. Now all root-leaf paths going through n's
 	 * parent have a black height of b - 1. We recurse thus on n's parent.
 	 *
 	 *           B                      >B
