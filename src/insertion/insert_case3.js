@@ -36,7 +36,7 @@ const insert_case3 = (n) => {
 	 *     -   -                 -   -
 	 */
 
-	if (u !== null && u._color === RED) {
+	if (u._color === RED) {
 		n.parent._color = BLACK;
 		u._color = BLACK;
 		const g = grandparent(n);

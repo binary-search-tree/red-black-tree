@@ -1,5 +1,6 @@
 import assert from 'assert';
 import Node from '../adt/Node.js';
+import Leaf from '../adt/Leaf.js';
 import grandparent from './grandparent.js';
 
 /**
@@ -7,21 +8,15 @@ import grandparent from './grandparent.js';
  * exist.
  *
  * @param {Node} node - The input node.
- * @returns {Node}
+ * @returns {Node|Leaf}
  */
 const uncle = (node) => {
 	assert(node instanceof Node);
 	const g = grandparent(node);
 	assert(g !== null);
-	if (node.parent === g.left) {
-		if (g.right.isLeaf()) return null;
-		assert(g.right instanceof Node);
-		return g.right;
-	}
-
-	if (g.left.isLeaf()) return null;
-	assert(g.left instanceof Node);
-	return g.left;
+	const u = node.parent === g.left ? g.right : g.left;
+	assert(u instanceof Node || u instanceof Leaf);
+	return u;
 };
 
 export default uncle;
