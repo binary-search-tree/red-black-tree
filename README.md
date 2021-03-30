@@ -1,7 +1,9 @@
 :christmas_tree: [@aureooms/js-red-black-tree](https://aureooms.github.io/js-red-black-tree)
 ==
 
-<img src="https://cdn.rawgit.com/aureooms/js-red-black-tree/main/media/sketch.svg" width="864">
+<p align="center">
+<img src="https://cdn.rawgit.com/aureooms/js-red-black-tree/main/media/sketch.svg" width="480">
+</p>
 
 ```js
 import {from} from '@aureooms/js-red-black-tree';
