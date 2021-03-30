@@ -4,7 +4,10 @@
 <img src="https://cdn.rawgit.com/aureooms/js-red-black-tree/main/media/sketch.svg" width="864">
 
 ```js
-let tree = RedBlackTree.from( increasing , range( 100000 ) ) ;
+import {from} from '@aureooms/js-red-black-tree';
+import {increasing} from '@aureooms/js-compare';
+import {range} from '@aureooms/js-itertools';
+let tree = from( increasing , range( 100000 ) ) ;
 ```
 
 Red-black tree library for JavaScript.
