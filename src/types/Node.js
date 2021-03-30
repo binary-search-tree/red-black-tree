@@ -24,7 +24,7 @@ export default function Node(color, key) {
  * Returns <code>true</code> if the <code>Node</code> object is a leaf. This
  * always returns <code>false</code>.
  *
- * @returns {Boolean}
+ * @returns {boolean}
  */
 Node.prototype.isLeaf = function () {
 	return false;

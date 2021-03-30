@@ -83,7 +83,7 @@ export default class RedBlackTree {
 	 * key.
 	 *
 	 * @param {any} key - The input key.
-	 * @returns {Boolean}
+	 * @returns {boolean}
 	 */
 	has(key) {
 		return this._search(key) !== null;
@@ -130,7 +130,7 @@ export default class RedBlackTree {
 	 * then return <code>true</code>. Return <code>false</code> otherwise.
 	 *
 	 * @param {any} key - The input key.
-	 * @returns {Boolean} - Whether the key existed in the tree before removal.
+	 * @returns {boolean} - Whether the key existed in the tree before removal.
 	 */
 	remove(key) {
 		const node = this._search(key);

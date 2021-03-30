@@ -20,7 +20,7 @@ export default function Leaf(parent) {
  * Returns <code>true</code> if the <code>Leaf</code> object is a leaf. This
  * always returns <code>true</code>.
  *
- * @returns {Boolean}
+ * @returns {boolean}
  */
 Leaf.prototype.isLeaf = function () {
 	return true;
