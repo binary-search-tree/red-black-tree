@@ -1,5 +1,5 @@
 import assert from 'assert';
-import Node from '../adt/Node.js';
+import Node from '../types/Node.js';
 
 /**
  * Traverses the tree rooted at <code>node</code> in order.

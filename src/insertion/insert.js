@@ -1,5 +1,5 @@
 import assert from 'assert';
-import Node from '../adt/Node.js';
+import Node from '../types/Node.js';
 
 /**
  * Walks the tree rooted at <code>A</code> down the only path that satisfies

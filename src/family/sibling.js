@@ -1,6 +1,6 @@
 import assert from 'assert';
-import Node from '../adt/Node.js';
-import Leaf from '../adt/Leaf.js';
+import Node from '../types/Node.js';
+import Leaf from '../types/Leaf.js';
 
 /**
  * Computes the sibling of the input node.

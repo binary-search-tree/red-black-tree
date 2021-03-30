@@ -1,5 +1,5 @@
 import assert from 'assert';
-import Node from '../adt/Node.js';
+import Node from '../types/Node.js';
 
 /**
  * Computes the grandparent (parent of parent) of the input node.

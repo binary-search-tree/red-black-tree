@@ -1,6 +1,3 @@
-export {default as Leaf} from './adt/Leaf.js';
-export {default as Node} from './adt/Node.js';
-export {default as RedBlackTree} from './adt/RedBlackTree.js';
 export {default as BLACK} from './color/BLACK.js';
 export {default as RED} from './color/RED.js';
 export {default as _debug} from './debug/_debug.js';
@@ -27,3 +24,6 @@ export {default as rotate_right} from './rotate/rotate_right.js';
 export {default as search} from './search/search.js';
 export {default as inordertraversal} from './traversal/inordertraversal.js';
 export {default as rangetraversal} from './traversal/rangetraversal.js';
+export {default as Leaf} from './types/Leaf.js';
+export {default as Node} from './types/Node.js';
+export {default as RedBlackTree} from './types/RedBlackTree.js';

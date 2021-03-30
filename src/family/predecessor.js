@@ -1,5 +1,5 @@
 import assert from 'assert';
-import Node from '../adt/Node.js';
+import Node from '../types/Node.js';
 
 /**
  * Computes the predecessor of the input node, in the subtree rooted at the

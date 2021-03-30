@@ -1,5 +1,5 @@
 import assert from 'assert';
-import Node from '../adt/Node.js';
+import Node from '../types/Node.js';
 
 /**
  * Rotate tree left. (see https://en.wikipedia.org/wiki/Tree_rotation)

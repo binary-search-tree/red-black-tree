@@ -1,8 +1,8 @@
 import assert from 'assert';
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
-import Node from '../adt/Node.js';
-import Leaf from '../adt/Leaf.js';
+import Node from '../types/Node.js';
+import Leaf from '../types/Leaf.js';
 
 import replace_node from './replace_node.js';
 import delete_case1 from './delete_case1.js';

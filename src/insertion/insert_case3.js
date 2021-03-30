@@ -1,5 +1,5 @@
 import assert from 'assert';
-import Node from '../adt/Node.js';
+import Node from '../types/Node.js';
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import uncle from '../family/uncle.js';
