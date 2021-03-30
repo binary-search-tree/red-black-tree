@@ -1,14 +1,14 @@
 import test from 'ava';
 
-import {increasing, decreasing} from '@aureooms/js-compare';
+import {increasing, decreasing} from '../../fixtures.js';
 
 import {range} from '@aureooms/js-itertools';
 
 import {RedBlackTree} from '../../../src/index.js';
 
-test('RedBlackTree::get', (t) => {
-	for (const compare of [increasing, decreasing]) {
-		const tree = new RedBlackTree(compare);
+for (const compare of [increasing, decreasing]) {
+	test(`RedBlackTree::get [${compare.name}]`, (t) => {
+		const tree = RedBlackTree.empty(compare);
 
 		t.is(tree.get(0), null);
 
@@ -28,5 +28,5 @@ test('RedBlackTree::get', (t) => {
 
 		t.is(tree.get(-1), null);
 		t.is(tree.get(n), null);
-	}
-});
+	});
+}

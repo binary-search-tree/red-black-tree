@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {increasing} from '@aureooms/js-compare';
+import {increasing} from '../../fixtures.js';
 
 import {list, range, sorted, head, iter, exhaust} from '@aureooms/js-itertools';
 

@@ -1,13 +1,13 @@
 import test from 'ava';
 
-import {increasing, decreasing} from '@aureooms/js-compare';
+import {increasing, decreasing} from '../../fixtures.js';
 
 import {list, range} from '@aureooms/js-itertools';
 
 import {RedBlackTree} from '../../../src/index.js';
 
-test('RedBlackTree::Symbol.iterator', (t) => {
-	for (const compare of [increasing, decreasing]) {
+for (const compare of [increasing, decreasing]) {
+	test(`RedBlackTree::Symbol.iterator [${compare.name}]`, (t) => {
 		const tree = new RedBlackTree(compare);
 
 		const a1 = list(tree);
@@ -30,5 +30,5 @@ test('RedBlackTree::Symbol.iterator', (t) => {
 
 		t.deepEqual(a2.length, n, `tree contains ${n} elements`);
 		t.deepEqual(a2, reference, 'tree is sorted');
-	}
-});
+	});
+}

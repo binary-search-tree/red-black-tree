@@ -1,13 +1,13 @@
 import test from 'ava';
 
-import {increasing, decreasing} from '@aureooms/js-compare';
+import {increasing, decreasing} from '../../fixtures.js';
 
 import {range} from '@aureooms/js-itertools';
 
 import {RedBlackTree} from '../../../src/index.js';
 
-test('RedBlackTree::has', (t) => {
-	for (const compare of [increasing, decreasing]) {
+for (const compare of [increasing, decreasing]) {
+	test(`RedBlackTree::has [${compare.name}]`, (t) => {
 		const tree = new RedBlackTree(compare);
 
 		t.falsy(tree.has(0));
@@ -28,5 +28,5 @@ test('RedBlackTree::has', (t) => {
 
 		t.falsy(tree.has(-1));
 		t.falsy(tree.has(n));
-	}
-});
+	});
+}

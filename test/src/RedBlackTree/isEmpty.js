@@ -4,7 +4,30 @@ import {range} from '@aureooms/js-itertools';
 
 import {increasing, decreasing} from '../../fixtures.js';
 
-import {RedBlackTree} from '../../../src/index.js';
+import {empty, from, RedBlackTree} from '../../../src/index.js';
+
+for (const compare of [increasing, decreasing]) {
+	test(`empty(${compare.name})`, (t) => {
+		t.true(empty(compare).isEmpty());
+	});
+
+	test(`from(${compare.name}, [])`, (t) => {
+		t.true(from(compare, []).isEmpty());
+	});
+
+	test(`from(${compare.name}, range(100))`, (t) => {
+		t.false(from(compare, range(100)).isEmpty());
+	});
+
+	test(`RedBlackTree.empty(${compare.name}) + add + remove`, (t) => {
+		const tree = RedBlackTree.empty(compare);
+		t.true(tree.isEmpty());
+		tree.add('x');
+		t.false(tree.isEmpty());
+		tree.remove('x');
+		t.true(tree.isEmpty());
+	});
+}
 
 const macro = (t, compare, items, expected) => {
 	const tree = RedBlackTree.from(compare, items);
