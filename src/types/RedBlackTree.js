@@ -166,6 +166,16 @@ export default class RedBlackTree {
 	}
 
 	/**
+	 * Constructs an empty red-black tree.
+	 *
+	 * @param {Function} compare - The comparison function to use.
+	 * @returns {RedBlackTree}
+	 */
+	static empty(compare) {
+		return new RedBlackTree(compare);
+	}
+
+	/**
 	 * Constructs a red-black tree from an input iterable.
 	 *
 	 * @param {Function} compare - The comparison function to use.
