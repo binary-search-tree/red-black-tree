@@ -29,9 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#adt">adt</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/adt/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-from">from</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#color">color</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BLACK">BLACK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RED">RED</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#debug">debug</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_debug">_debug</a></span></span></li>
@@ -58,16 +57,24 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/deletion/delete_case5.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {BLACK, RED} from &apos;../color/index.js&apos;;
-import {rotate_left, rotate_right} from &apos;../rotate/index.js&apos;;
-import {sibling} from &apos;../family/sibling.js&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
+import BLACK from &apos;../color/BLACK.js&apos;;
+import RED from &apos;../color/RED.js&apos;;
+import Node from &apos;../types/Node.js&apos;;
+import Leaf from &apos;../types/Leaf.js&apos;;
+import rotate_left from &apos;../rotate/rotate_left.js&apos;;
+import rotate_right from &apos;../rotate/rotate_right.js&apos;;
+import sibling from &apos;../family/sibling.js&apos;;
 
-import {delete_case6} from &apos;./delete_case6.js&apos;;
+import delete_case6 from &apos;./delete_case6.js&apos;;
 
 /**
  * Preconditions:
@@ -78,10 +85,16 @@ import {delete_case6} from &apos;./delete_case6.js&apos;;
  *   - n&apos;s sibling is black
  *   - at least one of n&apos;s sibling&apos;s children is red
  *
- * @param {Node} n - The input node.
+ * @param {Node|Leaf} n - The input node.
  */
-export const delete_case5 = (n) =&gt; {
+const delete_case5 = (n) =&gt; {
+	assert(n instanceof Node || n instanceof Leaf);
+	assert(n._color === BLACK);
+	assert(n.parent !== null);
 	const s = sibling(n);
+	assert(s instanceof Node);
+	assert(s._color === BLACK);
+	assert(s.left._color === RED || s.right._color === RED);
 
 	// The following statements just force the red n&apos;s sibling child to be on
 	// the left of the left of the parent, or right of the right, so case 6
@@ -121,6 +134,8 @@ export const delete_case5 = (n) =&gt; {
 
 	delete_case6(n);
 };
+
+export default delete_case5;
 </code></pre>
 
 </div>

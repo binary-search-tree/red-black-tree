@@ -29,9 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#adt">adt</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/adt/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-from">from</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#color">color</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BLACK">BLACK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RED">RED</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#debug">debug</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_debug">_debug</a></span></span></li>
@@ -58,20 +57,45 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export * from &apos;./adt/index.js&apos;;
-export * from &apos;./color/index.js&apos;;
-export * from &apos;./debug/index.js&apos;;
-export * from &apos;./deletion/index.js&apos;;
-export * from &apos;./family/index.js&apos;;
-export * from &apos;./insertion/index.js&apos;;
-export * from &apos;./rotate/index.js&apos;;
-export * from &apos;./search/index.js&apos;;
-export * from &apos;./traversal/index.js&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export {default as empty} from &apos;./api/empty.js&apos;;
+export {default as from} from &apos;./api/from.js&apos;;
+export {default as BLACK} from &apos;./color/BLACK.js&apos;;
+export {default as RED} from &apos;./color/RED.js&apos;;
+export {default as _debug} from &apos;./debug/_debug.js&apos;;
+export {default as delete_case1} from &apos;./deletion/delete_case1.js&apos;;
+export {default as delete_case2} from &apos;./deletion/delete_case2.js&apos;;
+export {default as delete_case3} from &apos;./deletion/delete_case3.js&apos;;
+export {default as delete_case4} from &apos;./deletion/delete_case4.js&apos;;
+export {default as delete_case5} from &apos;./deletion/delete_case5.js&apos;;
+export {default as delete_case6} from &apos;./deletion/delete_case6.js&apos;;
+export {default as delete_one_child} from &apos;./deletion/delete_one_child.js&apos;;
+export {default as replace_node} from &apos;./deletion/replace_node.js&apos;;
+export {default as grandparent} from &apos;./family/grandparent.js&apos;;
+export {default as predecessor} from &apos;./family/predecessor.js&apos;;
+export {default as sibling} from &apos;./family/sibling.js&apos;;
+export {default as uncle} from &apos;./family/uncle.js&apos;;
+export {default as insert} from &apos;./insertion/insert.js&apos;;
+export {default as insert_case1} from &apos;./insertion/insert_case1.js&apos;;
+export {default as insert_case2} from &apos;./insertion/insert_case2.js&apos;;
+export {default as insert_case3} from &apos;./insertion/insert_case3.js&apos;;
+export {default as insert_case4} from &apos;./insertion/insert_case4.js&apos;;
+export {default as insert_case5} from &apos;./insertion/insert_case5.js&apos;;
+export {default as rotate_left} from &apos;./rotate/rotate_left.js&apos;;
+export {default as rotate_right} from &apos;./rotate/rotate_right.js&apos;;
+export {default as search} from &apos;./search/search.js&apos;;
+export {default as inordertraversal} from &apos;./traversal/inordertraversal.js&apos;;
+export {default as rangetraversal} from &apos;./traversal/rangetraversal.js&apos;;
+export {default as Leaf} from &apos;./types/Leaf.js&apos;;
+export {default as Node} from &apos;./types/Node.js&apos;;
+export {default as RedBlackTree} from &apos;./types/RedBlackTree.js&apos;;
 </code></pre>
 
 </div>

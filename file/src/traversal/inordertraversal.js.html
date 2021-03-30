@@ -29,9 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#adt">adt</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/adt/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-from">from</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#color">color</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BLACK">BLACK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RED">RED</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#debug">debug</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_debug">_debug</a></span></span></li>
@@ -58,22 +57,30 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/traversal/inordertraversal.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
+import Node from &apos;../types/Node.js&apos;;
+
+/**
  * Traverses the tree rooted at &lt;code&gt;node&lt;/code&gt; in order.
  *
  * @param {Node} node - The root of the tree.
- * @returns {Iterator}
+ * @returns {IterableIterator}
  */
-export function* inordertraversal(node) {
+export default function* inordertraversal(node) {
+	assert(node instanceof Node);
 	if (!node.left.isLeaf()) {
 		// Yield the nodes on the left recursively. Those nodes are all smaller
 		// than (or equal to) the current node by the binary search tree
 		// properties.
+		assert(node.left instanceof Node);
 		yield* inordertraversal(node.left);
 	}
 
@@ -84,6 +91,7 @@ export function* inordertraversal(node) {
 		// Yield the nodes on the right recursively. Those nodes are all larger
 		// than (or equal to) the current node by the binary search tree
 		// properties.
+		assert(node.right instanceof Node);
 		yield* inordertraversal(node.right);
 	}
 }

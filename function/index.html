@@ -29,9 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#adt">adt</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/adt/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-from">from</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#color">color</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BLACK">BLACK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RED">RED</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#debug">debug</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_debug">_debug</a></span></span></li>
@@ -58,6 +57,9 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -81,7 +83,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span><span class="code" data-ice="signature">(parent: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span><span class="code" data-ice="signature">(parent: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
         </p>
       </div>
       <div>
@@ -110,7 +112,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span><span class="code" data-ice="signature">(color: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, key: <span>Key</span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span><span class="code" data-ice="signature">(color: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, key: <span>any</span>)</span>
         </p>
       </div>
       <div>
@@ -139,7 +141,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delete_case1">delete_case1</a></span></span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delete_case1">delete_case1</a></span></span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
         </p>
       </div>
       <div>
@@ -173,7 +175,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delete_case2">delete_case2</a></span></span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delete_case2">delete_case2</a></span></span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
         </p>
       </div>
       <div>
@@ -208,7 +210,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delete_case3">delete_case3</a></span></span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delete_case3">delete_case3</a></span></span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
         </p>
       </div>
       <div>
@@ -244,7 +246,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delete_case4">delete_case4</a></span></span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delete_case4">delete_case4</a></span></span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
         </p>
       </div>
       <div>
@@ -281,7 +283,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delete_case5">delete_case5</a></span></span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delete_case5">delete_case5</a></span></span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
         </p>
       </div>
       <div>
@@ -318,7 +320,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delete_case6">delete_case6</a></span></span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delete_case6">delete_case6</a></span></span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
         </p>
       </div>
       <div>
@@ -414,7 +416,7 @@
           
           
           <span data-ice="generator">*</span>
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span>Iterator</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span>IterableIterator</span></span>
         </p>
       </div>
       <div>
@@ -443,7 +445,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-insert">insert</a></span></span><span class="code" data-ice="signature">(compare: <span>*</span>, A: <span><a href="function/index.html#static-function-Node">Node</a></span>, B: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-insert">insert</a></span></span><span class="code" data-ice="signature">(compare: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, A: <span><a href="function/index.html#static-function-Node">Node</a></span>, B: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
         </p>
       </div>
       <div>
@@ -663,7 +665,7 @@ input node, when this predecessor is guaranteed to exist.</p>
           
           
           <span data-ice="generator">*</span>
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span><span class="code" data-ice="signature">(compare: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, root: <span><a href="function/index.html#static-function-Node">Node</a></span>, left: <span>Key</span>, right: <span>Key</span>): <span>Iterator</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span><span class="code" data-ice="signature">(compare: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, root: <span><a href="function/index.html#static-function-Node">Node</a></span>, left: <span>any</span>, right: <span>any</span>): <span>IterableIterator</span></span>
         </p>
       </div>
       <div>
@@ -693,7 +695,7 @@ interval <code>[left, right[</code>, in order.</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-replace_node">replace_node</a></span></span><span class="code" data-ice="signature">(A: <span><a href="function/index.html#static-function-Node">Node</a></span>, B: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-replace_node">replace_node</a></span></span><span class="code" data-ice="signature">(A: <span><a href="function/index.html#static-function-Node">Node</a></span>, B: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
         </p>
       </div>
       <div>
@@ -780,7 +782,7 @@ interval <code>[left, right[</code>, in order.</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span><span class="code" data-ice="signature">(compare: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, root: <span><a href="function/index.html#static-function-Node">Node</a></span>, key: <span>Key</span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span><span class="code" data-ice="signature">(compare: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, root: <span><a href="function/index.html#static-function-Node">Node</a></span>, key: <span>any</span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
         </p>
       </div>
       <div>
@@ -809,7 +811,7 @@ interval <code>[left, right[</code>, in order.</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-sibling">sibling</a></span></span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-sibling">sibling</a></span></span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span>
         </p>
       </div>
       <div>
@@ -838,7 +840,7 @@ interval <code>[left, right[</code>, in order.</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-uncle">uncle</a></span></span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-uncle">uncle</a></span></span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span>
         </p>
       </div>
       <div>
@@ -902,15 +904,15 @@ exist.</p>
     
     
     
-    <span class="code" data-ice="name">Leaf</span><span class="code" data-ice="signature">(parent: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span>
+    <span class="code" data-ice="name">Leaf</span><span class="code" data-ice="signature">(parent: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/adt/Leaf.js.html#lineNumber10">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/Leaf.js.html#lineNumber11">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Leaf} from &apos;<span><a href="file/src/adt/Leaf.js.html#lineNumber10">@aureooms/js-red-black-tree/src/adt/Leaf.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Leaf from &apos;<span><a href="file/src/types/Leaf.js.html#lineNumber11">@aureooms/js-red-black-tree/src/types/Leaf.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>A black leaf node.</p>
@@ -938,19 +940,7 @@ exist.</p>
 </div>
 </div>
 
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></td>
-          
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
+  
 
   
 
@@ -975,15 +965,15 @@ exist.</p>
     
     
     
-    <span class="code" data-ice="name">Node</span><span class="code" data-ice="signature">(color: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>, key: <span>Key</span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+    <span class="code" data-ice="name">Node</span><span class="code" data-ice="signature">(color: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, key: <span>any</span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/adt/Node.js.html#lineNumber11">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/Node.js.html#lineNumber10">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Node} from &apos;<span><a href="file/src/adt/Node.js.html#lineNumber11">@aureooms/js-red-black-tree/src/adt/Node.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Node from &apos;<span><a href="file/src/types/Node.js.html#lineNumber10">@aureooms/js-red-black-tree/src/types/Node.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>An internal node. This node can be red or black.</p>
@@ -1001,14 +991,14 @@ exist.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">color</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span></td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The color of the node.</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">key</td>
-      <td data-ice="type" class="code"><span>Key</span></td>
+      <td data-ice="type" class="code"><span>any</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The key of the node.</p>
 </td>
@@ -1018,19 +1008,7 @@ exist.</p>
 </div>
 </div>
 
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
-          
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
+  
 
   
 
@@ -1055,15 +1033,15 @@ exist.</p>
     
     
     
-    <span class="code" data-ice="name">delete_case1</span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+    <span class="code" data-ice="name">delete_case1</span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/deletion/delete_case1.js.html#lineNumber11">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/deletion/delete_case1.js.html#lineNumber15">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {delete_case1} from &apos;<span><a href="file/src/deletion/delete_case1.js.html#lineNumber11">@aureooms/js-red-black-tree/src/deletion/delete_case1.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import delete_case1 from &apos;<span><a href="file/src/deletion/delete_case1.js.html#lineNumber15">@aureooms/js-red-black-tree/src/deletion/delete_case1.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Preconditions:</p>
@@ -1086,7 +1064,7 @@ exist.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">n</td>
-      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
+      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The input node.</p>
 </td>
@@ -1121,15 +1099,15 @@ exist.</p>
     
     
     
-    <span class="code" data-ice="name">delete_case2</span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+    <span class="code" data-ice="name">delete_case2</span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/deletion/delete_case2.js.html#lineNumber17">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/deletion/delete_case2.js.html#lineNumber22">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {delete_case2} from &apos;<span><a href="file/src/deletion/delete_case2.js.html#lineNumber17">@aureooms/js-red-black-tree/src/deletion/delete_case2.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import delete_case2 from &apos;<span><a href="file/src/deletion/delete_case2.js.html#lineNumber22">@aureooms/js-red-black-tree/src/deletion/delete_case2.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Preconditions:</p>
@@ -1153,7 +1131,7 @@ exist.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">n</td>
-      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
+      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The input node.</p>
 </td>
@@ -1188,15 +1166,15 @@ exist.</p>
     
     
     
-    <span class="code" data-ice="name">delete_case3</span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+    <span class="code" data-ice="name">delete_case3</span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/deletion/delete_case3.js.html#lineNumber17">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/deletion/delete_case3.js.html#lineNumber21">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {delete_case3} from &apos;<span><a href="file/src/deletion/delete_case3.js.html#lineNumber17">@aureooms/js-red-black-tree/src/deletion/delete_case3.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import delete_case3 from &apos;<span><a href="file/src/deletion/delete_case3.js.html#lineNumber21">@aureooms/js-red-black-tree/src/deletion/delete_case3.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Preconditions:</p>
@@ -1221,7 +1199,7 @@ exist.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">n</td>
-      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
+      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The input node.</p>
 </td>
@@ -1256,15 +1234,15 @@ exist.</p>
     
     
     
-    <span class="code" data-ice="name">delete_case4</span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+    <span class="code" data-ice="name">delete_case4</span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/deletion/delete_case4.js.html#lineNumber17">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/deletion/delete_case4.js.html#lineNumber21">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {delete_case4} from &apos;<span><a href="file/src/deletion/delete_case4.js.html#lineNumber17">@aureooms/js-red-black-tree/src/deletion/delete_case4.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import delete_case4 from &apos;<span><a href="file/src/deletion/delete_case4.js.html#lineNumber21">@aureooms/js-red-black-tree/src/deletion/delete_case4.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Preconditions:</p>
@@ -1290,7 +1268,7 @@ exist.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">n</td>
-      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
+      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The input node.</p>
 </td>
@@ -1325,15 +1303,15 @@ exist.</p>
     
     
     
-    <span class="code" data-ice="name">delete_case5</span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+    <span class="code" data-ice="name">delete_case5</span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/deletion/delete_case5.js.html#lineNumber18">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/deletion/delete_case5.js.html#lineNumber23">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {delete_case5} from &apos;<span><a href="file/src/deletion/delete_case5.js.html#lineNumber18">@aureooms/js-red-black-tree/src/deletion/delete_case5.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import delete_case5 from &apos;<span><a href="file/src/deletion/delete_case5.js.html#lineNumber23">@aureooms/js-red-black-tree/src/deletion/delete_case5.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Preconditions:</p>
@@ -1359,7 +1337,7 @@ exist.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">n</td>
-      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
+      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The input node.</p>
 </td>
@@ -1394,15 +1372,15 @@ exist.</p>
     
     
     
-    <span class="code" data-ice="name">delete_case6</span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+    <span class="code" data-ice="name">delete_case6</span><span class="code" data-ice="signature">(n: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/deletion/delete_case6.js.html#lineNumber17">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/deletion/delete_case6.js.html#lineNumber22">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {delete_case6} from &apos;<span><a href="file/src/deletion/delete_case6.js.html#lineNumber17">@aureooms/js-red-black-tree/src/deletion/delete_case6.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import delete_case6 from &apos;<span><a href="file/src/deletion/delete_case6.js.html#lineNumber22">@aureooms/js-red-black-tree/src/deletion/delete_case6.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Preconditions:</p>
@@ -1429,7 +1407,7 @@ exist.</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">n</td>
-      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
+      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The input node.</p>
 </td>
@@ -1468,11 +1446,11 @@ exist.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/deletion/delete_one_child.js.html#lineNumber15">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/deletion/delete_one_child.js.html#lineNumber20">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {delete_one_child} from &apos;<span><a href="file/src/deletion/delete_one_child.js.html#lineNumber15">@aureooms/js-red-black-tree/src/deletion/delete_one_child.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import delete_one_child from &apos;<span><a href="file/src/deletion/delete_one_child.js.html#lineNumber20">@aureooms/js-red-black-tree/src/deletion/delete_one_child.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Delete a node <code>n</code> that has at most a single non-leaf child.</p>
@@ -1480,6 +1458,7 @@ exist.</p>
 <ul>
 <li>n has at most one non-leaf child.</li>
 <li>if n has a non-leaf child, then it is its left child.</li>
+<li>hence, n&apos;s right child is a leaf</li>
 </ul>
 </div>
 
@@ -1534,11 +1513,11 @@ exist.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/family/grandparent.js.html#lineNumber7">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/family/grandparent.js.html#lineNumber10">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {grandparent} from &apos;<span><a href="file/src/family/grandparent.js.html#lineNumber7">@aureooms/js-red-black-tree/src/family/grandparent.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import grandparent from &apos;<span><a href="file/src/family/grandparent.js.html#lineNumber10">@aureooms/js-red-black-tree/src/family/grandparent.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Computes the grandparent (parent of parent) of the input node.</p>
@@ -1603,15 +1582,15 @@ exist.</p>
     
     
     <span data-ice="generator">*</span>
-    <span class="code" data-ice="name">inordertraversal</span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span>Iterator</span></span>
+    <span class="code" data-ice="name">inordertraversal</span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span>IterableIterator</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/traversal/inordertraversal.js.html#lineNumber7">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/traversal/inordertraversal.js.html#lineNumber10">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {inordertraversal} from &apos;<span><a href="file/src/traversal/inordertraversal.js.html#lineNumber7">@aureooms/js-red-black-tree/src/traversal/inordertraversal.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import inordertraversal from &apos;<span><a href="file/src/traversal/inordertraversal.js.html#lineNumber10">@aureooms/js-red-black-tree/src/traversal/inordertraversal.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Traverses the tree rooted at <code>node</code> in order.</p>
@@ -1644,7 +1623,7 @@ exist.</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span>Iterator</span></td>
+          <td class="return-type code" data-ice="returnType"><span>IterableIterator</span></td>
           
         </tr>
       </tbody>
@@ -1676,15 +1655,15 @@ exist.</p>
     
     
     
-    <span class="code" data-ice="name">insert</span><span class="code" data-ice="signature">(compare: <span>*</span>, A: <span><a href="function/index.html#static-function-Node">Node</a></span>, B: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+    <span class="code" data-ice="name">insert</span><span class="code" data-ice="signature">(compare: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, A: <span><a href="function/index.html#static-function-Node">Node</a></span>, B: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/insertion/insert.js.html#lineNumber17">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/insertion/insert.js.html#lineNumber20">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {insert} from &apos;<span><a href="file/src/insertion/insert.js.html#lineNumber17">@aureooms/js-red-black-tree/src/insertion/insert.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import insert from &apos;<span><a href="file/src/insertion/insert.js.html#lineNumber20">@aureooms/js-red-black-tree/src/insertion/insert.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Walks the tree rooted at <code>A</code> down the only path that satisfies
@@ -1710,7 +1689,7 @@ by <span><a href="function/index.html#static-function-insert_case1">insert_case1
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">compare</td>
-      <td data-ice="type" class="code"><span>*</span></td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The comparison function to use.</p>
 </td>
@@ -1776,16 +1755,17 @@ by <span><a href="function/index.html#static-function-insert_case1">insert_case1
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/insertion/insert_case1.js.html#lineNumber10">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/insertion/insert_case1.js.html#lineNumber14">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {insert_case1} from &apos;<span><a href="file/src/insertion/insert_case1.js.html#lineNumber10">@aureooms/js-red-black-tree/src/insertion/insert_case1.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import insert_case1 from &apos;<span><a href="file/src/insertion/insert_case1.js.html#lineNumber14">@aureooms/js-red-black-tree/src/insertion/insert_case1.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Preconditions:</p>
 <ul>
 <li>n is red.</li>
+<li>n&apos;s children are BLACK</li>
 </ul>
 </div>
 
@@ -1840,16 +1820,17 @@ by <span><a href="function/index.html#static-function-insert_case1">insert_case1
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/insertion/insert_case2.js.html#lineNumber11">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/insertion/insert_case2.js.html#lineNumber15">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {insert_case2} from &apos;<span><a href="file/src/insertion/insert_case2.js.html#lineNumber11">@aureooms/js-red-black-tree/src/insertion/insert_case2.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import insert_case2 from &apos;<span><a href="file/src/insertion/insert_case2.js.html#lineNumber15">@aureooms/js-red-black-tree/src/insertion/insert_case2.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Preconditions:</p>
 <ul>
 <li>n is red.</li>
+<li>n&apos;s children are BLACK</li>
 <li>n is not the root of the tree.</li>
 </ul>
 </div>
@@ -1905,16 +1886,17 @@ by <span><a href="function/index.html#static-function-insert_case1">insert_case1
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/insertion/insert_case3.js.html#lineNumber14">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/insertion/insert_case3.js.html#lineNumber19">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {insert_case3} from &apos;<span><a href="file/src/insertion/insert_case3.js.html#lineNumber14">@aureooms/js-red-black-tree/src/insertion/insert_case3.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import insert_case3 from &apos;<span><a href="file/src/insertion/insert_case3.js.html#lineNumber19">@aureooms/js-red-black-tree/src/insertion/insert_case3.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Preconditions:</p>
 <ul>
 <li>n is red.</li>
+<li>n&apos;s children are BLACK</li>
 <li>n is not the root of the tree.</li>
 <li>n&apos;s parent is red.</li>
 </ul>
@@ -1971,16 +1953,17 @@ by <span><a href="function/index.html#static-function-insert_case1">insert_case1
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/insertion/insert_case4.js.html#lineNumber16">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/insertion/insert_case4.js.html#lineNumber22">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {insert_case4} from &apos;<span><a href="file/src/insertion/insert_case4.js.html#lineNumber16">@aureooms/js-red-black-tree/src/insertion/insert_case4.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import insert_case4 from &apos;<span><a href="file/src/insertion/insert_case4.js.html#lineNumber22">@aureooms/js-red-black-tree/src/insertion/insert_case4.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Preconditions:</p>
 <ul>
 <li>n is red.</li>
+<li>n&apos;s children are BLACK</li>
 <li>n is not the root of the tree.</li>
 <li>n&apos;s parent is red.</li>
 <li>n&apos;s uncle is black.</li>
@@ -2039,16 +2022,17 @@ by <span><a href="function/index.html#static-function-insert_case1">insert_case1
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/insertion/insert_case5.js.html#lineNumber15">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/insertion/insert_case5.js.html#lineNumber20">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {insert_case5} from &apos;<span><a href="file/src/insertion/insert_case5.js.html#lineNumber15">@aureooms/js-red-black-tree/src/insertion/insert_case5.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import insert_case5 from &apos;<span><a href="file/src/insertion/insert_case5.js.html#lineNumber20">@aureooms/js-red-black-tree/src/insertion/insert_case5.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Preconditions:</p>
 <ul>
 <li>n is red.</li>
+<li>n&apos;s children are BLACK</li>
 <li>n is not the root of the tree.</li>
 <li>n&apos;s parent is red.</li>
 <li>n&apos;s uncle is black.</li>
@@ -2107,11 +2091,11 @@ by <span><a href="function/index.html#static-function-insert_case1">insert_case1
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/family/predecessor.js.html#lineNumber8">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/family/predecessor.js.html#lineNumber11">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {predecessor} from &apos;<span><a href="file/src/family/predecessor.js.html#lineNumber8">@aureooms/js-red-black-tree/src/family/predecessor.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import predecessor from &apos;<span><a href="file/src/family/predecessor.js.html#lineNumber11">@aureooms/js-red-black-tree/src/family/predecessor.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Computes the predecessor of the input node, in the subtree rooted at the
@@ -2177,15 +2161,15 @@ input node, when this predecessor is guaranteed to exist.</p>
     
     
     <span data-ice="generator">*</span>
-    <span class="code" data-ice="name">rangetraversal</span><span class="code" data-ice="signature">(compare: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, root: <span><a href="function/index.html#static-function-Node">Node</a></span>, left: <span>Key</span>, right: <span>Key</span>): <span>Iterator</span></span>
+    <span class="code" data-ice="name">rangetraversal</span><span class="code" data-ice="signature">(compare: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, root: <span><a href="function/index.html#static-function-Node">Node</a></span>, left: <span>any</span>, right: <span>any</span>): <span>IterableIterator</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/traversal/rangetraversal.js.html#lineNumber11">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/traversal/rangetraversal.js.html#lineNumber14">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {rangetraversal} from &apos;<span><a href="file/src/traversal/rangetraversal.js.html#lineNumber11">@aureooms/js-red-black-tree/src/traversal/rangetraversal.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import rangetraversal from &apos;<span><a href="file/src/traversal/rangetraversal.js.html#lineNumber14">@aureooms/js-red-black-tree/src/traversal/rangetraversal.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Yields all the keys in the tree rooted at <code>root</code> that lie in the
@@ -2218,16 +2202,16 @@ interval <code>[left, right[</code>, in order.</p>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">left</td>
-      <td data-ice="type" class="code"><span>Key</span></td>
+      <td data-ice="type" class="code"><span>any</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>The lower bound of the interval.</p>
+      <td data-ice="description"><p>The inclusive lower bound of the interval.</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">right</td>
-      <td data-ice="type" class="code"><span>Key</span></td>
+      <td data-ice="type" class="code"><span>any</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>The upper bound of the interval.</p>
+      <td data-ice="description"><p>The non-inclusive upper bound of the interval.</p>
 </td>
     </tr>
 </tbody>
@@ -2240,7 +2224,7 @@ interval <code>[left, right[</code>, in order.</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span>Iterator</span></td>
+          <td class="return-type code" data-ice="returnType"><span>IterableIterator</span></td>
           
         </tr>
       </tbody>
@@ -2272,15 +2256,15 @@ interval <code>[left, right[</code>, in order.</p>
     
     
     
-    <span class="code" data-ice="name">replace_node</span><span class="code" data-ice="signature">(A: <span><a href="function/index.html#static-function-Node">Node</a></span>, B: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+    <span class="code" data-ice="name">replace_node</span><span class="code" data-ice="signature">(A: <span><a href="function/index.html#static-function-Node">Node</a></span>, B: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/deletion/replace_node.js.html#lineNumber7">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/deletion/replace_node.js.html#lineNumber11">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {replace_node} from &apos;<span><a href="file/src/deletion/replace_node.js.html#lineNumber7">@aureooms/js-red-black-tree/src/deletion/replace_node.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import replace_node from &apos;<span><a href="file/src/deletion/replace_node.js.html#lineNumber11">@aureooms/js-red-black-tree/src/deletion/replace_node.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Replaces node <code>A</code> by node <code>B</code>.</p>
@@ -2305,7 +2289,7 @@ interval <code>[left, right[</code>, in order.</p>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">B</td>
-      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
+      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The replacement node.</p>
 </td>
@@ -2344,11 +2328,11 @@ interval <code>[left, right[</code>, in order.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/rotate/rotate_left.js.html#lineNumber16">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/rotate/rotate_left.js.html#lineNumber19">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {rotate_left} from &apos;<span><a href="file/src/rotate/rotate_left.js.html#lineNumber16">@aureooms/js-red-black-tree/src/rotate/rotate_left.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import rotate_left from &apos;<span><a href="file/src/rotate/rotate_left.js.html#lineNumber19">@aureooms/js-red-black-tree/src/rotate/rotate_left.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Rotate tree left. (see <a href="https://en.wikipedia.org/wiki/Tree_rotation">https://en.wikipedia.org/wiki/Tree_rotation</a>)
@@ -2411,11 +2395,11 @@ interval <code>[left, right[</code>, in order.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/rotate/rotate_right.js.html#lineNumber16">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/rotate/rotate_right.js.html#lineNumber19">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {rotate_right} from &apos;<span><a href="file/src/rotate/rotate_right.js.html#lineNumber16">@aureooms/js-red-black-tree/src/rotate/rotate_right.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import rotate_right from &apos;<span><a href="file/src/rotate/rotate_right.js.html#lineNumber19">@aureooms/js-red-black-tree/src/rotate/rotate_right.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Rotate tree right. (see <a href="https://en.wikipedia.org/wiki/Tree_rotation">https://en.wikipedia.org/wiki/Tree_rotation</a>)
@@ -2474,15 +2458,15 @@ a   b                b   c</code>
     
     
     
-    <span class="code" data-ice="name">search</span><span class="code" data-ice="signature">(compare: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, root: <span><a href="function/index.html#static-function-Node">Node</a></span>, key: <span>Key</span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+    <span class="code" data-ice="name">search</span><span class="code" data-ice="signature">(compare: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>, root: <span><a href="function/index.html#static-function-Node">Node</a></span>, key: <span>any</span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/search/search.js.html#lineNumber9">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/search/search.js.html#lineNumber12">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {search} from &apos;<span><a href="file/src/search/search.js.html#lineNumber9">@aureooms/js-red-black-tree/src/search/search.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import search from &apos;<span><a href="file/src/search/search.js.html#lineNumber12">@aureooms/js-red-black-tree/src/search/search.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Search for the first node whose key equals <code>key</code>.</p>
@@ -2514,7 +2498,7 @@ a   b                b   c</code>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">key</td>
-      <td data-ice="type" class="code"><span>Key</span></td>
+      <td data-ice="type" class="code"><span>any</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The key to search for.</p>
 </td>
@@ -2561,15 +2545,15 @@ a   b                b   c</code>
     
     
     
-    <span class="code" data-ice="name">sibling</span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+    <span class="code" data-ice="name">sibling</span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/family/sibling.js.html#lineNumber7">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/family/sibling.js.html#lineNumber11">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {sibling} from &apos;<span><a href="file/src/family/sibling.js.html#lineNumber7">@aureooms/js-red-black-tree/src/family/sibling.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import sibling from &apos;<span><a href="file/src/family/sibling.js.html#lineNumber11">@aureooms/js-red-black-tree/src/family/sibling.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Computes the sibling of the input node.</p>
@@ -2587,7 +2571,7 @@ a   b                b   c</code>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">node</td>
-      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
+      <td data-ice="type" class="code"><span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The input node.</p>
 </td>
@@ -2602,7 +2586,7 @@ a   b                b   c</code>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></td>
           
         </tr>
       </tbody>
@@ -2634,15 +2618,15 @@ a   b                b   c</code>
     
     
     
-    <span class="code" data-ice="name">uncle</span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
+    <span class="code" data-ice="name">uncle</span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>): <span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/family/uncle.js.html#lineNumber10">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/family/uncle.js.html#lineNumber13">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {uncle} from &apos;<span><a href="file/src/family/uncle.js.html#lineNumber10">@aureooms/js-red-black-tree/src/family/uncle.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import uncle from &apos;<span><a href="file/src/family/uncle.js.html#lineNumber13">@aureooms/js-red-black-tree/src/family/uncle.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Computes the uncle of the input node when the grandparent is guaranteed to
@@ -2676,7 +2660,7 @@ exist.</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="function/index.html#static-function-Node">Node</a></span> | <span><a href="function/index.html#static-function-Leaf">Leaf</a></span></td>
           
         </tr>
       </tbody>
@@ -2714,11 +2698,11 @@ exist.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/debug/debug.js.html#lineNumber9">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/debug/_debug.js.html#lineNumber12">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_debug} from &apos;<span><a href="file/src/debug/debug.js.html#lineNumber9">@aureooms/js-red-black-tree/src/debug/debug.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import _debug from &apos;<span><a href="file/src/debug/_debug.js.html#lineNumber12">@aureooms/js-red-black-tree/src/debug/_debug.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Builds a debug function from color handlers.</p>

@@ -29,9 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#adt">adt</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/adt/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-from">from</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#color">color</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BLACK">BLACK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RED">RED</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#debug">debug</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_debug">_debug</a></span></span></li>
@@ -58,40 +57,55 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/traversal/rangetraversal.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
+import Node from &apos;../types/Node.js&apos;;
+
+/**
  * Yields all the keys in the tree rooted at &lt;code&gt;root&lt;/code&gt; that lie in the
  * interval &lt;code&gt;[left, right[&lt;/code&gt;, in order.
  *
  * @param {Function} compare - The comparison function.
  * @param {Node} root - The root of the tree.
- * @param {Key} left - The lower bound of the interval.
- * @param {Key} right - The upper bound of the interval.
- * @returns {Iterator}
+ * @param {any} left - The inclusive lower bound of the interval.
+ * @param {any} right - The non-inclusive upper bound of the interval.
+ * @returns {IterableIterator}
  */
-export function* rangetraversal(compare, root, left, right) {
+export default function* rangetraversal(compare, root, left, right) {
 	if (compare(root.key, left) &lt; 0) {
 		// If the root lies to the left of the interval, we can discard the
 		// entire left subtree.
-		if (!root.right.isLeaf())
+		if (!root.right.isLeaf()) {
+			assert(root.right instanceof Node);
 			yield* rangetraversal(compare, root.right, left, right);
+		}
 	} else if (compare(root.key, right) &gt;= 0) {
 		// If the root lies to the right of the interval, we can discard the
 		// entire right subtree.
-		if (!root.left.isLeaf())
+		if (!root.left.isLeaf()) {
+			assert(root.left instanceof Node);
 			yield* rangetraversal(compare, root.left, left, right);
+		}
 	} else {
 		// Otherwise just recurse on both subtrees and yield the root in
 		// between.
-		if (!root.left.isLeaf())
+		if (!root.left.isLeaf()) {
+			assert(root.left instanceof Node);
 			yield* rangetraversal(compare, root.left, left, right);
+		}
+
 		yield root.key;
-		if (!root.right.isLeaf())
+		if (!root.right.isLeaf()) {
+			assert(root.right instanceof Node);
 			yield* rangetraversal(compare, root.right, left, right);
+		}
 	}
 }
 </code></pre>

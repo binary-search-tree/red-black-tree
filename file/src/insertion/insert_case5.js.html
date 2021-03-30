@@ -29,9 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#adt">adt</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/adt/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-from">from</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#color">color</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BLACK">BLACK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RED">RED</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#debug">debug</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_debug">_debug</a></span></span></li>
@@ -58,18 +57,26 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/insertion/insert_case5.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {BLACK, RED} from &apos;../color/index.js&apos;;
-import {rotate_left, rotate_right} from &apos;../rotate/index.js&apos;;
-import {grandparent} from &apos;../family/grandparent.js&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
+import Node from &apos;../types/Node.js&apos;;
+import BLACK from &apos;../color/BLACK.js&apos;;
+import RED from &apos;../color/RED.js&apos;;
+import rotate_left from &apos;../rotate/rotate_left.js&apos;;
+import rotate_right from &apos;../rotate/rotate_right.js&apos;;
+import grandparent from &apos;../family/grandparent.js&apos;;
 
 /**
  * Preconditions:
  *   - n is red.
+ *   - n&apos;s children are BLACK
  *   - n is not the root of the tree.
  *   - n&apos;s parent is red.
  *   - n&apos;s uncle is black.
@@ -77,39 +84,57 @@ import {grandparent} from &apos;../family/grandparent.js&apos;;
  *
  * @param {Node} n - The input node.
  */
-export const insert_case5 = (n) =&gt; {
+const insert_case5 = (n) =&gt; {
+	assert(n instanceof Node);
+	assert(n._color === RED);
+	assert(n.left._color === BLACK);
+	assert(n.right._color === BLACK);
+	assert(n.parent !== null);
+	assert(n.parent._color === RED);
 	const g = grandparent(n);
 
 	// Repaint n&apos;s parent black, n&apos;s grandparent red
 	n.parent._color = BLACK;
 	g._color = RED;
 
-	/**
-	 * If the path from g to n makes a left-left, {@link rotate_right} at g.
-	 * We are done.
-	 *
-	 *             R                     B
-	 *           /   \                 /   \
-	 *         B       B            &gt;R       R
-	 *        / \     / \   --&gt;     / \     / \
-	 *      &gt;R   =   -   -         =   =   =   B
-	 *      / \                               / \
-	 *     =   =                             -   -
-	 */
-	if (n === n.parent.left) rotate_right(g);
-	/**
-	 * If the path from g to n makes a right-right, {@link rotate_left} at g.
-	 * We are done.
-	 *
-	 *             R                     B
-	 *           /   \                 /   \
-	 *         B       B             R      &gt;R
-	 *        / \     / \   --&gt;     / \     / \
-	 *       -   -   =  &gt;R         B   =   =   =
-	 *                  / \       / \
-	 *                 =   =     -   -
-	 */ else rotate_left(g);
+	if (n === n.parent.left) {
+		/**
+		 * If the path from g to n makes a left-left, {@link rotate_right} at g.
+		 * We are done.
+		 *
+		 *             R                     B
+		 *           /   \                 /   \
+		 *         B       B            &gt;R       R
+		 *        / \     / \   --&gt;     / \     / \
+		 *      &gt;R   =   -   -         =   =   =   B
+		 *      / \                               / \
+		 *     =   =                             -   -
+		 */
+		assert(g.left instanceof Node);
+		assert(n === g.left.left);
+		assert(g.right._color === BLACK);
+		rotate_right(g);
+	} else {
+		/**
+		 * If the path from g to n makes a right-right, {@link rotate_left} at g.
+		 * We are done.
+		 *
+		 *             R                     B
+		 *           /   \                 /   \
+		 *         B       B             R      &gt;R
+		 *        / \     / \   --&gt;     / \     / \
+		 *       -   -   =  &gt;R         B   =   =   =
+		 *                  / \       / \
+		 *                 =   =     -   -
+		 */
+		assert(g.right instanceof Node);
+		assert(n === g.right.right);
+		assert(g.left._color === BLACK);
+		rotate_left(g);
+	}
 };
+
+export default insert_case5;
 </code></pre>
 
 </div>

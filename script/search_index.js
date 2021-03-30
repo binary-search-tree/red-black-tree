@@ -6,15 +6,15 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "@aureooms/js-red-black-tree/src/adt/leaf.js~leaf",
+    "@aureooms/js-red-black-tree/src/types/leaf.js~leaf",
     "function/index.html#static-function-Leaf",
-    "<span>Leaf</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/adt/Leaf.js</span>",
+    "<span>Leaf</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/types/Leaf.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/adt/node.js~node",
+    "@aureooms/js-red-black-tree/src/types/node.js~node",
     "function/index.html#static-function-Node",
-    "<span>Node</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/adt/Node.js</span>",
+    "<span>Node</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/types/Node.js</span>",
     "function"
   ],
   [
@@ -24,15 +24,15 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "@aureooms/js-red-black-tree/src/adt/redblacktree.js~redblacktree",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html",
-    "<span>RedBlackTree</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/adt/RedBlackTree.js</span>",
+    "@aureooms/js-red-black-tree/src/types/redblacktree.js~redblacktree",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html",
+    "<span>RedBlackTree</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/types/RedBlackTree.js</span>",
     "class"
   ],
   [
-    "@aureooms/js-red-black-tree/src/debug/debug.js~_debug",
+    "@aureooms/js-red-black-tree/src/debug/_debug.js~_debug",
     "function/index.html#static-function-_debug",
-    "<span>_debug</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/debug/debug.js</span>",
+    "<span>_debug</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/debug/_debug.js</span>",
     "function"
   ],
   [
@@ -76,6 +76,18 @@ window.esdocSearchIndex = [
     "function/index.html#static-function-delete_one_child",
     "<span>delete_one_child</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_one_child.js</span>",
     "function"
+  ],
+  [
+    "@aureooms/js-red-black-tree/src/api/empty.js~empty",
+    "variable/index.html#static-variable-empty",
+    "<span>empty</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/api/empty.js</span>",
+    "variable"
+  ],
+  [
+    "@aureooms/js-red-black-tree/src/api/from.js~from",
+    "variable/index.html#static-variable-from",
+    "<span>from</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/api/from.js</span>",
+    "variable"
   ],
   [
     "@aureooms/js-red-black-tree/src/family/grandparent.js~grandparent",
@@ -456,111 +468,15 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/adt/leaf.js",
-    "file/src/adt/Leaf.js.html",
-    "src/adt/Leaf.js",
+    "src/api/empty.js",
+    "file/src/api/empty.js.html",
+    "src/api/empty.js",
     "file"
   ],
   [
-    "src/adt/node.js",
-    "file/src/adt/Node.js.html",
-    "src/adt/Node.js",
-    "file"
-  ],
-  [
-    "src/adt/redblacktree.js",
-    "file/src/adt/RedBlackTree.js.html",
-    "src/adt/RedBlackTree.js",
-    "file"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#[symbol.iterator]",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-[Symbol.iterator]",
-    "src/adt/RedBlackTree.js~RedBlackTree#[Symbol.iterator]",
-    "method"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#_delete",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-_delete",
-    "src/adt/RedBlackTree.js~RedBlackTree#_delete",
-    "method"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#_search",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-_search",
-    "src/adt/RedBlackTree.js~RedBlackTree#_search",
-    "method"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#add",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-add",
-    "src/adt/RedBlackTree.js~RedBlackTree#add",
-    "method"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#compare",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-member-compare",
-    "src/adt/RedBlackTree.js~RedBlackTree#compare",
-    "member"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#constructor",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-constructor-constructor",
-    "src/adt/RedBlackTree.js~RedBlackTree#constructor",
-    "method"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#get",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-get",
-    "src/adt/RedBlackTree.js~RedBlackTree#get",
-    "method"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#has",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-has",
-    "src/adt/RedBlackTree.js~RedBlackTree#has",
-    "method"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#isempty",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-isEmpty",
-    "src/adt/RedBlackTree.js~RedBlackTree#isEmpty",
-    "method"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#items",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-items",
-    "src/adt/RedBlackTree.js~RedBlackTree#items",
-    "method"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#range",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-range",
-    "src/adt/RedBlackTree.js~RedBlackTree#range",
-    "method"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#remove",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-method-remove",
-    "src/adt/RedBlackTree.js~RedBlackTree#remove",
-    "method"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree#root",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#instance-member-root",
-    "src/adt/RedBlackTree.js~RedBlackTree#root",
-    "member"
-  ],
-  [
-    "src/adt/redblacktree.js~redblacktree.from",
-    "class/src/adt/RedBlackTree.js~RedBlackTree.html#static-method-from",
-    "src/adt/RedBlackTree.js~RedBlackTree.from",
-    "method"
-  ],
-  [
-    "src/adt/index.js",
-    "file/src/adt/index.js.html",
-    "src/adt/index.js",
+    "src/api/from.js",
+    "file/src/api/from.js.html",
+    "src/api/from.js",
     "file"
   ],
   [
@@ -576,21 +492,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/color/index.js",
-    "file/src/color/index.js.html",
-    "src/color/index.js",
-    "file"
-  ],
-  [
-    "src/debug/debug.js",
-    "file/src/debug/debug.js.html",
-    "src/debug/debug.js",
-    "file"
-  ],
-  [
-    "src/debug/index.js",
-    "file/src/debug/index.js.html",
-    "src/debug/index.js",
+    "src/debug/_debug.js",
+    "file/src/debug/_debug.js.html",
+    "src/debug/_debug.js",
     "file"
   ],
   [
@@ -636,12 +540,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/deletion/index.js",
-    "file/src/deletion/index.js.html",
-    "src/deletion/index.js",
-    "file"
-  ],
-  [
     "src/deletion/replace_node.js",
     "file/src/deletion/replace_node.js.html",
     "src/deletion/replace_node.js",
@@ -651,12 +549,6 @@ window.esdocSearchIndex = [
     "src/family/grandparent.js",
     "file/src/family/grandparent.js.html",
     "src/family/grandparent.js",
-    "file"
-  ],
-  [
-    "src/family/index.js",
-    "file/src/family/index.js.html",
-    "src/family/index.js",
     "file"
   ],
   [
@@ -681,12 +573,6 @@ window.esdocSearchIndex = [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
-    "file"
-  ],
-  [
-    "src/insertion/index.js",
-    "file/src/insertion/index.js.html",
-    "src/insertion/index.js",
     "file"
   ],
   [
@@ -726,12 +612,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/rotate/index.js",
-    "file/src/rotate/index.js.html",
-    "src/rotate/index.js",
-    "file"
-  ],
-  [
     "src/rotate/rotate_left.js",
     "file/src/rotate/rotate_left.js.html",
     "src/rotate/rotate_left.js",
@@ -744,21 +624,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/search/index.js",
-    "file/src/search/index.js.html",
-    "src/search/index.js",
-    "file"
-  ],
-  [
     "src/search/search.js",
     "file/src/search/search.js.html",
     "src/search/search.js",
-    "file"
-  ],
-  [
-    "src/traversal/index.js",
-    "file/src/traversal/index.js.html",
-    "src/traversal/index.js",
     "file"
   ],
   [
@@ -772,5 +640,113 @@ window.esdocSearchIndex = [
     "file/src/traversal/rangetraversal.js.html",
     "src/traversal/rangetraversal.js",
     "file"
+  ],
+  [
+    "src/types/leaf.js",
+    "file/src/types/Leaf.js.html",
+    "src/types/Leaf.js",
+    "file"
+  ],
+  [
+    "src/types/node.js",
+    "file/src/types/Node.js.html",
+    "src/types/Node.js",
+    "file"
+  ],
+  [
+    "src/types/redblacktree.js",
+    "file/src/types/RedBlackTree.js.html",
+    "src/types/RedBlackTree.js",
+    "file"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#[symbol.iterator]",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-[Symbol.iterator]",
+    "src/types/RedBlackTree.js~RedBlackTree#[Symbol.iterator]",
+    "method"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#_delete",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-_delete",
+    "src/types/RedBlackTree.js~RedBlackTree#_delete",
+    "method"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#_search",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-_search",
+    "src/types/RedBlackTree.js~RedBlackTree#_search",
+    "method"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#add",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-add",
+    "src/types/RedBlackTree.js~RedBlackTree#add",
+    "method"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#compare",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-member-compare",
+    "src/types/RedBlackTree.js~RedBlackTree#compare",
+    "member"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#constructor",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-constructor-constructor",
+    "src/types/RedBlackTree.js~RedBlackTree#constructor",
+    "method"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#get",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-get",
+    "src/types/RedBlackTree.js~RedBlackTree#get",
+    "method"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#has",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-has",
+    "src/types/RedBlackTree.js~RedBlackTree#has",
+    "method"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#isempty",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-isEmpty",
+    "src/types/RedBlackTree.js~RedBlackTree#isEmpty",
+    "method"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#items",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-items",
+    "src/types/RedBlackTree.js~RedBlackTree#items",
+    "method"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#range",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-range",
+    "src/types/RedBlackTree.js~RedBlackTree#range",
+    "method"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#remove",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-remove",
+    "src/types/RedBlackTree.js~RedBlackTree#remove",
+    "method"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#root",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-member-root",
+    "src/types/RedBlackTree.js~RedBlackTree#root",
+    "member"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree.empty",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#static-method-empty",
+    "src/types/RedBlackTree.js~RedBlackTree.empty",
+    "method"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree.from",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#static-method-from",
+    "src/types/RedBlackTree.js~RedBlackTree.from",
+    "method"
   ]
 ]

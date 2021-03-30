@@ -29,9 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#adt">adt</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/adt/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-from">from</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#color">color</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BLACK">BLACK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RED">RED</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#debug">debug</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_debug">_debug</a></span></span></li>
@@ -58,12 +57,22 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-christmas-tree---a-href--https---aureooms-github-io-js-red-black-tree---aureooms-js-red-black-tree--a-">:christmas_tree: <a href="https://aureooms.github.io/js-red-black-tree">@aureooms/js-red-black-tree</a></h1><p><img src="https://cdn.rawgit.com/aureooms/js-red-black-tree/main/media/sketch.svg" width="864"></p>
-<pre><code class="lang-js"><code class="source-code prettyprint">let tree = RedBlackTree.from( increasing , range( 100000 ) ) ;</code>
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-christmas-tree---a-href--https---aureooms-github-io-js-red-black-tree---aureooms-js-red-black-tree--a-">:christmas_tree: <a href="https://aureooms.github.io/js-red-black-tree">@aureooms/js-red-black-tree</a></h1><p></p><p>
+<img src="https://cdn.rawgit.com/aureooms/js-red-black-tree/main/media/sketch.svg" width="480">
+</p>
+
+<p></p>
+<pre><code class="lang-js"><code class="source-code prettyprint">import {from} from &apos;@aureooms/js-red-black-tree&apos;;
+import {increasing} from &apos;@aureooms/js-compare&apos;;
+import {range} from &apos;@aureooms/js-itertools&apos;;
+let tree = from( increasing , range( 100000 ) ) ;</code>
 </code></pre>
 <p>Red-black tree library for JavaScript.
 See <a href="https://aureooms.github.io/js-red-black-tree/index.html">documentation</a>.

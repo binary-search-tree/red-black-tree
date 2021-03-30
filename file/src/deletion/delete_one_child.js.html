@@ -29,9 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#adt">adt</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/adt/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#api">api</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-from">from</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#color">color</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BLACK">BLACK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RED">RED</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#debug">debug</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_debug">_debug</a></span></span></li>
@@ -58,15 +57,22 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/deletion/delete_one_child.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {BLACK, RED} from &apos;../color/index.js&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
+import BLACK from &apos;../color/BLACK.js&apos;;
+import RED from &apos;../color/RED.js&apos;;
+import Node from &apos;../types/Node.js&apos;;
+import Leaf from &apos;../types/Leaf.js&apos;;
 
-import {replace_node} from &apos;./replace_node.js&apos;;
-import {delete_case1} from &apos;./delete_case1.js&apos;;
+import replace_node from &apos;./replace_node.js&apos;;
+import delete_case1 from &apos;./delete_case1.js&apos;;
 
 /**
  * Delete a node &lt;code&gt;n&lt;/code&gt; that has at most a single non-leaf child.
@@ -74,16 +80,18 @@ import {delete_case1} from &apos;./delete_case1.js&apos;;
  * Precondition:
  *   - n has at most one non-leaf child.
  *   - if n has a non-leaf child, then it is its left child.
+ *   - hence, n&apos;s right child is a leaf
  *
  * @param {Node} n - The node to delete.
  */
-export const delete_one_child = (n) =&gt; {
-	// Precondition: n has at most one non-leaf child.
-	// assert( n.right.isLeaf() || n.left.isLeaf());
+const delete_one_child = (n) =&gt; {
+	assert(n instanceof Node);
+	// Precondition: n&apos;s right child is a leaf.
+	// The right child of n is always a LEAF because either n is a subtree
+	// predecessor or it is the only child of its parent by the red-black tree
+	// properties
+	assert(n.right instanceof Leaf);
 
-	// const child = n.right.isLeaf() ? n.left : n.right;
-	// n.right is always a LEAF because either n is a subtree predecessor or it
-	// is the only child of its parent by the red-black tree properties
 	const child = n.left;
 
 	// Replace n with its left child
@@ -97,14 +105,17 @@ export const delete_one_child = (n) =&gt; {
 		// replace n with it.
 		if (child._color === RED) child._color = BLACK;
 		// Otherwise, there are more things to fix.
-		else delete_case1(child);
+		else {
+			delete_case1(child);
+		}
+	} else {
+		//    If n is red then its child can only be black. Replacing n with its
+		//    child suffices. This is a NO-OP.
+		assert(child._color === BLACK);
 	}
-
-	// Else {
-	//    If n is red then its child can only be black. Replacing n with its
-	//    child suffices.
-	// }
 };
+
+export default delete_one_child;
 </code></pre>
 
 </div>
