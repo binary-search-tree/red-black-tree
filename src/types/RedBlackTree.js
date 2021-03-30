@@ -1,5 +1,6 @@
 import assert from 'assert';
 import Node from './Node.js';
+import Leaf from './Leaf.js';
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import predecessor from '../family/predecessor.js';
@@ -108,6 +109,8 @@ export default class RedBlackTree {
 			// child.
 			const succ = node.right;
 			assert(succ instanceof Node);
+			assert(succ.left instanceof Leaf);
+			assert(succ.right instanceof Leaf);
 			node.key = succ.key;
 			// Delete successor node
 			// note: this node can only have one non-leaf child
