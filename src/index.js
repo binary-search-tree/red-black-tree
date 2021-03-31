@@ -8,7 +8,7 @@ export {default as delete_case1} from './deletion/delete_case1.js';
 export {default as delete_case2} from './deletion/delete_case2.js';
 export {default as delete_case3} from './deletion/delete_case3.js';
 export {default as delete_case4} from './deletion/delete_case4.js';
-export {default as delete_case6} from './deletion/delete_case6.js';
+export {default as delete_case5} from './deletion/delete_case5.js';
 export {default as delete_no_child} from './deletion/delete_no_child.js';
 export {default as delete_one_child} from './deletion/delete_one_child.js';
 export {default as prune} from './deletion/prune.js';
