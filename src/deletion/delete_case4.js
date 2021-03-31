@@ -19,7 +19,7 @@ import delete_case6 from './delete_case6.js';
  *
  * @param {Node} n - The input node.
  */
-const delete_case5 = (n) => {
+const delete_case4 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === BLACK);
 	assert(n.parent !== null);
@@ -70,4 +70,4 @@ const delete_case5 = (n) => {
 	delete_case6(n);
 };
 
-export default delete_case5;
+export default delete_case4;

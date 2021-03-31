@@ -4,7 +4,7 @@ import RED from '../color/RED.js';
 import Node from '../types/Node.js';
 import sibling from '../family/sibling.js';
 
-import delete_case5 from './delete_case5.js';
+import delete_case4 from './delete_case4.js';
 
 /**
  * Preconditions:
@@ -55,7 +55,7 @@ const delete_case3 = (n) => {
 	}
 
 	// Otherwise, go to case 5.
-	else delete_case5(n);
+	else delete_case4(n);
 };
 
 export default delete_case3;
