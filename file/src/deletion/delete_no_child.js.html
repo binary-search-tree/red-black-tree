@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/deletion/delete_case4.js | @aureooms/js-red-black-tree</title>
+  <title data-ice="title">src/deletion/delete_no_child.js | @aureooms/js-red-black-tree</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -34,97 +34,84 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#color">color</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BLACK">BLACK</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RED">RED</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#debug">debug</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_debug">_debug</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#deletion">deletion</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case1">delete_case1</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#deletion">deletion</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case0">delete_case0</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case1">delete_case1</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case2">delete_case2</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case3">delete_case3</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case4">delete_case4</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case5">delete_case5</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_case6">delete_case6</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_no_child">delete_no_child</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-delete_one_child">delete_one_child</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-prune">prune</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-replace_node">replace_node</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#family">family</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-grandparent">grandparent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-predecessor">predecessor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sibling">sibling</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-uncle">uncle</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#insertion">insertion</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert">insert</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert_case0">insert_case0</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert_case1">insert_case1</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert_case2">insert_case2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert_case3">insert_case3</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert_case4">insert_case4</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-insert_case5">insert_case5</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#rotate">rotate</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_left">rotate_left</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_right">rotate_right</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Leaf">Leaf</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/deletion/delete_case4.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/deletion/delete_no_child.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
 import BLACK from &apos;../color/BLACK.js&apos;;
 import RED from &apos;../color/RED.js&apos;;
 import Node from &apos;../types/Node.js&apos;;
-import Leaf from &apos;../types/Leaf.js&apos;;
-import sibling from &apos;../family/sibling.js&apos;;
 
-import delete_case5 from &apos;./delete_case5.js&apos;;
+import replace_node from &apos;./replace_node.js&apos;;
+import delete_case1 from &apos;./delete_case1.js&apos;;
+
+import prune from &apos;./prune.js&apos;;
 
 /**
- * Preconditions:
- *   - n is black
- *   - all root-leaf paths going through n have a black height of b - 1
- *   - all other root-leaf paths have a black height of b
- *   - n is not the root
- *   - n&apos;s sibling is black
- *   - n&apos;s parent and n&apos;s sibling&apos;s children cannot all be black
+ * Delete a node &lt;code&gt;n&lt;/code&gt; that has no non-leaf child.
  *
- * @param {Node|Leaf} n - The input node.
+ * Precondition:
+ *   - n has no non-leaf child.
+ *   - n is not the root
+ *
+ * @param {Node} n - The node to delete.
  */
-const delete_case4 = (n) =&gt; {
-	assert(n instanceof Node || n instanceof Leaf);
-	assert(n._color === BLACK);
+const delete_no_child = (n) =&gt; {
+	assert(n instanceof Node);
 	assert(n.parent !== null);
-	const s = sibling(n);
-	assert(s instanceof Node);
-	assert(s._color === BLACK);
-	assert(
-		n.parent._color === RED || s.left._color === RED || s.right._color === RED,
-	);
+	assert(n.left === null);
+	assert(n.right === null);
 
-	/**
-	 * If n&apos;s parent is red and n&apos;s sibling&apos;s children are black, then swap n&apos;s
-	 * parent and n&apos;s sibling color. All root-leaf paths going through n have
-	 * now a black height of b. All other root-leaf paths have their black
-	 * height unchanged. Red-black properties are respected. We are done.
-	 *
-	 *           R                       B
-	 *         /   \                  /     \
-	 *      &gt;B       B              &gt;B        R
-	 *      / \     / \     --&gt;     / \      / \
-	 *     -   -  B     B          -   -   B     B
-	 *           / \   / \                / \   / \
-	 *          -   - -   -              -   - -   -
-	 */
-	if (
-		// The parent color test is always true when coming from case 2
-		n.parent._color === RED &amp;&amp;
-		s.left._color === BLACK &amp;&amp;
-		s.right._color === BLACK
-	) {
-		s._color = RED;
-		n.parent._color = BLACK;
+	if (n._color !== BLACK) {
+		assert(n._color === RED);
+		prune(n);
+		return;
 	}
 
-	// Otherwise, go to case 5.
-	else delete_case5(n);
+	// Mock leaf since there is no left child
+	// We use key = n.key to avoid mixing types, but this property is never
+	// accessed.
+	const leaf = new Node(BLACK, n.key);
+
+	// Replace n with the mocked leaf
+	replace_node(n, leaf);
+
+	// If n is black, deleting it reduces the black-height of every path going
+	// through it by 1. The leaf is black, so there are more things to fix.
+	delete_case1(leaf);
+
+	// Delete mocked leaf
+	prune(leaf);
 };
 
-export default delete_case4;
+export default delete_no_child;
 </code></pre>
 
 </div>

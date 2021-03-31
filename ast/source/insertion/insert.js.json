@@ -168,7 +168,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Walks the tree rooted at <code>A</code> down the only path that satisfies\n * the following property: if at a node <code>C</code> we make a left (resp.\n * right), then <code>B < C</code> (resp. <code>B >= C</code>). Once we hit the\n * end of the path, we can add node <code>B</code> at this position. By the\n * property of the path, the tree rooted at <code>A</code> is still a binary\n * search tree.\n * For our red-black tree, all that is left to do is fix the red-black tree\n * properties in case they have been violated by this insertion. This is fixed\n * by {@link insert_case1}.\n *\n * @param {Function} compare - The comparison function to use.\n * @param {Node} A - The root of the tree.\n * @param {Node} B - The node to insert.\n * @returns {Node} B - The node that has been inserted.\n ",
+            "value": "*\n * Walks the tree rooted at <code>A</code> down the only path that satisfies\n * the following property: if at a node <code>C</code> we make a left (resp.\n * right), then <code>B < C</code> (resp. <code>B >= C</code>). Once we hit the\n * end of the path, we can add node <code>B</code> at this position. By the\n * property of the path, the tree rooted at <code>A</code> is still a binary\n * search tree.\n * For our red-black tree, all that is left to do is fix the red-black tree\n * properties in case they have been violated by this insertion. This is fixed\n * by {@link insert_case0}.\n *\n * @param {Function} compare - The comparison function to use.\n * @param {Node} A - The root of the tree.\n * @param {Node} B - The node to insert.\n * @returns {Node} B - The node that has been inserted.\n ",
             "start": 67,
             "end": 866,
             "loc": {
@@ -676,7 +676,7 @@
                                   }
                                 },
                                 "test": {
-                                  "type": "CallExpression",
+                                  "type": "BinaryExpression",
                                   "start": 986,
                                   "end": 999,
                                   "loc": {
@@ -689,10 +689,10 @@
                                       "column": 20
                                     }
                                   },
-                                  "callee": {
-                                    "type": "MemberExpression",
+                                  "left": {
+                                    "type": "Identifier",
                                     "start": 986,
-                                    "end": 997,
+                                    "end": 990,
                                     "loc": {
                                       "start": {
                                         "line": 25,
@@ -700,46 +700,28 @@
                                       },
                                       "end": {
                                         "line": 25,
-                                        "column": 18
-                                      }
-                                    },
-                                    "object": {
-                                      "type": "Identifier",
-                                      "start": 986,
-                                      "end": 990,
-                                      "loc": {
-                                        "start": {
-                                          "line": 25,
-                                          "column": 7
-                                        },
-                                        "end": {
-                                          "line": 25,
-                                          "column": 11
-                                        },
-                                        "identifierName": "node"
+                                        "column": 11
                                       },
-                                      "name": "node"
+                                      "identifierName": "node"
                                     },
-                                    "property": {
-                                      "type": "Identifier",
-                                      "start": 991,
-                                      "end": 997,
-                                      "loc": {
-                                        "start": {
-                                          "line": 25,
-                                          "column": 12
-                                        },
-                                        "end": {
-                                          "line": 25,
-                                          "column": 18
-                                        },
-                                        "identifierName": "isLeaf"
-                                      },
-                                      "name": "isLeaf"
-                                    },
-                                    "computed": false
+                                    "name": "node"
                                   },
-                                  "arguments": []
+                                  "operator": "===",
+                                  "right": {
+                                    "type": "NullLiteral",
+                                    "start": 995,
+                                    "end": 999,
+                                    "loc": {
+                                      "start": {
+                                        "line": 25,
+                                        "column": 16
+                                      },
+                                      "end": {
+                                        "line": 25,
+                                        "column": 20
+                                      }
+                                    }
+                                  }
                                 },
                                 "consequent": {
                                   "type": "BlockStatement",
@@ -1172,7 +1154,7 @@
                                   }
                                 },
                                 "test": {
-                                  "type": "CallExpression",
+                                  "type": "BinaryExpression",
                                   "start": 1126,
                                   "end": 1139,
                                   "loc": {
@@ -1185,10 +1167,10 @@
                                       "column": 20
                                     }
                                   },
-                                  "callee": {
-                                    "type": "MemberExpression",
+                                  "left": {
+                                    "type": "Identifier",
                                     "start": 1126,
-                                    "end": 1137,
+                                    "end": 1130,
                                     "loc": {
                                       "start": {
                                         "line": 35,
@@ -1196,46 +1178,28 @@
                                       },
                                       "end": {
                                         "line": 35,
-                                        "column": 18
-                                      }
-                                    },
-                                    "object": {
-                                      "type": "Identifier",
-                                      "start": 1126,
-                                      "end": 1130,
-                                      "loc": {
-                                        "start": {
-                                          "line": 35,
-                                          "column": 7
-                                        },
-                                        "end": {
-                                          "line": 35,
-                                          "column": 11
-                                        },
-                                        "identifierName": "node"
+                                        "column": 11
                                       },
-                                      "name": "node"
+                                      "identifierName": "node"
                                     },
-                                    "property": {
-                                      "type": "Identifier",
-                                      "start": 1131,
-                                      "end": 1137,
-                                      "loc": {
-                                        "start": {
-                                          "line": 35,
-                                          "column": 12
-                                        },
-                                        "end": {
-                                          "line": 35,
-                                          "column": 18
-                                        },
-                                        "identifierName": "isLeaf"
-                                      },
-                                      "name": "isLeaf"
-                                    },
-                                    "computed": false
+                                    "name": "node"
                                   },
-                                  "arguments": []
+                                  "operator": "===",
+                                  "right": {
+                                    "type": "NullLiteral",
+                                    "start": 1135,
+                                    "end": 1139,
+                                    "loc": {
+                                      "start": {
+                                        "line": 35,
+                                        "column": 16
+                                      },
+                                      "end": {
+                                        "line": 35,
+                                        "column": 20
+                                      }
+                                    }
+                                  }
                                 },
                                 "consequent": {
                                   "type": "BlockStatement",
@@ -2243,7 +2207,7 @@
                                     }
                                   },
                                   "test": {
-                                    "type": "CallExpression",
+                                    "type": "BinaryExpression",
                                     "start": 986,
                                     "end": 999,
                                     "loc": {
@@ -2256,10 +2220,10 @@
                                         "column": 20
                                       }
                                     },
-                                    "callee": {
-                                      "type": "MemberExpression",
+                                    "left": {
+                                      "type": "Identifier",
                                       "start": 986,
-                                      "end": 997,
+                                      "end": 990,
                                       "loc": {
                                         "start": {
                                           "line": 25,
@@ -2267,46 +2231,28 @@
                                         },
                                         "end": {
                                           "line": 25,
-                                          "column": 18
-                                        }
-                                      },
-                                      "object": {
-                                        "type": "Identifier",
-                                        "start": 986,
-                                        "end": 990,
-                                        "loc": {
-                                          "start": {
-                                            "line": 25,
-                                            "column": 7
-                                          },
-                                          "end": {
-                                            "line": 25,
-                                            "column": 11
-                                          },
-                                          "identifierName": "node"
+                                          "column": 11
                                         },
-                                        "name": "node"
+                                        "identifierName": "node"
                                       },
-                                      "property": {
-                                        "type": "Identifier",
-                                        "start": 991,
-                                        "end": 997,
-                                        "loc": {
-                                          "start": {
-                                            "line": 25,
-                                            "column": 12
-                                          },
-                                          "end": {
-                                            "line": 25,
-                                            "column": 18
-                                          },
-                                          "identifierName": "isLeaf"
-                                        },
-                                        "name": "isLeaf"
-                                      },
-                                      "computed": false
+                                      "name": "node"
                                     },
-                                    "arguments": []
+                                    "operator": "===",
+                                    "right": {
+                                      "type": "NullLiteral",
+                                      "start": 995,
+                                      "end": 999,
+                                      "loc": {
+                                        "start": {
+                                          "line": 25,
+                                          "column": 16
+                                        },
+                                        "end": {
+                                          "line": 25,
+                                          "column": 20
+                                        }
+                                      }
+                                    }
                                   },
                                   "consequent": {
                                     "type": "BlockStatement",
@@ -2739,7 +2685,7 @@
                                     }
                                   },
                                   "test": {
-                                    "type": "CallExpression",
+                                    "type": "BinaryExpression",
                                     "start": 1126,
                                     "end": 1139,
                                     "loc": {
@@ -2752,10 +2698,10 @@
                                         "column": 20
                                       }
                                     },
-                                    "callee": {
-                                      "type": "MemberExpression",
+                                    "left": {
+                                      "type": "Identifier",
                                       "start": 1126,
-                                      "end": 1137,
+                                      "end": 1130,
                                       "loc": {
                                         "start": {
                                           "line": 35,
@@ -2763,46 +2709,28 @@
                                         },
                                         "end": {
                                           "line": 35,
-                                          "column": 18
-                                        }
-                                      },
-                                      "object": {
-                                        "type": "Identifier",
-                                        "start": 1126,
-                                        "end": 1130,
-                                        "loc": {
-                                          "start": {
-                                            "line": 35,
-                                            "column": 7
-                                          },
-                                          "end": {
-                                            "line": 35,
-                                            "column": 11
-                                          },
-                                          "identifierName": "node"
+                                          "column": 11
                                         },
-                                        "name": "node"
+                                        "identifierName": "node"
                                       },
-                                      "property": {
-                                        "type": "Identifier",
-                                        "start": 1131,
-                                        "end": 1137,
-                                        "loc": {
-                                          "start": {
-                                            "line": 35,
-                                            "column": 12
-                                          },
-                                          "end": {
-                                            "line": 35,
-                                            "column": 18
-                                          },
-                                          "identifierName": "isLeaf"
-                                        },
-                                        "name": "isLeaf"
-                                      },
-                                      "computed": false
+                                      "name": "node"
                                     },
-                                    "arguments": []
+                                    "operator": "===",
+                                    "right": {
+                                      "type": "NullLiteral",
+                                      "start": 1135,
+                                      "end": 1139,
+                                      "loc": {
+                                        "start": {
+                                          "line": 35,
+                                          "column": 16
+                                        },
+                                        "end": {
+                                          "line": 35,
+                                          "column": 20
+                                        }
+                                      }
+                                    }
                                   },
                                   "consequent": {
                                     "type": "BlockStatement",
@@ -3251,7 +3179,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Walks the tree rooted at <code>A</code> down the only path that satisfies\n * the following property: if at a node <code>C</code> we make a left (resp.\n * right), then <code>B < C</code> (resp. <code>B >= C</code>). Once we hit the\n * end of the path, we can add node <code>B</code> at this position. By the\n * property of the path, the tree rooted at <code>A</code> is still a binary\n * search tree.\n * For our red-black tree, all that is left to do is fix the red-black tree\n * properties in case they have been violated by this insertion. This is fixed\n * by {@link insert_case1}.\n *\n * @param {Function} compare - The comparison function to use.\n * @param {Node} A - The root of the tree.\n * @param {Node} B - The node to insert.\n * @returns {Node} B - The node that has been inserted.\n ",
+              "value": "*\n * Walks the tree rooted at <code>A</code> down the only path that satisfies\n * the following property: if at a node <code>C</code> we make a left (resp.\n * right), then <code>B < C</code> (resp. <code>B >= C</code>). Once we hit the\n * end of the path, we can add node <code>B</code> at this position. By the\n * property of the path, the tree rooted at <code>A</code> is still a binary\n * search tree.\n * For our red-black tree, all that is left to do is fix the red-black tree\n * properties in case they have been violated by this insertion. This is fixed\n * by {@link insert_case0}.\n *\n * @param {Function} compare - The comparison function to use.\n * @param {Node} A - The root of the tree.\n * @param {Node} B - The node to insert.\n * @returns {Node} B - The node that has been inserted.\n ",
               "start": 67,
               "end": 866,
               "loc": {
@@ -3275,7 +3203,7 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * Walks the tree rooted at <code>A</code> down the only path that satisfies\n * the following property: if at a node <code>C</code> we make a left (resp.\n * right), then <code>B < C</code> (resp. <code>B >= C</code>). Once we hit the\n * end of the path, we can add node <code>B</code> at this position. By the\n * property of the path, the tree rooted at <code>A</code> is still a binary\n * search tree.\n * For our red-black tree, all that is left to do is fix the red-black tree\n * properties in case they have been violated by this insertion. This is fixed\n * by {@link insert_case1}.\n *\n * @param {Function} compare - The comparison function to use.\n * @param {Node} A - The root of the tree.\n * @param {Node} B - The node to insert.\n * @returns {Node} B - The node that has been inserted.\n ",
+      "value": "*\n * Walks the tree rooted at <code>A</code> down the only path that satisfies\n * the following property: if at a node <code>C</code> we make a left (resp.\n * right), then <code>B < C</code> (resp. <code>B >= C</code>). Once we hit the\n * end of the path, we can add node <code>B</code> at this position. By the\n * property of the path, the tree rooted at <code>A</code> is still a binary\n * search tree.\n * For our red-black tree, all that is left to do is fix the red-black tree\n * properties in case they have been violated by this insertion. This is fixed\n * by {@link insert_case0}.\n *\n * @param {Function} compare - The comparison function to use.\n * @param {Node} A - The root of the tree.\n * @param {Node} B - The node to insert.\n * @returns {Node} B - The node that has been inserted.\n ",
       "start": 67,
       "end": 866,
       "loc": {
@@ -3559,7 +3487,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Walks the tree rooted at <code>A</code> down the only path that satisfies\n * the following property: if at a node <code>C</code> we make a left (resp.\n * right), then <code>B < C</code> (resp. <code>B >= C</code>). Once we hit the\n * end of the path, we can add node <code>B</code> at this position. By the\n * property of the path, the tree rooted at <code>A</code> is still a binary\n * search tree.\n * For our red-black tree, all that is left to do is fix the red-black tree\n * properties in case they have been violated by this insertion. This is fixed\n * by {@link insert_case1}.\n *\n * @param {Function} compare - The comparison function to use.\n * @param {Node} A - The root of the tree.\n * @param {Node} B - The node to insert.\n * @returns {Node} B - The node that has been inserted.\n ",
+      "value": "*\n * Walks the tree rooted at <code>A</code> down the only path that satisfies\n * the following property: if at a node <code>C</code> we make a left (resp.\n * right), then <code>B < C</code> (resp. <code>B >= C</code>). Once we hit the\n * end of the path, we can add node <code>B</code> at this position. By the\n * property of the path, the tree rooted at <code>A</code> is still a binary\n * search tree.\n * For our red-black tree, all that is left to do is fix the red-black tree\n * properties in case they have been violated by this insertion. This is fixed\n * by {@link insert_case0}.\n *\n * @param {Function} compare - The comparison function to use.\n * @param {Node} A - The root of the tree.\n * @param {Node} B - The node to insert.\n * @returns {Node} B - The node that has been inserted.\n ",
       "start": 67,
       "end": 866,
       "loc": {
@@ -4697,9 +4625,37 @@
     },
     {
       "type": {
-        "label": ".",
-        "beforeExpr": false,
+        "label": "==/!=",
+        "beforeExpr": true,
         "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": 6,
+        "updateContext": null
+      },
+      "value": "===",
+      "start": 991,
+      "end": 994,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 12
+        },
+        "end": {
+          "line": 25,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "null",
+        "keyword": "null",
+        "beforeExpr": false,
+        "startsExpr": true,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
@@ -4708,88 +4664,13 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 990,
-      "end": 991,
-      "loc": {
-        "start": {
-          "line": 25,
-          "column": 11
-        },
-        "end": {
-          "line": 25,
-          "column": 12
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "isLeaf",
-      "start": 991,
-      "end": 997,
-      "loc": {
-        "start": {
-          "line": 25,
-          "column": 12
-        },
-        "end": {
-          "line": 25,
-          "column": 18
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "(",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 997,
-      "end": 998,
-      "loc": {
-        "start": {
-          "line": 25,
-          "column": 18
-        },
-        "end": {
-          "line": 25,
-          "column": 19
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ")",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 998,
+      "value": "null",
+      "start": 995,
       "end": 999,
       "loc": {
         "start": {
           "line": 25,
-          "column": 19
+          "column": 16
         },
         "end": {
           "line": 25,
@@ -5714,9 +5595,37 @@
     },
     {
       "type": {
-        "label": ".",
-        "beforeExpr": false,
+        "label": "==/!=",
+        "beforeExpr": true,
         "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": 6,
+        "updateContext": null
+      },
+      "value": "===",
+      "start": 1131,
+      "end": 1134,
+      "loc": {
+        "start": {
+          "line": 35,
+          "column": 12
+        },
+        "end": {
+          "line": 35,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "null",
+        "keyword": "null",
+        "beforeExpr": false,
+        "startsExpr": true,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
@@ -5725,88 +5634,13 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1130,
-      "end": 1131,
-      "loc": {
-        "start": {
-          "line": 35,
-          "column": 11
-        },
-        "end": {
-          "line": 35,
-          "column": 12
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "isLeaf",
-      "start": 1131,
-      "end": 1137,
-      "loc": {
-        "start": {
-          "line": 35,
-          "column": 12
-        },
-        "end": {
-          "line": 35,
-          "column": 18
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "(",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 1137,
-      "end": 1138,
-      "loc": {
-        "start": {
-          "line": 35,
-          "column": 18
-        },
-        "end": {
-          "line": 35,
-          "column": 19
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ")",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 1138,
+      "value": "null",
+      "start": 1135,
       "end": 1139,
       "loc": {
         "start": {
           "line": 35,
-          "column": 19
+          "column": 16
         },
         "end": {
           "line": 35,

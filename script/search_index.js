@@ -6,12 +6,6 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "@aureooms/js-red-black-tree/src/types/leaf.js~leaf",
-    "function/index.html#static-function-Leaf",
-    "<span>Leaf</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/types/Leaf.js</span>",
-    "function"
-  ],
-  [
     "@aureooms/js-red-black-tree/src/types/node.js~node",
     "function/index.html#static-function-Node",
     "<span>Node</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/types/Node.js</span>",
@@ -36,6 +30,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@aureooms/js-red-black-tree/src/deletion/delete_case0.js~delete_case0",
+    "function/index.html#static-function-delete_case0",
+    "<span>delete_case0</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case0.js</span>",
+    "function"
+  ],
+  [
     "@aureooms/js-red-black-tree/src/deletion/delete_case1.js~delete_case1",
     "function/index.html#static-function-delete_case1",
     "<span>delete_case1</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case1.js</span>",
@@ -48,27 +48,15 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/deletion/delete_case3.js~delete_case3",
-    "function/index.html#static-function-delete_case3",
-    "<span>delete_case3</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case3.js</span>",
-    "function"
-  ],
-  [
-    "@aureooms/js-red-black-tree/src/deletion/delete_case4.js~delete_case4",
-    "function/index.html#static-function-delete_case4",
-    "<span>delete_case4</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case4.js</span>",
-    "function"
-  ],
-  [
     "@aureooms/js-red-black-tree/src/deletion/delete_case5.js~delete_case5",
     "function/index.html#static-function-delete_case5",
     "<span>delete_case5</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case5.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/deletion/delete_case6.js~delete_case6",
-    "function/index.html#static-function-delete_case6",
-    "<span>delete_case6</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case6.js</span>",
+    "@aureooms/js-red-black-tree/src/deletion/delete_no_child.js~delete_no_child",
+    "function/index.html#static-function-delete_no_child",
+    "<span>delete_no_child</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_no_child.js</span>",
     "function"
   ],
   [
@@ -108,6 +96,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@aureooms/js-red-black-tree/src/insertion/insert_case0.js~insert_case0",
+    "function/index.html#static-function-insert_case0",
+    "<span>insert_case0</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case0.js</span>",
+    "function"
+  ],
+  [
     "@aureooms/js-red-black-tree/src/insertion/insert_case1.js~insert_case1",
     "function/index.html#static-function-insert_case1",
     "<span>insert_case1</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case1.js</span>",
@@ -132,15 +126,15 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/insertion/insert_case5.js~insert_case5",
-    "function/index.html#static-function-insert_case5",
-    "<span>insert_case5</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case5.js</span>",
-    "function"
-  ],
-  [
     "@aureooms/js-red-black-tree/src/family/predecessor.js~predecessor",
     "function/index.html#static-function-predecessor",
     "<span>predecessor</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/family/predecessor.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-red-black-tree/src/deletion/prune.js~prune",
+    "function/index.html#static-function-prune",
+    "<span>prune</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/prune.js</span>",
     "function"
   ],
   [
@@ -498,6 +492,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/deletion/delete_case0.js",
+    "file/src/deletion/delete_case0.js.html",
+    "src/deletion/delete_case0.js",
+    "file"
+  ],
+  [
     "src/deletion/delete_case1.js",
     "file/src/deletion/delete_case1.js.html",
     "src/deletion/delete_case1.js",
@@ -510,33 +510,27 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/deletion/delete_case3.js",
-    "file/src/deletion/delete_case3.js.html",
-    "src/deletion/delete_case3.js",
-    "file"
-  ],
-  [
-    "src/deletion/delete_case4.js",
-    "file/src/deletion/delete_case4.js.html",
-    "src/deletion/delete_case4.js",
-    "file"
-  ],
-  [
     "src/deletion/delete_case5.js",
     "file/src/deletion/delete_case5.js.html",
     "src/deletion/delete_case5.js",
     "file"
   ],
   [
-    "src/deletion/delete_case6.js",
-    "file/src/deletion/delete_case6.js.html",
-    "src/deletion/delete_case6.js",
+    "src/deletion/delete_no_child.js",
+    "file/src/deletion/delete_no_child.js.html",
+    "src/deletion/delete_no_child.js",
     "file"
   ],
   [
     "src/deletion/delete_one_child.js",
     "file/src/deletion/delete_one_child.js.html",
     "src/deletion/delete_one_child.js",
+    "file"
+  ],
+  [
+    "src/deletion/prune.js",
+    "file/src/deletion/prune.js.html",
+    "src/deletion/prune.js",
     "file"
   ],
   [
@@ -582,6 +576,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/insertion/insert_case0.js",
+    "file/src/insertion/insert_case0.js.html",
+    "src/insertion/insert_case0.js",
+    "file"
+  ],
+  [
     "src/insertion/insert_case1.js",
     "file/src/insertion/insert_case1.js.html",
     "src/insertion/insert_case1.js",
@@ -603,12 +603,6 @@ window.esdocSearchIndex = [
     "src/insertion/insert_case4.js",
     "file/src/insertion/insert_case4.js.html",
     "src/insertion/insert_case4.js",
-    "file"
-  ],
-  [
-    "src/insertion/insert_case5.js",
-    "file/src/insertion/insert_case5.js.html",
-    "src/insertion/insert_case5.js",
     "file"
   ],
   [
@@ -639,12 +633,6 @@ window.esdocSearchIndex = [
     "src/traversal/rangetraversal.js",
     "file/src/traversal/rangetraversal.js.html",
     "src/traversal/rangetraversal.js",
-    "file"
-  ],
-  [
-    "src/types/leaf.js",
-    "file/src/types/Leaf.js.html",
-    "src/types/Leaf.js",
     "file"
   ],
   [
