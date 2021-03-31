@@ -23,12 +23,11 @@ const delete_no_child = (n) => {
 	assert(n.left === null);
 	assert(n.right === null);
 
-	if (n._color === RED) {
+	if (n._color !== BLACK) {
+		assert(n._color === RED);
 		prune(n);
 		return;
 	}
-
-	assert(n._color === BLACK);
 
 	// Mock leaf since there is no left child
 	// We use key = n.key to avoid mixing types, but this property is never

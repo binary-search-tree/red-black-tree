@@ -26,27 +26,27 @@ const delete_case1 = (n) => {
 	const s = sibling(n);
 	assert(s instanceof Node);
 
-	/**
-	 * If n's sibling is red, prepare for and go to case 4.
-	 *
-	 *           B                       B
-	 *         /   \                  /     \
-	 *      >B       R               R       B
-	 *      / \     / \     -->    /   \    / \
-	 *     -   -  B     B        >B     B  =   =
-	 *           / \   / \       / \   / \
-	 *          =   = =   =     -   - =   =
-	 */
-	if (s._color === RED) {
+	if (s._color === BLACK) {
+		// If n's sibling is BLACK, go to case 3.
+		delete_case2(n);
+	} else {
+		/**
+		 * Otherwise, prepare for and go to case 4.
+		 *
+		 *           B                       B
+		 *         /   \                  /     \
+		 *      >B       R               R       B
+		 *      / \     / \     -->    /   \    / \
+		 *     -   -  B     B        >B     B  =   =
+		 *           / \   / \       / \   / \
+		 *          =   = =   =     -   - =   =
+		 */
 		n.parent._color = RED;
 		s._color = BLACK;
 		if (n === n.parent.left) rotate_left(n.parent);
 		else rotate_right(n.parent);
 		delete_case3(n);
 	}
-
-	// Otherwise, go to case 3.
-	else delete_case2(n);
 };
 
 export default delete_case1;

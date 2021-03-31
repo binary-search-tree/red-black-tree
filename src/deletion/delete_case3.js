@@ -46,7 +46,7 @@ const delete_case3 = (n) => {
 	 */
 	if (
 		// The parent color test is always true when coming from case 2
-		n.parent._color === RED &&
+		n.parent._color !== BLACK &&
 		(s.left === null || s.left._color === BLACK) &&
 		(s.right === null || s.right._color === BLACK)
 	) {
