@@ -4,7 +4,7 @@ import RED from '../color/RED.js';
 import Node from '../types/Node.js';
 
 import replace_node from './replace_node.js';
-import delete_case2 from './delete_case2.js';
+import delete_case1 from './delete_case1.js';
 
 import prune from './prune.js';
 
@@ -40,7 +40,7 @@ const delete_no_child = (n) => {
 
 	// If n is black, deleting it reduces the black-height of every path going
 	// through it by 1. The leaf is black, so there are more things to fix.
-	delete_case2(leaf);
+	delete_case1(leaf);
 
 	// Delete mocked leaf
 	prune(leaf);

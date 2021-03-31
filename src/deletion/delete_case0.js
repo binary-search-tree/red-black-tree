@@ -1,7 +1,7 @@
 import assert from 'assert';
 import BLACK from '../color/BLACK.js';
 import Node from '../types/Node.js';
-import delete_case2 from './delete_case2.js';
+import delete_case1 from './delete_case1.js';
 
 /**
  * Preconditions:
@@ -17,7 +17,7 @@ const delete_case0 = (n) => {
 	// If n is the root, there is nothing to do:
 	//   - all paths go through n, and
 	//   - n is black.
-	if (n.parent !== null) delete_case2(n);
+	if (n.parent !== null) delete_case1(n);
 };
 
 export default delete_case0;
