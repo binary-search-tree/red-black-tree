@@ -11,7 +11,7 @@ import delete_case2 from './delete_case2.js';
  *
  * @param {Node} n - The input node.
  */
-const delete_case1 = (n) => {
+const delete_case0 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === BLACK);
 	// If n is the root, there is nothing to do:
@@ -20,4 +20,4 @@ const delete_case1 = (n) => {
 	if (n.parent !== null) delete_case2(n);
 };
 
-export default delete_case1;
+export default delete_case0;

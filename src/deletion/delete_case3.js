@@ -4,7 +4,7 @@ import RED from '../color/RED.js';
 import Node from '../types/Node.js';
 import sibling from '../family/sibling.js';
 
-import delete_case1 from './delete_case1.js';
+import delete_case0 from './delete_case0.js';
 import delete_case4 from './delete_case4.js';
 
 /**
@@ -44,7 +44,7 @@ const delete_case3 = (n) => {
 		(s.right === null || s.right._color === BLACK)
 	) {
 		s._color = RED;
-		delete_case1(n.parent);
+		delete_case0(n.parent);
 	}
 
 	// Otherwise, go to case 4.
