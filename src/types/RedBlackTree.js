@@ -4,7 +4,7 @@ import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import predecessor from '../family/predecessor.js';
 import insert from '../insertion/insert.js';
-import insert_case2 from '../insertion/insert_case2.js';
+import insert_case1 from '../insertion/insert_case1.js';
 import delete_one_child from '../deletion/delete_one_child.js';
 import delete_no_child from '../deletion/delete_no_child.js';
 import search from '../search/search.js';
@@ -49,7 +49,7 @@ export default class RedBlackTree {
 		} else {
 			const node = new Node(RED, key);
 			insert(this.compare, this.root, node);
-			insert_case2(node);
+			insert_case1(node);
 		}
 	}
 
