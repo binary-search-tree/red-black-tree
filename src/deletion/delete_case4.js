@@ -29,7 +29,7 @@ const delete_case4 = (n) => {
 	assert(s.left?._color === RED || s.right?._color === RED);
 
 	// The following statements just force the red n's sibling child to be on
-	// the left of the left of the parent, or right of the right, so case 6
+	// the left of the left of the parent, or right of the right, so case 5
 	// will rotate correctly.
 
 	/**

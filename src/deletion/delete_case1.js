@@ -27,11 +27,11 @@ const delete_case1 = (n) => {
 	assert(s instanceof Node);
 
 	if (s._color === BLACK) {
-		// If n's sibling is BLACK, go to case 3.
+		// If n's sibling is BLACK, go to case 2.
 		delete_case2(n);
 	} else {
 		/**
-		 * Otherwise, prepare for and go to case 4.
+		 * Otherwise, prepare for and go to case 3.
 		 *
 		 *           B                       B
 		 *         /   \                  /     \

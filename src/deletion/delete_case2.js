@@ -47,7 +47,7 @@ const delete_case2 = (n) => {
 		delete_case0(n.parent);
 	}
 
-	// Otherwise, go to case 4.
+	// Otherwise, go to case 3.
 	else delete_case3(n);
 };
 
