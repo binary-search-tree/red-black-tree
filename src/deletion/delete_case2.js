@@ -5,7 +5,7 @@ import Node from '../types/Node.js';
 import sibling from '../family/sibling.js';
 
 import delete_case0 from './delete_case0.js';
-import delete_case4 from './delete_case4.js';
+import delete_case3 from './delete_case3.js';
 
 /**
  * Preconditions:
@@ -48,7 +48,7 @@ const delete_case2 = (n) => {
 	}
 
 	// Otherwise, go to case 4.
-	else delete_case4(n);
+	else delete_case3(n);
 };
 
 export default delete_case2;

@@ -7,7 +7,7 @@ import rotate_right from '../rotate/rotate_right.js';
 import sibling from '../family/sibling.js';
 
 import delete_case2 from './delete_case2.js';
-import delete_case4 from './delete_case4.js';
+import delete_case3 from './delete_case3.js';
 
 /**
  * Preconditions:
@@ -42,7 +42,7 @@ const delete_case1 = (n) => {
 		s._color = BLACK;
 		if (n === n.parent.left) rotate_left(n.parent);
 		else rotate_right(n.parent);
-		delete_case4(n);
+		delete_case3(n);
 	}
 
 	// Otherwise, go to case 3.
