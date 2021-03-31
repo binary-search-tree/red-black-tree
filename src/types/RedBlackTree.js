@@ -6,6 +6,7 @@ import predecessor from '../family/predecessor.js';
 import insert from '../insertion/insert.js';
 import insert_case2 from '../insertion/insert_case2.js';
 import delete_one_child from '../deletion/delete_one_child.js';
+import delete_no_child from '../deletion/delete_no_child.js';
 import search from '../search/search.js';
 import inordertraversal from '../traversal/inordertraversal.js';
 import rangetraversal from '../traversal/rangetraversal.js';
@@ -21,6 +22,7 @@ export default class RedBlackTree {
 	 * @param {Function} compare - The comparison function for node keys.
 	 */
 	constructor(compare) {
+		assert(compare instanceof Function);
 		/** @member {Function} The comparison function for node keys. */
 		this.compare = compare;
 		/** @member {Node} The root of the tree. */
@@ -94,31 +96,31 @@ export default class RedBlackTree {
 	 * @param {Node} node - The input node to delete.
 	 */
 	_delete(node) {
+		assert(node instanceof Node);
 		if (node.left !== null) {
 			// Replace node's key with predecessor's key
 			const pred = predecessor(node);
 			node.key = pred.key;
 			// Delete predecessor node
-			// note: this node can only have one non-leaf child
-			//       because the tree is a red-black tree
-			delete_one_child(pred);
+			// NOTE: this node can only have one non-leaf (left) child because
+			// of red-black tree invariant.
+			if (pred.left === null) {
+				delete_no_child(pred);
+			} else {
+				delete_one_child(pred);
+			}
 		} else if (node.right !== null) {
 			// Replace node's key with successor's key
-			// If there is no left child, then there can only be one right
-			// child.
+			// NOTE: Since there is no left child, then there can only be one
+			// right child by the red-black tree invariant.
 			const succ = node.right;
-			assert(succ instanceof Node);
-			assert(succ.left === null);
-			assert(succ.right === null);
 			node.key = succ.key;
 			// Delete successor node
-			// note: this node can only have one non-leaf child
-			//       because the tree is a red-black tree
-			delete_one_child(succ);
+			delete_no_child(succ);
 		} else if (node === this.root) {
 			this.root = null;
 		} else {
-			delete_one_child(node);
+			delete_no_child(node);
 		}
 	}
 

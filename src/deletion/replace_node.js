@@ -11,7 +11,7 @@ import Leaf from '../types/Leaf.js';
 const replace_node = (A, B) => {
 	assert(A instanceof Node);
 	assert(B instanceof Node || B instanceof Leaf);
-	// We never apply delete_one_child on the root
+	// We never apply delete_one_child or delete_no_child on the root
 	assert(A.parent !== null);
 
 	if (A === A.parent.left) A.parent.left = B;
