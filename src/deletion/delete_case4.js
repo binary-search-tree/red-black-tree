@@ -6,7 +6,7 @@ import rotate_left from '../rotate/rotate_left.js';
 import rotate_right from '../rotate/rotate_right.js';
 import sibling from '../family/sibling.js';
 
-import delete_case6 from './delete_case6.js';
+import delete_case5 from './delete_case5.js';
 
 /**
  * Preconditions:
@@ -67,7 +67,7 @@ const delete_case4 = (n) => {
 		rotate_left(s);
 	}
 
-	delete_case6(n);
+	delete_case5(n);
 };
 
 export default delete_case4;

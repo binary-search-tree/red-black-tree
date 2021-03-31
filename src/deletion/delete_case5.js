@@ -18,7 +18,7 @@ import sibling from '../family/sibling.js';
  *
  * @param {Node} n - The input node.
  */
-const delete_case6 = (n) => {
+const delete_case5 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === BLACK);
 	assert(n.parent !== null);
@@ -61,4 +61,4 @@ const delete_case6 = (n) => {
 	}
 };
 
-export default delete_case6;
+export default delete_case5;
