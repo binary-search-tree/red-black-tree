@@ -7,7 +7,7 @@ import Leaf from '../types/Leaf.js';
  *
  * @param {Node|Leaf} root - The leaf to delete.
  */
-const prune_subtree = (root) => {
+const prune = (root) => {
 	assert(root instanceof Node || root instanceof Leaf);
 	assert(root.parent !== null);
 
@@ -15,4 +15,4 @@ const prune_subtree = (root) => {
 	else root.parent.right = null;
 };
 
-export default prune_subtree;
+export default prune;
