@@ -18,7 +18,7 @@ export {default as predecessor} from './family/predecessor.js';
 export {default as sibling} from './family/sibling.js';
 export {default as uncle} from './family/uncle.js';
 export {default as insert} from './insertion/insert.js';
-export {default as insert_case1} from './insertion/insert_case1.js';
+export {default as insert_case0} from './insertion/insert_case0.js';
 export {default as insert_case2} from './insertion/insert_case2.js';
 export {default as insert_case3} from './insertion/insert_case3.js';
 export {default as insert_case4} from './insertion/insert_case4.js';

@@ -4,7 +4,7 @@ import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import uncle from '../family/uncle.js';
 import grandparent from '../family/grandparent.js';
-import insert_case1 from './insert_case1.js';
+import insert_case0 from './insert_case0.js';
 import insert_case4 from './insert_case4.js';
 
 /**
@@ -28,7 +28,7 @@ const insert_case3 = (n) => {
 	/**
 	 * If n has a non-leaf uncle and this uncle is red then we simply
 	 * repaint the parent and the uncle of n in black, the grandparent of
-	 * n in red, then call insert_case1 on n's grandparent.
+	 * n in red, then call insert_case0 on n's grandparent.
 	 *
 	 *             B                    >R
 	 *           /   \                 /   \
@@ -44,7 +44,7 @@ const insert_case3 = (n) => {
 		u._color = BLACK;
 		const g = grandparent(n);
 		g._color = RED;
-		insert_case1(g);
+		insert_case0(g);
 	} else insert_case4(n);
 };
 
