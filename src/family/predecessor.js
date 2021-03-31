@@ -12,7 +12,7 @@ const predecessor = (node) => {
 	assert(node.left instanceof Node);
 	let pred = node.left;
 
-	while (!pred.right.isLeaf()) {
+	while (pred.right !== null) {
 		assert(pred.right instanceof Node);
 		pred = pred.right;
 	}

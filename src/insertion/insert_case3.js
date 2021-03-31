@@ -19,8 +19,8 @@ import insert_case4 from './insert_case4.js';
 const insert_case3 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === RED);
-	assert(n.left._color === BLACK);
-	assert(n.right._color === BLACK);
+	assert(n.left === null || n.left._color === BLACK);
+	assert(n.right === null || n.right._color === BLACK);
 	assert(n.parent !== null);
 	assert(n.parent._color === RED);
 	const u = uncle(n);
@@ -39,7 +39,7 @@ const insert_case3 = (n) => {
 	 *     -   -                 -   -
 	 */
 
-	if (u._color === RED) {
+	if (u !== null && u._color === RED) {
 		n.parent._color = BLACK;
 		u._color = BLACK;
 		const g = grandparent(n);

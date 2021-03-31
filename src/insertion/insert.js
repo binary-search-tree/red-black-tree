@@ -22,7 +22,7 @@ const insert = (compare, A, B) => {
 		if (compare(B.key, A.key) < 0) {
 			const node = A.left;
 
-			if (node.isLeaf()) {
+			if (node === null) {
 				A.left = B;
 				break;
 			}
@@ -32,7 +32,7 @@ const insert = (compare, A, B) => {
 		} else {
 			const node = A.right;
 
-			if (node.isLeaf()) {
+			if (node === null) {
 				A.right = B;
 				break;
 			}

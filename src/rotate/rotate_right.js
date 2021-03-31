@@ -33,9 +33,9 @@ const rotate_right = (B) => {
 	A.left = b;
 	A.right = c;
 
-	a.parent = B;
-	b.parent = A;
-	c.parent = A;
+	if (a !== null) a.parent = B;
+	if (b !== null) b.parent = A;
+	if (c !== null) c.parent = A;
 };
 
 export default rotate_right;

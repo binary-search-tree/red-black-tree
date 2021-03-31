@@ -9,19 +9,9 @@ import Node from './Node.js';
  * @param {Node} parent - The parent node in the tree.
  */
 export default function Leaf(parent) {
-	assert(parent instanceof Node);
+	assert(parent === null || parent instanceof Node);
 	/** @constant {number} The color of the node. */
 	this._color = BLACK;
 	/** @member {Node} The parent node. */
 	this.parent = parent;
 }
-
-/**
- * Returns <code>true</code> if the <code>Leaf</code> object is a leaf. This
- * always returns <code>true</code>.
- *
- * @returns {boolean}
- */
-Leaf.prototype.isLeaf = function () {
-	return true;
-};

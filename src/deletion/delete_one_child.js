@@ -7,6 +7,8 @@ import Leaf from '../types/Leaf.js';
 import replace_node from './replace_node.js';
 import delete_case2 from './delete_case2.js';
 
+import delete_mocked_leaf from './delete_mocked_leaf.js';
+
 /**
  * Delete a node <code>n</code> that has at most a single non-leaf child.
  *
@@ -25,9 +27,12 @@ const delete_one_child = (n) => {
 	// The right child of n is always a LEAF because either n is a subtree
 	// predecessor or it is the only child of its parent by the red-black tree
 	// properties
-	assert(n.right instanceof Leaf);
+	assert(n.right === null);
 
-	const child = n.left;
+	// Mock leaf if there is no left child
+	const child = n.left === null ? new Leaf(null) : n.left;
+
+	// TODO skip creating mocked leaf if n._color === RED
 
 	// Replace n with its left child
 	replace_node(n, child);
@@ -48,6 +53,8 @@ const delete_one_child = (n) => {
 		//    child suffices. This is a NO-OP.
 		assert(child._color === BLACK);
 	}
+
+	if (child instanceof Leaf) delete_mocked_leaf(child);
 };
 
 export default delete_one_child;

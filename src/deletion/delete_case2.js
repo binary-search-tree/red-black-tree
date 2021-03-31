@@ -25,6 +25,7 @@ const delete_case2 = (n) => {
 	assert(n.parent !== null);
 
 	const s = sibling(n);
+	assert(s instanceof Node);
 
 	/**
 	 * If n's sibling is red, prepare for and go to case 4.

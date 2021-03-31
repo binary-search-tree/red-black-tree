@@ -26,7 +26,9 @@ const delete_case4 = (n) => {
 	assert(s instanceof Node);
 	assert(s._color === BLACK);
 	assert(
-		n.parent._color === RED || s.left._color === RED || s.right._color === RED,
+		n.parent._color === RED ||
+			s.left?._color === RED ||
+			s.right?._color === RED,
 	);
 
 	/**
@@ -46,8 +48,8 @@ const delete_case4 = (n) => {
 	if (
 		// The parent color test is always true when coming from case 2
 		n.parent._color === RED &&
-		s.left._color === BLACK &&
-		s.right._color === BLACK
+		(s.left === null || s.left._color === BLACK) &&
+		(s.right === null || s.right._color === BLACK)
 	) {
 		s._color = RED;
 		n.parent._color = BLACK;

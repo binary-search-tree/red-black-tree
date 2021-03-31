@@ -9,7 +9,7 @@ import Node from '../types/Node.js';
  */
 export default function* inordertraversal(node) {
 	assert(node instanceof Node);
-	if (!node.left.isLeaf()) {
+	if (node.left !== null) {
 		// Yield the nodes on the left recursively. Those nodes are all smaller
 		// than (or equal to) the current node by the binary search tree
 		// properties.
@@ -20,7 +20,7 @@ export default function* inordertraversal(node) {
 	// Yield the current node.
 	yield node.key;
 
-	if (!node.right.isLeaf()) {
+	if (node.right !== null) {
 		// Yield the nodes on the right recursively. Those nodes are all larger
 		// than (or equal to) the current node by the binary search tree
 		// properties.

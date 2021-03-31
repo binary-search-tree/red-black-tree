@@ -1,6 +1,5 @@
 import assert from 'assert';
 import Node from './Node.js';
-import Leaf from './Leaf.js';
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import predecessor from '../family/predecessor.js';
@@ -95,7 +94,7 @@ export default class RedBlackTree {
 	 * @param {Node} node - The input node to delete.
 	 */
 	_delete(node) {
-		if (!node.left.isLeaf()) {
+		if (node.left !== null) {
 			// Replace node's key with predecessor's key
 			const pred = predecessor(node);
 			node.key = pred.key;
@@ -103,14 +102,14 @@ export default class RedBlackTree {
 			// note: this node can only have one non-leaf child
 			//       because the tree is a red-black tree
 			delete_one_child(pred);
-		} else if (!node.right.isLeaf()) {
+		} else if (node.right !== null) {
 			// Replace node's key with successor's key
 			// If there is no left child, then there can only be one right
 			// child.
 			const succ = node.right;
 			assert(succ instanceof Node);
-			assert(succ.left instanceof Leaf);
-			assert(succ.right instanceof Leaf);
+			assert(succ.left === null);
+			assert(succ.right === null);
 			node.key = succ.key;
 			// Delete successor node
 			// note: this node can only have one non-leaf child

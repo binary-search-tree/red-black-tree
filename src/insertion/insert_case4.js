@@ -22,8 +22,8 @@ import insert_case5 from './insert_case5.js';
 const insert_case4 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === RED);
-	assert(n.left._color === BLACK);
-	assert(n.right._color === BLACK);
+	assert(n.left === null || n.left._color === BLACK);
+	assert(n.right === null || n.right._color === BLACK);
 	assert(n.parent !== null);
 	assert(n.parent._color === RED);
 	const g = grandparent(n);
