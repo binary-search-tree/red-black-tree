@@ -10,7 +10,7 @@ import Node from '../types/Node.js';
  * search tree.
  * For our red-black tree, all that is left to do is fix the red-black tree
  * properties in case they have been violated by this insertion. This is fixed
- * by {@link insert_case1}.
+ * by {@link insert_case0}.
  *
  * @param {Function} compare - The comparison function to use.
  * @param {Node} A - The root of the tree.
