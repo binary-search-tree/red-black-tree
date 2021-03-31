@@ -2,7 +2,6 @@ import assert from 'assert';
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import Node from '../types/Node.js';
-import Leaf from '../types/Leaf.js';
 
 import replace_node from './replace_node.js';
 import delete_case2 from './delete_case2.js';
@@ -32,13 +31,15 @@ const delete_no_child = (n) => {
 	assert(n._color === BLACK);
 
 	// Mock leaf since there is no left child
-	const leaf = new Leaf(null);
+	// We use key = n.key to avoid mixing types, but this property is never
+	// accessed.
+	const leaf = new Node(BLACK, n.key);
 
 	// Replace n with the mocked leaf
 	replace_node(n, leaf);
 
 	// If n is black, deleting it reduces the black-height of every path going
-	// through it by 1. Leaf is black, so there are more things to fix.
+	// through it by 1. The leaf is black, so there are more things to fix.
 	delete_case2(leaf);
 
 	// Delete mocked leaf
