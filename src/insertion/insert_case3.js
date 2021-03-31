@@ -19,7 +19,7 @@ import insert_case5 from './insert_case5.js';
  *
  * @param {Node} n - The input node.
  */
-const insert_case4 = (n) => {
+const insert_case3 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === RED);
 	assert(n.left === null || n.left._color === BLACK);
@@ -89,4 +89,4 @@ const insert_case4 = (n) => {
 	insert_case5(n);
 };
 
-export default insert_case4;
+export default insert_case3;

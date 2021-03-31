@@ -5,7 +5,7 @@ import RED from '../color/RED.js';
 import uncle from '../family/uncle.js';
 import grandparent from '../family/grandparent.js';
 import insert_case0 from './insert_case0.js';
-import insert_case4 from './insert_case4.js';
+import insert_case3 from './insert_case3.js';
 
 /**
  * Preconditions:
@@ -45,7 +45,7 @@ const insert_case2 = (n) => {
 		const g = grandparent(n);
 		g._color = RED;
 		insert_case0(g);
-	} else insert_case4(n);
+	} else insert_case3(n);
 };
 
 export default insert_case2;
