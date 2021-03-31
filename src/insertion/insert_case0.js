@@ -2,7 +2,7 @@ import assert from 'assert';
 import Node from '../types/Node.js';
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
-import insert_case2 from './insert_case2.js';
+import insert_case1 from './insert_case1.js';
 
 /**
  * Preconditions:
@@ -24,7 +24,7 @@ const insert_case0 = (n) => {
 	 *     -   -
 	 */
 	if (n.parent === null) n._color = BLACK;
-	else insert_case2(n);
+	else insert_case1(n);
 };
 
 export default insert_case0;
