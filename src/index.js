@@ -3,7 +3,7 @@ export {default as from} from './api/from.js';
 export {default as BLACK} from './color/BLACK.js';
 export {default as RED} from './color/RED.js';
 export {default as _debug} from './debug/_debug.js';
-export {default as delete_case1} from './deletion/delete_case1.js';
+export {default as delete_case0} from './deletion/delete_case0.js';
 export {default as delete_case2} from './deletion/delete_case2.js';
 export {default as delete_case3} from './deletion/delete_case3.js';
 export {default as delete_case4} from './deletion/delete_case4.js';
