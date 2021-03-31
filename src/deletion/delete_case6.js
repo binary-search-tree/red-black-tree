@@ -2,7 +2,6 @@ import assert from 'assert';
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import Node from '../types/Node.js';
-import Leaf from '../types/Leaf.js';
 import rotate_left from '../rotate/rotate_left.js';
 import rotate_right from '../rotate/rotate_right.js';
 import sibling from '../family/sibling.js';
@@ -17,10 +16,10 @@ import sibling from '../family/sibling.js';
  *   - if n is a left child, the right child of n's sibling is red
  *   - if n is a right child, the left child of n's sibling is red
  *
- * @param {Node|Leaf} n - The input node.
+ * @param {Node} n - The input node.
  */
 const delete_case6 = (n) => {
-	assert(n instanceof Node || n instanceof Leaf);
+	assert(n instanceof Node);
 	assert(n._color === BLACK);
 	assert(n.parent !== null);
 	const s = sibling(n);

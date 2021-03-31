@@ -2,7 +2,6 @@ import assert from 'assert';
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import Node from '../types/Node.js';
-import Leaf from '../types/Leaf.js';
 import sibling from '../family/sibling.js';
 
 import delete_case5 from './delete_case5.js';
@@ -16,10 +15,10 @@ import delete_case5 from './delete_case5.js';
  *   - n's sibling is black
  *   - n's parent and n's sibling's children cannot all be black
  *
- * @param {Node|Leaf} n - The input node.
+ * @param {Node} n - The input node.
  */
 const delete_case4 = (n) => {
-	assert(n instanceof Node || n instanceof Leaf);
+	assert(n instanceof Node);
 	assert(n._color === BLACK);
 	assert(n.parent !== null);
 	const s = sibling(n);
