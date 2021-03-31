@@ -20,8 +20,8 @@ import grandparent from '../family/grandparent.js';
 const insert_case5 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === RED);
-	assert(n.left._color === BLACK);
-	assert(n.right._color === BLACK);
+	assert(n.left === null || n.left._color === BLACK);
+	assert(n.right === null || n.right._color === BLACK);
 	assert(n.parent !== null);
 	assert(n.parent._color === RED);
 	const g = grandparent(n);
@@ -45,7 +45,7 @@ const insert_case5 = (n) => {
 		 */
 		assert(g.left instanceof Node);
 		assert(n === g.left.left);
-		assert(g.right._color === BLACK);
+		assert(g.right === null || g.right._color === BLACK);
 		rotate_right(g);
 	} else {
 		/**
@@ -62,7 +62,7 @@ const insert_case5 = (n) => {
 		 */
 		assert(g.right instanceof Node);
 		assert(n === g.right.right);
-		assert(g.left._color === BLACK);
+		assert(g.left === null || g.left._color === BLACK);
 		rotate_left(g);
 	}
 };

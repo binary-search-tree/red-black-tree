@@ -27,7 +27,7 @@ const delete_case5 = (n) => {
 	const s = sibling(n);
 	assert(s instanceof Node);
 	assert(s._color === BLACK);
-	assert(s.left._color === RED || s.right._color === RED);
+	assert(s.left?._color === RED || s.right?._color === RED);
 
 	// The following statements just force the red n's sibling child to be on
 	// the left of the left of the parent, or right of the right, so case 6
@@ -44,11 +44,14 @@ const delete_case5 = (n) => {
 	 *                                            / \
 	 *                                           -   -
 	 */
-	if (n === n.parent.left && s.right._color === BLACK) {
+	if (n === n.parent.left && (s.right === null || s.right._color === BLACK)) {
 		s._color = RED;
 		s.left._color = BLACK;
 		rotate_right(s);
-	} else if (n === n.parent.right && s.left._color === BLACK) {
+	} else if (
+		n === n.parent.right &&
+		(s.left === null || s.left._color === BLACK)
+	) {
 		/**
 		 *           ?                       ?
 		 *         /   \                  /     \

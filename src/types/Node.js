@@ -1,5 +1,3 @@
-import Leaf from './Leaf.js';
-
 /**
  * An internal node. This node can be red or black.
  *
@@ -10,22 +8,12 @@ import Leaf from './Leaf.js';
 export default function Node(color, key) {
 	/** @member {number} The color of the node. */
 	this._color = color;
-	/** @member {Node|Leaf} The left child */
-	this.left = new Leaf(this);
-	/** @member {Node|Leaf} The right child */
-	this.right = new Leaf(this);
+	/** @member {Node} The left child */
+	this.left = null;
+	/** @member {Node} The right child */
+	this.right = null;
 	/** @member {Node} The parent node. */
 	this.parent = null;
 	/** @member {any} The key held by this node. */
 	this.key = key;
 }
-
-/**
- * Returns <code>true</code> if the <code>Node</code> object is a leaf. This
- * always returns <code>false</code>.
- *
- * @returns {boolean}
- */
-Node.prototype.isLeaf = function () {
-	return false;
-};

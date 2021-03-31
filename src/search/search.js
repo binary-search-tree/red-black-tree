@@ -18,14 +18,11 @@ const search = (compare, root, key) => {
 			return root;
 		}
 
-		const child = d < 0 ? root.left : root.right;
+		root = d < 0 ? root.left : root.right;
 
-		if (child.isLeaf()) {
+		if (root === null) {
 			return null;
 		}
-
-		assert(child instanceof Node);
-		root = child;
 	}
 };
 

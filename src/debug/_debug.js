@@ -1,6 +1,5 @@
 import assert from 'assert';
 import Node from '../types/Node.js';
-import Leaf from '../types/Leaf.js';
 import BLACK from '../color/BLACK.js';
 
 /**
@@ -14,15 +13,11 @@ const _debug = ({red, black}) => {
 	 * Recursively constructs a prettyprint string for the red-black tree rooted at
 	 * <code>root</code>.
 	 *
-	 * @param {Node|Leaf} root - The root of the tree.
+	 * @param {Node} root - The root of the tree.
 	 * @returns {string}
 	 */
 	const debug = (root) => {
-		assert(root instanceof Node || root instanceof Leaf);
-		if (root.isLeaf()) {
-			assert(root instanceof Leaf);
-			return black('L');
-		}
+		if (root === null) return black('L');
 
 		assert(root instanceof Node);
 

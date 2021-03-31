@@ -34,15 +34,15 @@ const delete_case3 = (n) => {
 	 *           B                      >B
 	 *         /   \                  /     \
 	 *      >B       B               B       R
-	 *      / \     / \     -->    /   \    / \
-	 *     -   -  B     B         -     - B     B
+	 *      / \     / \     -->     / \     / \
+	 *     -   -  B     B          -   -  B     B
 	 *           / \   / \               / \   / \
 	 *          -   - -   -             -   - -   -
 	 */
 	if (
 		n.parent._color === BLACK &&
-		s.left._color === BLACK &&
-		s.right._color === BLACK
+		(s.left === null || s.left._color === BLACK) &&
+		(s.right === null || s.right._color === BLACK)
 	) {
 		s._color = RED;
 		delete_case1(n.parent);
