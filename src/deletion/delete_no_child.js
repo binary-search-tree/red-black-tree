@@ -7,7 +7,7 @@ import Leaf from '../types/Leaf.js';
 import replace_node from './replace_node.js';
 import delete_case2 from './delete_case2.js';
 
-import prune_subtree from './prune_subtree.js';
+import prune from './prune.js';
 
 /**
  * Delete a node <code>n</code> that has no non-leaf child.
@@ -25,7 +25,7 @@ const delete_no_child = (n) => {
 	assert(n.right === null);
 
 	if (n._color === RED) {
-		prune_subtree(n);
+		prune(n);
 		return;
 	}
 
@@ -42,7 +42,7 @@ const delete_no_child = (n) => {
 	delete_case2(leaf);
 
 	// Delete mocked leaf
-	prune_subtree(leaf);
+	prune(leaf);
 };
 
 export default delete_no_child;
