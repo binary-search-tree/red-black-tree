@@ -5,7 +5,7 @@ import RED from '../color/RED.js';
 import rotate_left from '../rotate/rotate_left.js';
 import rotate_right from '../rotate/rotate_right.js';
 import grandparent from '../family/grandparent.js';
-import insert_case5 from './insert_case5.js';
+import insert_case4 from './insert_case4.js';
 
 /**
  * Preconditions:
@@ -15,7 +15,7 @@ import insert_case5 from './insert_case5.js';
  *   - n's parent is red.
  *   - n's uncle is black.
  *
- * Here we fix the input subtree to pass the preconditions of {@link insert_case5}.
+ * Here we fix the input subtree to pass the preconditions of {@link insert_case4}.
  *
  * @param {Node} n - The input node.
  */
@@ -30,7 +30,7 @@ const insert_case3 = (n) => {
 
 	/**
 	 * If the path from g to n makes a left-right, change it to a left-left
-	 * with {@link rotate_left}. Then call {@link insert_case5} on the old
+	 * with {@link rotate_left}. Then call {@link insert_case4} on the old
 	 * parent of n.
 	 *
 	 *             B                     B
@@ -60,7 +60,7 @@ const insert_case3 = (n) => {
 	} else if (n === n.parent.left && n.parent === g.right) {
 		/**
 		 * If the path from g to n makes a right-left, change it to a right-right
-		 * with {@link rotate_right}. Then call {@link insert_case5} on the old
+		 * with {@link rotate_right}. Then call {@link insert_case4} on the old
 		 * parent of n.
 		 *
 		 *             B                     B
@@ -86,7 +86,7 @@ const insert_case3 = (n) => {
 		// n = n.right ;
 	}
 
-	insert_case5(n);
+	insert_case4(n);
 };
 
 export default insert_case3;

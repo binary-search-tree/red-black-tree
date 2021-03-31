@@ -17,7 +17,7 @@ import grandparent from '../family/grandparent.js';
  *
  * @param {Node} n - The input node.
  */
-const insert_case5 = (n) => {
+const insert_case4 = (n) => {
 	assert(n instanceof Node);
 	assert(n._color === RED);
 	assert(n.left === null || n.left._color === BLACK);
@@ -67,4 +67,4 @@ const insert_case5 = (n) => {
 	}
 };
 
-export default insert_case5;
+export default insert_case4;

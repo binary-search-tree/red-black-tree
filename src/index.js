@@ -22,7 +22,7 @@ export {default as insert_case0} from './insertion/insert_case0.js';
 export {default as insert_case1} from './insertion/insert_case1.js';
 export {default as insert_case2} from './insertion/insert_case2.js';
 export {default as insert_case3} from './insertion/insert_case3.js';
-export {default as insert_case5} from './insertion/insert_case5.js';
+export {default as insert_case4} from './insertion/insert_case4.js';
 export {default as rotate_left} from './rotate/rotate_left.js';
 export {default as rotate_right} from './rotate/rotate_right.js';
 export {default as search} from './search/search.js';
