@@ -7,7 +7,7 @@ import Leaf from '../types/Leaf.js';
 import replace_node from './replace_node.js';
 import delete_case2 from './delete_case2.js';
 
-import delete_mocked_leaf from './delete_mocked_leaf.js';
+import prune_subtree from './prune_subtree.js';
 
 /**
  * Delete a node <code>n</code> that has at most a single non-leaf child.
@@ -29,32 +29,41 @@ const delete_one_child = (n) => {
 	// properties
 	assert(n.right === null);
 
+	if (n._color === RED) {
+		//    If n is red then its child can only be black. Replacing n with its
+		//    child suffices.
+		const child = n.left;
+		if (child === null) {
+			prune_subtree(n);
+		} else {
+			assert(child._color === BLACK);
+			replace_node(n, child);
+		}
+
+		return;
+	}
+
+	assert(n._color === BLACK);
+
 	// Mock leaf if there is no left child
 	const child = n.left === null ? new Leaf(null) : n.left;
-
-	// TODO skip creating mocked leaf if n._color === RED
 
 	// Replace n with its left child
 	replace_node(n, child);
 
 	// If n is black, deleting it reduces the black-height of every path going
 	// through it by 1.
-	if (n._color === BLACK) {
-		// We can easily fix this when its left child is an
-		// internal red node: change the color of the left child to black and
-		// replace n with it.
-		if (child._color === RED) child._color = BLACK;
-		// Otherwise, there are more things to fix.
-		else {
-			delete_case2(child);
-		}
-	} else {
-		//    If n is red then its child can only be black. Replacing n with its
-		//    child suffices. This is a NO-OP.
-		assert(child._color === BLACK);
+	// We can easily fix this when its left child is an
+	// internal red node: change the color of the left child to black and
+	// replace n with it.
+	if (child._color === RED) child._color = BLACK;
+	// Otherwise, there are more things to fix.
+	else {
+		delete_case2(child);
 	}
 
-	if (child instanceof Leaf) delete_mocked_leaf(child);
+	// Delete mocked leaf
+	if (child instanceof Leaf) prune_subtree(child);
 };
 
 export default delete_one_child;
