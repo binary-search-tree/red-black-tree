@@ -3,13 +3,14 @@ import Node from '../types/Node.js';
 
 /**
  * Rotate tree right. (see https://en.wikipedia.org/wiki/Tree_rotation)
- * /!\ This swaps the references to A and B.
  *
+ *         p                p
+ *         |                |
  *         B                A
  *        / \              / \
- *       A   c     ->     a   B
+ *       A   y     ->     x   B
  *      / \                  / \
- *     a   b                b   c
+ *     x   b                b   j
  *
  *
  * @param {Node} B - The root of the tree.
@@ -20,22 +21,21 @@ const rotate_right = (B) => {
 	assert(B instanceof Node);
 	const A = B.left;
 	assert(A instanceof Node);
-	const a = A.left;
+
+	const p = B.parent;
+	if (p !== null) {
+		if (B === p.left) p.left = A;
+		else p.right = A;
+	}
+
+	A.parent = p;
+	B.parent = A;
+
 	const b = A.right;
-	const c = B.right;
+	B.left = b;
+	A.right = B;
 
-	[A.key, B.key] = [B.key, A.key];
-	[A._color, B._color] = [B._color, A._color];
-
-	B.left = a;
-	B.right = A;
-
-	A.left = b;
-	A.right = c;
-
-	if (a !== null) a.parent = B;
-	if (b !== null) b.parent = A;
-	if (c !== null) c.parent = A;
+	if (b !== null) b.parent = B;
 };
 
 export default rotate_right;

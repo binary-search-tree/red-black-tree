@@ -16,6 +16,7 @@ import delete_case3 from './delete_case3.js';
  *   - n's sibling is black
  *
  * @param {Node} n - The input node.
+ * @return {Node} The root of the modified subtree.
  */
 const delete_case2 = (n) => {
 	assert(n instanceof Node);
@@ -44,11 +45,11 @@ const delete_case2 = (n) => {
 		(s.right === null || s.right._color === BLACK)
 	) {
 		s._color = RED;
-		delete_case0(n.parent);
+		return delete_case0(n.parent);
 	}
 
 	// Otherwise, go to case 3.
-	else delete_case3(n);
+	return delete_case3(n);
 };
 
 export default delete_case2;

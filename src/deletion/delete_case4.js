@@ -18,6 +18,7 @@ import delete_case5 from './delete_case5.js';
  *   - at least one of n's sibling's children is red
  *
  * @param {Node} n - The input node.
+ * @return {Node} The root of the modified subtree.
  */
 const delete_case4 = (n) => {
 	assert(n instanceof Node);
@@ -32,18 +33,18 @@ const delete_case4 = (n) => {
 	// the left of the left of the parent, or right of the right, so case 5
 	// will rotate correctly.
 
-	/**
-	 *           ?                       ?
-	 *         /   \                  /     \
-	 *      >B       B              >B        B
-	 *      / \     / \     -->     / \      / \
-	 *     -   -  R     B          -   -   =     R
-	 *           / \   / \                      / \
-	 *          =   = -   -                    =   B
-	 *                                            / \
-	 *                                           -   -
-	 */
 	if (n === n.parent.left && (s.right === null || s.right._color === BLACK)) {
+		/**
+		 *           ?                       ?
+		 *         /   \                  /     \
+		 *      >B       B              >B        B
+		 *      / \     / \     -->     / \      / \
+		 *     -   -  R     B          -   -   =     R
+		 *           / \   / \                      / \
+		 *          =   = -   -                    =   B
+		 *                                            / \
+		 *                                           -   -
+		 */
 		s._color = RED;
 		s.left._color = BLACK;
 		rotate_right(s);
@@ -67,7 +68,9 @@ const delete_case4 = (n) => {
 		rotate_left(s);
 	}
 
-	delete_case5(n);
+	// TODO we could merge case 4 and 5 without too much trouble.
+	// It would allow to avoid checking n's direction twice.
+	return delete_case5(n);
 };
 
 export default delete_case4;

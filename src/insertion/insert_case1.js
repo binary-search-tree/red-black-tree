@@ -11,6 +11,7 @@ import insert_case2 from './insert_case2.js';
  *   - n is not the root of the tree.
  *
  * @param {Node} n - The input node.
+ * @return {Node} The root of the modified subtree.
  */
 const insert_case1 = (n) => {
 	assert(n instanceof Node);
@@ -28,9 +29,7 @@ const insert_case1 = (n) => {
 	 *      / \
 	 *     -   -
 	 */
-	if (n.parent._color === BLACK) return;
-
-	insert_case2(n);
+	return n.parent._color === BLACK ? n : insert_case2(n);
 };
 
 export default insert_case1;

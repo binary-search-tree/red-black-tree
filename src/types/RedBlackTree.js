@@ -4,12 +4,15 @@ import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import predecessor from '../family/predecessor.js';
 import insert from '../insertion/insert.js';
-import insert_case1 from '../insertion/insert_case1.js';
+import insert_case2 from '../insertion/insert_case2.js';
 import delete_one_child from '../deletion/delete_one_child.js';
 import delete_no_child from '../deletion/delete_no_child.js';
 import search from '../search/search.js';
 import inordertraversal from '../traversal/inordertraversal.js';
 import rangetraversal from '../traversal/rangetraversal.js';
+import replace_node from '../deletion/replace_node.js';
+import swap_non_adjacent from '../swap/swap_non_adjacent.js';
+import swap_left from '../swap/swap_left.js';
 
 /**
  * A RedBlackTree with key-only nodes.
@@ -42,15 +45,25 @@ export default class RedBlackTree {
 	 * Adds a key to the tree.
 	 *
 	 * @param {any} key - The key to add.
+	 * @return {Node} The newly added node.
 	 */
 	add(key) {
 		if (this.root === null) {
 			this.root = new Node(BLACK, key);
-		} else {
-			const node = new Node(RED, key);
-			insert(this.compare, this.root, node);
-			insert_case1(node);
+			return this.root;
 		}
+
+		const node = new Node(RED, key);
+		insert(this.compare, this.root, node);
+		assert(node.parent !== null);
+		if (node.parent._color !== BLACK) {
+			const subtree = insert_case2(node);
+			if (subtree.parent === null) {
+				this.root = subtree;
+			}
+		}
+
+		return node;
 	}
 
 	/**
@@ -98,29 +111,80 @@ export default class RedBlackTree {
 	_delete(node) {
 		assert(node instanceof Node);
 		if (node.left !== null) {
-			// Replace node's key with predecessor's key
+			// Swap node with its predecessor
 			const pred = predecessor(node);
-			node.key = pred.key;
 			// Delete predecessor node
-			// NOTE: this node can only have one non-leaf (left) child because
-			// of red-black tree invariant.
-			if (pred.left === null) {
-				delete_no_child(pred);
+			// NOTE: this node can have at most one non-leaf (left) child
+			// because of red-black tree invariant.
+			assert(pred.right === null);
+			if (pred === node.left) {
+				swap_left(node);
 			} else {
-				delete_one_child(pred);
+				swap_non_adjacent(node, pred);
+			}
+
+			assert(node.right === null);
+			if (node.left === null) {
+				const subtree = delete_no_child(node);
+				if (subtree.parent === null) {
+					this.root = subtree;
+				} else if (pred.parent === null) {
+					assert(node === this.root);
+					this.root = pred;
+				}
+			} else {
+				delete_one_child(node);
+				if (pred.parent === null) {
+					assert(node === this.root);
+					this.root = pred;
+				}
 			}
 		} else if (node.right !== null) {
-			// Replace node's key with successor's key
-			// NOTE: Since there is no left child, then there can only be one
-			// right child by the red-black tree invariant.
+			/**
+			 * Swap node with its successor.
+			 *
+			 * NOTE: Since pred is a leaf, there can only by one node in the
+			 * right subtree, succ, which is necessarily red, hence
+			 * node is black.
+			 *
+			 * The configuration:
+			 *
+			 *      (A)                 (B)                  (C)
+			 *
+			 *    p                   p                    p
+			 *    |                   |                    |
+			 *   node (BLACK)        succ (BLACK)        succ (BLACK)
+			 *   / \                 / \                  / \
+			 *  -  succ (RED)  ->   -  node (RED)  ->    -   -
+			 *     / \                 / \
+			 *    -   -               -   -
+			 *
+			 * NOTE: We take a shortcut and go directly from (A) to (C)
+			 */
+			assert(node.left === null);
 			const succ = node.right;
-			node.key = succ.key;
-			// Delete successor node
-			delete_no_child(succ);
+			assert(succ._color === RED);
+			succ._color = BLACK;
+			if (node === this.root) {
+				assert(node.parent === null);
+				succ.parent = null;
+				this.root = succ;
+			} else {
+				replace_node(node, succ);
+			}
 		} else if (node === this.root) {
+			assert(node.parent === null);
+			assert(node._color === BLACK);
+			assert(node.left === null);
+			assert(node.right === null);
 			this.root = null;
 		} else {
-			delete_no_child(node);
+			assert(node.left === null);
+			assert(node.right === null);
+			const subtree = delete_no_child(node);
+			if (subtree.parent === null) {
+				this.root = subtree;
+			}
 		}
 	}
 
