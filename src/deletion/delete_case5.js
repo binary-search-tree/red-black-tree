@@ -17,6 +17,7 @@ import sibling from '../family/sibling.js';
  *   - if n is a right child, the left child of n's sibling is red
  *
  * @param {Node} n - The input node.
+ * @return {Node} The root of the modified subtree.
  */
 const delete_case5 = (n) => {
 	assert(n instanceof Node);
@@ -28,8 +29,9 @@ const delete_case5 = (n) => {
 
 	/**
 	 * Increment the black height of all root-leaf paths going through n by
+	 * swapping the colors of n's parent and n's sibling and
 	 * rotating at n's parent. This decrements the black height of all
-	 * root-leaft paths going through n's sibling's right child.
+	 * root-leaf paths going through n's sibling's right child.
 	 * We can repaint n's sibling's right child in black to fix this.
 	 * We are done.
 	 *
@@ -44,6 +46,7 @@ const delete_case5 = (n) => {
 	 *                   -   -
 	 */
 
+	// Swap the color of the parent and the sibling.
 	s._color = n.parent._color;
 	n.parent._color = BLACK;
 
@@ -51,14 +54,15 @@ const delete_case5 = (n) => {
 		assert(s.right._color === RED);
 		s.right._color = BLACK;
 		rotate_left(n.parent);
+		return s;
 	}
 
 	// Symmetric case
-	else {
-		assert(s.left._color === RED);
-		s.left._color = BLACK;
-		rotate_right(n.parent);
-	}
+
+	assert(s.left._color === RED);
+	s.left._color = BLACK;
+	rotate_right(n.parent);
+	return s;
 };
 
 export default delete_case5;

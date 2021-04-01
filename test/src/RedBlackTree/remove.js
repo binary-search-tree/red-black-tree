@@ -1,19 +1,11 @@
 import test from 'ava';
 
-import {increasing} from '../../fixtures.js';
+import {increasing, entropy} from '../../fixtures.js';
 
 import {list, range, sorted, head, iter, exhaust} from '@aureooms/js-itertools';
 
-import {_fisheryates, _shuffle} from '@aureooms/js-random';
-import {splitmix64, nextFloat64} from '@aureooms/js-pseudo-random';
-
 const seed = [0, 17];
-const prng = splitmix64(seed);
-const random = () => nextFloat64(prng);
-const _randint = (random) => (i, j) => i + Math.floor(random() * (j - i));
-const randint = _randint(random);
-const sample = _fisheryates(randint);
-const shuffle = _shuffle(sample);
+const {shuffle} = entropy(seed);
 
 import {RedBlackTree, _debug} from '../../../src/index.js';
 
@@ -77,7 +69,7 @@ const macro = (t, reference) => {
 macro.title = (title, reference) =>
 	title ||
 	'Test RedBlackTree::remove with ' +
-		(reference.length >= 10
+		(reference.length > 10
 			? `${reference.length} elements`
 			: JSON.stringify(reference));
 

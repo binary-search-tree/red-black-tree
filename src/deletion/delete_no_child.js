@@ -16,6 +16,7 @@ import prune from './prune.js';
  *   - n is not the root
  *
  * @param {Node} n - The node to delete.
+ * @return {Node} The root of the modified subtree.
  */
 const delete_no_child = (n) => {
 	assert(n instanceof Node);
@@ -26,7 +27,7 @@ const delete_no_child = (n) => {
 	if (n._color !== BLACK) {
 		assert(n._color === RED);
 		prune(n);
-		return;
+		return n.parent;
 	}
 
 	// Mock leaf since there is no left child
@@ -39,10 +40,11 @@ const delete_no_child = (n) => {
 
 	// If n is black, deleting it reduces the black-height of every path going
 	// through it by 1. The leaf is black, so there are more things to fix.
-	delete_case1(leaf);
+	const subtree = delete_case1(leaf);
 
 	// Delete mocked leaf
 	prune(leaf);
+	return subtree;
 };
 
 export default delete_no_child;

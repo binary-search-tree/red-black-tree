@@ -16,6 +16,7 @@ import grandparent from '../family/grandparent.js';
  *   - the path from n to its grandparent makes a left-left or right-right.
  *
  * @param {Node} n - The input node.
+ * @return {Node} The root of the modified subtree.
  */
 const insert_case4 = (n) => {
 	assert(n instanceof Node);
@@ -65,6 +66,8 @@ const insert_case4 = (n) => {
 		assert(g.left === null || g.left._color === BLACK);
 		rotate_left(g);
 	}
+
+	return n.parent;
 };
 
 export default insert_case4;
