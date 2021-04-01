@@ -22,13 +22,8 @@ import {bgRed as red, bgBlack as black} from 'chalk';
 
 const debug = _debug({red, black});
 
-test('RedBlackTree::remove', (t) => {
-	const n = 10000;
-	const reference = list(range(n));
-	shuffle(reference, 0, n);
-
-	// Const reference = [3,0,2,4,1];
-	// const n = reference.length ;
+const macro = (t, reference) => {
+	const n = reference.length;
 
 	const tree = RedBlackTree.from(increasing, reference);
 	t.deepEqual(
@@ -36,8 +31,6 @@ test('RedBlackTree::remove', (t) => {
 		sorted(increasing, reference),
 		'tree contains n items',
 	);
-
-	// Console.log(reference);
 
 	const m = (n / 2) | 0;
 	for (const i of range(m)) {
@@ -79,7 +72,24 @@ test('RedBlackTree::remove', (t) => {
 	}
 
 	t.deepEqual(list(tree), [], 'tree is empty');
-});
+};
+
+macro.title = (title, reference) =>
+	title ||
+	'Test RedBlackTree::remove with ' +
+		(reference.length >= 10
+			? `${reference.length} elements`
+			: JSON.stringify(reference));
+
+const n = 10000;
+const huge_list = list(range(n));
+shuffle(huge_list, 0, n);
+test(macro, huge_list);
+
+test(macro, [5, 3, 2, 6, 7, 8, 4, 1]);
+test(macro, [5, 3, 2, 6, 7, 8, 4]);
+test(macro, [5, 3, 2, 6, 7, 8]);
+test(macro, [5, 3, 2, 6, 7]);
 
 test('delete root with right child', (t) => {
 	const tree = new RedBlackTree(increasing);
