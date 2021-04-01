@@ -4,7 +4,16 @@ import {increasing} from '../../fixtures.js';
 
 import {list, range, sorted, head, iter, exhaust} from '@aureooms/js-itertools';
 
-import {shuffle} from '@aureooms/js-random';
+import {_fisheryates, _shuffle} from '@aureooms/js-random';
+import {splitmix64, nextFloat64} from '@aureooms/js-pseudo-random';
+
+const seed = [0, 17];
+const prng = splitmix64(seed);
+const random = () => nextFloat64(prng);
+const _randint = (random) => (i, j) => i + Math.floor(random() * (j - i));
+const randint = _randint(random);
+const sample = _fisheryates(randint);
+const shuffle = _shuffle(sample);
 
 import {RedBlackTree, _debug} from '../../../src/index.js';
 
