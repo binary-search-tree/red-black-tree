@@ -118,6 +118,7 @@ export default class RedBlackTree {
 			// Delete successor node
 			delete_no_child(succ);
 		} else if (node === this.root) {
+			assert(node._color === BLACK);
 			this.root = null;
 		} else {
 			delete_no_child(node);
