@@ -10,6 +10,7 @@ import delete_no_child from '../deletion/delete_no_child.js';
 import search from '../search/search.js';
 import inordertraversal from '../traversal/inordertraversal.js';
 import rangetraversal from '../traversal/rangetraversal.js';
+import replace_node from '../deletion/replace_node.js';
 
 /**
  * A RedBlackTree with key-only nodes.
@@ -110,13 +111,35 @@ export default class RedBlackTree {
 				delete_one_child(pred);
 			}
 		} else if (node.right !== null) {
-			// Replace node's key with successor's key
-			// NOTE: Since there is no left child, then there can only be one
-			// right child by the red-black tree invariant.
+			/**
+			 * Swap node with its successor.
+			 *
+			 * NOTE: Since pred is a leaf, there can only by one node in the
+			 * right subtree, succ, which is necessarily red, hence
+			 * node is black.
+			 *
+			 * The configuration:
+			 *
+			 *      (A)                 (B)                  (C)
+			 *
+			 *    p                   p                    p
+			 *    |                   |                    |
+			 *   node (BLACK)        succ (BLACK)        succ (BLACK)
+			 *   / \                 / \                  / \
+			 *  -  succ (RED)  ->   -  node (RED)  ->    -   -
+			 *     / \                 / \
+			 *    -   -               -   -
+			 *
+			 * NOTE: We take a shortcut and go directly from (A) to (C)
+			 */
 			const succ = node.right;
-			node.key = succ.key;
-			// Delete successor node
-			delete_no_child(succ);
+			assert(succ._color === RED);
+			succ._color = BLACK;
+			if (node === this.root) {
+				this.root = succ;
+			} else {
+				replace_node(node, succ);
+			}
 		} else if (node === this.root) {
 			assert(node._color === BLACK);
 			this.root = null;

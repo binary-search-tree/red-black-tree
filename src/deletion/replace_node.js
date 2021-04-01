@@ -10,7 +10,7 @@ import Node from '../types/Node.js';
 const replace_node = (A, B) => {
 	assert(A instanceof Node);
 	assert(B instanceof Node);
-	// We never apply delete_one_child or delete_no_child on the root
+	// We never apply replace_node on the root
 	assert(A.parent !== null);
 
 	if (A === A.parent.left) A.parent.left = B;
