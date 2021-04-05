@@ -89,7 +89,7 @@ export default class RedBlackTree {
 	 */
 	get(key) {
 		const node = this._search(key);
-		return node === null ? null : node.key;
+		return node === null ? undefined : node.key;
 	}
 
 	/**

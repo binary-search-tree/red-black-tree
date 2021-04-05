@@ -28,7 +28,7 @@ const macro = (t, reference) => {
 	for (const i of range(m)) {
 		const x = reference[i];
 		t.true(tree.remove(x));
-		t.true(tree.get(x) === null);
+		t.true(tree.get(x) === undefined);
 	}
 
 	const _rest = iter(reference);
@@ -46,7 +46,7 @@ const macro = (t, reference) => {
 
 	for (const i of range(m)) {
 		const x = reference[i];
-		t.true(tree.get(x) === null);
+		t.true(tree.get(x) === undefined);
 		tree.add(x);
 		t.true(tree.get(x) === x);
 	}
@@ -60,7 +60,7 @@ const macro = (t, reference) => {
 	for (const i of range(n)) {
 		const x = reference[i];
 		t.true(tree.remove(x));
-		t.true(tree.get(x) === null);
+		t.true(tree.get(x) === undefined);
 	}
 
 	t.deepEqual(list(tree), [], 'tree is empty');

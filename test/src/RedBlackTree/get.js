@@ -10,7 +10,7 @@ for (const compare of [increasing, decreasing]) {
 	test(`RedBlackTree::get [${compare.name}]`, (t) => {
 		const tree = RedBlackTree.empty(compare);
 
-		t.is(tree.get(0), null);
+		t.true(tree.get(0) === undefined);
 
 		const n = 10000;
 		const reference = [];
@@ -26,7 +26,7 @@ for (const compare of [increasing, decreasing]) {
 			t.deepEqual(tree.get(x), x);
 		}
 
-		t.is(tree.get(-1), null);
-		t.is(tree.get(n), null);
+		t.true(tree.get(-1) === undefined);
+		t.true(tree.get(n) === undefined);
 	});
 }
