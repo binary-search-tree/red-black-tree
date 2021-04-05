@@ -1,5 +1,7 @@
 import assert from 'assert';
 import Node from '../types/Node.js';
+import leftOpenRangeTraversal from './leftOpenRangeTraversal.js';
+import rightOpenRangeTraversal from './rightOpenRangeTraversal.js';
 
 /**
  * Yields all the keys in the tree rooted at <code>root</code> that lie in the
@@ -31,13 +33,13 @@ export default function* rangetraversal(compare, root, left, right) {
 		// between.
 		if (root.left !== null) {
 			assert(root.left instanceof Node);
-			yield* rangetraversal(compare, root.left, left, right);
+			yield* rightOpenRangeTraversal(compare, root.left, left);
 		}
 
 		yield root.key;
 		if (root.right !== null) {
 			assert(root.right instanceof Node);
-			yield* rangetraversal(compare, root.right, left, right);
+			yield* leftOpenRangeTraversal(compare, root.right, right);
 		}
 	}
 }

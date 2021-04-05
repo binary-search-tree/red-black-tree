@@ -30,6 +30,8 @@ export {default as swap_color} from './swap/swap_color.js';
 export {default as swap_left} from './swap/swap_left.js';
 export {default as swap_non_adjacent} from './swap/swap_non_adjacent.js';
 export {default as inordertraversal} from './traversal/inordertraversal.js';
+export {default as leftOpenRangeTraversal} from './traversal/leftOpenRangeTraversal.js';
 export {default as rangetraversal} from './traversal/rangetraversal.js';
+export {default as rightOpenRangeTraversal} from './traversal/rightOpenRangeTraversal.js';
 export {default as Node} from './types/Node.js';
 export {default as RedBlackTree} from './types/RedBlackTree.js';
