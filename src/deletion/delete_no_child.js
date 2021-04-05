@@ -3,7 +3,6 @@ import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import Node from '../types/Node.js';
 
-import replace_node from './replace_node.js';
 import delete_case1 from './delete_case1.js';
 
 import prune from './prune.js';
@@ -30,20 +29,14 @@ const delete_no_child = (n) => {
 		return n.parent;
 	}
 
-	// Mock leaf since there is no left child
-	// We use key = n.key to avoid mixing types, but this property is never
-	// accessed.
-	const leaf = new Node(BLACK, n.key);
-
-	// Replace n with the mocked leaf
-	replace_node(n, leaf);
-
 	// If n is black, deleting it reduces the black-height of every path going
 	// through it by 1. The leaf is black, so there are more things to fix.
-	const subtree = delete_case1(leaf);
+	// NOTE We temporarily keep n in the tree to mock a leaf, since n does not
+	// have children.
+	const subtree = delete_case1(n);
 
 	// Delete mocked leaf
-	prune(leaf);
+	prune(n);
 	return subtree;
 };
 
