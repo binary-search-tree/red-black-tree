@@ -108,7 +108,7 @@ export default class RedBlackTree {
 	 *
 	 * @param {Node} node - The input node to delete.
 	 */
-	_delete(node) {
+	unlink(node) {
 		assert(node instanceof Node);
 		if (node.left !== null) {
 			// Swap node with its predecessor
@@ -191,7 +191,7 @@ export default class RedBlackTree {
 	/**
 	 * Search for the first node of the tree whose key equals the input key
 	 * (with {@link RedBlackTree#_search}), then delete that node
-	 * (with {@link RedBlackTree#_delete}). If such a node is found and deleted
+	 * (with {@link RedBlackTree#unlink}). If such a node is found and deleted
 	 * then return <code>true</code>. Return <code>false</code> otherwise.
 	 *
 	 * @param {any} key - The input key.
@@ -201,7 +201,7 @@ export default class RedBlackTree {
 		const node = this._search(key);
 		if (node === null) return false;
 
-		this._delete(node);
+		this.unlink(node);
 		return true;
 	}
 
