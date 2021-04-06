@@ -4,7 +4,10 @@ import replace_node from '../deletion/replace_node.js';
 import swap_color from './swap_color.js';
 
 /**
- * Swap pointers and colors of a node and its left child.
+ * Swap pointers and colors of a node and its left child B with one constraint:
+ *   - B's right child is a leaf
+ *
+ * NOTE: This constraint is implied because B is A's in-subtree predecessor.
  *
  *         p                   p
  *         |                   |
@@ -12,7 +15,7 @@ import swap_color from './swap_color.js';
  *        / \                 / \
  *      +B   c       ->     +A   c
  *      / \                 / \
- *     a   b               a   b
+ *     a   -               a   -
  *
  * @param {Node} A - The node.
  * @return {Node} The node B.
@@ -23,7 +26,7 @@ const swap_left = (A) => {
 	const B = A.left;
 	assert(B instanceof Node);
 	const a = B.left;
-	const b = B.right;
+	assert(B.right === null);
 	const c = A.right;
 
 	if (A.parent === null) {
@@ -34,8 +37,7 @@ const swap_left = (A) => {
 
 	A.parent = B;
 
-	A.right = b;
-	if (b !== null) b.parent = A;
+	A.right = null;
 	B.right = c;
 	if (c !== null) c.parent = B;
 
