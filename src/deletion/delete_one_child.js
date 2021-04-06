@@ -9,6 +9,14 @@ import replace_node from './replace_node.js';
  * Delete a node <code>n</code> with one non-leaf left child and one leaf right
  * child.
  *
+ *       p
+ *       |
+ *       n (BLACK)
+ *      / \
+ *    RED  -
+ *    / \
+ *   -   -
+ *
  * Precondition:
  *   - n has exactly one non-leaf child.
  *   - n is not the root
@@ -33,6 +41,8 @@ const delete_one_child = (n) => {
 	// We can easily fix this when its only child is an
 	// internal RED node: change the color of the child to black and
 	// replace n with it.
+	// TODO we could know n's direction depending whether swap_left or
+	// swap_non_adjacent has been called upstream.
 	replace_node(n, child);
 	child._color = BLACK;
 };
