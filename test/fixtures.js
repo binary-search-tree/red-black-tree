@@ -5,8 +5,7 @@ increasing.step = 1;
 export const decreasing = (a, b) => _dec(a, b);
 decreasing.step = -1;
 
-import {_fisheryates, _shuffle} from '@aureooms/js-random';
-const _randint = (random) => (i, j) => i + Math.floor(random() * (j - i));
+import {_fisheryates, _shuffle, _randint} from '@aureooms/js-random';
 import {splitmix64, nextFloat64} from '@aureooms/js-pseudo-random';
 
 export const entropy = (seed) => {
