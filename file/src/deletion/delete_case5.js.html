@@ -55,8 +55,13 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#rotate">rotate</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_left">rotate_left</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_right">rotate_right</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#swap">swap</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_color">swap_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_left">swap_left</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_non_adjacent">swap_non_adjacent</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-leftOpenRangeTraversal">leftOpenRangeTraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rightOpenRangeTraversal">rightOpenRangeTraversal</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
@@ -83,6 +88,7 @@ import sibling from &apos;../family/sibling.js&apos;;
  *   - if n is a right child, the left child of n&apos;s sibling is red
  *
  * @param {Node} n - The input node.
+ * @return {Node} The root of the modified subtree.
  */
 const delete_case5 = (n) =&gt; {
 	assert(n instanceof Node);
@@ -94,8 +100,9 @@ const delete_case5 = (n) =&gt; {
 
 	/**
 	 * Increment the black height of all root-leaf paths going through n by
+	 * swapping the colors of n&apos;s parent and n&apos;s sibling and
 	 * rotating at n&apos;s parent. This decrements the black height of all
-	 * root-leaft paths going through n&apos;s sibling&apos;s right child.
+	 * root-leaf paths going through n&apos;s sibling&apos;s right child.
 	 * We can repaint n&apos;s sibling&apos;s right child in black to fix this.
 	 * We are done.
 	 *
@@ -110,6 +117,7 @@ const delete_case5 = (n) =&gt; {
 	 *                   -   -
 	 */
 
+	// Swap the color of the parent and the sibling.
 	s._color = n.parent._color;
 	n.parent._color = BLACK;
 
@@ -117,14 +125,15 @@ const delete_case5 = (n) =&gt; {
 		assert(s.right._color === RED);
 		s.right._color = BLACK;
 		rotate_left(n.parent);
+		return s;
 	}
 
 	// Symmetric case
-	else {
-		assert(s.left._color === RED);
-		s.left._color = BLACK;
-		rotate_right(n.parent);
-	}
+
+	assert(s.left._color === RED);
+	s.left._color = BLACK;
+	rotate_right(n.parent);
+	return s;
 };
 
 export default delete_case5;

@@ -55,8 +55,13 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#rotate">rotate</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_left">rotate_left</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_right">rotate_right</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#swap">swap</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_color">swap_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_left">swap_left</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_non_adjacent">swap_non_adjacent</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-leftOpenRangeTraversal">leftOpenRangeTraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rightOpenRangeTraversal">rightOpenRangeTraversal</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
@@ -69,7 +74,6 @@ import BLACK from &apos;../color/BLACK.js&apos;;
 import RED from &apos;../color/RED.js&apos;;
 import Node from &apos;../types/Node.js&apos;;
 
-import replace_node from &apos;./replace_node.js&apos;;
 import delete_case1 from &apos;./delete_case1.js&apos;;
 
 import prune from &apos;./prune.js&apos;;
@@ -82,6 +86,7 @@ import prune from &apos;./prune.js&apos;;
  *   - n is not the root
  *
  * @param {Node} n - The node to delete.
+ * @return {Node} The root of the modified subtree.
  */
 const delete_no_child = (n) =&gt; {
 	assert(n instanceof Node);
@@ -92,23 +97,18 @@ const delete_no_child = (n) =&gt; {
 	if (n._color !== BLACK) {
 		assert(n._color === RED);
 		prune(n);
-		return;
+		return n.parent;
 	}
-
-	// Mock leaf since there is no left child
-	// We use key = n.key to avoid mixing types, but this property is never
-	// accessed.
-	const leaf = new Node(BLACK, n.key);
-
-	// Replace n with the mocked leaf
-	replace_node(n, leaf);
 
 	// If n is black, deleting it reduces the black-height of every path going
 	// through it by 1. The leaf is black, so there are more things to fix.
-	delete_case1(leaf);
+	// NOTE We temporarily keep n in the tree to mock a leaf, since n does not
+	// have children.
+	const subtree = delete_case1(n);
 
 	// Delete mocked leaf
-	prune(leaf);
+	prune(n);
+	return subtree;
 };
 
 export default delete_no_child;

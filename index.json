@@ -752,7 +752,7 @@
     "__docId__": 58,
     "kind": "file",
     "name": "src/deletion/delete_case0.js",
-    "content": "import assert from 'assert';\nimport BLACK from '../color/BLACK.js';\nimport Node from '../types/Node.js';\nimport delete_case1 from './delete_case1.js';\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *\n * @param {Node} n - The input node.\n */\nconst delete_case0 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === BLACK);\n\t// If n is the root, there is nothing to do:\n\t//   - all paths go through n, and\n\t//   - n is black.\n\tif (n.parent !== null) delete_case1(n);\n};\n\nexport default delete_case0;\n",
+    "content": "import assert from 'assert';\nimport BLACK from '../color/BLACK.js';\nimport Node from '../types/Node.js';\nimport delete_case1 from './delete_case1.js';\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *\n * @param {Node} n - The input node.\n * @return {Node} The root of the modified subtree.\n */\nconst delete_case0 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === BLACK);\n\t// If n is the root, there is nothing to do:\n\t//   - all paths go through n, and\n\t//   - n is black.\n\treturn n.parent === null ? n : delete_case1(n);\n};\n\nexport default delete_case0;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/deletion/delete_case0.js",
     "access": "public",
@@ -773,7 +773,7 @@
     "importPath": "@aureooms/js-red-black-tree/src/deletion/delete_case0.js",
     "importStyle": "delete_case0",
     "description": "Preconditions:\n  - n is black\n  - all root-leaf paths going through n have a black height of b - 1\n  - all other root-leaf paths have a black height of b",
-    "lineNumber": 14,
+    "lineNumber": 15,
     "params": [
       {
         "nullable": null,
@@ -786,13 +786,20 @@
         "description": "The input node."
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Node"
+      ],
+      "spread": false,
+      "description": "The root of the modified subtree."
+    }
   },
   {
     "__docId__": 60,
     "kind": "file",
     "name": "src/deletion/delete_case1.js",
-    "content": "import assert from 'assert';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport Node from '../types/Node.js';\nimport rotate_left from '../rotate/rotate_left.js';\nimport rotate_right from '../rotate/rotate_right.js';\nimport sibling from '../family/sibling.js';\n\nimport delete_case2 from './delete_case2.js';\nimport delete_case3 from './delete_case3.js';\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *\n * @param {Node} n - The input node.\n */\nconst delete_case1 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === BLACK);\n\tassert(n.parent !== null);\n\n\tconst s = sibling(n);\n\tassert(s instanceof Node);\n\n\tif (s._color === BLACK) {\n\t\t// If n's sibling is BLACK, go to case 2.\n\t\tdelete_case2(n);\n\t} else {\n\t\t/**\n\t\t * Otherwise, prepare for and go to case 3.\n\t\t *\n\t\t *           B                       B\n\t\t *         /   \\                  /     \\\n\t\t *      >B       R               R       B\n\t\t *      / \\     / \\     -->    /   \\    / \\\n\t\t *     -   -  B     B        >B     B  =   =\n\t\t *           / \\   / \\       / \\   / \\\n\t\t *          =   = =   =     -   - =   =\n\t\t */\n\t\tn.parent._color = RED;\n\t\ts._color = BLACK;\n\t\tif (n === n.parent.left) rotate_left(n.parent);\n\t\telse rotate_right(n.parent);\n\t\tdelete_case3(n);\n\t}\n};\n\nexport default delete_case1;\n",
+    "content": "import assert from 'assert';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport Node from '../types/Node.js';\nimport rotate_left from '../rotate/rotate_left.js';\nimport rotate_right from '../rotate/rotate_right.js';\nimport sibling from '../family/sibling.js';\n\nimport delete_case2 from './delete_case2.js';\nimport delete_case3 from './delete_case3.js';\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *\n * @param {Node} n - The input node.\n * @return {Node} The root of the modified subtree.\n */\nconst delete_case1 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === BLACK);\n\tassert(n.parent !== null);\n\n\tconst s = sibling(n);\n\tassert(s instanceof Node);\n\n\tif (s._color === BLACK) {\n\t\t// If n's sibling is BLACK, go to case 2.\n\t\treturn delete_case2(n);\n\t}\n\n\t/**\n\t * Otherwise, prepare for and go to case 3.\n\t *\n\t *           B                      *B\n\t *         /   \\                  /     \\\n\t *      >B       R               R       B\n\t *      / \\     / \\     -->    /   \\    / \\\n\t *     -   -  B     B        >B     B  =   =\n\t *           / \\   / \\       / \\   / \\\n\t *          =   = =   =     -   - =   =\n\t */\n\tn.parent._color = RED;\n\ts._color = BLACK;\n\tif (n === n.parent.left) rotate_left(n.parent);\n\telse rotate_right(n.parent);\n\treturn delete_case3(n).parent;\n};\n\nexport default delete_case1;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/deletion/delete_case1.js",
     "access": "public",
@@ -813,7 +820,7 @@
     "importPath": "@aureooms/js-red-black-tree/src/deletion/delete_case1.js",
     "importStyle": "delete_case1",
     "description": "Preconditions:\n  - n is black\n  - all root-leaf paths going through n have a black height of b - 1\n  - all other root-leaf paths have a black height of b\n  - n is not the root",
-    "lineNumber": 21,
+    "lineNumber": 22,
     "params": [
       {
         "nullable": null,
@@ -826,13 +833,20 @@
         "description": "The input node."
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Node"
+      ],
+      "spread": false,
+      "description": "The root of the modified subtree."
+    }
   },
   {
     "__docId__": 62,
     "kind": "file",
     "name": "src/deletion/delete_case2.js",
-    "content": "import assert from 'assert';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport Node from '../types/Node.js';\nimport sibling from '../family/sibling.js';\n\nimport delete_case0 from './delete_case0.js';\nimport delete_case3 from './delete_case3.js';\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *   - n's sibling is black\n *\n * @param {Node} n - The input node.\n */\nconst delete_case2 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === BLACK);\n\tassert(n.parent !== null);\n\tconst s = sibling(n);\n\tassert(s instanceof Node);\n\tassert(s._color === BLACK);\n\n\t/**\n\t * If n's parent is black and n's sibling's children are black, then\n\t * repaint n's sibling red. Now all root-leaf paths going through n's\n\t * parent have a black height of b - 1. We recurse thus on n's parent.\n\t *\n\t *           B                      >B\n\t *         /   \\                  /     \\\n\t *      >B       B               B       R\n\t *      / \\     / \\     -->     / \\     / \\\n\t *     -   -  B     B          -   -  B     B\n\t *           / \\   / \\               / \\   / \\\n\t *          -   - -   -             -   - -   -\n\t */\n\tif (\n\t\tn.parent._color === BLACK &&\n\t\t(s.left === null || s.left._color === BLACK) &&\n\t\t(s.right === null || s.right._color === BLACK)\n\t) {\n\t\ts._color = RED;\n\t\tdelete_case0(n.parent);\n\t}\n\n\t// Otherwise, go to case 3.\n\telse delete_case3(n);\n};\n\nexport default delete_case2;\n",
+    "content": "import assert from 'assert';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport Node from '../types/Node.js';\nimport sibling from '../family/sibling.js';\n\nimport delete_case0 from './delete_case0.js';\nimport delete_case3 from './delete_case3.js';\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *   - n's sibling is black\n *\n * @param {Node} n - The input node.\n * @return {Node} The root of the modified subtree.\n */\nconst delete_case2 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === BLACK);\n\tassert(n.parent !== null);\n\tconst s = sibling(n);\n\tassert(s instanceof Node);\n\tassert(s._color === BLACK);\n\n\t/**\n\t * If n's parent is black and n's sibling's children are black, then\n\t * repaint n's sibling red. Now all root-leaf paths going through n's\n\t * parent have a black height of b - 1. We recurse thus on n's parent.\n\t *\n\t *           B                      >B\n\t *         /   \\                  /     \\\n\t *      >B       B               B       R\n\t *      / \\     / \\     -->     / \\     / \\\n\t *     -   -  B     B          -   -  B     B\n\t *           / \\   / \\               / \\   / \\\n\t *          -   - -   -             -   - -   -\n\t */\n\tif (\n\t\tn.parent._color === BLACK &&\n\t\t(s.left === null || s.left._color === BLACK) &&\n\t\t(s.right === null || s.right._color === BLACK)\n\t) {\n\t\ts._color = RED;\n\t\treturn delete_case0(n.parent);\n\t}\n\n\t// Otherwise, go to case 3.\n\treturn delete_case3(n);\n};\n\nexport default delete_case2;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/deletion/delete_case2.js",
     "access": "public",
@@ -853,7 +867,7 @@
     "importPath": "@aureooms/js-red-black-tree/src/deletion/delete_case2.js",
     "importStyle": "delete_case2",
     "description": "Preconditions:\n  - n is black\n  - all root-leaf paths going through n have a black height of b - 1\n  - all other root-leaf paths have a black height of b\n  - n is not the root\n  - n's sibling is black",
-    "lineNumber": 20,
+    "lineNumber": 21,
     "params": [
       {
         "nullable": null,
@@ -866,13 +880,20 @@
         "description": "The input node."
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Node"
+      ],
+      "spread": false,
+      "description": "The root of the modified subtree."
+    }
   },
   {
     "__docId__": 64,
     "kind": "file",
     "name": "src/deletion/delete_case5.js",
-    "content": "import assert from 'assert';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport Node from '../types/Node.js';\nimport rotate_left from '../rotate/rotate_left.js';\nimport rotate_right from '../rotate/rotate_right.js';\nimport sibling from '../family/sibling.js';\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *   - n's sibling is black\n *   - if n is a left child, the right child of n's sibling is red\n *   - if n is a right child, the left child of n's sibling is red\n *\n * @param {Node} n - The input node.\n */\nconst delete_case5 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === BLACK);\n\tassert(n.parent !== null);\n\tconst s = sibling(n);\n\tassert(s instanceof Node);\n\tassert(s._color === BLACK);\n\n\t/**\n\t * Increment the black height of all root-leaf paths going through n by\n\t * rotating at n's parent. This decrements the black height of all\n\t * root-leaft paths going through n's sibling's right child.\n\t * We can repaint n's sibling's right child in black to fix this.\n\t * We are done.\n\t *\n\t *           ?                          ?\n\t *        /     \\                     /   \\\n\t *      >B        B                 B       B\n\t *      / \\      / \\               / \\     / \\\n\t *     -   -   =     R     -->   >B   =   =   B\n\t *                  / \\          / \\         / \\\n\t *                 =   B        -   -       -   -\n\t *                    / \\\n\t *                   -   -\n\t */\n\n\ts._color = n.parent._color;\n\tn.parent._color = BLACK;\n\n\tif (n === n.parent.left) {\n\t\tassert(s.right._color === RED);\n\t\ts.right._color = BLACK;\n\t\trotate_left(n.parent);\n\t}\n\n\t// Symmetric case\n\telse {\n\t\tassert(s.left._color === RED);\n\t\ts.left._color = BLACK;\n\t\trotate_right(n.parent);\n\t}\n};\n\nexport default delete_case5;\n",
+    "content": "import assert from 'assert';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport Node from '../types/Node.js';\nimport rotate_left from '../rotate/rotate_left.js';\nimport rotate_right from '../rotate/rotate_right.js';\nimport sibling from '../family/sibling.js';\n\n/**\n * Preconditions:\n *   - n is black\n *   - all root-leaf paths going through n have a black height of b - 1\n *   - all other root-leaf paths have a black height of b\n *   - n is not the root\n *   - n's sibling is black\n *   - if n is a left child, the right child of n's sibling is red\n *   - if n is a right child, the left child of n's sibling is red\n *\n * @param {Node} n - The input node.\n * @return {Node} The root of the modified subtree.\n */\nconst delete_case5 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === BLACK);\n\tassert(n.parent !== null);\n\tconst s = sibling(n);\n\tassert(s instanceof Node);\n\tassert(s._color === BLACK);\n\n\t/**\n\t * Increment the black height of all root-leaf paths going through n by\n\t * swapping the colors of n's parent and n's sibling and\n\t * rotating at n's parent. This decrements the black height of all\n\t * root-leaf paths going through n's sibling's right child.\n\t * We can repaint n's sibling's right child in black to fix this.\n\t * We are done.\n\t *\n\t *           ?                          ?\n\t *        /     \\                     /   \\\n\t *      >B        B                 B       B\n\t *      / \\      / \\               / \\     / \\\n\t *     -   -   =     R     -->   >B   =   =   B\n\t *                  / \\          / \\         / \\\n\t *                 =   B        -   -       -   -\n\t *                    / \\\n\t *                   -   -\n\t */\n\n\t// Swap the color of the parent and the sibling.\n\ts._color = n.parent._color;\n\tn.parent._color = BLACK;\n\n\tif (n === n.parent.left) {\n\t\tassert(s.right._color === RED);\n\t\ts.right._color = BLACK;\n\t\trotate_left(n.parent);\n\t\treturn s;\n\t}\n\n\t// Symmetric case\n\n\tassert(s.left._color === RED);\n\ts.left._color = BLACK;\n\trotate_right(n.parent);\n\treturn s;\n};\n\nexport default delete_case5;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/deletion/delete_case5.js",
     "access": "public",
@@ -893,7 +914,7 @@
     "importPath": "@aureooms/js-red-black-tree/src/deletion/delete_case5.js",
     "importStyle": "delete_case5",
     "description": "Preconditions:\n  - n is black\n  - all root-leaf paths going through n have a black height of b - 1\n  - all other root-leaf paths have a black height of b\n  - n is not the root\n  - n's sibling is black\n  - if n is a left child, the right child of n's sibling is red\n  - if n is a right child, the left child of n's sibling is red",
-    "lineNumber": 21,
+    "lineNumber": 22,
     "params": [
       {
         "nullable": null,
@@ -906,13 +927,20 @@
         "description": "The input node."
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Node"
+      ],
+      "spread": false,
+      "description": "The root of the modified subtree."
+    }
   },
   {
     "__docId__": 66,
     "kind": "file",
     "name": "src/deletion/delete_no_child.js",
-    "content": "import assert from 'assert';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport Node from '../types/Node.js';\n\nimport replace_node from './replace_node.js';\nimport delete_case1 from './delete_case1.js';\n\nimport prune from './prune.js';\n\n/**\n * Delete a node <code>n</code> that has no non-leaf child.\n *\n * Precondition:\n *   - n has no non-leaf child.\n *   - n is not the root\n *\n * @param {Node} n - The node to delete.\n */\nconst delete_no_child = (n) => {\n\tassert(n instanceof Node);\n\tassert(n.parent !== null);\n\tassert(n.left === null);\n\tassert(n.right === null);\n\n\tif (n._color !== BLACK) {\n\t\tassert(n._color === RED);\n\t\tprune(n);\n\t\treturn;\n\t}\n\n\t// Mock leaf since there is no left child\n\t// We use key = n.key to avoid mixing types, but this property is never\n\t// accessed.\n\tconst leaf = new Node(BLACK, n.key);\n\n\t// Replace n with the mocked leaf\n\treplace_node(n, leaf);\n\n\t// If n is black, deleting it reduces the black-height of every path going\n\t// through it by 1. The leaf is black, so there are more things to fix.\n\tdelete_case1(leaf);\n\n\t// Delete mocked leaf\n\tprune(leaf);\n};\n\nexport default delete_no_child;\n",
+    "content": "import assert from 'assert';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport Node from '../types/Node.js';\n\nimport delete_case1 from './delete_case1.js';\n\nimport prune from './prune.js';\n\n/**\n * Delete a node <code>n</code> that has no non-leaf child.\n *\n * Precondition:\n *   - n has no non-leaf child.\n *   - n is not the root\n *\n * @param {Node} n - The node to delete.\n * @return {Node} The root of the modified subtree.\n */\nconst delete_no_child = (n) => {\n\tassert(n instanceof Node);\n\tassert(n.parent !== null);\n\tassert(n.left === null);\n\tassert(n.right === null);\n\n\tif (n._color !== BLACK) {\n\t\tassert(n._color === RED);\n\t\tprune(n);\n\t\treturn n.parent;\n\t}\n\n\t// If n is black, deleting it reduces the black-height of every path going\n\t// through it by 1. The leaf is black, so there are more things to fix.\n\t// NOTE We temporarily keep n in the tree to mock a leaf, since n does not\n\t// have children.\n\tconst subtree = delete_case1(n);\n\n\t// Delete mocked leaf\n\tprune(n);\n\treturn subtree;\n};\n\nexport default delete_no_child;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/deletion/delete_no_child.js",
     "access": "public",
@@ -946,13 +974,20 @@
         "description": "The node to delete."
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Node"
+      ],
+      "spread": false,
+      "description": "The root of the modified subtree."
+    }
   },
   {
     "__docId__": 68,
     "kind": "file",
     "name": "src/deletion/delete_one_child.js",
-    "content": "import assert from 'assert';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport Node from '../types/Node.js';\n\nimport replace_node from './replace_node.js';\n\n/**\n * Delete a node <code>n</code> with one non-leaf left child and one leaf right\n * child.\n *\n * Precondition:\n *   - n has exactly one non-leaf child.\n *   - n is not the root\n *   - n's only non-leaf child is n's left child.\n *   - hence, n's right child is a leaf\n *   - hence, n's left child is RED\n *   - hence, n is BLACK\n *\n * @param {Node} n - The node to delete.\n */\nconst delete_one_child = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === BLACK);\n\tassert(n.parent !== null);\n\tassert(n.left instanceof Node);\n\tassert(n.left._color === RED);\n\tassert(n.right === null);\n\n\tconst child = n.left;\n\t// If n is black, deleting it reduces the black-height of every path going\n\t// through it by 1.\n\t// We can easily fix this when its only child is an\n\t// internal RED node: change the color of the child to black and\n\t// replace n with it.\n\treplace_node(n, child);\n\tchild._color = BLACK;\n};\n\nexport default delete_one_child;\n",
+    "content": "import assert from 'assert';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport Node from '../types/Node.js';\n\nimport replace_node from './replace_node.js';\n\n/**\n * Delete a node <code>n</code> with one non-leaf left child and one leaf right\n * child.\n *\n *       p\n *       |\n *       n (BLACK)\n *      / \\\n *    RED  -\n *    / \\\n *   -   -\n *\n * Precondition:\n *   - n has exactly one non-leaf child.\n *   - n is not the root\n *   - n's only non-leaf child is n's left child.\n *   - hence, n's right child is a leaf\n *   - hence, n's left child is RED\n *   - hence, n is BLACK\n *\n * @param {Node} n - The node to delete.\n */\nconst delete_one_child = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === BLACK);\n\tassert(n.parent !== null);\n\tassert(n.left instanceof Node);\n\tassert(n.left._color === RED);\n\tassert(n.right === null);\n\n\tconst child = n.left;\n\t// If n is black, deleting it reduces the black-height of every path going\n\t// through it by 1.\n\t// We can easily fix this when its only child is an\n\t// internal RED node: change the color of the child to black and\n\t// replace n with it.\n\t// TODO we could know n's direction depending whether swap_left or\n\t// swap_non_adjacent has been called upstream.\n\treplace_node(n, child);\n\tchild._color = BLACK;\n};\n\nexport default delete_one_child;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/deletion/delete_one_child.js",
     "access": "public",
@@ -972,8 +1007,8 @@
     "export": true,
     "importPath": "@aureooms/js-red-black-tree/src/deletion/delete_one_child.js",
     "importStyle": "delete_one_child",
-    "description": "Delete a node <code>n</code> with one non-leaf left child and one leaf right\nchild.\n\nPrecondition:\n  - n has exactly one non-leaf child.\n  - n is not the root\n  - n's only non-leaf child is n's left child.\n  - hence, n's right child is a leaf\n  - hence, n's left child is RED\n  - hence, n is BLACK",
-    "lineNumber": 22,
+    "description": "Delete a node <code>n</code> with one non-leaf left child and one leaf right\nchild.\n\n      p\n      |\n      n (BLACK)\n     / \\\n   RED  -\n   / \\\n  -   -\n\nPrecondition:\n  - n has exactly one non-leaf child.\n  - n is not the root\n  - n's only non-leaf child is n's left child.\n  - hence, n's right child is a leaf\n  - hence, n's left child is RED\n  - hence, n is BLACK",
+    "lineNumber": 30,
     "params": [
       {
         "nullable": null,
@@ -1032,7 +1067,7 @@
     "__docId__": 72,
     "kind": "file",
     "name": "src/deletion/replace_node.js",
-    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\n\n/**\n * Replaces node <code>A</code> by node <code>B</code>.\n *\n * @param {Node} A - The node to replace.\n * @param {Node} B - The replacement node.\n */\nconst replace_node = (A, B) => {\n\tassert(A instanceof Node);\n\tassert(B instanceof Node);\n\t// We never apply delete_one_child or delete_no_child on the root\n\tassert(A.parent !== null);\n\n\tif (A === A.parent.left) A.parent.left = B;\n\telse A.parent.right = B;\n\n\tB.parent = A.parent;\n};\n\nexport default replace_node;\n",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\n\n/**\n * Replaces node <code>A</code> by node <code>B</code>.\n *\n * @param {Node} A - The node to replace.\n * @param {Node} B - The replacement node.\n */\nconst replace_node = (A, B) => {\n\tassert(A instanceof Node);\n\tassert(B instanceof Node);\n\t// We never apply replace_node on the root\n\tassert(A.parent !== null);\n\n\tif (A === A.parent.left) A.parent.left = B;\n\telse A.parent.right = B;\n\n\tB.parent = A.parent;\n};\n\nexport default replace_node;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/deletion/replace_node.js",
     "access": "public",
@@ -1294,7 +1329,7 @@
     "__docId__": 82,
     "kind": "file",
     "name": "src/index.js",
-    "content": "export {default as empty} from './api/empty.js';\nexport {default as from} from './api/from.js';\nexport {default as BLACK} from './color/BLACK.js';\nexport {default as RED} from './color/RED.js';\nexport {default as _debug} from './debug/_debug.js';\nexport {default as delete_case0} from './deletion/delete_case0.js';\nexport {default as delete_case1} from './deletion/delete_case1.js';\nexport {default as delete_case2} from './deletion/delete_case2.js';\nexport {default as delete_case3} from './deletion/delete_case3.js';\nexport {default as delete_case4} from './deletion/delete_case4.js';\nexport {default as delete_case5} from './deletion/delete_case5.js';\nexport {default as delete_no_child} from './deletion/delete_no_child.js';\nexport {default as delete_one_child} from './deletion/delete_one_child.js';\nexport {default as prune} from './deletion/prune.js';\nexport {default as replace_node} from './deletion/replace_node.js';\nexport {default as grandparent} from './family/grandparent.js';\nexport {default as predecessor} from './family/predecessor.js';\nexport {default as sibling} from './family/sibling.js';\nexport {default as uncle} from './family/uncle.js';\nexport {default as insert} from './insertion/insert.js';\nexport {default as insert_case0} from './insertion/insert_case0.js';\nexport {default as insert_case1} from './insertion/insert_case1.js';\nexport {default as insert_case2} from './insertion/insert_case2.js';\nexport {default as insert_case3} from './insertion/insert_case3.js';\nexport {default as insert_case4} from './insertion/insert_case4.js';\nexport {default as rotate_left} from './rotate/rotate_left.js';\nexport {default as rotate_right} from './rotate/rotate_right.js';\nexport {default as search} from './search/search.js';\nexport {default as inordertraversal} from './traversal/inordertraversal.js';\nexport {default as rangetraversal} from './traversal/rangetraversal.js';\nexport {default as Node} from './types/Node.js';\nexport {default as RedBlackTree} from './types/RedBlackTree.js';\n",
+    "content": "export {default as empty} from './api/empty.js';\nexport {default as from} from './api/from.js';\nexport {default as BLACK} from './color/BLACK.js';\nexport {default as RED} from './color/RED.js';\nexport {default as _debug} from './debug/_debug.js';\nexport {default as delete_case0} from './deletion/delete_case0.js';\nexport {default as delete_case1} from './deletion/delete_case1.js';\nexport {default as delete_case2} from './deletion/delete_case2.js';\nexport {default as delete_case3} from './deletion/delete_case3.js';\nexport {default as delete_case4} from './deletion/delete_case4.js';\nexport {default as delete_case5} from './deletion/delete_case5.js';\nexport {default as delete_no_child} from './deletion/delete_no_child.js';\nexport {default as delete_one_child} from './deletion/delete_one_child.js';\nexport {default as prune} from './deletion/prune.js';\nexport {default as replace_node} from './deletion/replace_node.js';\nexport {default as grandparent} from './family/grandparent.js';\nexport {default as predecessor} from './family/predecessor.js';\nexport {default as sibling} from './family/sibling.js';\nexport {default as uncle} from './family/uncle.js';\nexport {default as insert} from './insertion/insert.js';\nexport {default as insert_case0} from './insertion/insert_case0.js';\nexport {default as insert_case1} from './insertion/insert_case1.js';\nexport {default as insert_case2} from './insertion/insert_case2.js';\nexport {default as insert_case3} from './insertion/insert_case3.js';\nexport {default as insert_case4} from './insertion/insert_case4.js';\nexport {default as rotate_left} from './rotate/rotate_left.js';\nexport {default as rotate_right} from './rotate/rotate_right.js';\nexport {default as search} from './search/search.js';\nexport {default as swap_color} from './swap/swap_color.js';\nexport {default as swap_left} from './swap/swap_left.js';\nexport {default as swap_non_adjacent} from './swap/swap_non_adjacent.js';\nexport {default as inordertraversal} from './traversal/inordertraversal.js';\nexport {default as leftOpenRangeTraversal} from './traversal/leftOpenRangeTraversal.js';\nexport {default as rangetraversal} from './traversal/rangetraversal.js';\nexport {default as rightOpenRangeTraversal} from './traversal/rightOpenRangeTraversal.js';\nexport {default as Node} from './types/Node.js';\nexport {default as RedBlackTree} from './types/RedBlackTree.js';\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/index.js",
     "access": "public",
@@ -1378,7 +1413,7 @@
     "__docId__": 85,
     "kind": "file",
     "name": "src/insertion/insert_case0.js",
-    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport insert_case1 from './insert_case1.js';\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n's children are BLACK\n *\n * @param {Node} n - The input node.\n */\nconst insert_case0 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === RED);\n\tassert(n.left._color === BLACK);\n\tassert(n.right._color === BLACK);\n\t/**\n\t * If n is the root of the tree, paint it black and we are done.\n\t *\n\t *      >R\n\t *      / \\\n\t *     -   -\n\t */\n\tif (n.parent === null) n._color = BLACK;\n\telse insert_case1(n);\n};\n\nexport default insert_case0;\n",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport insert_case1 from './insert_case1.js';\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n's children are BLACK\n *\n * @param {Node} n - The input node.\n * @return {Node} The root of the modified subtree.\n */\nconst insert_case0 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === RED);\n\tassert(n.left._color === BLACK);\n\tassert(n.right._color === BLACK);\n\t/**\n\t * If n is the root of the tree, paint it black and we are done.\n\t *\n\t *      >R\n\t *      / \\\n\t *     -   -\n\t */\n\tif (n.parent === null) {\n\t\tn._color = BLACK;\n\t\treturn n;\n\t}\n\n\treturn insert_case1(n);\n};\n\nexport default insert_case0;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/insertion/insert_case0.js",
     "access": "public",
@@ -1399,7 +1434,7 @@
     "importPath": "@aureooms/js-red-black-tree/src/insertion/insert_case0.js",
     "importStyle": "insert_case0",
     "description": "Preconditions:\n  - n is red.\n  - n's children are BLACK",
-    "lineNumber": 14,
+    "lineNumber": 15,
     "params": [
       {
         "nullable": null,
@@ -1412,13 +1447,20 @@
         "description": "The input node."
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Node"
+      ],
+      "spread": false,
+      "description": "The root of the modified subtree."
+    }
   },
   {
     "__docId__": 87,
     "kind": "file",
     "name": "src/insertion/insert_case1.js",
-    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport insert_case2 from './insert_case2.js';\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n's children are BLACK\n *   - n is not the root of the tree.\n *\n * @param {Node} n - The input node.\n */\nconst insert_case1 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === RED);\n\tassert(n.left === null || n.left._color === BLACK);\n\tassert(n.right === null || n.right._color === BLACK);\n\tassert(n.parent !== null);\n\n\t/**\n\t * If the parent of n is black then we have nothing to do.\n\t *\n\t *         B\n\t *        / \\\n\t *      >R   -\n\t *      / \\\n\t *     -   -\n\t */\n\tif (n.parent._color === BLACK) return;\n\n\tinsert_case2(n);\n};\n\nexport default insert_case1;\n",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport insert_case2 from './insert_case2.js';\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n's children are BLACK\n *   - n is not the root of the tree.\n *\n * @param {Node} n - The input node.\n * @return {Node} The root of the modified subtree.\n */\nconst insert_case1 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === RED);\n\tassert(n.left === null || n.left._color === BLACK);\n\tassert(n.right === null || n.right._color === BLACK);\n\tassert(n.parent !== null);\n\n\t/**\n\t * If the parent of n is black then we have nothing to do.\n\t *\n\t *         B\n\t *        / \\\n\t *      >R   -\n\t *      / \\\n\t *     -   -\n\t */\n\treturn n.parent._color === BLACK ? n : insert_case2(n);\n};\n\nexport default insert_case1;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/insertion/insert_case1.js",
     "access": "public",
@@ -1439,7 +1481,7 @@
     "importPath": "@aureooms/js-red-black-tree/src/insertion/insert_case1.js",
     "importStyle": "insert_case1",
     "description": "Preconditions:\n  - n is red.\n  - n's children are BLACK\n  - n is not the root of the tree.",
-    "lineNumber": 15,
+    "lineNumber": 16,
     "params": [
       {
         "nullable": null,
@@ -1452,13 +1494,20 @@
         "description": "The input node."
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Node"
+      ],
+      "spread": false,
+      "description": "The root of the modified subtree."
+    }
   },
   {
     "__docId__": 89,
     "kind": "file",
     "name": "src/insertion/insert_case2.js",
-    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport uncle from '../family/uncle.js';\nimport grandparent from '../family/grandparent.js';\nimport insert_case0 from './insert_case0.js';\nimport insert_case3 from './insert_case3.js';\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n's children are BLACK\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *\n * @param {Node} n - The input node.\n */\nconst insert_case2 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === RED);\n\tassert(n.left === null || n.left._color === BLACK);\n\tassert(n.right === null || n.right._color === BLACK);\n\tassert(n.parent !== null);\n\tassert(n.parent._color === RED);\n\tconst u = uncle(n);\n\n\t/**\n\t * If n has a non-leaf uncle and this uncle is red then we simply\n\t * repaint the parent and the uncle of n in black, the grandparent of\n\t * n in red, then call insert_case0 on n's grandparent.\n\t *\n\t *             B                    >R\n\t *           /   \\                 /   \\\n\t *         R       R             B       B\n\t *        / \\     / \\   -->     / \\     / \\\n\t *      >R   -   -   -         R   -   -   -\n\t *      / \\                   / \\\n\t *     -   -                 -   -\n\t */\n\n\tif (u !== null && u._color !== BLACK) {\n\t\tassert(u._color === RED);\n\t\tn.parent._color = BLACK;\n\t\tu._color = BLACK;\n\t\tconst g = grandparent(n);\n\t\tg._color = RED;\n\t\tinsert_case0(g);\n\t} else insert_case3(n);\n};\n\nexport default insert_case2;\n",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport uncle from '../family/uncle.js';\nimport grandparent from '../family/grandparent.js';\nimport insert_case0 from './insert_case0.js';\nimport insert_case3 from './insert_case3.js';\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n's children are BLACK\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *\n * @param {Node} n - The input node.\n * @return {Node} The root of the modified subtree.\n */\nconst insert_case2 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === RED);\n\tassert(n.left === null || n.left._color === BLACK);\n\tassert(n.right === null || n.right._color === BLACK);\n\tassert(n.parent !== null);\n\tassert(n.parent._color === RED);\n\tconst u = uncle(n);\n\n\t/**\n\t * If n has a non-leaf uncle and this uncle is red then we simply\n\t * repaint the parent and the uncle of n in black, the grandparent of\n\t * n in red, then call insert_case0 on n's grandparent.\n\t *\n\t *             B                    >R\n\t *           /   \\                 /   \\\n\t *         R       R             B       B\n\t *        / \\     / \\   -->     / \\     / \\\n\t *      >R   -   -   -         R   -   -   -\n\t *      / \\                   / \\\n\t *     -   -                 -   -\n\t */\n\n\tif (u !== null && u._color !== BLACK) {\n\t\tassert(u._color === RED);\n\t\tn.parent._color = BLACK;\n\t\tu._color = BLACK;\n\t\tconst g = grandparent(n);\n\t\tg._color = RED;\n\t\treturn insert_case0(g);\n\t}\n\n\treturn insert_case3(n);\n};\n\nexport default insert_case2;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/insertion/insert_case2.js",
     "access": "public",
@@ -1479,7 +1528,7 @@
     "importPath": "@aureooms/js-red-black-tree/src/insertion/insert_case2.js",
     "importStyle": "insert_case2",
     "description": "Preconditions:\n  - n is red.\n  - n's children are BLACK\n  - n is not the root of the tree.\n  - n's parent is red.",
-    "lineNumber": 19,
+    "lineNumber": 20,
     "params": [
       {
         "nullable": null,
@@ -1492,13 +1541,20 @@
         "description": "The input node."
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Node"
+      ],
+      "spread": false,
+      "description": "The root of the modified subtree."
+    }
   },
   {
     "__docId__": 91,
     "kind": "file",
     "name": "src/insertion/insert_case3.js",
-    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport rotate_left from '../rotate/rotate_left.js';\nimport rotate_right from '../rotate/rotate_right.js';\nimport grandparent from '../family/grandparent.js';\nimport insert_case4 from './insert_case4.js';\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n's children are BLACK\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *   - n's uncle is black.\n *\n * Here we fix the input subtree to pass the preconditions of {@link insert_case4}.\n *\n * @param {Node} n - The input node.\n */\nconst insert_case3 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === RED);\n\tassert(n.left === null || n.left._color === BLACK);\n\tassert(n.right === null || n.right._color === BLACK);\n\tassert(n.parent !== null);\n\tassert(n.parent._color === RED);\n\tconst g = grandparent(n);\n\n\t/**\n\t * If the path from g to n makes a left-right, change it to a left-left\n\t * with {@link rotate_left}. Then call {@link insert_case4} on the old\n\t * parent of n.\n\t *\n\t *             B                     B\n\t *           /   \\                 /   \\\n\t *         R       B             R       B\n\t *        / \\     / \\   -->     / \\     / \\\n\t *       =  >R   -   -        >R   =   -   -\n\t *          / \\               / \\\n\t *         =   =             =   =\n\t */\n\n\tif (n === n.parent.right && n.parent === g.left) {\n\t\trotate_left(n.parent);\n\n\t\t/**\n\t\t * Rotate_left can be the below because of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.left, *saved_left_n=n.left;\n\t\t * g.left=n;\n\t\t * n.left=saved_p;\n\t\t * saved_p.right=saved_left_n;\n\t\t *\n\t\t * and modify the parent's nodes properly\n\t\t */\n\n\t\t// n = n.left; /!\\ need to fix rotate, so that we can safely reference a node\n\t} else if (n === n.parent.left && n.parent === g.right) {\n\t\t/**\n\t\t * If the path from g to n makes a right-left, change it to a right-right\n\t\t * with {@link rotate_right}. Then call {@link insert_case4} on the old\n\t\t * parent of n.\n\t\t *\n\t\t *             B                     B\n\t\t *           /   \\                 /   \\\n\t\t *         B       R             B       R\n\t\t *        / \\     / \\   -->     / \\     / \\\n\t\t *       -   -  >R   =         -   -   =  >R\n\t\t *              / \\                       / \\\n\t\t *             =   =                     =   =\n\t\t */\n\t\trotate_right(n.parent);\n\n\t\t/**\n\t\t * Rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.right, *saved_right_n=n.right;\n\t\t * g.right=n;\n\t\t * n.right=saved_p;\n\t\t * saved_p.left=saved_right_n;\n\t\t *\n\t\t */\n\n\t\t// n = n.right ;\n\t}\n\n\tinsert_case4(n);\n};\n\nexport default insert_case3;\n",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport rotate_left from '../rotate/rotate_left.js';\nimport rotate_right from '../rotate/rotate_right.js';\nimport insert_case4 from './insert_case4.js';\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n's children are BLACK\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *   - n's uncle is black.\n *\n * Here we fix the input subtree to pass the preconditions of {@link insert_case4}.\n *\n * @param {Node} n - The input node.\n * @return {Node} The root of the modified subtree.\n */\nconst insert_case3 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === RED);\n\tassert(n.left === null || n.left._color === BLACK);\n\tassert(n.right === null || n.right._color === BLACK);\n\tassert(n.parent !== null);\n\tassert(n.parent._color === RED);\n\tconst p = n.parent;\n\tconst g = p.parent;\n\n\tif (n === p.right && p === g.left) {\n\t\t/**\n\t\t * If the path from g to n makes a left-right, change it to a left-left\n\t\t * with {@link rotate_left}. Then call {@link insert_case4} on the old\n\t\t * parent of n.\n\t\t *\n\t\t *             B                     B\n\t\t *           /   \\                 /   \\\n\t\t *         R       B            >R       B\n\t\t *        / \\     / \\   -->     / \\     / \\\n\t\t *       =  >R   -   -         R   =   -   -\n\t\t *          / \\               / \\\n\t\t *         =   =             =   =\n\t\t */\n\t\trotate_left(p);\n\n\t\t/**\n\t\t * Rotate_left can be the below because of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.left, *saved_left_n=n.left;\n\t\t * g.left=n;\n\t\t * n.left=saved_p;\n\t\t * saved_p.right=saved_left_n;\n\t\t *\n\t\t * and modify the parent's nodes properly\n\t\t */\n\n\t\t// n = n.left; /!\\ need to fix rotate, so that we can safely reference a node\n\t\treturn insert_case4(p);\n\t}\n\n\tif (n === p.left && p === g.right) {\n\t\t/**\n\t\t * If the path from g to n makes a right-left, change it to a right-right\n\t\t * with {@link rotate_right}. Then call {@link insert_case4} on the old\n\t\t * parent of n.\n\t\t *\n\t\t *             B                     B\n\t\t *           /   \\                 /   \\\n\t\t *         B       R             B      >R\n\t\t *        / \\     / \\   -->     / \\     / \\\n\t\t *       -   -  >R   =         -   -   =   R\n\t\t *              / \\                       / \\\n\t\t *             =   =                     =   =\n\t\t */\n\t\trotate_right(p);\n\n\t\t/**\n\t\t * Rotate_right can be the below to take advantage of already having *g =  grandparent(n)\n\t\t *\n\t\t * saved_p=g.right, *saved_right_n=n.right;\n\t\t * g.right=n;\n\t\t * n.right=saved_p;\n\t\t * saved_p.left=saved_right_n;\n\t\t *\n\t\t */\n\n\t\t// n = n.right ;\n\t\treturn insert_case4(p);\n\t}\n\n\treturn insert_case4(n);\n};\n\nexport default insert_case3;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/insertion/insert_case3.js",
     "access": "public",
@@ -1532,13 +1588,20 @@
         "description": "The input node."
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Node"
+      ],
+      "spread": false,
+      "description": "The root of the modified subtree."
+    }
   },
   {
     "__docId__": 93,
     "kind": "file",
     "name": "src/insertion/insert_case4.js",
-    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport rotate_left from '../rotate/rotate_left.js';\nimport rotate_right from '../rotate/rotate_right.js';\nimport grandparent from '../family/grandparent.js';\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n's children are BLACK\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *   - n's uncle is black.\n *   - the path from n to its grandparent makes a left-left or right-right.\n *\n * @param {Node} n - The input node.\n */\nconst insert_case4 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === RED);\n\tassert(n.left === null || n.left._color === BLACK);\n\tassert(n.right === null || n.right._color === BLACK);\n\tassert(n.parent !== null);\n\tassert(n.parent._color === RED);\n\tconst g = grandparent(n);\n\n\t// Repaint n's parent black, n's grandparent red\n\tn.parent._color = BLACK;\n\tg._color = RED;\n\n\tif (n === n.parent.left) {\n\t\t/**\n\t\t * If the path from g to n makes a left-left, {@link rotate_right} at g.\n\t\t * We are done.\n\t\t *\n\t\t *             R                     B\n\t\t *           /   \\                 /   \\\n\t\t *         B       B            >R       R\n\t\t *        / \\     / \\   -->     / \\     / \\\n\t\t *      >R   =   -   -         =   =   =   B\n\t\t *      / \\                               / \\\n\t\t *     =   =                             -   -\n\t\t */\n\t\tassert(g.left instanceof Node);\n\t\tassert(n === g.left.left);\n\t\tassert(g.right === null || g.right._color === BLACK);\n\t\trotate_right(g);\n\t} else {\n\t\t/**\n\t\t * If the path from g to n makes a right-right, {@link rotate_left} at g.\n\t\t * We are done.\n\t\t *\n\t\t *             R                     B\n\t\t *           /   \\                 /   \\\n\t\t *         B       B             R      >R\n\t\t *        / \\     / \\   -->     / \\     / \\\n\t\t *       -   -   =  >R         B   =   =   =\n\t\t *                  / \\       / \\\n\t\t *                 =   =     -   -\n\t\t */\n\t\tassert(g.right instanceof Node);\n\t\tassert(n === g.right.right);\n\t\tassert(g.left === null || g.left._color === BLACK);\n\t\trotate_left(g);\n\t}\n};\n\nexport default insert_case4;\n",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport rotate_left from '../rotate/rotate_left.js';\nimport rotate_right from '../rotate/rotate_right.js';\nimport grandparent from '../family/grandparent.js';\n\n/**\n * Preconditions:\n *   - n is red.\n *   - n's children are BLACK\n *   - n is not the root of the tree.\n *   - n's parent is red.\n *   - n's uncle is black.\n *   - the path from n to its grandparent makes a left-left or right-right.\n *\n * @param {Node} n - The input node.\n * @return {Node} The root of the modified subtree.\n */\nconst insert_case4 = (n) => {\n\tassert(n instanceof Node);\n\tassert(n._color === RED);\n\tassert(n.left === null || n.left._color === BLACK);\n\tassert(n.right === null || n.right._color === BLACK);\n\tassert(n.parent !== null);\n\tassert(n.parent._color === RED);\n\tconst g = grandparent(n);\n\n\t// Repaint n's parent black, n's grandparent red\n\tn.parent._color = BLACK;\n\tg._color = RED;\n\n\tif (n === n.parent.left) {\n\t\t/**\n\t\t * If the path from g to n makes a left-left, {@link rotate_right} at g.\n\t\t * We are done.\n\t\t *\n\t\t *             R                     B\n\t\t *           /   \\                 /   \\\n\t\t *         B       B            >R       R\n\t\t *        / \\     / \\   -->     / \\     / \\\n\t\t *      >R   =   -   -         =   =   =   B\n\t\t *      / \\                               / \\\n\t\t *     =   =                             -   -\n\t\t */\n\t\tassert(g.left instanceof Node);\n\t\tassert(n === g.left.left);\n\t\tassert(g.right === null || g.right._color === BLACK);\n\t\trotate_right(g);\n\t} else {\n\t\t/**\n\t\t * If the path from g to n makes a right-right, {@link rotate_left} at g.\n\t\t * We are done.\n\t\t *\n\t\t *             R                     B\n\t\t *           /   \\                 /   \\\n\t\t *         B       B             R      >R\n\t\t *        / \\     / \\   -->     / \\     / \\\n\t\t *       -   -   =  >R         B   =   =   =\n\t\t *                  / \\       / \\\n\t\t *                 =   =     -   -\n\t\t */\n\t\tassert(g.right instanceof Node);\n\t\tassert(n === g.right.right);\n\t\tassert(g.left === null || g.left._color === BLACK);\n\t\trotate_left(g);\n\t}\n\n\treturn n.parent;\n};\n\nexport default insert_case4;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/insertion/insert_case4.js",
     "access": "public",
@@ -1559,7 +1622,7 @@
     "importPath": "@aureooms/js-red-black-tree/src/insertion/insert_case4.js",
     "importStyle": "insert_case4",
     "description": "Preconditions:\n  - n is red.\n  - n's children are BLACK\n  - n is not the root of the tree.\n  - n's parent is red.\n  - n's uncle is black.\n  - the path from n to its grandparent makes a left-left or right-right.",
-    "lineNumber": 20,
+    "lineNumber": 21,
     "params": [
       {
         "nullable": null,
@@ -1572,13 +1635,20 @@
         "description": "The input node."
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Node"
+      ],
+      "spread": false,
+      "description": "The root of the modified subtree."
+    }
   },
   {
     "__docId__": 95,
     "kind": "file",
     "name": "src/rotate/rotate_left.js",
-    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\n\n/**\n * Rotate tree left. (see https://en.wikipedia.org/wiki/Tree_rotation)\n * /!\\ This swaps the references to A and B.\n *\n *         A                B\n *        / \\              / \\\n *       a   B     ->     A   c\n *          / \\          / \\\n *         b   c        a   b\n *\n *\n * @param {Node} A - The root of the tree.\n *\n */\n\nconst rotate_left = (A) => {\n\tassert(A instanceof Node);\n\tconst B = A.right;\n\tassert(B instanceof Node);\n\tconst a = A.left;\n\tconst b = B.left;\n\tconst c = B.right;\n\n\t[A.key, B.key] = [B.key, A.key];\n\t[A._color, B._color] = [B._color, A._color];\n\n\tA.left = B;\n\tA.right = c;\n\n\tB.left = a;\n\tB.right = b;\n\n\tif (a !== null) a.parent = B;\n\tif (b !== null) b.parent = B;\n\tif (c !== null) c.parent = A;\n};\n\nexport default rotate_left;\n",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\n\n/**\n * Rotate tree left. (see https://en.wikipedia.org/wiki/Tree_rotation)\n *\n *         p                p\n *         |                |\n *         A                B\n *        / \\              / \\\n *       x   B     ->     A   y\n *          / \\          / \\\n *         b   y        x   b\n *\n *\n * @param {Node} A - The root of the tree.\n *\n */\n\nconst rotate_left = (A) => {\n\tassert(A instanceof Node);\n\tconst B = A.right;\n\tassert(B instanceof Node);\n\n\tconst p = A.parent;\n\tif (p !== null) {\n\t\tif (A === p.left) p.left = B;\n\t\telse p.right = B;\n\t}\n\n\tB.parent = p;\n\tA.parent = B;\n\n\tconst b = B.left;\n\tA.right = b;\n\tB.left = A;\n\n\tif (b !== null) b.parent = A;\n};\n\nexport default rotate_left;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/rotate/rotate_left.js",
     "access": "public",
@@ -1598,8 +1668,8 @@
     "export": true,
     "importPath": "@aureooms/js-red-black-tree/src/rotate/rotate_left.js",
     "importStyle": "rotate_left",
-    "description": "Rotate tree left. (see https://en.wikipedia.org/wiki/Tree_rotation)\n/!\\ This swaps the references to A and B.\n\n        A                B\n       / \\              / \\\n      a   B     ->     A   c\n         / \\          / \\\n        b   c        a   b",
-    "lineNumber": 19,
+    "description": "Rotate tree left. (see https://en.wikipedia.org/wiki/Tree_rotation)\n\n        p                p\n        |                |\n        A                B\n       / \\              / \\\n      x   B     ->     A   y\n         / \\          / \\\n        b   y        x   b",
+    "lineNumber": 20,
     "params": [
       {
         "nullable": null,
@@ -1618,7 +1688,7 @@
     "__docId__": 97,
     "kind": "file",
     "name": "src/rotate/rotate_right.js",
-    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\n\n/**\n * Rotate tree right. (see https://en.wikipedia.org/wiki/Tree_rotation)\n * /!\\ This swaps the references to A and B.\n *\n *         B                A\n *        / \\              / \\\n *       A   c     ->     a   B\n *      / \\                  / \\\n *     a   b                b   c\n *\n *\n * @param {Node} B - The root of the tree.\n *\n */\n\nconst rotate_right = (B) => {\n\tassert(B instanceof Node);\n\tconst A = B.left;\n\tassert(A instanceof Node);\n\tconst a = A.left;\n\tconst b = A.right;\n\tconst c = B.right;\n\n\t[A.key, B.key] = [B.key, A.key];\n\t[A._color, B._color] = [B._color, A._color];\n\n\tB.left = a;\n\tB.right = A;\n\n\tA.left = b;\n\tA.right = c;\n\n\tif (a !== null) a.parent = B;\n\tif (b !== null) b.parent = A;\n\tif (c !== null) c.parent = A;\n};\n\nexport default rotate_right;\n",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\n\n/**\n * Rotate tree right. (see https://en.wikipedia.org/wiki/Tree_rotation)\n *\n *         p                p\n *         |                |\n *         B                A\n *        / \\              / \\\n *       A   y     ->     x   B\n *      / \\                  / \\\n *     x   b                b   j\n *\n *\n * @param {Node} B - The root of the tree.\n *\n */\n\nconst rotate_right = (B) => {\n\tassert(B instanceof Node);\n\tconst A = B.left;\n\tassert(A instanceof Node);\n\n\tconst p = B.parent;\n\tif (p !== null) {\n\t\tif (B === p.left) p.left = A;\n\t\telse p.right = A;\n\t}\n\n\tA.parent = p;\n\tB.parent = A;\n\n\tconst b = A.right;\n\tB.left = b;\n\tA.right = B;\n\n\tif (b !== null) b.parent = B;\n};\n\nexport default rotate_right;\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/rotate/rotate_right.js",
     "access": "public",
@@ -1638,8 +1708,8 @@
     "export": true,
     "importPath": "@aureooms/js-red-black-tree/src/rotate/rotate_right.js",
     "importStyle": "rotate_right",
-    "description": "Rotate tree right. (see https://en.wikipedia.org/wiki/Tree_rotation)\n/!\\ This swaps the references to A and B.\n\n        B                A\n       / \\              / \\\n      A   c     ->     a   B\n     / \\                  / \\\n    a   b                b   c",
-    "lineNumber": 19,
+    "description": "Rotate tree right. (see https://en.wikipedia.org/wiki/Tree_rotation)\n\n        p                p\n        |                |\n        B                A\n       / \\              / \\\n      A   y     ->     x   B\n     / \\                  / \\\n    x   b                b   j",
+    "lineNumber": 20,
     "params": [
       {
         "nullable": null,
@@ -1730,6 +1800,153 @@
   {
     "__docId__": 101,
     "kind": "file",
+    "name": "src/swap/swap_color.js",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\n\n/**\n * Swap colors of two arbitrary nodes.\n *\n *        -A        +B      ->      +A        -B\n *\n * @param {Node} A - The first node.\n * @param {Node} B - The second node.\n */\n\nconst swap_color = (A, B) => {\n\tassert(A instanceof Node);\n\tassert(B instanceof Node);\n\n\tconst color = A._color;\n\tA._color = B._color;\n\tB._color = color;\n};\n\nexport default swap_color;\n",
+    "static": true,
+    "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/swap/swap_color.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 102,
+    "kind": "function",
+    "name": "swap_color",
+    "memberof": "src/swap/swap_color.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/swap/swap_color.js~swap_color",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-red-black-tree/src/swap/swap_color.js",
+    "importStyle": "swap_color",
+    "description": "Swap colors of two arbitrary nodes.\n\n       -A        +B      ->      +A        -B",
+    "lineNumber": 13,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Node"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "A",
+        "description": "The first node."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Node"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "B",
+        "description": "The second node."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 103,
+    "kind": "file",
+    "name": "src/swap/swap_left.js",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport replace_node from '../deletion/replace_node.js';\nimport swap_color from './swap_color.js';\n\n/**\n * Swap pointers and colors of a node and its left child B with one constraint:\n *   - B's right child is a leaf\n *\n * NOTE: This constraint is implied because B is A's in-subtree predecessor.\n *\n *         p                   p\n *         |                   |\n *        -A                  -B\n *        / \\                 / \\\n *      +B   c       ->     +A   c\n *      / \\                 / \\\n *     a   -               a   -\n *\n * @param {Node} A - The node.\n * @return {Node} The node B.\n */\n\nconst swap_left = (A) => {\n\tassert(A instanceof Node);\n\tconst B = A.left;\n\tassert(B instanceof Node);\n\tconst a = B.left;\n\tassert(B.right === null);\n\tconst c = A.right;\n\n\tif (A.parent === null) {\n\t\tB.parent = null;\n\t} else {\n\t\treplace_node(A, B);\n\t}\n\n\tA.parent = B;\n\n\tA.right = null;\n\tB.right = c;\n\tif (c !== null) c.parent = B;\n\n\tA.left = a;\n\tif (a !== null) a.parent = A;\n\tB.left = A;\n\n\tswap_color(A, B);\n\n\treturn B;\n};\n\nexport default swap_left;\n",
+    "static": true,
+    "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/swap/swap_left.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 104,
+    "kind": "function",
+    "name": "swap_left",
+    "memberof": "src/swap/swap_left.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/swap/swap_left.js~swap_left",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-red-black-tree/src/swap/swap_left.js",
+    "importStyle": "swap_left",
+    "description": "Swap pointers and colors of a node and its left child B with one constraint:\n  - B's right child is a leaf\n\nNOTE: This constraint is implied because B is A's in-subtree predecessor.\n\n        p                   p\n        |                   |\n       -A                  -B\n       / \\                 / \\\n     +B   c       ->     +A   c\n     / \\                 / \\\n    a   -               a   -",
+    "lineNumber": 24,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Node"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "A",
+        "description": "The node."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Node"
+      ],
+      "spread": false,
+      "description": "The node B."
+    }
+  },
+  {
+    "__docId__": 105,
+    "kind": "file",
+    "name": "src/swap/swap_non_adjacent.js",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport swap_color from './swap_color.js';\n\n/**\n * Swap pointers and colors of two NON-ADJACENT nodes with three constraints:\n *   - B is not the root\n *   - B is its parent right child\n *   - B's right child is a leaf\n *\n * NOTE: These three constraints are implied because B is A's in-subtree\n * predecessor without being A's left child.\n *\n *         p       q             q           p\n *         |        \\             \\          |\n *        -A        +B            +A        -B\n *        / \\       / \\           / \\       / \\\n *       u   v     x   -     ->  x   -     u   v\n *\n * @param {Node} A - The first node.\n * @param {Node} B - The second node.\n */\n\nconst swap_non_adjacent = (A, B) => {\n\tassert(A instanceof Node);\n\tassert(B instanceof Node);\n\tconst p = A.parent;\n\tconst u = A.left;\n\tconst v = A.right;\n\tconst q = B.parent;\n\tconst x = B.left;\n\tassert(B.right === null);\n\tassert(q !== null);\n\tassert(B === q.right);\n\n\tif (p !== null) {\n\t\tif (A === p.left) p.left = B;\n\t\telse p.right = B;\n\t}\n\n\tq.right = A;\n\n\tA.parent = q;\n\tA.left = x;\n\tA.right = null;\n\tB.parent = p;\n\tB.left = u;\n\tB.right = v;\n\n\tif (x !== null) x.parent = A;\n\tif (u !== null) u.parent = B;\n\tif (v !== null) v.parent = B;\n\n\tswap_color(A, B);\n};\n\nexport default swap_non_adjacent;\n",
+    "static": true,
+    "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/swap/swap_non_adjacent.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 106,
+    "kind": "function",
+    "name": "swap_non_adjacent",
+    "memberof": "src/swap/swap_non_adjacent.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/swap/swap_non_adjacent.js~swap_non_adjacent",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-red-black-tree/src/swap/swap_non_adjacent.js",
+    "importStyle": "swap_non_adjacent",
+    "description": "Swap pointers and colors of two NON-ADJACENT nodes with three constraints:\n  - B is not the root\n  - B is its parent right child\n  - B's right child is a leaf\n\nNOTE: These three constraints are implied because B is A's in-subtree\npredecessor without being A's left child.\n\n        p       q             q           p\n        |        \\             \\          |\n       -A        +B            +A        -B\n       / \\       / \\           / \\       / \\\n      u   v     x   -     ->  x   -     u   v",
+    "lineNumber": 24,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Node"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "A",
+        "description": "The first node."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Node"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "B",
+        "description": "The second node."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 107,
+    "kind": "file",
     "name": "src/traversal/inordertraversal.js",
     "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\n\n/**\n * Traverses the tree rooted at <code>node</code> in order.\n *\n * @param {Node} node - The root of the tree.\n * @returns {IterableIterator}\n */\nexport default function* inordertraversal(node) {\n\tassert(node instanceof Node);\n\tif (node.left !== null) {\n\t\t// Yield the nodes on the left recursively. Those nodes are all smaller\n\t\t// than (or equal to) the current node by the binary search tree\n\t\t// properties.\n\t\tassert(node.left instanceof Node);\n\t\tyield* inordertraversal(node.left);\n\t}\n\n\t// Yield the current node.\n\tyield node.key;\n\n\tif (node.right !== null) {\n\t\t// Yield the nodes on the right recursively. Those nodes are all larger\n\t\t// than (or equal to) the current node by the binary search tree\n\t\t// properties.\n\t\tassert(node.right instanceof Node);\n\t\tyield* inordertraversal(node.right);\n\t}\n}\n",
     "static": true,
@@ -1739,7 +1956,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 102,
+    "__docId__": 108,
     "kind": "function",
     "name": "inordertraversal",
     "memberof": "src/traversal/inordertraversal.js",
@@ -1781,10 +1998,83 @@
     }
   },
   {
-    "__docId__": 103,
+    "__docId__": 109,
+    "kind": "file",
+    "name": "src/traversal/leftOpenRangeTraversal.js",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport inordertraversal from './inordertraversal.js';\n\n/**\n * Yields all the keys in the tree rooted at <code>root</code> that lie in the\n * interval <code>(-oo, right[</code>, in order.\n *\n * @param {Function} compare - The comparison function.\n * @param {Node} root - The root of the tree.\n * @param {any} right - The non-inclusive upper bound of the interval.\n * @returns {IterableIterator}\n */\nexport default function* leftOpenRangeTraversal(compare, root, right) {\n\tif (compare(root.key, right) >= 0) {\n\t\t// If the root lies to the right of the interval, we can discard the\n\t\t// entire right subtree.\n\t\tif (root.left !== null) {\n\t\t\tassert(root.left instanceof Node);\n\t\t\tyield* leftOpenRangeTraversal(compare, root.left, right);\n\t\t}\n\t} else {\n\t\t// Otherwise yield entire left subtree, yield the root, and recurse on\n\t\t// the right subtree.\n\t\tif (root.left !== null) {\n\t\t\tassert(root.left instanceof Node);\n\t\t\tyield* inordertraversal(root.left);\n\t\t}\n\n\t\tyield root.key;\n\t\tif (root.right !== null) {\n\t\t\tassert(root.right instanceof Node);\n\t\t\tyield* leftOpenRangeTraversal(compare, root.right, right);\n\t\t}\n\t}\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/traversal/leftOpenRangeTraversal.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 110,
+    "kind": "function",
+    "name": "leftOpenRangeTraversal",
+    "memberof": "src/traversal/leftOpenRangeTraversal.js",
+    "generator": true,
+    "async": false,
+    "static": true,
+    "longname": "src/traversal/leftOpenRangeTraversal.js~leftOpenRangeTraversal",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-red-black-tree/src/traversal/leftOpenRangeTraversal.js",
+    "importStyle": "leftOpenRangeTraversal",
+    "description": "Yields all the keys in the tree rooted at <code>root</code> that lie in the\ninterval <code>(-oo, right[</code>, in order.",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{IterableIterator}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "compare",
+        "description": "The comparison function."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Node"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "root",
+        "description": "The root of the tree."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "right",
+        "description": "The non-inclusive upper bound of the interval."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "IterableIterator"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 111,
     "kind": "file",
     "name": "src/traversal/rangetraversal.js",
-    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\n\n/**\n * Yields all the keys in the tree rooted at <code>root</code> that lie in the\n * interval <code>[left, right[</code>, in order.\n *\n * @param {Function} compare - The comparison function.\n * @param {Node} root - The root of the tree.\n * @param {any} left - The inclusive lower bound of the interval.\n * @param {any} right - The non-inclusive upper bound of the interval.\n * @returns {IterableIterator}\n */\nexport default function* rangetraversal(compare, root, left, right) {\n\tif (compare(root.key, left) < 0) {\n\t\t// If the root lies to the left of the interval, we can discard the\n\t\t// entire left subtree.\n\t\tif (root.right !== null) {\n\t\t\tassert(root.right instanceof Node);\n\t\t\tyield* rangetraversal(compare, root.right, left, right);\n\t\t}\n\t} else if (compare(root.key, right) >= 0) {\n\t\t// If the root lies to the right of the interval, we can discard the\n\t\t// entire right subtree.\n\t\tif (root.left !== null) {\n\t\t\tassert(root.left instanceof Node);\n\t\t\tyield* rangetraversal(compare, root.left, left, right);\n\t\t}\n\t} else {\n\t\t// Otherwise just recurse on both subtrees and yield the root in\n\t\t// between.\n\t\tif (root.left !== null) {\n\t\t\tassert(root.left instanceof Node);\n\t\t\tyield* rangetraversal(compare, root.left, left, right);\n\t\t}\n\n\t\tyield root.key;\n\t\tif (root.right !== null) {\n\t\t\tassert(root.right instanceof Node);\n\t\t\tyield* rangetraversal(compare, root.right, left, right);\n\t\t}\n\t}\n}\n",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport leftOpenRangeTraversal from './leftOpenRangeTraversal.js';\nimport rightOpenRangeTraversal from './rightOpenRangeTraversal.js';\n\n/**\n * Yields all the keys in the tree rooted at <code>root</code> that lie in the\n * interval <code>[left, right[</code>, in order.\n *\n * @param {Function} compare - The comparison function.\n * @param {Node} root - The root of the tree.\n * @param {any} left - The inclusive lower bound of the interval.\n * @param {any} right - The non-inclusive upper bound of the interval.\n * @returns {IterableIterator}\n */\nexport default function* rangetraversal(compare, root, left, right) {\n\tif (compare(root.key, left) < 0) {\n\t\t// If the root lies to the left of the interval, we can discard the\n\t\t// entire left subtree.\n\t\tif (root.right !== null) {\n\t\t\tassert(root.right instanceof Node);\n\t\t\tyield* rangetraversal(compare, root.right, left, right);\n\t\t}\n\t} else if (compare(root.key, right) >= 0) {\n\t\t// If the root lies to the right of the interval, we can discard the\n\t\t// entire right subtree.\n\t\tif (root.left !== null) {\n\t\t\tassert(root.left instanceof Node);\n\t\t\tyield* rangetraversal(compare, root.left, left, right);\n\t\t}\n\t} else {\n\t\t// Otherwise just recurse on both subtrees and yield the root in\n\t\t// between.\n\t\tif (root.left !== null) {\n\t\t\tassert(root.left instanceof Node);\n\t\t\tyield* rightOpenRangeTraversal(compare, root.left, left);\n\t\t}\n\n\t\tyield root.key;\n\t\tif (root.right !== null) {\n\t\t\tassert(root.right instanceof Node);\n\t\t\tyield* leftOpenRangeTraversal(compare, root.right, right);\n\t\t}\n\t}\n}\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/traversal/rangetraversal.js",
     "access": "public",
@@ -1792,7 +2082,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 104,
+    "__docId__": 112,
     "kind": "function",
     "name": "rangetraversal",
     "memberof": "src/traversal/rangetraversal.js",
@@ -1805,7 +2095,7 @@
     "importPath": "@aureooms/js-red-black-tree/src/traversal/rangetraversal.js",
     "importStyle": "rangetraversal",
     "description": "Yields all the keys in the tree rooted at <code>root</code> that lie in the\ninterval <code>[left, right[</code>, in order.",
-    "lineNumber": 14,
+    "lineNumber": 16,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1864,7 +2154,80 @@
     }
   },
   {
-    "__docId__": 105,
+    "__docId__": 113,
+    "kind": "file",
+    "name": "src/traversal/rightOpenRangeTraversal.js",
+    "content": "import assert from 'assert';\nimport Node from '../types/Node.js';\nimport inordertraversal from './inordertraversal.js';\n\n/**\n * Yields all the keys in the tree rooted at <code>root</code> that lie in the\n * interval <code>[left, +oo)</code>, in order.\n *\n * @param {Function} compare - The comparison function.\n * @param {Node} root - The root of the tree.\n * @param {any} left - The inclusive lower bound of the interval.\n * @returns {IterableIterator}\n */\nexport default function* rightOpenRangeTraversal(compare, root, left) {\n\tif (compare(root.key, left) < 0) {\n\t\t// If the root lies to the left of the interval, we can discard the\n\t\t// entire left subtree.\n\t\tif (root.right !== null) {\n\t\t\tassert(root.right instanceof Node);\n\t\t\tyield* rightOpenRangeTraversal(compare, root.right, left);\n\t\t}\n\t} else {\n\t\t// Otherwise recurse on left subtree, yield the root, and yield the\n\t\t// entire right subtree.\n\t\tif (root.left !== null) {\n\t\t\tassert(root.left instanceof Node);\n\t\t\tyield* rightOpenRangeTraversal(compare, root.left, left);\n\t\t}\n\n\t\tyield root.key;\n\t\tif (root.right !== null) {\n\t\t\tassert(root.right instanceof Node);\n\t\t\tyield* inordertraversal(root.right);\n\t\t}\n\t}\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/traversal/rightOpenRangeTraversal.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 114,
+    "kind": "function",
+    "name": "rightOpenRangeTraversal",
+    "memberof": "src/traversal/rightOpenRangeTraversal.js",
+    "generator": true,
+    "async": false,
+    "static": true,
+    "longname": "src/traversal/rightOpenRangeTraversal.js~rightOpenRangeTraversal",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-red-black-tree/src/traversal/rightOpenRangeTraversal.js",
+    "importStyle": "rightOpenRangeTraversal",
+    "description": "Yields all the keys in the tree rooted at <code>root</code> that lie in the\ninterval <code>[left, +oo)</code>, in order.",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{IterableIterator}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "compare",
+        "description": "The comparison function."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Node"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "root",
+        "description": "The root of the tree."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "left",
+        "description": "The inclusive lower bound of the interval."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "IterableIterator"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 115,
     "kind": "file",
     "name": "src/types/Node.js",
     "content": "/**\n * An internal node. This node can be red or black.\n *\n * @class\n * @param {number} color - The color of the node.\n * @param {any} key - The key of the node.\n */\nexport default function Node(color, key) {\n\t/** @member {number} The color of the node. */\n\tthis._color = color;\n\t/** @member {Node} The left child */\n\tthis.left = null;\n\t/** @member {Node} The right child */\n\tthis.right = null;\n\t/** @member {Node} The parent node. */\n\tthis.parent = null;\n\t/** @member {any} The key held by this node. */\n\tthis.key = key;\n}\n",
@@ -1875,7 +2238,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 106,
+    "__docId__": 116,
     "kind": "function",
     "name": "Node",
     "memberof": "src/types/Node.js",
@@ -1920,10 +2283,10 @@
     "return": null
   },
   {
-    "__docId__": 107,
+    "__docId__": 117,
     "kind": "file",
     "name": "src/types/RedBlackTree.js",
-    "content": "import assert from 'assert';\nimport Node from './Node.js';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport predecessor from '../family/predecessor.js';\nimport insert from '../insertion/insert.js';\nimport insert_case1 from '../insertion/insert_case1.js';\nimport delete_one_child from '../deletion/delete_one_child.js';\nimport delete_no_child from '../deletion/delete_no_child.js';\nimport search from '../search/search.js';\nimport inordertraversal from '../traversal/inordertraversal.js';\nimport rangetraversal from '../traversal/rangetraversal.js';\n\n/**\n * A RedBlackTree with key-only nodes.\n *\n */\nexport default class RedBlackTree {\n\t/**\n\t * Constructs a new empty red-black tree.\n\t *\n\t * @param {Function} compare - The comparison function for node keys.\n\t */\n\tconstructor(compare) {\n\t\tassert(compare instanceof Function);\n\t\t/** @member {Function} The comparison function for node keys. */\n\t\tthis.compare = compare;\n\t\t/** @member {Node} The root of the tree. */\n\t\tthis.root = null;\n\t}\n\n\t/**\n\t * Tells whether the tree is empty.\n\t *\n\t * @returns {boolean} true if empty, false otherwise.\n\t */\n\tisEmpty() {\n\t\treturn this.root === null;\n\t}\n\n\t/**\n\t * Adds a key to the tree.\n\t *\n\t * @param {any} key - The key to add.\n\t */\n\tadd(key) {\n\t\tif (this.root === null) {\n\t\t\tthis.root = new Node(BLACK, key);\n\t\t} else {\n\t\t\tconst node = new Node(RED, key);\n\t\t\tinsert(this.compare, this.root, node);\n\t\t\tinsert_case1(node);\n\t\t}\n\t}\n\n\t/**\n\t * Search for the input key in the tree.\n\t * Returns the first node whose key equals the input key.\n\t * If no such node exists, returns <code>null</code>.\n\t *\n\t * @param {any} key - The input key.\n\t * @returns {Node}\n\t */\n\t_search(key) {\n\t\tif (this.root === null) return null;\n\t\treturn search(this.compare, this.root, key);\n\t}\n\n\t/**\n\t * Search for the input key in the tree. Returns the first node key found\n\t * in this way (with {@link RedBlackTree#_search}. If no such key exists\n\t * in the tree, returns <code>null</code>.\n\t *\n\t * @param {any} key - The input key.\n\t * @returns {any}\n\t */\n\tget(key) {\n\t\tconst node = this._search(key);\n\t\treturn node === null ? null : node.key;\n\t}\n\n\t/**\n\t * Returns <code>true</code> if and only if the tree contains the input\n\t * key.\n\t *\n\t * @param {any} key - The input key.\n\t * @returns {boolean}\n\t */\n\thas(key) {\n\t\treturn this._search(key) !== null;\n\t}\n\n\t/**\n\t * Deletes the input node from the tree.\n\t *\n\t * @param {Node} node - The input node to delete.\n\t */\n\t_delete(node) {\n\t\tassert(node instanceof Node);\n\t\tif (node.left !== null) {\n\t\t\t// Replace node's key with predecessor's key\n\t\t\tconst pred = predecessor(node);\n\t\t\tnode.key = pred.key;\n\t\t\t// Delete predecessor node\n\t\t\t// NOTE: this node can only have one non-leaf (left) child because\n\t\t\t// of red-black tree invariant.\n\t\t\tif (pred.left === null) {\n\t\t\t\tdelete_no_child(pred);\n\t\t\t} else {\n\t\t\t\tdelete_one_child(pred);\n\t\t\t}\n\t\t} else if (node.right !== null) {\n\t\t\t// Replace node's key with successor's key\n\t\t\t// NOTE: Since there is no left child, then there can only be one\n\t\t\t// right child by the red-black tree invariant.\n\t\t\tconst succ = node.right;\n\t\t\tnode.key = succ.key;\n\t\t\t// Delete successor node\n\t\t\tdelete_no_child(succ);\n\t\t} else if (node === this.root) {\n\t\t\tthis.root = null;\n\t\t} else {\n\t\t\tdelete_no_child(node);\n\t\t}\n\t}\n\n\t/**\n\t * Search for the first node of the tree whose key equals the input key\n\t * (with {@link RedBlackTree#_search}), then delete that node\n\t * (with {@link RedBlackTree#_delete}). If such a node is found and deleted\n\t * then return <code>true</code>. Return <code>false</code> otherwise.\n\t *\n\t * @param {any} key - The input key.\n\t * @returns {boolean} - Whether the key existed in the tree before removal.\n\t */\n\tremove(key) {\n\t\tconst node = this._search(key);\n\t\tif (node === null) return false;\n\n\t\tthis._delete(node);\n\t\treturn true;\n\t}\n\n\t/**\n\t * Returns an in order iterator over the keys of the tree that lie in the\n\t * interval [left, right[.\n\t * @param {any} left - The left bound of the interval.\n\t * @param {any} right - The right bound of the interval.\n\t * @returns {IterableIterator}\n\t */\n\t*range(left, right) {\n\t\tif (this.root !== null)\n\t\t\tyield* rangetraversal(this.compare, this.root, left, right);\n\t}\n\n\t/**\n\t * Returns an in order iterator over the keys of the tree.\n\t *\n\t * @returns {IterableIterator}\n\t */\n\t*items() {\n\t\tif (this.root !== null) yield* inordertraversal(this.root);\n\t}\n\n\t/**\n\t * Same as {@link RedBlackTree#items}.\n\t */\n\t[Symbol.iterator]() {\n\t\treturn this.items();\n\t}\n\n\t/**\n\t * Constructs an empty red-black tree.\n\t *\n\t * @param {Function} compare - The comparison function to use.\n\t * @returns {RedBlackTree}\n\t */\n\tstatic empty(compare) {\n\t\treturn new RedBlackTree(compare);\n\t}\n\n\t/**\n\t * Constructs a red-black tree from an input iterable.\n\t *\n\t * @param {Function} compare - The comparison function to use.\n\t * @param {Iterable} iterable - The input iterable.\n\t * @returns {RedBlackTree}\n\t */\n\tstatic from(compare, iterable) {\n\t\tconst tree = new RedBlackTree(compare);\n\n\t\tfor (const element of iterable) tree.add(element);\n\n\t\treturn tree;\n\t}\n}\n",
+    "content": "import assert from 'assert';\nimport Node from './Node.js';\nimport BLACK from '../color/BLACK.js';\nimport RED from '../color/RED.js';\nimport predecessor from '../family/predecessor.js';\nimport insert from '../insertion/insert.js';\nimport insert_case2 from '../insertion/insert_case2.js';\nimport delete_one_child from '../deletion/delete_one_child.js';\nimport delete_no_child from '../deletion/delete_no_child.js';\nimport search from '../search/search.js';\nimport inordertraversal from '../traversal/inordertraversal.js';\nimport rangetraversal from '../traversal/rangetraversal.js';\nimport replace_node from '../deletion/replace_node.js';\nimport swap_non_adjacent from '../swap/swap_non_adjacent.js';\nimport swap_left from '../swap/swap_left.js';\n\n/**\n * A RedBlackTree with key-only nodes.\n *\n */\nexport default class RedBlackTree {\n\t/**\n\t * Constructs a new empty red-black tree.\n\t *\n\t * @param {Function} compare - The comparison function for node keys.\n\t */\n\tconstructor(compare) {\n\t\tassert(compare instanceof Function);\n\t\t/** @member {Function} The comparison function for node keys. */\n\t\tthis.compare = compare;\n\t\t/** @member {Node} The root of the tree. */\n\t\tthis.root = null;\n\t}\n\n\t/**\n\t * Tells whether the tree is empty.\n\t *\n\t * @returns {boolean} true if empty, false otherwise.\n\t */\n\tisEmpty() {\n\t\treturn this.root === null;\n\t}\n\n\t/**\n\t * Adds a key to the tree.\n\t *\n\t * @param {any} key - The key to add.\n\t * @return {Node} The newly added node.\n\t */\n\tadd(key) {\n\t\tif (this.root === null) {\n\t\t\tthis.root = new Node(BLACK, key);\n\t\t\treturn this.root;\n\t\t}\n\n\t\tconst node = new Node(RED, key);\n\t\tinsert(this.compare, this.root, node);\n\t\tassert(node.parent !== null);\n\t\tif (node.parent._color !== BLACK) {\n\t\t\tconst subtree = insert_case2(node);\n\t\t\tif (subtree.parent === null) {\n\t\t\t\tthis.root = subtree;\n\t\t\t}\n\t\t}\n\n\t\treturn node;\n\t}\n\n\t/**\n\t * Search for the input key in the tree.\n\t * Returns the first node whose key equals the input key.\n\t * If no such node exists, returns <code>null</code>.\n\t *\n\t * @param {any} key - The input key.\n\t * @returns {Node}\n\t */\n\t_search(key) {\n\t\tif (this.root === null) return null;\n\t\treturn search(this.compare, this.root, key);\n\t}\n\n\t/**\n\t * Search for the input key in the tree. Returns the first node key found\n\t * in this way (with {@link RedBlackTree#_search}. If no such key exists\n\t * in the tree, returns <code>null</code>.\n\t *\n\t * @param {any} key - The input key.\n\t * @returns {any}\n\t */\n\tget(key) {\n\t\tconst node = this._search(key);\n\t\treturn node === null ? undefined : node.key;\n\t}\n\n\t/**\n\t * Returns <code>true</code> if and only if the tree contains the input\n\t * key.\n\t *\n\t * @param {any} key - The input key.\n\t * @returns {boolean}\n\t */\n\thas(key) {\n\t\treturn this._search(key) !== null;\n\t}\n\n\t/**\n\t * Deletes the input node from the tree.\n\t *\n\t * @param {Node} node - The input node to delete.\n\t */\n\tunlink(node) {\n\t\tassert(node instanceof Node);\n\t\tif (node.left !== null) {\n\t\t\t// Swap node with its predecessor\n\t\t\tconst pred = predecessor(node);\n\t\t\t// Delete predecessor node\n\t\t\t// NOTE: this node can have at most one non-leaf (left) child\n\t\t\t// because of red-black tree invariant.\n\t\t\tassert(pred.right === null);\n\t\t\tif (pred === node.left) {\n\t\t\t\tswap_left(node);\n\t\t\t} else {\n\t\t\t\tswap_non_adjacent(node, pred);\n\t\t\t}\n\n\t\t\tassert(node.right === null);\n\t\t\tif (node.left === null) {\n\t\t\t\tconst subtree = delete_no_child(node);\n\t\t\t\tif (subtree.parent === null) {\n\t\t\t\t\tthis.root = subtree;\n\t\t\t\t} else if (pred.parent === null) {\n\t\t\t\t\tassert(node === this.root);\n\t\t\t\t\tthis.root = pred;\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tdelete_one_child(node);\n\t\t\t\tif (pred.parent === null) {\n\t\t\t\t\tassert(node === this.root);\n\t\t\t\t\tthis.root = pred;\n\t\t\t\t}\n\t\t\t}\n\t\t} else if (node.right !== null) {\n\t\t\t/**\n\t\t\t * Swap node with its successor.\n\t\t\t *\n\t\t\t * NOTE: Since pred is a leaf, there can only by one node in the\n\t\t\t * right subtree, succ, which is necessarily red, hence\n\t\t\t * node is black.\n\t\t\t *\n\t\t\t * The configuration:\n\t\t\t *\n\t\t\t *      (A)                 (B)                  (C)\n\t\t\t *\n\t\t\t *    p                   p                    p\n\t\t\t *    |                   |                    |\n\t\t\t *   node (BLACK)        succ (BLACK)        succ (BLACK)\n\t\t\t *   / \\                 / \\                  / \\\n\t\t\t *  -  succ (RED)  ->   -  node (RED)  ->    -   -\n\t\t\t *     / \\                 / \\\n\t\t\t *    -   -               -   -\n\t\t\t *\n\t\t\t * NOTE: We take a shortcut and go directly from (A) to (C)\n\t\t\t */\n\t\t\tassert(node.left === null);\n\t\t\tconst succ = node.right;\n\t\t\tassert(succ._color === RED);\n\t\t\tsucc._color = BLACK;\n\t\t\tif (node === this.root) {\n\t\t\t\tassert(node.parent === null);\n\t\t\t\tsucc.parent = null;\n\t\t\t\tthis.root = succ;\n\t\t\t} else {\n\t\t\t\treplace_node(node, succ);\n\t\t\t}\n\t\t} else if (node === this.root) {\n\t\t\tassert(node.parent === null);\n\t\t\tassert(node._color === BLACK);\n\t\t\tassert(node.left === null);\n\t\t\tassert(node.right === null);\n\t\t\tthis.root = null;\n\t\t} else {\n\t\t\tassert(node.left === null);\n\t\t\tassert(node.right === null);\n\t\t\tconst subtree = delete_no_child(node);\n\t\t\tif (subtree.parent === null) {\n\t\t\t\tthis.root = subtree;\n\t\t\t}\n\t\t}\n\t}\n\n\t/**\n\t * Search for the first node of the tree whose key equals the input key\n\t * (with {@link RedBlackTree#_search}), then delete that node\n\t * (with {@link RedBlackTree#unlink}). If such a node is found and deleted\n\t * then return <code>true</code>. Return <code>false</code> otherwise.\n\t *\n\t * @param {any} key - The input key.\n\t * @returns {boolean} - Whether the key existed in the tree before removal.\n\t */\n\tremove(key) {\n\t\tconst node = this._search(key);\n\t\tif (node === null) return false;\n\n\t\tthis.unlink(node);\n\t\treturn true;\n\t}\n\n\t/**\n\t * Returns an in order iterator over the keys of the tree that lie in the\n\t * interval [left, right[.\n\t * @param {any} left - The left bound of the interval.\n\t * @param {any} right - The right bound of the interval.\n\t * @returns {IterableIterator}\n\t */\n\t*range(left, right) {\n\t\tif (this.root !== null)\n\t\t\tyield* rangetraversal(this.compare, this.root, left, right);\n\t}\n\n\t/**\n\t * Returns an in order iterator over the keys of the tree.\n\t *\n\t * @returns {IterableIterator}\n\t */\n\t*items() {\n\t\tif (this.root !== null) yield* inordertraversal(this.root);\n\t}\n\n\t/**\n\t * Same as {@link RedBlackTree#items}.\n\t */\n\t[Symbol.iterator]() {\n\t\treturn this.items();\n\t}\n\n\t/**\n\t * Constructs an empty red-black tree.\n\t *\n\t * @param {Function} compare - The comparison function to use.\n\t * @returns {RedBlackTree}\n\t */\n\tstatic empty(compare) {\n\t\treturn new RedBlackTree(compare);\n\t}\n\n\t/**\n\t * Constructs a red-black tree from an input iterable.\n\t *\n\t * @param {Function} compare - The comparison function to use.\n\t * @param {Iterable} iterable - The input iterable.\n\t * @returns {RedBlackTree}\n\t */\n\tstatic from(compare, iterable) {\n\t\tconst tree = new RedBlackTree(compare);\n\n\t\tfor (const element of iterable) tree.add(element);\n\n\t\treturn tree;\n\t}\n}\n",
     "static": true,
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/src/types/RedBlackTree.js",
     "access": "public",
@@ -1931,7 +2294,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 108,
+    "__docId__": 118,
     "kind": "class",
     "name": "RedBlackTree",
     "memberof": "src/types/RedBlackTree.js",
@@ -1942,11 +2305,11 @@
     "importPath": "@aureooms/js-red-black-tree/src/types/RedBlackTree.js",
     "importStyle": "RedBlackTree",
     "description": "A RedBlackTree with key-only nodes.",
-    "lineNumber": 18,
+    "lineNumber": 21,
     "interface": false
   },
   {
-    "__docId__": 109,
+    "__docId__": 119,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -1956,7 +2319,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree#constructor",
     "access": "public",
     "description": "Constructs a new empty red-black tree.",
-    "lineNumber": 24,
+    "lineNumber": 27,
     "params": [
       {
         "nullable": null,
@@ -1971,7 +2334,7 @@
     ]
   },
   {
-    "__docId__": 110,
+    "__docId__": 120,
     "kind": "member",
     "name": "compare",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -1979,7 +2342,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree#compare",
     "access": "public",
     "description": null,
-    "lineNumber": 27,
+    "lineNumber": 30,
     "type": {
       "types": [
         "*"
@@ -1987,7 +2350,7 @@
     }
   },
   {
-    "__docId__": 111,
+    "__docId__": 121,
     "kind": "member",
     "name": "root",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -1995,7 +2358,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree#root",
     "access": "public",
     "description": null,
-    "lineNumber": 29,
+    "lineNumber": 32,
     "type": {
       "types": [
         "*"
@@ -2003,7 +2366,7 @@
     }
   },
   {
-    "__docId__": 112,
+    "__docId__": 122,
     "kind": "method",
     "name": "isEmpty",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -2013,7 +2376,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree#isEmpty",
     "access": "public",
     "description": "Tells whether the tree is empty.",
-    "lineNumber": 37,
+    "lineNumber": 40,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2031,7 +2394,7 @@
     "params": []
   },
   {
-    "__docId__": 113,
+    "__docId__": 123,
     "kind": "method",
     "name": "add",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -2041,7 +2404,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree#add",
     "access": "public",
     "description": "Adds a key to the tree.",
-    "lineNumber": 46,
+    "lineNumber": 50,
     "params": [
       {
         "nullable": null,
@@ -2054,10 +2417,17 @@
         "description": "The key to add."
       }
     ],
-    "return": null
+    "return": {
+      "nullable": null,
+      "types": [
+        "Node"
+      ],
+      "spread": false,
+      "description": "The newly added node."
+    }
   },
   {
-    "__docId__": 115,
+    "__docId__": 126,
     "kind": "method",
     "name": "_search",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -2067,7 +2437,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree#_search",
     "access": "private",
     "description": "Search for the input key in the tree.\nReturns the first node whose key equals the input key.\nIf no such node exists, returns <code>null</code>.",
-    "lineNumber": 64,
+    "lineNumber": 77,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2096,7 +2466,7 @@
     }
   },
   {
-    "__docId__": 116,
+    "__docId__": 127,
     "kind": "method",
     "name": "get",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -2106,7 +2476,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree#get",
     "access": "public",
     "description": "Search for the input key in the tree. Returns the first node key found\nin this way (with {@link RedBlackTree#_search}. If no such key exists\nin the tree, returns <code>null</code>.",
-    "lineNumber": 77,
+    "lineNumber": 90,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2135,7 +2505,7 @@
     }
   },
   {
-    "__docId__": 117,
+    "__docId__": 128,
     "kind": "method",
     "name": "has",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -2145,7 +2515,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree#has",
     "access": "public",
     "description": "Returns <code>true</code> if and only if the tree contains the input\nkey.",
-    "lineNumber": 89,
+    "lineNumber": 102,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2174,17 +2544,17 @@
     }
   },
   {
-    "__docId__": 118,
+    "__docId__": 129,
     "kind": "method",
-    "name": "_delete",
+    "name": "unlink",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/types/RedBlackTree.js~RedBlackTree#_delete",
-    "access": "private",
+    "longname": "src/types/RedBlackTree.js~RedBlackTree#unlink",
+    "access": "public",
     "description": "Deletes the input node from the tree.",
-    "lineNumber": 98,
+    "lineNumber": 111,
     "params": [
       {
         "nullable": null,
@@ -2200,7 +2570,7 @@
     "return": null
   },
   {
-    "__docId__": 120,
+    "__docId__": 136,
     "kind": "method",
     "name": "remove",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -2209,8 +2579,8 @@
     "static": false,
     "longname": "src/types/RedBlackTree.js~RedBlackTree#remove",
     "access": "public",
-    "description": "Search for the first node of the tree whose key equals the input key\n(with {@link RedBlackTree#_search}), then delete that node\n(with {@link RedBlackTree#_delete}). If such a node is found and deleted\nthen return <code>true</code>. Return <code>false</code> otherwise.",
-    "lineNumber": 136,
+    "description": "Search for the first node of the tree whose key equals the input key\n(with {@link RedBlackTree#_search}), then delete that node\n(with {@link RedBlackTree#unlink}). If such a node is found and deleted\nthen return <code>true</code>. Return <code>false</code> otherwise.",
+    "lineNumber": 200,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2239,7 +2609,7 @@
     }
   },
   {
-    "__docId__": 121,
+    "__docId__": 137,
     "kind": "method",
     "name": "range",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -2249,7 +2619,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree#range",
     "access": "public",
     "description": "Returns an in order iterator over the keys of the tree that lie in the\ninterval [left, right[.",
-    "lineNumber": 151,
+    "lineNumber": 215,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2288,7 +2658,7 @@
     }
   },
   {
-    "__docId__": 122,
+    "__docId__": 138,
     "kind": "method",
     "name": "items",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -2298,7 +2668,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree#items",
     "access": "public",
     "description": "Returns an in order iterator over the keys of the tree.",
-    "lineNumber": 161,
+    "lineNumber": 225,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2316,7 +2686,7 @@
     "params": []
   },
   {
-    "__docId__": 123,
+    "__docId__": 139,
     "kind": "method",
     "name": "[Symbol.iterator]",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -2326,7 +2696,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree#[Symbol.iterator]",
     "access": "public",
     "description": "Same as {@link RedBlackTree#items}.",
-    "lineNumber": 168,
+    "lineNumber": 232,
     "params": [],
     "return": {
       "types": [
@@ -2335,7 +2705,7 @@
     }
   },
   {
-    "__docId__": 124,
+    "__docId__": 140,
     "kind": "method",
     "name": "empty",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -2345,7 +2715,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree.empty",
     "access": "public",
     "description": "Constructs an empty red-black tree.",
-    "lineNumber": 178,
+    "lineNumber": 242,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2374,7 +2744,7 @@
     }
   },
   {
-    "__docId__": 125,
+    "__docId__": 141,
     "kind": "method",
     "name": "from",
     "memberof": "src/types/RedBlackTree.js~RedBlackTree",
@@ -2384,7 +2754,7 @@
     "longname": "src/types/RedBlackTree.js~RedBlackTree.from",
     "access": "public",
     "description": "Constructs a red-black tree from an input iterable.",
-    "lineNumber": 189,
+    "lineNumber": 253,
     "unknown": [
       {
         "tagName": "@returns",
@@ -2432,7 +2802,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@aureooms/js-red-black-tree\",\n  \"description\": \"Red-black tree library for JavaScript\",\n  \"version\": \"8.0.0\",\n  \"license\": \"AGPL-3.0\",\n  \"author\": \"Aurélien Ooms <aurelien.ooms@gmail.com>\",\n  \"homepage\": \"https://aureooms.github.io/js-red-black-tree\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-red-black-tree\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-red-black-tree/issues\"\n  },\n  \"keywords\": [\n    \"balanced binary search tree\",\n    \"bst\",\n    \"data structure\",\n    \"red-black tree\"\n  ],\n  \"sideEffects\": false,\n  \"source\": \"src/index.js\",\n  \"main\": \"dist/index.js\",\n  \"module\": \"dist/index.module.js\",\n  \"esmodule\": \"dist/index.modern.js\",\n  \"umd:main\": \"dist/index.umd.js\",\n  \"unpkg\": \"dist/index.umd.js\",\n  \"exports\": {\n    \".\": {\n      \"browser\": \"./dist/index.module.js\",\n      \"umd\": \"./dist/index.umd.js\",\n      \"require\": \"./dist/index.js\",\n      \"default\": \"./dist/index.modern.js\"\n    }\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"scripts\": {\n    \"build\": \"NODE_ENV=production microbundle\",\n    \"build-docs\": \"esdoc\",\n    \"build-gh-pages\": \"npm run build-docs\",\n    \"ci:test\": \"npm run lint-config && npm run lint && npm run cover\",\n    \"commit-msg\": \"commitlint --edit\",\n    \"cover\": \"NODE_ENV=cover c8 --all --src src --reporter lcov --reporter text-summary --reporter text npm test\",\n    \"debug\": \"NODE_ENV=debug npm run test -- -st --fail-fast\",\n    \"dev\": \"npm run lint-config-and-fix && npm run lint-and-fix && npm run cover -- -- -st --fail-fast\",\n    \"install-hooks\": \"husky install\",\n    \"lint\": \"xo\",\n    \"lint-and-fix\": \"npm run lint -- --fix\",\n    \"lint-config\": \"fixpack --dryRun\",\n    \"lint-config-and-fix\": \"fixpack || fixpack\",\n    \"postinstall\": \"npm run install-hooks\",\n    \"postpublish\": \"pinst --enable\",\n    \"precommit\": \"lint-staged\",\n    \"prepare\": \"npm run build\",\n    \"prepublishOnly\": \"pinst --disable\",\n    \"release\": \"np --message ':hatching_chick: release: Bumping to v%s.'\",\n    \"test\": \"ava\"\n  },\n  \"devDependencies\": {\n    \"@aureooms/js-compare\": \"2.0.0\",\n    \"@aureooms/js-itertools\": \"5.1.0\",\n    \"@aureooms/js-random\": \"2.0.0\",\n    \"@babel/core\": \"7.13.14\",\n    \"@babel/preset-env\": \"7.13.12\",\n    \"@babel/register\": \"7.13.14\",\n    \"@commitlint/cli\": \"12.0.1\",\n    \"@js-library/commitlint-config\": \"0.0.4\",\n    \"ava\": \"3.15.0\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.0.1\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"c8\": \"7.7.0\",\n    \"chalk\": \"4.1.0\",\n    \"coveralls\": \"3.1.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"fixpack\": \"4.0.0\",\n    \"husky\": \"6.0.0\",\n    \"lint-staged\": \"10.5.4\",\n    \"microbundle\": \"0.13.0\",\n    \"np\": \"7.4.0\",\n    \"pinst\": \"2.1.6\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.7\",\n    \"xo\": \"0.38.2\"\n  },\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\",\n      \"@babel/register\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"sourceMaps\": true,\n    \"presets\": [\n      [\n        \"@babel/preset-env\",\n        {\n          \"targets\": \"current node\"\n        }\n      ]\n    ],\n    \"plugins\": [\n      [\n        \"transform-remove-console\",\n        {\n          \"exclude\": [\n            \"log\",\n            \"error\",\n            \"warn\"\n          ]\n        }\n      ]\n    ],\n    \"env\": {\n      \"debug\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"debug\",\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      },\n      \"test\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"cover\": {\n        \"sourceMaps\": \"inline\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"development\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ],\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"production\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ]\n        ],\n        \"plugins\": [\n          \"babel-plugin-unassert\"\n        ]\n      }\n    }\n  },\n  \"lint-staged\": {\n    \"*.js\": [\n      \"npm run lint-and-fix\"\n    ],\n    \"package.json\": [\n      \"npm run lint-config-and-fix\"\n    ]\n  },\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"xo\": {\n    \"prettier\": true,\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/filename-case\": \"off\",\n      \"camelcase\": \"off\",\n      \"unicorn/prevent-abbreviations\": \"off\",\n      \"no-constant-condition\": \"off\",\n      \"unicorn/prefer-math-trunc\": \"off\",\n      \"unicorn/no-new-array\": \"off\",\n      \"no-negated-condition\": \"off\"\n    },\n    \"overrides\": [\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
+    "content": "{\n  \"name\": \"@aureooms/js-red-black-tree\",\n  \"description\": \"Red-black tree library for JavaScript\",\n  \"version\": \"9.0.0\",\n  \"license\": \"AGPL-3.0\",\n  \"author\": \"Aurélien Ooms <aurelien.ooms@gmail.com>\",\n  \"homepage\": \"https://aureooms.github.io/js-red-black-tree\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-red-black-tree\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-red-black-tree/issues\"\n  },\n  \"keywords\": [\n    \"balanced binary search tree\",\n    \"bst\",\n    \"data structure\",\n    \"red-black tree\"\n  ],\n  \"sideEffects\": false,\n  \"source\": \"src/index.js\",\n  \"main\": \"dist/index.js\",\n  \"module\": \"dist/index.module.js\",\n  \"esmodule\": \"dist/index.modern.js\",\n  \"umd:main\": \"dist/index.umd.js\",\n  \"unpkg\": \"dist/index.umd.js\",\n  \"exports\": {\n    \".\": {\n      \"browser\": \"./dist/index.module.js\",\n      \"umd\": \"./dist/index.umd.js\",\n      \"require\": \"./dist/index.js\",\n      \"default\": \"./dist/index.modern.js\"\n    }\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"scripts\": {\n    \"build\": \"NODE_ENV=production microbundle\",\n    \"build-docs\": \"esdoc\",\n    \"build-gh-pages\": \"npm run build-docs\",\n    \"ci:test\": \"npm run lint-config && npm run lint && npm run cover\",\n    \"commit-msg\": \"commitlint --edit\",\n    \"cover\": \"NODE_ENV=cover c8 --all --src src --reporter lcov --reporter text-summary --reporter text npm test\",\n    \"debug\": \"NODE_ENV=debug npm run test -- -st --fail-fast\",\n    \"dev\": \"npm run lint-config-and-fix && npm run lint-and-fix && npm run cover -- -- -st --fail-fast\",\n    \"install-hooks\": \"husky install\",\n    \"lint\": \"xo\",\n    \"lint-and-fix\": \"npm run lint -- --fix\",\n    \"lint-config\": \"fixpack --dryRun\",\n    \"lint-config-and-fix\": \"fixpack || fixpack\",\n    \"postinstall\": \"npm run install-hooks\",\n    \"postpublish\": \"pinst --enable\",\n    \"precommit\": \"lint-staged\",\n    \"prepare\": \"npm run build\",\n    \"prepublishOnly\": \"pinst --disable\",\n    \"release\": \"np --message ':hatching_chick: release: Bumping to v%s.'\",\n    \"test\": \"ava\"\n  },\n  \"devDependencies\": {\n    \"@aureooms/js-compare\": \"2.0.0\",\n    \"@aureooms/js-itertools\": \"5.1.0\",\n    \"@aureooms/js-pseudo-random\": \"2.0.0\",\n    \"@aureooms/js-random\": \"2.0.0\",\n    \"@babel/core\": \"7.13.14\",\n    \"@babel/preset-env\": \"7.13.12\",\n    \"@babel/register\": \"7.13.14\",\n    \"@commitlint/cli\": \"12.1.1\",\n    \"@js-library/commitlint-config\": \"0.0.4\",\n    \"ava\": \"3.15.0\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.0.1\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"c8\": \"7.7.0\",\n    \"chalk\": \"4.1.0\",\n    \"coveralls\": \"3.1.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"fixpack\": \"4.0.0\",\n    \"husky\": \"6.0.0\",\n    \"lint-staged\": \"10.5.4\",\n    \"microbundle\": \"0.13.0\",\n    \"np\": \"7.4.0\",\n    \"pinst\": \"2.1.6\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.7\",\n    \"xo\": \"0.38.2\"\n  },\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\",\n      \"@babel/register\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"sourceMaps\": true,\n    \"presets\": [\n      [\n        \"@babel/preset-env\",\n        {\n          \"targets\": \"current node\"\n        }\n      ]\n    ],\n    \"plugins\": [\n      [\n        \"transform-remove-console\",\n        {\n          \"exclude\": [\n            \"log\",\n            \"error\",\n            \"warn\"\n          ]\n        }\n      ]\n    ],\n    \"env\": {\n      \"debug\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"debug\",\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      },\n      \"test\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"cover\": {\n        \"sourceMaps\": \"both\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"development\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ],\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"production\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ]\n        ],\n        \"plugins\": [\n          \"babel-plugin-unassert\"\n        ]\n      }\n    }\n  },\n  \"lint-staged\": {\n    \"*.js\": [\n      \"npm run lint-and-fix\"\n    ],\n    \"package.json\": [\n      \"npm run lint-config-and-fix\"\n    ]\n  },\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"xo\": {\n    \"prettier\": true,\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/filename-case\": \"off\",\n      \"camelcase\": \"off\",\n      \"unicorn/prevent-abbreviations\": \"off\",\n      \"no-constant-condition\": \"off\",\n      \"unicorn/prefer-math-trunc\": \"off\",\n      \"unicorn/no-new-array\": \"off\",\n      \"no-negated-condition\": \"off\"\n    },\n    \"overrides\": [\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
     "longname": "/home/runner/work/js-red-black-tree/js-red-black-tree/package.json",
     "name": "package.json",
     "static": true,

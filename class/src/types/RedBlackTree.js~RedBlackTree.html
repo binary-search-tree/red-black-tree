@@ -55,8 +55,13 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#rotate">rotate</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_left">rotate_left</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_right">rotate_right</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#swap">swap</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_color">swap_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_left">swap_left</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_non_adjacent">swap_non_adjacent</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-leftOpenRangeTraversal">leftOpenRangeTraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rightOpenRangeTraversal">rightOpenRangeTraversal</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
@@ -64,13 +69,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import RedBlackTree from &apos;<span><a href="file/src/types/RedBlackTree.js.html#lineNumber18">@aureooms/js-red-black-tree/src/types/RedBlackTree.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import RedBlackTree from &apos;<span><a href="file/src/types/RedBlackTree.js.html#lineNumber21">@aureooms/js-red-black-tree/src/types/RedBlackTree.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/types/RedBlackTree.js.html#lineNumber18">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/types/RedBlackTree.js.html#lineNumber21">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -315,7 +320,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-add">add</a></span></span><span class="code" data-ice="signature">(key: <span>any</span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-add">add</a></span></span><span class="code" data-ice="signature">(key: <span>any</span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
         </p>
       </div>
       <div>
@@ -499,7 +504,36 @@ interval [left, right[.</p>
         
         <div data-ice="description"><p>Search for the first node of the tree whose key equals the input key
 (with <span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-_search">RedBlackTree#_search</a></span>), then delete that node
-(with <span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-_delete">RedBlackTree#_delete</a></span>).</p>
+(with <span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-unlink">RedBlackTree#unlink</a></span>).</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-unlink">unlink</a></span></span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Deletes the input node from the tree.</p>
 </div>
       </div>
     </td>
@@ -515,35 +549,6 @@ interval [left, right[.</p>
   <tbody>
   
   <tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-_delete">_delete</a></span></span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Deletes the input node from the tree.</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
     <td>
       <span class="access" data-ice="access">private</span>
       
@@ -593,7 +598,7 @@ interval [left, right[.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber178">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber242">source</a></span></span>
     </span>
   </h3>
 
@@ -666,7 +671,7 @@ interval [left, right[.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber189">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber253">source</a></span></span>
     </span>
   </h3>
 
@@ -749,7 +754,7 @@ interval [left, right[.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber24">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber27">source</a></span></span>
     </span>
   </h3>
 
@@ -813,7 +818,7 @@ interval [left, right[.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber27">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber30">source</a></span></span>
     </span>
   </h3>
 
@@ -856,7 +861,7 @@ interval [left, right[.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber32">source</a></span></span>
     </span>
   </h3>
 
@@ -902,7 +907,7 @@ interval [left, right[.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber168">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber232">source</a></span></span>
     </span>
   </h3>
 
@@ -954,11 +959,11 @@ interval [left, right[.</p>
     
     
     
-    <span class="code" data-ice="name">add</span><span class="code" data-ice="signature">(key: <span>any</span>)</span>
+    <span class="code" data-ice="name">add</span><span class="code" data-ice="signature">(key: <span>any</span>): <span><a href="function/index.html#static-function-Node">Node</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber46">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber50">source</a></span></span>
     </span>
   </h3>
 
@@ -990,7 +995,20 @@ interval [left, right[.</p>
 </div>
 </div>
 
-  
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="function/index.html#static-function-Node">Node</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The newly added node.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
 
   
 
@@ -1019,7 +1037,7 @@ interval [left, right[.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber77">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber90">source</a></span></span>
     </span>
   </h3>
 
@@ -1094,7 +1112,7 @@ in the tree, returns <code>null</code>.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber89">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber102">source</a></span></span>
     </span>
   </h3>
 
@@ -1168,7 +1186,7 @@ key.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber37">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber40">source</a></span></span>
     </span>
   </h3>
 
@@ -1225,7 +1243,7 @@ key.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber161">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber225">source</a></span></span>
     </span>
   </h3>
 
@@ -1281,7 +1299,7 @@ key.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber151">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber215">source</a></span></span>
     </span>
   </h3>
 
@@ -1362,7 +1380,7 @@ interval [left, right[.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber136">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber200">source</a></span></span>
     </span>
   </h3>
 
@@ -1371,7 +1389,7 @@ interval [left, right[.</p>
   
   <div data-ice="description"><p>Search for the first node of the tree whose key equals the input key
 (with <span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-_search">RedBlackTree#_search</a></span>), then delete that node
-(with <span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-_delete">RedBlackTree#_delete</a></span>). If such a node is found and deleted
+(with <span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-unlink">RedBlackTree#unlink</a></span>). If such a node is found and deleted
 then return <code>true</code>. Return <code>false</code> otherwise.</p>
 </div>
 
@@ -1427,21 +1445,19 @@ then return <code>true</code>. Return <code>false</code> otherwise.</p>
   
   
 </div>
-<h2 data-ice="title">Private Methods</h2>
-
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-_delete">
-    <span class="access" data-ice="access">private</span>
+  <h3 data-ice="anchor" id="instance-method-unlink">
+    <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span class="code" data-ice="name">_delete</span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
+    <span class="code" data-ice="name">unlink</span><span class="code" data-ice="signature">(node: <span><a href="function/index.html#static-function-Node">Node</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber98">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber111">source</a></span></span>
     </span>
   </h3>
 
@@ -1490,6 +1506,8 @@ then return <code>true</code>. Return <code>false</code> otherwise.</p>
   
   
 </div>
+<h2 data-ice="title">Private Methods</h2>
+
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-_search">
     <span class="access" data-ice="access">private</span>
@@ -1502,7 +1520,7 @@ then return <code>true</code>. Return <code>false</code> otherwise.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber64">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/types/RedBlackTree.js.html#lineNumber77">source</a></span></span>
     </span>
   </h3>
 

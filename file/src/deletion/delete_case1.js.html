@@ -55,8 +55,13 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#rotate">rotate</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_left">rotate_left</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_right">rotate_right</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#swap">swap</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_color">swap_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_left">swap_left</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_non_adjacent">swap_non_adjacent</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-leftOpenRangeTraversal">leftOpenRangeTraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rightOpenRangeTraversal">rightOpenRangeTraversal</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
@@ -83,6 +88,7 @@ import delete_case3 from &apos;./delete_case3.js&apos;;
  *   - n is not the root
  *
  * @param {Node} n - The input node.
+ * @return {Node} The root of the modified subtree.
  */
 const delete_case1 = (n) =&gt; {
 	assert(n instanceof Node);
@@ -94,25 +100,25 @@ const delete_case1 = (n) =&gt; {
 
 	if (s._color === BLACK) {
 		// If n&apos;s sibling is BLACK, go to case 2.
-		delete_case2(n);
-	} else {
-		/**
-		 * Otherwise, prepare for and go to case 3.
-		 *
-		 *           B                       B
-		 *         /   \                  /     \
-		 *      &gt;B       R               R       B
-		 *      / \     / \     --&gt;    /   \    / \
-		 *     -   -  B     B        &gt;B     B  =   =
-		 *           / \   / \       / \   / \
-		 *          =   = =   =     -   - =   =
-		 */
-		n.parent._color = RED;
-		s._color = BLACK;
-		if (n === n.parent.left) rotate_left(n.parent);
-		else rotate_right(n.parent);
-		delete_case3(n);
+		return delete_case2(n);
 	}
+
+	/**
+	 * Otherwise, prepare for and go to case 3.
+	 *
+	 *           B                      *B
+	 *         /   \                  /     \
+	 *      &gt;B       R               R       B
+	 *      / \     / \     --&gt;    /   \    / \
+	 *     -   -  B     B        &gt;B     B  =   =
+	 *           / \   / \       / \   / \
+	 *          =   = =   =     -   - =   =
+	 */
+	n.parent._color = RED;
+	s._color = BLACK;
+	if (n === n.parent.left) rotate_left(n.parent);
+	else rotate_right(n.parent);
+	return delete_case3(n).parent;
 };
 
 export default delete_case1;

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/types/RedBlackTree.js | @aureooms/js-red-black-tree</title>
+  <title data-ice="title">src/swap/swap_non_adjacent.js | @aureooms/js-red-black-tree</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -68,267 +68,64 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/types/RedBlackTree.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/swap/swap_non_adjacent.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
-import Node from &apos;./Node.js&apos;;
-import BLACK from &apos;../color/BLACK.js&apos;;
-import RED from &apos;../color/RED.js&apos;;
-import predecessor from &apos;../family/predecessor.js&apos;;
-import insert from &apos;../insertion/insert.js&apos;;
-import insert_case2 from &apos;../insertion/insert_case2.js&apos;;
-import delete_one_child from &apos;../deletion/delete_one_child.js&apos;;
-import delete_no_child from &apos;../deletion/delete_no_child.js&apos;;
-import search from &apos;../search/search.js&apos;;
-import inordertraversal from &apos;../traversal/inordertraversal.js&apos;;
-import rangetraversal from &apos;../traversal/rangetraversal.js&apos;;
-import replace_node from &apos;../deletion/replace_node.js&apos;;
-import swap_non_adjacent from &apos;../swap/swap_non_adjacent.js&apos;;
-import swap_left from &apos;../swap/swap_left.js&apos;;
+import Node from &apos;../types/Node.js&apos;;
+import swap_color from &apos;./swap_color.js&apos;;
 
 /**
- * A RedBlackTree with key-only nodes.
+ * Swap pointers and colors of two NON-ADJACENT nodes with three constraints:
+ *   - B is not the root
+ *   - B is its parent right child
+ *   - B&apos;s right child is a leaf
  *
+ * NOTE: These three constraints are implied because B is A&apos;s in-subtree
+ * predecessor without being A&apos;s left child.
+ *
+ *         p       q             q           p
+ *         |        \             \          |
+ *        -A        +B            +A        -B
+ *        / \       / \           / \       / \
+ *       u   v     x   -     -&gt;  x   -     u   v
+ *
+ * @param {Node} A - The first node.
+ * @param {Node} B - The second node.
  */
-export default class RedBlackTree {
-	/**
-	 * Constructs a new empty red-black tree.
-	 *
-	 * @param {Function} compare - The comparison function for node keys.
-	 */
-	constructor(compare) {
-		assert(compare instanceof Function);
-		/** @member {Function} The comparison function for node keys. */
-		this.compare = compare;
-		/** @member {Node} The root of the tree. */
-		this.root = null;
+
+const swap_non_adjacent = (A, B) =&gt; {
+	assert(A instanceof Node);
+	assert(B instanceof Node);
+	const p = A.parent;
+	const u = A.left;
+	const v = A.right;
+	const q = B.parent;
+	const x = B.left;
+	assert(B.right === null);
+	assert(q !== null);
+	assert(B === q.right);
+
+	if (p !== null) {
+		if (A === p.left) p.left = B;
+		else p.right = B;
 	}
 
-	/**
-	 * Tells whether the tree is empty.
-	 *
-	 * @returns {boolean} true if empty, false otherwise.
-	 */
-	isEmpty() {
-		return this.root === null;
-	}
+	q.right = A;
 
-	/**
-	 * Adds a key to the tree.
-	 *
-	 * @param {any} key - The key to add.
-	 * @return {Node} The newly added node.
-	 */
-	add(key) {
-		if (this.root === null) {
-			this.root = new Node(BLACK, key);
-			return this.root;
-		}
+	A.parent = q;
+	A.left = x;
+	A.right = null;
+	B.parent = p;
+	B.left = u;
+	B.right = v;
 
-		const node = new Node(RED, key);
-		insert(this.compare, this.root, node);
-		assert(node.parent !== null);
-		if (node.parent._color !== BLACK) {
-			const subtree = insert_case2(node);
-			if (subtree.parent === null) {
-				this.root = subtree;
-			}
-		}
+	if (x !== null) x.parent = A;
+	if (u !== null) u.parent = B;
+	if (v !== null) v.parent = B;
 
-		return node;
-	}
+	swap_color(A, B);
+};
 
-	/**
-	 * Search for the input key in the tree.
-	 * Returns the first node whose key equals the input key.
-	 * If no such node exists, returns &lt;code&gt;null&lt;/code&gt;.
-	 *
-	 * @param {any} key - The input key.
-	 * @returns {Node}
-	 */
-	_search(key) {
-		if (this.root === null) return null;
-		return search(this.compare, this.root, key);
-	}
-
-	/**
-	 * Search for the input key in the tree. Returns the first node key found
-	 * in this way (with {@link RedBlackTree#_search}. If no such key exists
-	 * in the tree, returns &lt;code&gt;null&lt;/code&gt;.
-	 *
-	 * @param {any} key - The input key.
-	 * @returns {any}
-	 */
-	get(key) {
-		const node = this._search(key);
-		return node === null ? undefined : node.key;
-	}
-
-	/**
-	 * Returns &lt;code&gt;true&lt;/code&gt; if and only if the tree contains the input
-	 * key.
-	 *
-	 * @param {any} key - The input key.
-	 * @returns {boolean}
-	 */
-	has(key) {
-		return this._search(key) !== null;
-	}
-
-	/**
-	 * Deletes the input node from the tree.
-	 *
-	 * @param {Node} node - The input node to delete.
-	 */
-	unlink(node) {
-		assert(node instanceof Node);
-		if (node.left !== null) {
-			// Swap node with its predecessor
-			const pred = predecessor(node);
-			// Delete predecessor node
-			// NOTE: this node can have at most one non-leaf (left) child
-			// because of red-black tree invariant.
-			assert(pred.right === null);
-			if (pred === node.left) {
-				swap_left(node);
-			} else {
-				swap_non_adjacent(node, pred);
-			}
-
-			assert(node.right === null);
-			if (node.left === null) {
-				const subtree = delete_no_child(node);
-				if (subtree.parent === null) {
-					this.root = subtree;
-				} else if (pred.parent === null) {
-					assert(node === this.root);
-					this.root = pred;
-				}
-			} else {
-				delete_one_child(node);
-				if (pred.parent === null) {
-					assert(node === this.root);
-					this.root = pred;
-				}
-			}
-		} else if (node.right !== null) {
-			/**
-			 * Swap node with its successor.
-			 *
-			 * NOTE: Since pred is a leaf, there can only by one node in the
-			 * right subtree, succ, which is necessarily red, hence
-			 * node is black.
-			 *
-			 * The configuration:
-			 *
-			 *      (A)                 (B)                  (C)
-			 *
-			 *    p                   p                    p
-			 *    |                   |                    |
-			 *   node (BLACK)        succ (BLACK)        succ (BLACK)
-			 *   / \                 / \                  / \
-			 *  -  succ (RED)  -&gt;   -  node (RED)  -&gt;    -   -
-			 *     / \                 / \
-			 *    -   -               -   -
-			 *
-			 * NOTE: We take a shortcut and go directly from (A) to (C)
-			 */
-			assert(node.left === null);
-			const succ = node.right;
-			assert(succ._color === RED);
-			succ._color = BLACK;
-			if (node === this.root) {
-				assert(node.parent === null);
-				succ.parent = null;
-				this.root = succ;
-			} else {
-				replace_node(node, succ);
-			}
-		} else if (node === this.root) {
-			assert(node.parent === null);
-			assert(node._color === BLACK);
-			assert(node.left === null);
-			assert(node.right === null);
-			this.root = null;
-		} else {
-			assert(node.left === null);
-			assert(node.right === null);
-			const subtree = delete_no_child(node);
-			if (subtree.parent === null) {
-				this.root = subtree;
-			}
-		}
-	}
-
-	/**
-	 * Search for the first node of the tree whose key equals the input key
-	 * (with {@link RedBlackTree#_search}), then delete that node
-	 * (with {@link RedBlackTree#unlink}). If such a node is found and deleted
-	 * then return &lt;code&gt;true&lt;/code&gt;. Return &lt;code&gt;false&lt;/code&gt; otherwise.
-	 *
-	 * @param {any} key - The input key.
-	 * @returns {boolean} - Whether the key existed in the tree before removal.
-	 */
-	remove(key) {
-		const node = this._search(key);
-		if (node === null) return false;
-
-		this.unlink(node);
-		return true;
-	}
-
-	/**
-	 * Returns an in order iterator over the keys of the tree that lie in the
-	 * interval [left, right[.
-	 * @param {any} left - The left bound of the interval.
-	 * @param {any} right - The right bound of the interval.
-	 * @returns {IterableIterator}
-	 */
-	*range(left, right) {
-		if (this.root !== null)
-			yield* rangetraversal(this.compare, this.root, left, right);
-	}
-
-	/**
-	 * Returns an in order iterator over the keys of the tree.
-	 *
-	 * @returns {IterableIterator}
-	 */
-	*items() {
-		if (this.root !== null) yield* inordertraversal(this.root);
-	}
-
-	/**
-	 * Same as {@link RedBlackTree#items}.
-	 */
-	[Symbol.iterator]() {
-		return this.items();
-	}
-
-	/**
-	 * Constructs an empty red-black tree.
-	 *
-	 * @param {Function} compare - The comparison function to use.
-	 * @returns {RedBlackTree}
-	 */
-	static empty(compare) {
-		return new RedBlackTree(compare);
-	}
-
-	/**
-	 * Constructs a red-black tree from an input iterable.
-	 *
-	 * @param {Function} compare - The comparison function to use.
-	 * @param {Iterable} iterable - The input iterable.
-	 * @returns {RedBlackTree}
-	 */
-	static from(compare, iterable) {
-		const tree = new RedBlackTree(compare);
-
-		for (const element of iterable) tree.add(element);
-
-		return tree;
-	}
-}
+export default swap_non_adjacent;
 </code></pre>
 
 </div>

@@ -55,8 +55,13 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#rotate">rotate</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_left">rotate_left</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rotate_right">rotate_right</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#search">search</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-search">search</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#swap">swap</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_color">swap_color</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_left">swap_left</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-swap_non_adjacent">swap_non_adjacent</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#traversal">traversal</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inordertraversal">inordertraversal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-leftOpenRangeTraversal">leftOpenRangeTraversal</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rangetraversal">rangetraversal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rightOpenRangeTraversal">rightOpenRangeTraversal</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#types">types</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/types/RedBlackTree.js~RedBlackTree.html">RedBlackTree</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
 </ul>
@@ -70,7 +75,6 @@ import BLACK from &apos;../color/BLACK.js&apos;;
 import RED from &apos;../color/RED.js&apos;;
 import rotate_left from &apos;../rotate/rotate_left.js&apos;;
 import rotate_right from &apos;../rotate/rotate_right.js&apos;;
-import grandparent from &apos;../family/grandparent.js&apos;;
 import insert_case4 from &apos;./insert_case4.js&apos;;
 
 /**
@@ -84,6 +88,7 @@ import insert_case4 from &apos;./insert_case4.js&apos;;
  * Here we fix the input subtree to pass the preconditions of {@link insert_case4}.
  *
  * @param {Node} n - The input node.
+ * @return {Node} The root of the modified subtree.
  */
 const insert_case3 = (n) =&gt; {
 	assert(n instanceof Node);
@@ -92,24 +97,24 @@ const insert_case3 = (n) =&gt; {
 	assert(n.right === null || n.right._color === BLACK);
 	assert(n.parent !== null);
 	assert(n.parent._color === RED);
-	const g = grandparent(n);
+	const p = n.parent;
+	const g = p.parent;
 
-	/**
-	 * If the path from g to n makes a left-right, change it to a left-left
-	 * with {@link rotate_left}. Then call {@link insert_case4} on the old
-	 * parent of n.
-	 *
-	 *             B                     B
-	 *           /   \                 /   \
-	 *         R       B             R       B
-	 *        / \     / \   --&gt;     / \     / \
-	 *       =  &gt;R   -   -        &gt;R   =   -   -
-	 *          / \               / \
-	 *         =   =             =   =
-	 */
-
-	if (n === n.parent.right &amp;&amp; n.parent === g.left) {
-		rotate_left(n.parent);
+	if (n === p.right &amp;&amp; p === g.left) {
+		/**
+		 * If the path from g to n makes a left-right, change it to a left-left
+		 * with {@link rotate_left}. Then call {@link insert_case4} on the old
+		 * parent of n.
+		 *
+		 *             B                     B
+		 *           /   \                 /   \
+		 *         R       B            &gt;R       B
+		 *        / \     / \   --&gt;     / \     / \
+		 *       =  &gt;R   -   -         R   =   -   -
+		 *          / \               / \
+		 *         =   =             =   =
+		 */
+		rotate_left(p);
 
 		/**
 		 * Rotate_left can be the below because of already having *g =  grandparent(n)
@@ -123,7 +128,10 @@ const insert_case3 = (n) =&gt; {
 		 */
 
 		// n = n.left; /!\ need to fix rotate, so that we can safely reference a node
-	} else if (n === n.parent.left &amp;&amp; n.parent === g.right) {
+		return insert_case4(p);
+	}
+
+	if (n === p.left &amp;&amp; p === g.right) {
 		/**
 		 * If the path from g to n makes a right-left, change it to a right-right
 		 * with {@link rotate_right}. Then call {@link insert_case4} on the old
@@ -131,13 +139,13 @@ const insert_case3 = (n) =&gt; {
 		 *
 		 *             B                     B
 		 *           /   \                 /   \
-		 *         B       R             B       R
+		 *         B       R             B      &gt;R
 		 *        / \     / \   --&gt;     / \     / \
-		 *       -   -  &gt;R   =         -   -   =  &gt;R
+		 *       -   -  &gt;R   =         -   -   =   R
 		 *              / \                       / \
 		 *             =   =                     =   =
 		 */
-		rotate_right(n.parent);
+		rotate_right(p);
 
 		/**
 		 * Rotate_right can be the below to take advantage of already having *g =  grandparent(n)
@@ -150,9 +158,10 @@ const insert_case3 = (n) =&gt; {
 		 */
 
 		// n = n.right ;
+		return insert_case4(p);
 	}
 
-	insert_case4(n);
+	return insert_case4(n);
 };
 
 export default insert_case3;

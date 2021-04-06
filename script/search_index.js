@@ -126,6 +126,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@aureooms/js-red-black-tree/src/traversal/leftopenrangetraversal.js~leftopenrangetraversal",
+    "function/index.html#static-function-leftOpenRangeTraversal",
+    "<span>leftOpenRangeTraversal</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/traversal/leftOpenRangeTraversal.js</span>",
+    "function"
+  ],
+  [
     "@aureooms/js-red-black-tree/src/family/predecessor.js~predecessor",
     "function/index.html#static-function-predecessor",
     "<span>predecessor</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/family/predecessor.js</span>",
@@ -150,6 +156,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "@aureooms/js-red-black-tree/src/traversal/rightopenrangetraversal.js~rightopenrangetraversal",
+    "function/index.html#static-function-rightOpenRangeTraversal",
+    "<span>rightOpenRangeTraversal</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/traversal/rightOpenRangeTraversal.js</span>",
+    "function"
+  ],
+  [
     "@aureooms/js-red-black-tree/src/rotate/rotate_left.js~rotate_left",
     "function/index.html#static-function-rotate_left",
     "<span>rotate_left</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/rotate/rotate_left.js</span>",
@@ -171,6 +183,24 @@ window.esdocSearchIndex = [
     "@aureooms/js-red-black-tree/src/family/sibling.js~sibling",
     "function/index.html#static-function-sibling",
     "<span>sibling</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/family/sibling.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-red-black-tree/src/swap/swap_color.js~swap_color",
+    "function/index.html#static-function-swap_color",
+    "<span>swap_color</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/swap/swap_color.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-red-black-tree/src/swap/swap_left.js~swap_left",
+    "function/index.html#static-function-swap_left",
+    "<span>swap_left</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/swap/swap_left.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-red-black-tree/src/swap/swap_non_adjacent.js~swap_non_adjacent",
+    "function/index.html#static-function-swap_non_adjacent",
+    "<span>swap_non_adjacent</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/swap/swap_non_adjacent.js</span>",
     "function"
   ],
   [
@@ -624,15 +654,45 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/swap/swap_color.js",
+    "file/src/swap/swap_color.js.html",
+    "src/swap/swap_color.js",
+    "file"
+  ],
+  [
+    "src/swap/swap_left.js",
+    "file/src/swap/swap_left.js.html",
+    "src/swap/swap_left.js",
+    "file"
+  ],
+  [
+    "src/swap/swap_non_adjacent.js",
+    "file/src/swap/swap_non_adjacent.js.html",
+    "src/swap/swap_non_adjacent.js",
+    "file"
+  ],
+  [
     "src/traversal/inordertraversal.js",
     "file/src/traversal/inordertraversal.js.html",
     "src/traversal/inordertraversal.js",
     "file"
   ],
   [
+    "src/traversal/leftopenrangetraversal.js",
+    "file/src/traversal/leftOpenRangeTraversal.js.html",
+    "src/traversal/leftOpenRangeTraversal.js",
+    "file"
+  ],
+  [
     "src/traversal/rangetraversal.js",
     "file/src/traversal/rangetraversal.js.html",
     "src/traversal/rangetraversal.js",
+    "file"
+  ],
+  [
+    "src/traversal/rightopenrangetraversal.js",
+    "file/src/traversal/rightOpenRangeTraversal.js.html",
+    "src/traversal/rightOpenRangeTraversal.js",
     "file"
   ],
   [
@@ -651,12 +711,6 @@ window.esdocSearchIndex = [
     "src/types/redblacktree.js~redblacktree#[symbol.iterator]",
     "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-[Symbol.iterator]",
     "src/types/RedBlackTree.js~RedBlackTree#[Symbol.iterator]",
-    "method"
-  ],
-  [
-    "src/types/redblacktree.js~redblacktree#_delete",
-    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-_delete",
-    "src/types/RedBlackTree.js~RedBlackTree#_delete",
     "method"
   ],
   [
@@ -724,6 +778,12 @@ window.esdocSearchIndex = [
     "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-member-root",
     "src/types/RedBlackTree.js~RedBlackTree#root",
     "member"
+  ],
+  [
+    "src/types/redblacktree.js~redblacktree#unlink",
+    "class/src/types/RedBlackTree.js~RedBlackTree.html#instance-method-unlink",
+    "src/types/RedBlackTree.js~RedBlackTree#unlink",
+    "method"
   ],
   [
     "src/types/redblacktree.js~redblacktree.empty",
