@@ -1,4 +1,4 @@
-:christmas_tree: [@aureooms/js-red-black-tree](https://aureooms.github.io/js-red-black-tree)
+:christmas_tree: [@aureooms/js-red-black-tree](https://make-github-pseudonymous-again.github.io/js-red-black-tree)
 ==
 
 <p align="center">
@@ -13,7 +13,7 @@ let tree = from( increasing , range( 100000 ) ) ;
 ```
 
 Red-black tree library for JavaScript.
-See [documentation](https://aureooms.github.io/js-red-black-tree/index.html).
+See [documentation](https://make-github-pseudonymous-again.github.io/js-red-black-tree/index.html).
 Parent is [@aureooms/js-bst](https://github.com/aureooms/js-bst).
 
 [![License](https://img.shields.io/github/license/aureooms/js-red-black-tree.svg)](https://raw.githubusercontent.com/aureooms/js-red-black-tree/main/LICENSE)
@@ -28,5 +28,5 @@ Parent is [@aureooms/js-bst](https://github.com/aureooms/js-bst).
 [![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-red-black-tree.svg)](https://codeclimate.com/github/aureooms/js-red-black-tree/trends/churn)
 [![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-red-black-tree/main.svg)](https://codecov.io/gh/aureooms/js-red-black-tree)
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-red-black-tree.svg)](https://codeclimate.com/github/aureooms/js-red-black-tree/trends/technical_debt)
-[![Documentation](https://aureooms.github.io/js-red-black-tree/badge.svg)](https://aureooms.github.io/js-red-black-tree/source.html)
+[![Documentation](https://make-github-pseudonymous-again.github.io/js-red-black-tree/badge.svg)](https://make-github-pseudonymous-again.github.io/js-red-black-tree/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-red-black-tree)](https://bundlephobia.com/result?p=@aureooms/js-red-black-tree)
