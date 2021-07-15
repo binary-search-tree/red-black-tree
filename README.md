@@ -2,7 +2,7 @@
 ==
 
 <p align="center">
-<img src="https://cdn.rawgit.com/binary-search-tree/red-black-tree/main/media/sketch.svg" width="480">
+<img src="https://raw.github.com/binary-search-tree/red-black-tree/main/media/sketch.svg" width="480">
 </p>
 
 ```js
