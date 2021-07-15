@@ -14,8 +14,9 @@ const {shuffle} = entropy(seed);
 
 import {RedBlackTree, _debug} from '../../../src/index.js';
 
-// eslint-disable-next-line unicorn/import-style
-import {bgRed as red, bgBlack as black} from 'chalk';
+import chalk from 'chalk';
+
+const {bgRed: red, bgBlack: black} = chalk;
 
 const debug = _debug({red, black});
 
