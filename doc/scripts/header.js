@@ -17,8 +17,7 @@ domReady(() => {
 	header.insertBefore(projectname, header.firstChild);
 
 	const testlink = document.querySelector('header > a[data-ice="testLink"]');
-	testlink.href =
-		'https://coveralls.io/github/binary-search-tree/red-black-tree';
+	testlink.href = 'https://app.codecov.io/gh/binary-search-tree/red-black-tree';
 	testlink.target = '_BLANK';
 
 	const searchBox = document.querySelector('.search-box');
