@@ -1,212 +1,206 @@
 window.esdocSearchIndex = [
   [
-    "@aureooms/js-red-black-tree/src/color/black.js~black",
+    "@binary-search-tree/red-black-tree/src/color/black.js~black",
     "variable/index.html#static-variable-BLACK",
-    "<span>BLACK</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/color/BLACK.js</span>",
+    "<span>BLACK</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/color/BLACK.js</span>",
     "variable"
   ],
   [
-    "@aureooms/js-red-black-tree/src/types/node.js~node",
+    "@binary-search-tree/red-black-tree/src/types/node.js~node",
     "function/index.html#static-function-Node",
-    "<span>Node</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/types/Node.js</span>",
+    "<span>Node</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/types/Node.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/color/red.js~red",
+    "@binary-search-tree/red-black-tree/src/color/red.js~red",
     "variable/index.html#static-variable-RED",
-    "<span>RED</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/color/RED.js</span>",
+    "<span>RED</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/color/RED.js</span>",
     "variable"
   ],
   [
-    "@aureooms/js-red-black-tree/src/types/redblacktree.js~redblacktree",
+    "@binary-search-tree/red-black-tree/src/types/redblacktree.js~redblacktree",
     "class/src/types/RedBlackTree.js~RedBlackTree.html",
-    "<span>RedBlackTree</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/types/RedBlackTree.js</span>",
+    "<span>RedBlackTree</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/types/RedBlackTree.js</span>",
     "class"
   ],
   [
-    "@aureooms/js-red-black-tree/src/debug/_debug.js~_debug",
+    "@binary-search-tree/red-black-tree/src/debug/_debug.js~_debug",
     "function/index.html#static-function-_debug",
-    "<span>_debug</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/debug/_debug.js</span>",
+    "<span>_debug</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/debug/_debug.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/deletion/delete_case0.js~delete_case0",
+    "@binary-search-tree/red-black-tree/src/deletion/delete_case0.js~delete_case0",
     "function/index.html#static-function-delete_case0",
-    "<span>delete_case0</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case0.js</span>",
+    "<span>delete_case0</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/deletion/delete_case0.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/deletion/delete_case1.js~delete_case1",
+    "@binary-search-tree/red-black-tree/src/deletion/delete_case1.js~delete_case1",
     "function/index.html#static-function-delete_case1",
-    "<span>delete_case1</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case1.js</span>",
+    "<span>delete_case1</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/deletion/delete_case1.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/deletion/delete_case2.js~delete_case2",
+    "@binary-search-tree/red-black-tree/src/deletion/delete_case2.js~delete_case2",
     "function/index.html#static-function-delete_case2",
-    "<span>delete_case2</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case2.js</span>",
+    "<span>delete_case2</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/deletion/delete_case2.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/deletion/delete_case5.js~delete_case5",
+    "@binary-search-tree/red-black-tree/src/deletion/delete_case5.js~delete_case5",
     "function/index.html#static-function-delete_case5",
-    "<span>delete_case5</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_case5.js</span>",
+    "<span>delete_case5</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/deletion/delete_case5.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/deletion/delete_no_child.js~delete_no_child",
+    "@binary-search-tree/red-black-tree/src/deletion/delete_no_child.js~delete_no_child",
     "function/index.html#static-function-delete_no_child",
-    "<span>delete_no_child</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_no_child.js</span>",
+    "<span>delete_no_child</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/deletion/delete_no_child.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/deletion/delete_one_child.js~delete_one_child",
+    "@binary-search-tree/red-black-tree/src/deletion/delete_one_child.js~delete_one_child",
     "function/index.html#static-function-delete_one_child",
-    "<span>delete_one_child</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/delete_one_child.js</span>",
+    "<span>delete_one_child</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/deletion/delete_one_child.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/api/empty.js~empty",
+    "@binary-search-tree/red-black-tree/src/api/empty.js~empty",
     "variable/index.html#static-variable-empty",
-    "<span>empty</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/api/empty.js</span>",
+    "<span>empty</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/api/empty.js</span>",
     "variable"
   ],
   [
-    "@aureooms/js-red-black-tree/src/api/from.js~from",
-    "variable/index.html#static-variable-from",
-    "<span>from</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/api/from.js</span>",
-    "variable"
-  ],
-  [
-    "@aureooms/js-red-black-tree/src/family/grandparent.js~grandparent",
+    "@binary-search-tree/red-black-tree/src/family/grandparent.js~grandparent",
     "function/index.html#static-function-grandparent",
-    "<span>grandparent</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/family/grandparent.js</span>",
+    "<span>grandparent</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/family/grandparent.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/traversal/inordertraversal.js~inordertraversal",
+    "@binary-search-tree/red-black-tree/src/traversal/inordertraversal.js~inordertraversal",
     "function/index.html#static-function-inordertraversal",
-    "<span>inordertraversal</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/traversal/inordertraversal.js</span>",
+    "<span>inordertraversal</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/traversal/inordertraversal.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/insertion/insert.js~insert",
+    "@binary-search-tree/red-black-tree/src/insertion/insert.js~insert",
     "function/index.html#static-function-insert",
-    "<span>insert</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert.js</span>",
+    "<span>insert</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/insertion/insert.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/insertion/insert_case0.js~insert_case0",
+    "@binary-search-tree/red-black-tree/src/insertion/insert_case0.js~insert_case0",
     "function/index.html#static-function-insert_case0",
-    "<span>insert_case0</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case0.js</span>",
+    "<span>insert_case0</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/insertion/insert_case0.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/insertion/insert_case1.js~insert_case1",
+    "@binary-search-tree/red-black-tree/src/insertion/insert_case1.js~insert_case1",
     "function/index.html#static-function-insert_case1",
-    "<span>insert_case1</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case1.js</span>",
+    "<span>insert_case1</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/insertion/insert_case1.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/insertion/insert_case2.js~insert_case2",
+    "@binary-search-tree/red-black-tree/src/insertion/insert_case2.js~insert_case2",
     "function/index.html#static-function-insert_case2",
-    "<span>insert_case2</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case2.js</span>",
+    "<span>insert_case2</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/insertion/insert_case2.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/insertion/insert_case3.js~insert_case3",
+    "@binary-search-tree/red-black-tree/src/insertion/insert_case3.js~insert_case3",
     "function/index.html#static-function-insert_case3",
-    "<span>insert_case3</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case3.js</span>",
+    "<span>insert_case3</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/insertion/insert_case3.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/insertion/insert_case4.js~insert_case4",
+    "@binary-search-tree/red-black-tree/src/insertion/insert_case4.js~insert_case4",
     "function/index.html#static-function-insert_case4",
-    "<span>insert_case4</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/insertion/insert_case4.js</span>",
+    "<span>insert_case4</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/insertion/insert_case4.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/traversal/leftopenrangetraversal.js~leftopenrangetraversal",
+    "@binary-search-tree/red-black-tree/src/traversal/leftopenrangetraversal.js~leftopenrangetraversal",
     "function/index.html#static-function-leftOpenRangeTraversal",
-    "<span>leftOpenRangeTraversal</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/traversal/leftOpenRangeTraversal.js</span>",
+    "<span>leftOpenRangeTraversal</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/traversal/leftOpenRangeTraversal.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/family/predecessor.js~predecessor",
+    "@binary-search-tree/red-black-tree/src/family/predecessor.js~predecessor",
     "function/index.html#static-function-predecessor",
-    "<span>predecessor</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/family/predecessor.js</span>",
+    "<span>predecessor</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/family/predecessor.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/deletion/prune.js~prune",
+    "@binary-search-tree/red-black-tree/src/deletion/prune.js~prune",
     "function/index.html#static-function-prune",
-    "<span>prune</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/prune.js</span>",
+    "<span>prune</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/deletion/prune.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/traversal/rangetraversal.js~rangetraversal",
+    "@binary-search-tree/red-black-tree/src/traversal/rangetraversal.js~rangetraversal",
     "function/index.html#static-function-rangetraversal",
-    "<span>rangetraversal</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/traversal/rangetraversal.js</span>",
+    "<span>rangetraversal</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/traversal/rangetraversal.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/deletion/replace_node.js~replace_node",
+    "@binary-search-tree/red-black-tree/src/deletion/replace_node.js~replace_node",
     "function/index.html#static-function-replace_node",
-    "<span>replace_node</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/deletion/replace_node.js</span>",
+    "<span>replace_node</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/deletion/replace_node.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/traversal/rightopenrangetraversal.js~rightopenrangetraversal",
+    "@binary-search-tree/red-black-tree/src/traversal/rightopenrangetraversal.js~rightopenrangetraversal",
     "function/index.html#static-function-rightOpenRangeTraversal",
-    "<span>rightOpenRangeTraversal</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/traversal/rightOpenRangeTraversal.js</span>",
+    "<span>rightOpenRangeTraversal</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/traversal/rightOpenRangeTraversal.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/rotate/rotate_left.js~rotate_left",
+    "@binary-search-tree/red-black-tree/src/rotate/rotate_left.js~rotate_left",
     "function/index.html#static-function-rotate_left",
-    "<span>rotate_left</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/rotate/rotate_left.js</span>",
+    "<span>rotate_left</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/rotate/rotate_left.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/rotate/rotate_right.js~rotate_right",
+    "@binary-search-tree/red-black-tree/src/rotate/rotate_right.js~rotate_right",
     "function/index.html#static-function-rotate_right",
-    "<span>rotate_right</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/rotate/rotate_right.js</span>",
+    "<span>rotate_right</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/rotate/rotate_right.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/search/search.js~search",
+    "@binary-search-tree/red-black-tree/src/search/search.js~search",
     "function/index.html#static-function-search",
-    "<span>search</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/search/search.js</span>",
+    "<span>search</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/search/search.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/family/sibling.js~sibling",
+    "@binary-search-tree/red-black-tree/src/family/sibling.js~sibling",
     "function/index.html#static-function-sibling",
-    "<span>sibling</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/family/sibling.js</span>",
+    "<span>sibling</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/family/sibling.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/swap/swap_color.js~swap_color",
+    "@binary-search-tree/red-black-tree/src/swap/swap_color.js~swap_color",
     "function/index.html#static-function-swap_color",
-    "<span>swap_color</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/swap/swap_color.js</span>",
+    "<span>swap_color</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/swap/swap_color.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/swap/swap_left.js~swap_left",
+    "@binary-search-tree/red-black-tree/src/swap/swap_left.js~swap_left",
     "function/index.html#static-function-swap_left",
-    "<span>swap_left</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/swap/swap_left.js</span>",
+    "<span>swap_left</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/swap/swap_left.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/swap/swap_non_adjacent.js~swap_non_adjacent",
+    "@binary-search-tree/red-black-tree/src/swap/swap_non_adjacent.js~swap_non_adjacent",
     "function/index.html#static-function-swap_non_adjacent",
-    "<span>swap_non_adjacent</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/swap/swap_non_adjacent.js</span>",
+    "<span>swap_non_adjacent</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/swap/swap_non_adjacent.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-red-black-tree/src/family/uncle.js~uncle",
+    "@binary-search-tree/red-black-tree/src/family/uncle.js~uncle",
     "function/index.html#static-function-uncle",
-    "<span>uncle</span> <span class=\"search-result-import-path\">@aureooms/js-red-black-tree/src/family/uncle.js</span>",
+    "<span>uncle</span> <span class=\"search-result-import-path\">@binary-search-tree/red-black-tree/src/family/uncle.js</span>",
     "function"
   ],
   [
