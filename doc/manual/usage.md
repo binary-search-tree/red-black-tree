@@ -2,14 +2,14 @@
 The code needs a ES2015+ polyfill to work, for example
 [regenerator-runtime/runtime](https://babeljs.io/docs/usage/polyfill).
 ```js
-require( 'regenerator-runtime/runtime' ) ;
+await import( 'regenerator-runtime/runtime.js' ) ;
 // or
 import 'regenerator-runtime/runtime.js' ;
 ```
 
 Then
 ```js
-const { empty , from } = require( '@binary-search-tree/red-black-tree' ) ;
+const { empty , from } = await import( '@binary-search-tree/red-black-tree' ) ;
 // or
 import { empty , from } from '@binary-search-tree/red-black-tree' ;
 ```
