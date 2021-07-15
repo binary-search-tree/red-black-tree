@@ -2,7 +2,9 @@ import test from 'ava';
 
 import {increasing, entropy} from '../../fixtures.js';
 
-import {list, range, zip} from '@aureooms/js-itertools';
+import {list} from '@iterable-iterator/list';
+import {range} from '@iterable-iterator/range';
+import {zip} from '@iterable-iterator/zip';
 
 import {empty} from '../../../src/index.js';
 

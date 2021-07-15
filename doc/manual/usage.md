@@ -9,7 +9,7 @@ import 'regenerator-runtime/runtime.js' ;
 
 Then
 ```js
-const { empty , from } = require( '@aureooms/js-red-black-tree' ) ;
+const { empty , from } = require( '@binary-search-tree/red-black-tree' ) ;
 // or
-import { empty , from } from '@aureooms/js-red-black-tree' ;
+import { empty , from } from '@binary-search-tree/red-black-tree' ;
 ```

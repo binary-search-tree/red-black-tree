@@ -2,7 +2,12 @@ import test from 'ava';
 
 import {increasing, entropy} from '../../fixtures.js';
 
-import {list, range, sorted, head, iter, exhaust} from '@aureooms/js-itertools';
+import {list} from '@iterable-iterator/list';
+import {range} from '@iterable-iterator/range';
+import {sorted} from '@iterable-iterator/sorted';
+import {head} from '@iterable-iterator/slice';
+import {iter} from '@iterable-iterator/iter';
+import {exhaust} from '@iterable-iterator/consume';
 
 const seed = [0, 17];
 const {shuffle} = entropy(seed);

@@ -5,10 +5,10 @@ or [npm](https://github.com/npm/npm).
 
 ### jspm
 ```terminal
-jspm install npm:@aureooms/js-red-black-tree
+jspm install npm:@binary-search-tree/red-black-tree
 ```
 
 ### npm
 ```terminal
-npm install @aureooms/js-red-black-tree --save
+npm install @binary-search-tree/red-black-tree --save
 ```

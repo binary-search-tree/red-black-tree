@@ -10,7 +10,7 @@ const domReady = function (callback) {
 domReady(() => {
 	const projectname = document.createElement('a');
 	projectname.classList.add('project-name');
-	projectname.text = 'aureooms/js-red-black-tree';
+	projectname.text = 'binary-search-tree/red-black-tree';
 	projectname.href = './index.html';
 
 	const header = document.querySelector('header');
@@ -18,7 +18,7 @@ domReady(() => {
 
 	const testlink = document.querySelector('header > a[data-ice="testLink"]');
 	testlink.href =
-		'https://coveralls.io/github/make-github-pseudonymous-again/js-red-black-tree';
+		'https://coveralls.io/github/binary-search-tree/red-black-tree';
 	testlink.target = '_BLANK';
 
 	const searchBox = document.querySelector('.search-box');

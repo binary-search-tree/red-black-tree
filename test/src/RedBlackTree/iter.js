@@ -2,7 +2,8 @@ import test from 'ava';
 
 import {increasing, decreasing} from '../../fixtures.js';
 
-import {list, range} from '@aureooms/js-itertools';
+import {list} from '@iterable-iterator/list';
+import {range} from '@iterable-iterator/range';
 
 import {RedBlackTree} from '../../../src/index.js';
 

@@ -1,16 +1,16 @@
 {
-  "name": "@aureooms/js-red-black-tree",
+  "name": "@binary-search-tree/red-black-tree",
   "description": "Red-black tree library for JavaScript",
   "version": "9.0.0",
   "license": "AGPL-3.0",
-  "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
-  "homepage": "https://make-github-pseudonymous-again.github.io/js-red-black-tree",
+  "author": "make-github-pseudonymous-again",
+  "homepage": "https://binary-search-tree.github.io/red-black-tree",
   "repository": {
     "type": "git",
-    "url": "https://github.com/make-github-pseudonymous-again/js-red-black-tree"
+    "url": "https://github.com/binary-search-tree/red-black-tree"
   },
   "bugs": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-red-black-tree/issues"
+    "url": "https://github.com/binary-search-tree/red-black-tree/issues"
   },
   "keywords": [
     "balanced binary search tree",
@@ -59,15 +59,20 @@
     "test": "ava"
   },
   "devDependencies": {
-    "@aureooms/js-compare": "2.0.1",
-    "@aureooms/js-itertools": "5.1.1",
-    "@aureooms/js-pseudo-random": "2.0.0",
-    "@aureooms/js-random": "3.4.0",
     "@babel/core": "7.14.6",
     "@babel/preset-env": "7.14.7",
     "@babel/register": "7.14.5",
     "@commitlint/cli": "12.1.4",
+    "@entropy-source/pseudo-random": "^4.0.0",
+    "@iterable-iterator/consume": "^1.0.1",
+    "@iterable-iterator/list": "^1.0.1",
+    "@iterable-iterator/range": "^2.0.1",
+    "@iterable-iterator/slice": "^1.0.1",
+    "@iterable-iterator/sorted": "^1.0.0",
+    "@iterable-iterator/zip": "^1.0.1",
     "@js-library/commitlint-config": "0.0.4",
+    "@randomized/random": "^4.0.0",
+    "@total-order/primitive": "^1.0.1",
     "ava": "3.15.0",
     "babel-plugin-transform-remove-console": "6.9.4",
     "babel-plugin-unassert": "3.1.0",

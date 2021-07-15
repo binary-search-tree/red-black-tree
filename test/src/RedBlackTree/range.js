@@ -2,9 +2,10 @@ import test from 'ava';
 
 import {increasing, decreasing} from '../../fixtures.js';
 
-import {list, range} from '@aureooms/js-itertools';
+import {list} from '@iterable-iterator/list';
+import {range} from '@iterable-iterator/range';
 
-import {shuffle} from '@aureooms/js-random';
+import {shuffle} from '@randomized/random';
 
 import {RedBlackTree} from '../../../src/index.js';
 

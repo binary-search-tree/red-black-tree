@@ -1,12 +1,12 @@
-import {increasing as _inc, decreasing as _dec} from '@aureooms/js-compare';
+import {increasing as _inc, decreasing as _dec} from '@total-order/primitive';
 
 export const increasing = (a, b) => _inc(a, b);
 increasing.step = 1;
 export const decreasing = (a, b) => _dec(a, b);
 decreasing.step = -1;
 
-import {_fisheryates, _shuffle, _randint} from '@aureooms/js-random';
-import {splitmix64, nextFloat64} from '@aureooms/js-pseudo-random';
+import {_fisheryates, _shuffle, _randint} from '@randomized/random';
+import {splitmix64, nextFloat64} from '@entropy-source/pseudo-random';
 
 export const entropy = (seed) => {
 	const prng = splitmix64(seed);

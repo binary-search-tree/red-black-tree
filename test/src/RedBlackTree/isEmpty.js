@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {range} from '@aureooms/js-itertools';
+import {range} from '@iterable-iterator/range';
 
 import {increasing, decreasing} from '../../fixtures.js';
 

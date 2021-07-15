@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {list} from '@aureooms/js-itertools';
+import {list} from '@iterable-iterator/list';
 import {increasing} from '../../fixtures.js';
 import {RedBlackTree} from '../../../src/index.js';
 
