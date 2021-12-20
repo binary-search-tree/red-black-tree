@@ -1,10 +1,9 @@
 import test from 'ava';
 
-import {increasing, entropy} from '../../fixtures.js';
-
 import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';
 import {zip} from '@iterable-iterator/zip';
+import {increasing, entropy} from '../../fixtures.js';
 
 import {empty} from '../../../src/index.js';
 
@@ -61,4 +60,4 @@ test(macro, randomItems(10));
 test(macro, randomItems(20));
 test(macro, randomItems(100));
 test(macro, randomItems(1000));
-test(macro, randomItems(10000));
+test(macro, randomItems(10_000));

@@ -1,5 +1,4 @@
 import assert from 'assert';
-import Node from './Node.js';
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import predecessor from '../family/predecessor.js';
@@ -13,6 +12,7 @@ import rangetraversal from '../traversal/rangetraversal.js';
 import replace_node from '../deletion/replace_node.js';
 import swap_non_adjacent from '../swap/swap_non_adjacent.js';
 import swap_left from '../swap/swap_left.js';
+import Node from './Node.js';
 
 /**
  * A RedBlackTree with key-only nodes.

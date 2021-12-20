@@ -48,5 +48,5 @@ for (const compare of [increasing, decreasing]) {
 	test('range(0)', macro, compare, range(0), true);
 	test('range(1)', macro, compare, range(1), false);
 	test('range(10)', macro, compare, range(10), false);
-	test('range(10000)', macro, compare, range(10000), false);
+	test('range(10000)', macro, compare, range(10_000), false);
 }

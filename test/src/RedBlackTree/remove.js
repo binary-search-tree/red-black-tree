@@ -1,7 +1,5 @@
 import test from 'ava';
 
-import {increasing, entropy} from '../../fixtures.js';
-
 import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';
 import {sorted} from '@iterable-iterator/sorted';
@@ -9,12 +7,13 @@ import {head} from '@iterable-iterator/slice';
 import {iter} from '@iterable-iterator/iter';
 import {exhaust} from '@iterable-iterator/consume';
 
-const seed = [0, 17];
-const {shuffle} = entropy(seed);
-
+import chalk from 'chalk';
 import {RedBlackTree, _debug} from '../../../src/index.js';
 
-import chalk from 'chalk';
+import {increasing, entropy} from '../../fixtures.js';
+
+const seed = [0, 17];
+const {shuffle} = entropy(seed);
 
 const {bgRed: red, bgBlack: black} = chalk;
 
@@ -30,7 +29,7 @@ const macro = (t, reference) => {
 		'tree contains n items',
 	);
 
-	const m = (n / 2) | 0;
+	const m = Math.floor(n / 2);
 	for (const i of range(m)) {
 		const x = reference[i];
 		t.true(tree.remove(x));
@@ -79,7 +78,7 @@ macro.title = (title, reference) =>
 			? `${reference.length} elements`
 			: JSON.stringify(reference));
 
-const n = 10000;
+const n = 10_000;
 const huge_list = list(range(n));
 shuffle(huge_list, 0, n);
 test(macro, huge_list);

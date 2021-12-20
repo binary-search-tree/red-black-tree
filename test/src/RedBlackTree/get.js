@@ -1,8 +1,7 @@
 import test from 'ava';
 
-import {increasing, decreasing} from '../../fixtures.js';
-
 import {range} from '@iterable-iterator/range';
+import {increasing, decreasing} from '../../fixtures.js';
 
 import {RedBlackTree} from '../../../src/index.js';
 
@@ -12,7 +11,7 @@ for (const compare of [increasing, decreasing]) {
 
 		t.true(tree.get(0) === undefined);
 
-		const n = 10000;
+		const n = 10_000;
 		const reference = [];
 
 		// eslint-disable-next-line no-unused-vars

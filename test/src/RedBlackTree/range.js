@@ -1,17 +1,16 @@
 import test from 'ava';
 
-import {increasing, decreasing} from '../../fixtures.js';
-
 import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';
 
 import {shuffle} from '@randomized/random';
+import {increasing, decreasing} from '../../fixtures.js';
 
 import {RedBlackTree} from '../../../src/index.js';
 
 for (const compare of [increasing, decreasing]) {
 	test(`RedBlackTree::range [${compare.name}]`, (t) => {
-		const n = 10000;
+		const n = 10_000;
 		const reference = range(n);
 		shuffle(reference, 0, n);
 
