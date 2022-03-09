@@ -4,7 +4,7 @@ import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';
 import {increasing, decreasing} from '../../fixtures.js';
 
-import {RedBlackTree} from '../../../src/index.js';
+import {RedBlackTree} from '#module';
 
 for (const compare of [increasing, decreasing]) {
 	test(`RedBlackTree::Symbol.iterator [${compare.name}]`, (t) => {

@@ -3,7 +3,7 @@ import test from 'ava';
 import {range} from '@iterable-iterator/range';
 import {increasing, decreasing} from '../../fixtures.js';
 
-import {RedBlackTree} from '../../../src/index.js';
+import {RedBlackTree} from '#module';
 
 for (const compare of [increasing, decreasing]) {
 	test(`RedBlackTree::get [${compare.name}]`, (t) => {

@@ -6,7 +6,7 @@ import {range} from '@iterable-iterator/range';
 import {shuffle} from '@randomized/random';
 import {increasing, decreasing} from '../../fixtures.js';
 
-import {RedBlackTree} from '../../../src/index.js';
+import {RedBlackTree} from '#module';
 
 for (const compare of [increasing, decreasing]) {
 	test(`RedBlackTree::range [${compare.name}]`, (t) => {

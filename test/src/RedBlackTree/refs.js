@@ -5,7 +5,7 @@ import {range} from '@iterable-iterator/range';
 import {zip} from '@iterable-iterator/zip';
 import {increasing, entropy} from '../../fixtures.js';
 
-import {empty} from '../../../src/index.js';
+import {empty} from '#module';
 
 const seed = [0, 17];
 const {shuffle} = entropy(seed);

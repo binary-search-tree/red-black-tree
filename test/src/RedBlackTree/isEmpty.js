@@ -4,7 +4,7 @@ import {range} from '@iterable-iterator/range';
 
 import {increasing, decreasing} from '../../fixtures.js';
 
-import {empty, from, RedBlackTree} from '../../../src/index.js';
+import {empty, from, RedBlackTree} from '#module';
 
 for (const compare of [increasing, decreasing]) {
 	test(`empty(${compare.name})`, (t) => {

@@ -18,7 +18,7 @@ Parent is [js-bst](https://github.com/make-github-pseudonymous-again/js-bst).
 
 [![License](https://img.shields.io/github/license/binary-search-tree/red-black-tree.svg)](https://raw.githubusercontent.com/binary-search-tree/red-black-tree/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@binary-search-tree/red-black-tree.svg)](https://www.npmjs.org/package/@binary-search-tree/red-black-tree)
-[![Tests](https://img.shields.io/github/workflow/status/binary-search-tree/red-black-tree/ci:test?event=push&label=tests)](https://github.com/binary-search-tree/red-black-tree/actions/workflows/ci:test.yml?query=branch:main)
+[![Tests](https://img.shields.io/github/workflow/status/binary-search-tree/red-black-tree/ci?event=push&label=tests)](https://github.com/binary-search-tree/red-black-tree/actions/workflows/ci.yml?query=branch:main)
 [![Dependencies](https://img.shields.io/david/binary-search-tree/red-black-tree.svg)](https://david-dm.org/binary-search-tree/red-black-tree)
 [![Dev dependencies](https://img.shields.io/david/dev/binary-search-tree/red-black-tree.svg)](https://david-dm.org/binary-search-tree/red-black-tree?type=dev)
 [![GitHub issues](https://img.shields.io/github/issues/binary-search-tree/red-black-tree.svg)](https://github.com/binary-search-tree/red-black-tree/issues)
