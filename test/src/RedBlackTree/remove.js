@@ -8,9 +8,8 @@ import {iter} from '@iterable-iterator/iter';
 import {exhaust} from '@iterable-iterator/consume';
 
 import chalk from 'chalk';
-import {RedBlackTree, _debug} from '#module';
-
 import {increasing, entropy} from '../../fixtures.js';
+import {RedBlackTree, _debug} from '#module';
 
 const seed = [0, 17];
 const {shuffle} = entropy(seed);
