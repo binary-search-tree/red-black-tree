@@ -1,6 +1,8 @@
 import assert from 'assert';
-import Node from '../types/Node.js';
+
 import replace_node from '../deletion/replace_node.js';
+import Node from '../types/Node.js';
+
 import swap_color from './swap_color.js';
 
 /**

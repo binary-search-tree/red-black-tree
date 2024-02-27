@@ -1,6 +1,7 @@
 import assert from 'assert';
-import Node from '../types/Node.js';
+
 import BLACK from '../color/BLACK.js';
+import Node from '../types/Node.js';
 
 /**
  * Builds a debug function from color handlers.

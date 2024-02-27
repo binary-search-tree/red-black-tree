@@ -1,6 +1,7 @@
 import test from 'ava';
 
 import {increasing} from '../../fixtures.js';
+
 import {empty} from '#module';
 
 test('root + succ', (t) => {

@@ -1,7 +1,6 @@
-import {increasing as _inc, decreasing as _dec} from '@total-order/primitive';
-
-import {_fisheryates, _shuffle, _randint} from '@randomized/random';
 import {splitmix64, nextFloat64} from '@entropy-source/pseudo-random';
+import {_fisheryates, _shuffle, _randint} from '@randomized/random';
+import {increasing as _inc, decreasing as _dec} from '@total-order/primitive';
 
 export const increasing = (a, b) => _inc(a, b);
 increasing.step = 1;

@@ -1,10 +1,10 @@
 import assert from 'assert';
+
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import Node from '../types/Node.js';
 
 import delete_case1 from './delete_case1.js';
-
 import prune from './prune.js';
 
 /**

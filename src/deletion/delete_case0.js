@@ -1,6 +1,8 @@
 import assert from 'assert';
+
 import BLACK from '../color/BLACK.js';
 import Node from '../types/Node.js';
+
 import delete_case1 from './delete_case1.js';
 
 /**

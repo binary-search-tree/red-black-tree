@@ -1,9 +1,11 @@
 import assert from 'assert';
-import Node from '../types/Node.js';
+
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
-import uncle from '../family/uncle.js';
 import grandparent from '../family/grandparent.js';
+import uncle from '../family/uncle.js';
+import Node from '../types/Node.js';
+
 import insert_case0 from './insert_case0.js';
 import insert_case3 from './insert_case3.js';
 

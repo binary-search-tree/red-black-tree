@@ -1,10 +1,11 @@
 import assert from 'assert';
+
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
-import Node from '../types/Node.js';
+import sibling from '../family/sibling.js';
 import rotate_left from '../rotate/rotate_left.js';
 import rotate_right from '../rotate/rotate_right.js';
-import sibling from '../family/sibling.js';
+import Node from '../types/Node.js';
 
 import delete_case2 from './delete_case2.js';
 import delete_case3 from './delete_case3.js';

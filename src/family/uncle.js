@@ -1,5 +1,7 @@
 import assert from 'assert';
+
 import Node from '../types/Node.js';
+
 import grandparent from './grandparent.js';
 
 /**

@@ -1,7 +1,9 @@
 import test from 'ava';
 
 import {list} from '@iterable-iterator/list';
+
 import {increasing} from '../../fixtures.js';
+
 import {RedBlackTree} from '#module';
 
 test('Edge case of small list', (t) => {

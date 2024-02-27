@@ -1,7 +1,9 @@
 import assert from 'assert';
-import Node from '../types/Node.js';
+
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
+import Node from '../types/Node.js';
+
 import insert_case1 from './insert_case1.js';
 
 /**

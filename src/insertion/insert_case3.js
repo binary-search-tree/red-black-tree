@@ -1,9 +1,11 @@
 import assert from 'assert';
-import Node from '../types/Node.js';
+
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
 import rotate_left from '../rotate/rotate_left.js';
 import rotate_right from '../rotate/rotate_right.js';
+import Node from '../types/Node.js';
+
 import insert_case4 from './insert_case4.js';
 
 /**

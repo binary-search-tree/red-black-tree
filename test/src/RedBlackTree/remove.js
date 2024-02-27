@@ -1,14 +1,15 @@
 import test from 'ava';
 
+import {exhaust} from '@iterable-iterator/consume';
+import {iter} from '@iterable-iterator/iter';
 import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';
-import {sorted} from '@iterable-iterator/sorted';
 import {head} from '@iterable-iterator/slice';
-import {iter} from '@iterable-iterator/iter';
-import {exhaust} from '@iterable-iterator/consume';
-
+import {sorted} from '@iterable-iterator/sorted';
 import chalk from 'chalk';
+
 import {increasing, entropy} from '../../fixtures.js';
+
 import {RedBlackTree, _debug} from '#module';
 
 const seed = [0, 17];

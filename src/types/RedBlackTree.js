@@ -1,17 +1,19 @@
 import assert from 'assert';
+
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
+import delete_no_child from '../deletion/delete_no_child.js';
+import delete_one_child from '../deletion/delete_one_child.js';
+import replace_node from '../deletion/replace_node.js';
 import predecessor from '../family/predecessor.js';
 import insert from '../insertion/insert.js';
 import insert_case2 from '../insertion/insert_case2.js';
-import delete_one_child from '../deletion/delete_one_child.js';
-import delete_no_child from '../deletion/delete_no_child.js';
 import search from '../search/search.js';
+import swap_left from '../swap/swap_left.js';
+import swap_non_adjacent from '../swap/swap_non_adjacent.js';
 import inordertraversal from '../traversal/inordertraversal.js';
 import rangetraversal from '../traversal/rangetraversal.js';
-import replace_node from '../deletion/replace_node.js';
-import swap_non_adjacent from '../swap/swap_non_adjacent.js';
-import swap_left from '../swap/swap_left.js';
+
 import Node from './Node.js';
 
 /**

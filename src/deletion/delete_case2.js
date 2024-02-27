@@ -1,8 +1,9 @@
 import assert from 'assert';
+
 import BLACK from '../color/BLACK.js';
 import RED from '../color/RED.js';
-import Node from '../types/Node.js';
 import sibling from '../family/sibling.js';
+import Node from '../types/Node.js';
 
 import delete_case0 from './delete_case0.js';
 import delete_case3 from './delete_case3.js';

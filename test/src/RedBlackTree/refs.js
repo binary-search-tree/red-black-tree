@@ -3,6 +3,7 @@ import test from 'ava';
 import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';
 import {zip} from '@iterable-iterator/zip';
+
 import {increasing, entropy} from '../../fixtures.js';
 
 import {empty} from '#module';

@@ -2,8 +2,8 @@ import test from 'ava';
 
 import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';
-
 import {shuffle} from '@randomized/random';
+
 import {increasing, decreasing} from '../../fixtures.js';
 
 import {RedBlackTree} from '#module';
