@@ -108,13 +108,13 @@
     "files": [
       "test/src/**/*"
     ],
+    "nodeArguments": [
+      "--experimental-loader=@node-loader/core"
+    ],
     "require": [
       "regenerator-runtime/runtime"
     ],
-    "timeout": "1m",
-    "nodeArguments": [
-      "--experimental-loader=@node-loader/core"
-    ]
+    "timeout": "1m"
   },
   "babel": {
     "sourceMaps": true,
